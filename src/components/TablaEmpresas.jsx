@@ -8,7 +8,7 @@ export const TablaEmpresas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/api/data") // Asegúrate de que esta URL es la correcta para tu backend
+      .get("http://localhost:5000/api/data") // Asegúrate de que esta URL es la correcta para tu backend
       .then((response) => {
         setData(response.data);
         setLoading(false);
