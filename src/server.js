@@ -57,6 +57,18 @@ app.get("/api/data", (req, res) => {
   });
 });
 
+app.post("/api/addUser", (req, res) => {
+  const query = "INSERT INTO `users` (nif, password, role) VALUES (?,?, ?)"
+  const {nif, pass, role} = req.body.formData;
+  db.query(query, [nif, pass, role], (err, results) => {
+    if (err) {
+      console.error("Error al subir los datos:", err);
+      return res.status(500).json({ error: "Error al subir los datos" });
+    }
+    res.status(200).send()
+  });
+} );
+
 app.listen(5000, () => {
   console.log("Servidor corriendo en http://192.168.0.111:5000");
 });
