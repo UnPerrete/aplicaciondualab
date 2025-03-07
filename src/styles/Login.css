@@ -1,0 +1,63 @@
+  
+  /* Contenedor del formulario */
+  .login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Apila los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    
+  }
+  
+  /* Título */
+  .login-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Campos de entrada */
+  .login-container input{
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .login-container select {
+    width: 95%; /* Ocupa todo el ancho */
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }  
+  
+  /* Botón */
+  .login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .login-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Mensaje de error */
+  .login-container p {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  

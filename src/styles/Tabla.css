@@ -1,0 +1,47 @@
+/* Estilos generales */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Encabezado de la tabla */
+  th {
+    background-color: #4CAF50; /* Color de fondo verde */
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  /* Celdas de la tabla */
+  td {
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Borde sutil */
+  }
+  
+  /* Filas alternadas para mejorar la legibilidad */
+  tr:nth-child(odd){
+    background-color: #7f7575;
+
+  }
+
+  tr:nth-child(even) {
+    background-color: #cbbbbb;
+  }
+  
+  
+  /* Estilos del contenedor */
+  div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Título */
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
