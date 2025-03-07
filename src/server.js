@@ -25,26 +25,13 @@ db.connect((err) => {
 
 // Endpoint para el login
 app.post("/api/login", (req, res) => {
-  const { role, email, password, dni, nif } = req.body;
-  let query = "";
-  let params = [];
-
-  // Selección de tabla y credenciales según el rol
-  if (role === "profesor") {
-    query = "SELECT * FROM profesores WHERE email = ? AND password = ?";
-    params = [email, password];
-  } else if (role === "alumno") {
-    query = "SELECT * FROM alumnos WHERE dni = ? AND password = ?";
-    params = [dni, password];
-  } else if (role === "empresa") {
-    query = "SELECT * FROM empresas WHERE nif = ? AND password = ?";
-    params = [nif, password];
-  } else {
-    return res.status(400).json({ success: false, message: "Rol inválido" });
-  }
+  const { role, nif, password } = req.body;
+  let query = "SELECT * FROM users WHERE nif = ? AND password = ? and role = ?";
+  let params = [nif, password, role];
 
   // Ejecutar consulta en MySQL
   db.query(query, params, (err, results) => {
+    // console.log(results)
     if (err) {
       console.error("Error en la consulta:", err);
       return res.status(500).json({ success: false, message: "Error en el servidor" });

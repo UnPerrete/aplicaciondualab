@@ -52,25 +52,11 @@ const Login = () => {
           <option value="empresa">Empresa</option>
         </select>
 
-        {/* Campos dinámicos */}
-        {role === "profesor" && (
-          <>
-            <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
-          </>
-        )}
-        {role === "alumno" && (
-          <>
-            <input type="text" name="dni" placeholder="DNI" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
-          </>
-        )}
-        {role === "empresa" && (
           <>
             <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
             <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
           </>
-        )}
+        
         
         <button type="submit">Iniciar sesión</button>
         {error && <p style={{ color: "red" }}>{error}</p>}

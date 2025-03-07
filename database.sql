@@ -14,32 +14,14 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
+UNLOCK TABLES;
 --
 -- Table structure for table `alumnos`
 --
+drop database if exists dualab;
+create database dualab;
+use dualab;
 
-DROP TABLE IF EXISTS `alumnos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `alumnos` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `dni` varchar(20) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `dni` (`dni`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `alumnos`
---
-
-LOCK TABLES `alumnos` WRITE;
-/*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1,'12345678A','passalumno1'),(2,'12345678B','passalumno2');
-/*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `dualab`
@@ -69,56 +51,21 @@ INSERT INTO `dualab` VALUES ('Rocman Producciones','Calle Sao Paulo S/N , Ed.IME
 /*!40000 ALTER TABLE `dualab` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `empresas`
---
 
-DROP TABLE IF EXISTS `empresas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `empresas` (
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nif` varchar(20) NOT NULL,
+  `nif` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `role` varchar(25) NOT NULL CHECK (role IN ('profesor', 'empresa', 'alumno')),
   PRIMARY KEY (`id`),
   UNIQUE KEY `nif` (`nif`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `empresas`
---
-
-LOCK TABLES `empresas` WRITE;
-/*!40000 ALTER TABLE `empresas` DISABLE KEYS */;
-INSERT INTO `empresas` VALUES (1,'A12345678','empresa123'),(2,'B12345678','empresa456');
-/*!40000 ALTER TABLE `empresas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `profesores`
---
-
-DROP TABLE IF EXISTS `profesores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `profesores` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `profesores`
---
-
-LOCK TABLES `profesores` WRITE;
-/*!40000 ALTER TABLE `profesores` DISABLE KEYS */;
-INSERT INTO `profesores` VALUES (1,'profe1@gmail.com','1234'),(2,'profe2@gmail.com','4567');
-/*!40000 ALTER TABLE `profesores` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+INSERT INTO `users` VALUES (1,'78592247M','1234', 'profesor'),(2,'78592243M','4567', 'alumno');
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
