@@ -9,9 +9,9 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  host: "192.168.0.111",
-  user: "admin",
-  password: "dualab2025",
+  host: "localhost",
+  user: "root",
+  password: "root",
   database: "dualab",
 });
 
