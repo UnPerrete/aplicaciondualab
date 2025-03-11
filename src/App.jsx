@@ -7,6 +7,7 @@ import { AuthProvider } from './context/AuthProvider'
 import { TablaEmpresas } from './components/TablaEmpresas'
 import PrivateRoute from './context/PrivateRoute'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Servicios from './components/Servicios'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/tabla" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
+        {/* <Route path="" element={<Servicios />} /> */}
       </Routes>
     </BrowserRouter>
     </AuthProvider>

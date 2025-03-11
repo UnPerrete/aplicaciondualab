@@ -1,0 +1,158 @@
+import React, { useState } from "react";
+import '../styles/Servicios.css';
+
+const categorias = [
+  {
+    titulo: "INFORMÁTICA Y COMUNICACIONES",
+    imagen: "../src/assets/Inf.png",
+    descripcion:
+      "La FP de Informática y Comunicaciones forma profesionales en el desarrollo, administración y mantenimiento de sistemas informáticos y redes. Incluye programación, ciberseguridad, soporte técnico y gestión de bases de datos, preparándolos para entornos digitales y tecnológicos en constante evolución.",
+    servicios: [
+      "Desarrollo y mantenimineto de software",
+      "Administración de sistemas informáticos",
+      "Ciberseguridad y protección de datos",
+      "Soporte técnico y asistencia informática",
+      "Redes y telecomunicaciones",
+      "Desarrollo web y aplicaciones móviles",
+      "Virtualización y computación en la nube",
+      "Análisis y gestión de bases de datos",
+      "Automatización y scripting",
+      "Diseño y administración de infraestructuras TI",
+      "Gestión de proyectos tecnológicos",
+      "Inteligencia artificial y aprendizaje automático",
+      "Gestión y configuración de hardware",
+      "Optimización del rendimiento de sistemas",
+      "Implementación de soluciones IoT",
+      "Administración de servidores y almacenamiento",
+      "Seguridad en redes y auditorías de sistemas",
+      "Diseño y mantenimiento de páginas web",
+      "Monitorización y soporte en centros de datos",
+      "Administración de entornos multiplataforma",
+      "Seguridad informática",
+      "Big Data y análisis de datos",
+      "Soporte técnico"
+    ]
+  },
+  {
+    titulo: "IMAGEN Y SONIDO",
+    imagen: "../src/assets/Img.jpg",
+    descripcion:
+      "La FP de Imagen y Sonido forma profesionales en la producción audiovisual, el diseño de sonido y la postproducción. Abarca áreas como fotografía, cine, televisión, radio y animación digital, combinando creatividad con tecnología para la creación de contenido multimedia.",
+    servicios: [
+      "Edición de video",
+      "Producción multimedia",
+      "Diseño de efectos visuales",
+      "Sonido y postproducción",
+      "Producción audiovisual",
+      "Edición y postproducción de video",
+      "Montaje cinematográfico",
+      "Diseño y creación de efectos visuales",
+      "Grabación y mezcla de sonido",
+      "Producción musical y sonorización",
+      "Fotografía profesional",
+      "Animación digital y 3D",
+      "Dirección de proyectos audiovisuales",
+      "Operación de cámaras y equipos de grabación",
+      "Iluminación en producciones audiovisuales",
+      "Streaming y retransmisión en directo",
+      "Creación de contenido multimedia",
+      "Realización de televisión y radio",
+      "Diseño gráfico aplicado al audiovisual"
+    ]
+  },
+  {
+    titulo: "ADMINISTRACIÓN Y GESTIÓN",
+    imagen: "../src/assets/Adm.jpg",
+    descripcion:
+      "La FP de Administración y Gestión forma profesionales en la organización y gestión de empresas, abarcando contabilidad, finanzas, recursos humanos, gestión documental y atención al cliente. Prepara para trabajar en entornos administrativos, optimizando procesos y asegurando el correcto funcionamiento de una empresa.",
+    servicios: [
+      "Consultoría de negocios",
+      "Planificación estratégica",
+      "Marketing y ventas",
+      "Gestión financiera",
+      "Atención al cliente y comunicación empresarial",
+      "Gestión de recursos humanos",
+      "Organización y archivo documental",
+      "Gestión de compras y proveedores",
+      "Facturación y cobros",
+      "Gestión fiscal y tributaria",
+      "Control de stock e inventarios",
+      "Elaboración de informes y análisis de datos",
+      "Administración de software de gestión empresarial",
+      "Tramitación de documentación legal y laboral",
+      "Planificación y control de proyectos",
+      "Soporte en comercio internacional",
+      "Gestión de riesgos y seguros"
+    ]
+  },
+  {
+    titulo: "COMERCIO Y MARKETING",
+    imagen: "../src/assets/ComMar.jpg",
+    descripcion:
+      "La FP de Comercio y Marketing forma profesionales especializados en la gestión comercial, ventas, estrategias de marketing y atención al cliente. Prepara para desempeñar funciones en el ámbito del comercio nacional e internacional, publicidad, investigación de mercados y comercio digital, combinando conocimientos teóricos con formación práctica para adaptarse a las necesidades del mercado actual.",
+    servicios: [
+        "Atención al cliente",
+        "Gestión de ventas",
+        "Estrategias de marketing",
+        "Comercio internacional",
+        "Publicidad y comunicación",
+        "Investigación de mercados",
+        "Logística y distribución",
+        "Gestión de redes sociales",
+        "Comercio electrónico",
+        "Branding y posicionamiento de marca",
+        "Merchandising y escaparatismo",
+        "Fidelización de clientes",
+        "Análisis de datos comerciales",
+        "Creación de campañas promocionales",
+        "Organización de eventos comerciales"
+    ]
+  },
+];
+
+const Inicio = () => {
+  const [desplegados, setDesplegados] = useState([]);
+
+  const toggleDesplegable = (index) => {
+    setDesplegados((prev) =>
+      prev.includes(index)
+        ? prev.filter((item) => item !== index) // Cierra la lista si ya está abierta
+        : [...prev, index] // Agrega la lista si no está abierta
+    );
+  };
+
+  return (
+    <div className="p-6">
+      <h1 className="text-3xl font-bold text-center mb-4">
+        En esta sección, podrá conocer nuestras principales áreas de especialización y los servicios que ofrecemos en cada una.
+        Cada apartado incluye un desplegable con más detalles sobre los servicios disponibles. <br />
+        ¡Explore y descubra cómo podemos ayudarle!
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {categorias.map((categoria, index) => (
+          <div key={index} className="text-center">
+            <img src={categoria.imagen} alt={categoria.titulo} className="w-full h-64 object-cover rounded-lg" />
+            <h2 className="text-xl font-semibold mt-4">{categoria.titulo}</h2>
+            <p className="mt-2 text-gray-600">{categoria.descripcion}</p>
+            <button
+              className="mt-2 text-blue-500 flex items-center justify-center"
+              onClick={() => toggleDesplegable(index)}
+            >
+              {desplegados.includes(index) ? "Servicios ▴" : "Servicios ▾"}
+            </button>
+            {desplegados.includes(index) && (
+              <ul className="mt-2 text-gray-700 text-left mx-auto w-4/5">
+                {categoria.servicios.map((servicio, i) => (
+                  <li key={i} className="text-sm">{servicio}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Inicio;
