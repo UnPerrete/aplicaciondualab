@@ -13,14 +13,14 @@ const Login = () => {
 
   // Maneja cambios en los campos del formulario
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    let value = e.target.value;
+        if (e.target.type === "password"){
+          const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
+          value = hashedPass
+        }
+        setFormData({ ...formData, [e.target.name]: value })
   };
 
-  const handleChangePass = (e) => {
-    const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
-    setFormData({ ...formData, [e.target.name]: hashedPass });
-
-  }
 
   // Enviar formulario
   const handleSubmit = async (e) => {
@@ -61,7 +61,7 @@ const Login = () => {
 
           <>
             <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="Contraseña" onChange={handleChangePass} required />
+            <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
           </>
         
         

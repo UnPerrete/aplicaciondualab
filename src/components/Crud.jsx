@@ -3,20 +3,24 @@ import CryptoJS from "crypto-js";
 
 const Crud = () => {
   const [activeForm, setActiveForm] = useState('');
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({'role': 'alumno'});
   const [err, setErr] = useState(null);
+
+
   const handleFormSelect = (form) => {
     setActiveForm(form);
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    let value = e.target.value;
+    if (e.target.type === "password"){
+      const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
+      value = hashedPass
+    }
+    setFormData({ ...formData, [e.target.name]: value })
   };
 
-  const handleChangePass = (e) => {
-      const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
-      setFormData({ ...formData, [e.target.name]: hashedPass });
-    }
+
 
     const handleSubmit = async () => {
         try{
@@ -50,7 +54,7 @@ const Crud = () => {
           </div>
           <div className="form-group">
             <label htmlFor="pass">Password</label>
-            <input type="password" name="pass" placeholder="Nueva Contraseña" onChange={handleChangePass}/>
+            <input type="password" name="pass" placeholder="Nueva Contraseña" onChange={handleChange}/>
           </div>
           <div className="form-group">
             <label htmlFor="userEmail">Role</label>
