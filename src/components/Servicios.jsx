@@ -108,6 +108,148 @@ const categorias = [
         "Organización de eventos comerciales"
     ]
   },
+  {
+    titulo: "ARTES GRÁFICAS",
+    imagen: "../src/assets/ArtGra.png",
+    descripcion:
+    "La FP de Artes Gráficas forma profesionales en el diseño, producción y gestión de materiales gráficos, incluyendo impresión, preimpresión, edición digital y packaging. Combina creatividad con tecnología para la comunicación visual y la industria gráfica.",
+    servicios: [
+        "Diseño gráfico y comunicación visual",
+        "Producción e impresión digital",
+        "Maquetación y preimpresión",
+        "Diseño y producción de envases y packaging",
+        "Creación de identidad corporativa",
+        "Rotulación y señalética",
+        "Edición y producción editorial",
+        "Gestión y tratamiento de imágenes",
+        "Impresión en gran formato",
+        "Producción de publicidad impresa",
+        "Serigrafía y estampación",
+        "Producción de catálogos y revistas",
+        "Diseño de etiquetas y envoltorios",
+        "Creación de ilustraciones digitales",
+        "Gestión de color y acabados gráficos"
+    ]
+  },
+  {
+    titulo: "HOSTELERÍA Y TURISMO",
+    imagen: "../src/assets/HosTur.png",
+    descripcion:
+    "La FP de Hostelería y Turismo prepara profesionales en la gestión de alojamientos, restauración, agencias de viajes y organización de eventos, combinando atención al cliente, administración y promoción turística.",
+    servicios: [
+        "Gestión hotelera y alojamiento",
+        "Atención al cliente en turismo y restauración",
+        "Organización de eventos y congresos",
+        "Guía turístico y animación sociocultural",
+        "Gastronomía y cocina profesional",
+        "Servicio de bar y cafetería",
+        "Administración en agencias de viajes",
+        "Reservas y planificación de itinerarios",
+        "Seguridad e higiene en hostelería",
+        "Marketing y promoción turística",
+        "Turismo sostenible y ecoturismo"
+    ]
+  },
+  {
+    titulo: "INSTALACIÓN Y MANTENIMIENTO",
+    imagen: "../src/assets/InsMan.png",
+    descripcion:
+    "La FP de Instalación y Mantenimiento forma profesionales en el montaje, mantenimiento y reparación de sistemas industriales, equipos mecánicos, térmicos y redes de fluidos, asegurando su correcto funcionamiento y eficiencia.",
+    servicios: [
+        "Instalación y mantenimiento de sistemas industriales",
+        "Montaje y reparación de maquinaria",
+        "Gestión de redes de climatización y ventilación",
+        "Mantenimiento preventivo y correctivo",
+        "Automatización y control de procesos",
+        "Instalación de sistemas hidráulicos y neumáticos",
+        "Electricidad y electrónica aplicada",
+        "Montaje y ajuste de estructuras metálicas",
+        "Revisión de sistemas de seguridad industrial",
+        "Supervisión de redes de abastecimiento y saneamiento"
+    ]
+  },
+  {
+    titulo: "ELECTRICIDAD Y ELECTRÓNICA",
+    imagen: "../src/assets/Elec.png",
+    descripcion:
+    "La FP de Electricidad y Electrónica forma profesionales en la instalación, mantenimiento y reparación de sistemas eléctricos, electrónicos y automatizados, esenciales en sectores industriales y tecnológicos.",
+    servicios: [
+        "Instalación y mantenimiento de redes eléctricas",
+        "Automatización y control industrial",
+        "Montaje y reparación de sistemas electrónicos",
+        "Domótica y edificios inteligentes",
+        "Energías renovables y eficiencia energética",
+        "Instalaciones de telecomunicaciones",
+        "Electrónica aplicada y microprocesadores",
+        "Sistemas de seguridad y videovigilancia",
+        "Mantenimiento de maquinaria eléctrica",
+        "Diseño y montaje de circuitos electrónicos"
+    ]
+  },
+  {
+    titulo: "TRANSPORTE Y MANTENIMIENTO DE VEHÍCULOS",
+    imagen: "../src/assets/Trans.png",
+    descripcion:
+    "La FP de Transporte y Mantenimiento de Vehículos forma profesionales en la reparación, mantenimiento y gestión de sistemas de automoción, garantizando el correcto funcionamiento y seguridad de los vehículos.",
+    servicios: [
+        "Mantenimiento y reparación de vehículos",
+        "Diagnóstico de sistemas mecánicos y electrónicos",
+        "Electricidad y electrónica del automóvil",
+        "Gestión de talleres y servicio postventa",
+        "Sistemas de transmisión y frenos",
+        "Alineación y equilibrado de ruedas",
+        "Instalación de accesorios y climatización",
+        "Carrocería y pintura de automóviles",
+        "Mantenimiento de vehículos industriales y pesados",
+        "Sistemas de inyección y combustibles"
+    ]
+  },
+  {
+    titulo: "ACTIVIDADES FISICAS Y DEPORTIVAS",
+    imagen: "../src/assets/FisDep.png",
+    descripcion:
+    "La FP de Actividades Físicas y Deportivas capacita profesionales en la planificación, ejecución y gestión de programas deportivos, entrenamientos y actividades físicas para el bienestar y rendimiento.",
+    servicios: [
+        "Entrenamiento personal y planificación deportiva",
+        "Animación y dinamización de actividades físicas",
+        "Gestión y organización de eventos deportivos",
+        "Educación física y recreación",
+        "Prevención y recuperación de lesiones",
+        "Actividades en el medio natural",
+        "Monitores de fitness y musculación",
+        "Iniciación deportiva y formación de base",
+        "Técnicas de relajación y bienestar",
+        "Coaching deportivo y motivación"
+    ]
+  },
+  {
+    titulo: "AGRARIA",
+    imagen: "../src/assets/Agra.png",
+    descripcion:
+    "La FP Agraria forma profesionales en la producción, gestión y sostenibilidad de cultivos, ganadería y medio ambiente, optimizando los recursos naturales y tecnológicos del sector.",
+    servicios: [
+       "Producción y gestión de cultivos",
+      "Manejo y cuidado de explotaciones ganaderas",
+      "Agricultura ecológica y sostenible",
+      "Gestión de recursos hídricos y riego",
+      "Mantenimiento de maquinaria agrícola",
+      "Control de plagas y sanidad vegetal",
+      "Gestión forestal y medioambiental",
+      "Comercialización de productos agroalimentarios",
+      "Paisajismo y jardinería",
+      "Técnicas de biotecnología agrícola"
+    ]
+  },
+
+  /*{
+     titulo: "",
+     imagen: "../src/assets/",
+     descripcion:
+     "",
+     servicios: [
+        
+     ]
+  },*/
 ];
 
 const Inicio = () => {

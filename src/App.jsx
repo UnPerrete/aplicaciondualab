@@ -7,7 +7,7 @@ import PrivateRoute from './context/PrivateRoute'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from './components/Signup';
 import Crud from './components/Signup';
-//import Servicios from './components/Servicios'
+import Servicios from './components/Servicios'
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/tabla" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
-        {/* <Route path="" element={<Servicios />} /> */}
+        <Route path="/servicio" element={<Servicios />} />
         <Route path="/register" element={<Signup />} />
       </Routes>
     </BrowserRouter>
