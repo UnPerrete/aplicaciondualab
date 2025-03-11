@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../context/AuthProvider';
 import CryptoJS from "crypto-js";
+import { Link } from "react-router-dom";
 import "../styles/Login.css"
 
 const Login = () => {
@@ -68,6 +69,9 @@ const Login = () => {
         <button type="submit">Iniciar sesión</button>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
+      <p>
+         ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
+      </p>
     </div>
   );
 };
