@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../context/AuthProvider';
 import CryptoJS from "crypto-js";
+import { Link } from "react-router-dom";
 import "../styles/Login.css"
 
 const Login = () => {
@@ -13,14 +14,14 @@ const Login = () => {
 
   // Maneja cambios en los campos del formulario
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    let value = e.target.value;
+        if (e.target.type === "password"){
+          const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
+          value = hashedPass
+        }
+        setFormData({ ...formData, [e.target.name]: value })
   };
 
-  const handleChangePass = (e) => {
-    const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
-    setFormData({ ...formData, [e.target.name]: hashedPass });
-
-  }
 
   // Enviar formulario
   const handleSubmit = async (e) => {
@@ -61,13 +62,16 @@ const Login = () => {
 
           <>
             <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="Contraseña" onChange={handleChangePass} required />
+            <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
           </>
         
         
         <button type="submit">Iniciar sesión</button>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
+      <p>
+         ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
+      </p>
     </div>
   );
 };

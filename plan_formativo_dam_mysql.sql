@@ -1,3 +1,5 @@
+USE dualab;
+DROP TABLE IF EXISTS desarrollo_aplicaciones_multiplataforma
 CREATE TABLE desarrollo_aplicaciones_multiplataforma (
     Bloque CHAR(1) PRIMARY KEY,
     Descripcion TEXT,

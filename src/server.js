@@ -57,6 +57,20 @@ app.get("/api/data", (req, res) => {
   });
 });
 
+app.post("/api/addUser", (req, res) => {
+  const query = "INSERT INTO `users` (nif, password, role) VALUES (?,?, ?)"
+  const {nif, pass, confirmpass, role} = req.body.formData;
+  if(pass !== confirmpass) res.status(500).json({error: "Las Contraseñas no coinciden"})
+  db.query(query, [nif, pass, role], (err, results) => {
+    if (err) {
+      console.error("Error al subir los datos:", err);
+      return res.status(500).json({ error: "Error al subir los datos" });
+    }
+    console.log("Nuevo usuario añadido")
+    res.status(200).send()
+  });
+} );
+
 app.listen(5000, () => {
   console.log("Servidor corriendo en http://192.168.0.111:5000");
 });
