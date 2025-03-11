@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import CryptoJS from "crypto-js";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from '../context/AuthProvider';
 import "../styles/Login.css";
 
 export default function Signup() {
     const [formData, setFormData] = useState({'role': 'Profesor'});
     const [err, setErr] = useState(null);
+    const { login } = useAuth();
+    const navigate = useNavigate();
 
       const handleChange = (e) => {
         let value = e.target.value;
@@ -25,6 +29,16 @@ export default function Signup() {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({formData})
                   });
+
+                  const data = await response.json();
+                  console.log(data.success)
+                  if (data.success) {
+                    login();
+                    navigate(`/tabla`);
+                  } else {
+                    setErr("Credenciales incorrectas");
+                  }
+
             }catch (err){
                 setErr(err)
             }
@@ -57,8 +71,8 @@ export default function Signup() {
           <button type="submit">Añadir Usuario</button>
         </form>
         <p>
-         ¿Ya tienes Cuenta? <Link to="/">Inicia sesion aquí</Link>
-      </p>
+            ¿Ya tienes Cuenta? <Link to="/">Inicia sesion aquí</Link>
+        </p>
     </div>
   )
 }
