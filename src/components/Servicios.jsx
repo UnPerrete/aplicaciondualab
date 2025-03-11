@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import '../styles/Servicios.css';
+import categorias from "./data/servicios.json"
 
 const categorias = [
   {
