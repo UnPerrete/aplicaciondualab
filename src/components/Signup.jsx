@@ -22,25 +22,34 @@ export default function Signup() {
     
     
     
-        const handleSubmit = async () => {
+        const handleSubmit = async (e) => {
+          e.preventDefault();
             try{
-                await fetch("http://localhost:5000/api/addUser", {
+              const response = await fetch("http://localhost:5000/api/addUser", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({formData})
                   });
-
                   const data = await response.json();
-                  console.log(data.success)
                   if (data.success) {
+                    
                     login();
                     navigate(`/tabla`);
                   } else {
-                    setErr("Credenciales incorrectas");
+                    switch(data.error){
+                      case 1062:
+                        setErr("Este NIF ya ha sido registrado");
+                        break;
+                      case 1048:
+                        setErr("Complete todos los campos");
+                        break;
+                      case 79:
+                        setErr("Las contraseñas no coinciden")
+                    }
                   }
 
             }catch (err){
-                setErr(err)
+                setErr(err.message)
             }
         }
 
@@ -48,6 +57,7 @@ export default function Signup() {
     <div className='signup-container'>
         <form className="user-form" onSubmit={handleSubmit}>
           <h2>Sign Up</h2>
+          <p style={ {color: "red"} }>{err}</p>
           <div className="form-group">
             <input type="text" name="nif" placeholder="NIF" onChange={handleChange} />
           </div>
@@ -64,7 +74,7 @@ export default function Signup() {
                 <option value="empresa">Empresa</option>
             </select>
           </div>
-          <button type="submit">Añadir Usuario</button>
+          <button type="button" onClick={handleSubmit}>Añadir Usuario</button>
         </form>
         <p>
             ¿Ya tienes Cuenta? <Link to="/">Inicia sesion aquí</Link>

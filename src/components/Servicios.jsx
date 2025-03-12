@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+
 import "../styles/Servicio.css";
 import categoriasData from "./data/servicios.json";
-
+import Navbar  from "./Navbar";
 const Servicios = () => {
+
   const [desplegados, setDesplegados] = useState([]);
   const [categorias, setCategorias] = useState(categoriasData);
   const [categoriasOriginal] = useState([...categoriasData]);
@@ -44,7 +46,9 @@ const Servicios = () => {
 
   return (
     <div className="p-6">
+      <Navbar/>
       {/* Título */}
+
       <h1 className="text-3xl font-bold text-center mb-4">
         En esta sección, podrá conocer nuestras principales áreas de
         especialización y los servicios que ofrecemos en cada una.
