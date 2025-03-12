@@ -1,4 +1,3 @@
-  
   /* Contenedor del formulario */
   .login-container {
     background: white;
@@ -6,20 +5,23 @@
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
-    display: flex; /* Usa flexbox */
-    flex-direction: column; /* Apila los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    
+    display: flex;
+    /* Usa flexbox */
+    flex-direction: column;
+    /* Apila los elementos en columna */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+
   }
-  
+
   /* Título */
   .login-container h2 {
     margin-bottom: 15px;
     color: #333;
   }
-  
+
   /* Campos de entrada */
-  .login-container input{
+  .login-container input {
     width: 90%;
     padding: 12px;
     margin: 8px 0;
@@ -29,14 +31,15 @@
   }
 
   .login-container select {
-    width: 95%; /* Ocupa todo el ancho */
+    width: 95%;
+    /* Ocupa todo el ancho */
     padding: 12px;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-  }  
-  
+  }
+
   /* Botón */
   .login-container button {
     width: 100%;
@@ -49,15 +52,36 @@
     margin-top: 10px;
     border-radius: 5px;
   }
-  
+
   .login-container button:hover {
     background-color: #0056b3;
   }
-  
+
   /* Mensaje de error */
   .login-container p {
     color: red;
     margin-top: 10px;
     font-size: 14px;
   }
-  
+
+  /* Contenedor de la contraseña */
+  .password-container {
+    position: relative;
+    padding: 0;
+  }
+
+  .password-container input {
+    width: 82%;
+    padding-right: 40px;
+  }
+
+  .eye-icon {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;    
+  filter: invert(1) brightness(100);
+  }
