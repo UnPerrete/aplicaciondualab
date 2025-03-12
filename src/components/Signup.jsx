@@ -36,7 +36,16 @@ export default function Signup() {
                     login();
                     navigate(`/tabla`);
                   } else {
-                    setErr(data.error);
+                    switch(data.error){
+                      case 1062:
+                        setErr("Este NIF ya ha sido registrado");
+                        break;
+                      case 1048:
+                        setErr("Complete todos los campos");
+                        break;
+                      case 79:
+                        setErr("Las contraseñas no coinciden")
+                    }
                   }
 
             }catch (err){
