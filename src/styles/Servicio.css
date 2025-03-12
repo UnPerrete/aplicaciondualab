@@ -1,0 +1,180 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0eeee;
+  }
+  
+  /* Título principal */
+  .text-3xl {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem; /* Aumentamos la separación entre columnas */
+    }
+  }
+  
+  /* Contenedor de cada apartado */
+  .text-center {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 3rem; /* Aumentamos la separación entre filas */
+  }
+  
+  .text-center:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Imágenes ajustadas para uniformidad */
+  .text-center img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Títulos de cada apartado */
+  .text-xl {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #222;
+    margin-top: 1rem;
+  }
+  
+  /* Descripción */
+  .text-gray-600 {
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  /* Ajuste para la lista de servicios desplegada */
+  .text-center ul {
+    list-style-position: inside; /* Asegura que los puntos estén dentro del área del texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin: 0 auto; /* Centra la lista dentro del contenedor */
+    align-items: center;
+  }
+  
+  /* Aumentar separación entre cada elemento de la lista */
+  .text-center ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Menú desplegable alineado a la izquierda */
+  .dropdown-container {
+    display: flex;
+    justify-content: flex-start !important;
+  }
+  
+  /* Estilos del menú desplegable */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .title {
+    background-color: #d8d7d7;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+  }
+  
+  .title i {
+    transition: transform 0.3s ease;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu .option {
+    padding: 5px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .menu .option:hover {
+    background: #f0f0f0;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  /* Contenedor del grupo */
+.grupo-container {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #e8e8e8;
+  border-radius: 10px;
+}
+
+/* Encabezado del grupo con cuadro */
+.grupo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 15px;
+  background: #d1d1d1;
+  border: 2px solid #a1a1a1; /* Borde del cuadro */
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Sombra y cambio de color al pasar el cursor */
+.grupo-header:hover {
+  background: #bfbfbf;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícono de expandir y colapsar */
+.grupo-icon {
+  font-size: 2.5rem;
+}
+  
+  /* Animación de despliegue */
+  .expandido {
+    max-height: 1000px;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .colapsado {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
