@@ -241,6 +241,15 @@ const categorias = [
       "Técnicas de biotecnología agrícola"
     ]
   },
+  {
+    titulo: "EDIFICACIÓN Y OBRA CIVIL",
+    imagen: "../src/assets/",
+    descripcion:
+    "La FP de Edificación y Obra Civil forma profesionales en la construcción, planificación y mantenimiento de infraestructuras y edificaciones, asegurando calidad y seguridad en cada proyecto.",
+    servicios: [
+       
+    ]
+ },
 
   /*{
      titulo: "",
