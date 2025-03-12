@@ -249,18 +249,9 @@ const categorias = [
     servicios: [
        
     ]
- },
+ }
+]
 
-  /*{
-     titulo: "",
-     imagen: "../src/assets/",
-     descripcion:
-     "",
-     servicios: [
-        
-     ]
-  },*/
-];
 
 const Inicio = () => {
   const [desplegados, setDesplegados] = useState([]);
