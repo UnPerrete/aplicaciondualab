@@ -1,6 +1,7 @@
 [
   {
     "titulo": "INFORMÁTICA Y COMUNICACIONES",
+    "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/Inf.png",
     "descripcion":
       "La FP de Informática y Comunicaciones forma profesionales en el desarrollo, administración y mantenimiento de sistemas informáticos y redes. Incluye programación, ciberseguridad, soporte técnico y gestión de bases de datos, preparándolos para entornos digitales y tecnológicos en constante evolución.",
@@ -32,6 +33,7 @@
   },
   {
     "titulo": "IMAGEN Y SONIDO",
+    "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/Img.jpg",
     "descripcion":
       "La FP de Imagen y Sonido forma profesionales en la producción audiovisual, el diseño de sonido y la postproducción. Abarca áreas como fotografía, cine, televisión, radio y animación digital, combinando creatividad con tecnología para la creación de contenido multimedia.",
@@ -59,6 +61,7 @@
   },
   {
     "titulo": "ADMINISTRACIÓN Y GESTIÓN",
+    "grupo": "Administración, Comercio y Marketing",
     "imagen": "../src/assets/Adm.jpg",
     "descripcion":
       "La FP de Administración y Gestión forma profesionales en la organización y gestión de empresas, abarcando contabilidad, finanzas, recursos humanos, gestión documental y atención al cliente. Prepara para trabajar en entornos administrativos, optimizando procesos y asegurando el correcto funcionamiento de una empresa.",
@@ -84,6 +87,7 @@
   },
   {
     "titulo": "COMERCIO Y MARKETING",
+    "grupo": "Administración, Comercio y Marketing",
     "imagen": "../src/assets/ComMar.jpg",
     "descripcion":
       "La FP de Comercio y Marketing forma profesionales especializados en la gestión comercial, ventas, estrategias de marketing y atención al cliente. Prepara para desempeñar funciones en el ámbito del comercio nacional e internacional, publicidad, investigación de mercados y comercio digital, combinando conocimientos teóricos con formación práctica para adaptarse a las necesidades del mercado actual.",
@@ -107,6 +111,7 @@
   },
   {
     "titulo": "ARTES GRÁFICAS",
+    "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/ArtGra.png",
     "descripcion":
     "La FP de Artes Gráficas forma profesionales en el diseño, producción y gestión de materiales gráficos, incluyendo impresión, preimpresión, edición digital y packaging. Combina creatividad con tecnología para la comunicación visual y la industria gráfica.",
@@ -130,6 +135,7 @@
   },
   {
     "titulo": "HOSTELERÍA Y TURISMO",
+    "grupo": "Hostelería, Turismo y Servicios",
     "imagen": "../src/assets/HosTur.png",
     "descripcion":
     "La FP de Hostelería y Turismo prepara profesionales en la gestión de alojamientos, restauración, agencias de viajes y organización de eventos, combinando atención al cliente, administración y promoción turística.",
@@ -149,6 +155,7 @@
   },
   {
     "titulo": "INSTALACIÓN Y MANTENIMIENTO",
+    "grupo": "Industria y Fabricación",
     "imagen": "../src/assets/InsMan.png",
     "descripcion":
     "La FP de Instalación y Mantenimiento forma profesionales en el montaje, mantenimiento y reparación de sistemas industriales, equipos mecánicos, térmicos y redes de fluidos, asegurando su correcto funcionamiento y eficiencia.",
@@ -167,6 +174,7 @@
   },
   {
     "titulo": "ELECTRICIDAD Y ELECTRÓNICA",
+    "grupo": "Industria y Fabricación",
     "imagen": "../src/assets/Elec.png",
     "descripcion":
     "La FP de Electricidad y Electrónica forma profesionales en la instalación, mantenimiento y reparación de sistemas eléctricos, electrónicos y automatizados, esenciales en sectores industriales y tecnológicos.",
@@ -185,6 +193,7 @@
   },
   {
     "titulo": "TRANSPORTE Y MANTENIMIENTO DE VEHÍCULOS",
+    "grupo": "Transporte y Construcción",
     "imagen": "../src/assets/Trans.png",
     "descripcion":
     "La FP de Transporte y Mantenimiento de Vehículos forma profesionales en la reparación, mantenimiento y gestión de sistemas de automoción, garantizando el correcto funcionamiento y seguridad de los vehículos.",
@@ -203,6 +212,7 @@
   },
   {
     "titulo": "ACTIVIDADES FISICAS Y DEPORTIVAS",
+    "grupo": "Salud y Deporte",
     "imagen": "../src/assets/FisDep.png",
     "descripcion":
     "La FP de Actividades Físicas y Deportivas capacita profesionales en la planificación, ejecución y gestión de programas deportivos, entrenamientos y actividades físicas para el bienestar y rendimiento.",
@@ -221,6 +231,7 @@
   },
   {
     "titulo": "AGRARIA",
+    "grupo": "Ciencia y Medio Ambiente",
     "imagen": "../src/assets/Agra.png",
     "descripcion":
     "La FP Agraria forma profesionales en la producción, gestión y sostenibilidad de cultivos, ganadería y medio ambiente, optimizando los recursos naturales y tecnológicos del sector.",
@@ -235,6 +246,253 @@
       "Comercialización de productos agroalimentarios",
       "Paisajismo y jardinería",
       "Técnicas de biotecnología agrícola"
+    ]
+  },
+  {
+    "titulo": "EDIFICACIÓN Y OBRA CIVIL",
+    "grupo": "Transporte y Construcción",
+    "imagen": "../src/assets/EdOb.png",
+    "descripcion":
+    "La FP de Edificación y Obra Civil forma profesionales en la construcción, planificación y mantenimiento de infraestructuras y edificaciones, asegurando calidad y seguridad en cada proyecto.",
+    "servicios": [
+       "Diseño y planificación de proyectos de construcción",
+       "Ejecución y supervisión de obras",
+       "Gestión de materiales y estructuras",
+       "Rehabilitación y mantenimiento de edificios",
+       "Topografía y replanteo de terrenos",
+       "Instalaciones y acabados en la edificación",
+       "Dibujo técnico y modelado en 3D",
+       "Gestión de seguridad y prevención de riesgos",
+       "Obras hidráulicas y urbanización",
+       "Sostenibilidad y eficiencia energética en construcción"
+    ]
+  },
+  {
+    "titulo": "ENERGÍA Y AGUA",
+    "grupo": "Industria y Fabricación",
+    "imagen": "../src/assets/EnAg.png",
+    "descripcion":
+    "La FP de Energía y Agua capacita profesionales en la generación, distribución y gestión eficiente de recursos energéticos e hídricos, promoviendo el uso sostenible y tecnológico.",
+    "servicios": [
+      "Gestión y tratamiento de aguas",
+      "Mantenimiento de redes hidráulicas",
+      "Energías renovables y eficiencia energética",
+      "Instalaciones térmicas y de climatización",
+      "Distribución y control del suministro eléctrico",
+      "Optimización del consumo energético",
+      "Gestión de residuos y sostenibilidad",
+      "Monitoreo y control ambiental",
+      "Automatización de procesos energéticos",
+      "Infraestructuras hidráulicas y saneamiento"
+    ]
+  },
+  {
+    "titulo": "FABRICACIÓN MECÁNICA",
+    "grupo": "Industria y Fabricación",
+    "imagen": "../src/assets/FaMec.png",
+    "descripcion":
+    "La FP de Fabricación Mecánica forma profesionales en la producción, montaje y mantenimiento de piezas y estructuras metálicas, utilizando maquinaria y tecnologías avanzadas para la industria.",
+    "servicios": [
+      "Mecanizado de piezas y componentes",
+      "Soldadura y técnicas de unión",
+      "Montaje y mantenimiento de estructuras metálicas",
+      "Diseño y fabricación asistida por ordenador (CAD/CAM)",
+      "Control de calidad en procesos de fabricación",
+      "Automatización y robótica industrial",
+      "Mantenimiento de equipos y herramientas mecánicas",
+      "Fabricación de moldes y matrices",
+      "Impresión 3D y manufactura avanzada",
+      "Tratamientos térmicos y acabados superficiales"
+    ]
+  },
+  {
+    "titulo": "IMAGEN PERSONAL",
+    "grupo": "Imagen",
+    "imagen": "../src/assets/ImgPer.png",
+    "descripcion":
+    "La FP de Imagen Personal forma profesionales en estética, peluquería y asesoría de imagen, enfocándose en el cuidado, bienestar y estilo de las personas.",
+    "servicios": [
+      "Peluquería y estilismo",
+      "Asesoría de imagen y personal shopper",
+      "Maquillaje profesional y caracterización",
+      "Tratamientos estéticos y cuidado de la piel",
+      "Uñas esculpidas y manicura",
+      "Terapias de bienestar y spa",
+      "Depilación y estética corporal",
+      "Micropigmentación y tatuaje estético",
+      "Cosmética y perfumería",
+      "Protocolos y etiqueta en imagen personal"
+    ]
+  },
+  {
+    "titulo": "INDUSTRIAS ALIMENTARIAS",
+    "grupo": "Industria y Fabricación",
+    "imagen": "../src/assets/InAli.png",
+    "descripcion":
+    "La FP de Industrias Alimentarias forma profesionales en la producción, control de calidad y seguridad de alimentos, optimizando los procesos de transformación y distribución.",
+    "servicios": [
+      "Elaboración y procesamiento de alimentos",
+      "Control de calidad y seguridad alimentaria",
+      "Gestión de producción en la industria alimentaria",
+      "Técnicas de conservación y envasado",
+      "Manipulación higiénico-sanitaria de alimentos",
+      "Desarrollo e innovación en productos alimentarios",
+      "Logística y distribución alimentaria",
+      "Análisis y certificación de productos",
+      "Gestión de residuos y sostenibilidad",
+      "Comercialización y marketing de alimentos"
+    ]
+  },
+  {
+    "titulo": "MADERA, MUEBLE Y CORCHO",
+    "grupo": "Industria y Fabricación",
+    "imagen": "../src/assets/MMC.png",
+    "descripcion":
+    "La FP de Madera, Mueble y Corcho capacita profesionales en la fabricación, diseño y mantenimiento de mobiliario, carpintería y productos derivados de la madera.",
+    "servicios": [
+      "Fabricación y montaje de mobiliario",
+      "Diseño y elaboración de estructuras de madera",
+      "Técnicas de carpintería y ebanistería",
+      "Tratamiento y conservación de la madera",
+      "Producción de derivados del corcho",
+      "Restauración y reparación de muebles",
+      "Decoración y acabados en madera",
+      "Gestión de residuos y sostenibilidad",
+      "Manipulación de maquinaria para la madera",
+      "Montaje de estructuras y carpintería de obra"
+    ]
+  },
+  {
+    "titulo": "MARÍTIMO-PESQUERA",
+    "grupo": "Marítimo y Pesquero",
+    "imagen": "../src/assets/PesMar.png",
+    "descripcion":
+    "La FP de Marítimo-Pesquera capacita profesionales en la navegación, pesca, mantenimiento de embarcaciones y conservación de los recursos marinos.",
+    "servicios": [
+      "Navegación y maniobra de buques",
+      "Mantenimiento de embarcaciones",
+      "Pesca y acuicultura",
+      "Seguridad marítima y salvamento",
+      "Gestión de recursos pesqueros",
+      "Procesado y conservación de productos pesqueros",
+      "Mecánica naval y sistemas eléctricos",
+      "Gestión de puertos y logística marítima",
+      "Cartografía y orientación marítima",
+      "Prevención de contaminación marina"
+    ]
+  },
+  {
+    "titulo": "QUÍMICA",
+    "grupo": "Ciencia y Medio Ambiente",
+    "imagen": "../src/assets/Quimica.png",
+    "descripcion":
+    "La FP de Química forma profesionales en el análisis, producción y control de sustancias químicas, garantizando seguridad y calidad en laboratorios e industrias.",
+    "servicios": [
+      "Análisis y control de calidad química",
+      "Producción y transformación de productos químicos",
+      "Laboratorio de ensayos industriales",
+      "Tratamiento de aguas y residuos químicos",
+      "Desarrollo de productos farmacéuticos y cosméticos",
+      "Procesos de biotecnología aplicada",
+      "Síntesis de compuestos químicos",
+      "Gestión ambiental y seguridad química",
+      "Control de procesos en la industria química",
+      "Manipulación y almacenamiento de sustancias químicas"
+    ]
+  },
+  {
+    "titulo": "SANIDAD",
+    "grupo": "Salud y Deporte",
+    "imagen": "../src/assets/San.png",
+    "descripcion":
+    "La FP de Sanidad forma profesionales en la atención, prevención y gestión de la salud, garantizando el bienestar y cuidado de los pacientes en distintos ámbitos sanitarios.",
+    "servicios": [
+      "Atención sanitaria y cuidados auxiliares",
+      "Laboratorio clínico y biomédico",
+      "Higiene bucodental y odontología",
+      "Radiología y diagnóstico por imagen",
+      "Farmacia y productos sanitarios",
+      "Emergencias sanitarias y transporte asistencial",
+      "Rehabilitación y fisioterapia",
+      "Análisis clínicos y microbiología",
+      "Atención sociosanitaria y geriatría",
+      "Gestión y documentación sanitaria"
+    ]
+  },
+  {
+    "titulo": "SEGURIDAD Y MEDIO AMBIENTE",
+    "grupo": "Ciencia y Medio Ambiente",
+    "imagen": "../src/assets/SegMed.png",
+    "descripcion":
+    "La FP de Seguridad y Medio Ambiente capacita profesionales en la prevención de riesgos, gestión ambiental y protección de personas y ecosistemas.",
+    "servicios": [
+      "Prevención de riesgos laborales",
+      "Gestión de emergencias y protección civil",
+      "Evaluación y control ambiental",
+      "Gestión de residuos y reciclaje",
+      "Supervisión de seguridad en el trabajo",
+      "Protección de espacios naturales",
+      "Planes de autoprotección y evacuación",
+      "Control de contaminación y calidad del aire",
+      "Inspección de normativas ambientales",
+      "Seguridad industrial y gestión de crisis"
+    ]
+  },
+  {
+    "titulo": "SERVICIOS SOCIOCULTURALES Y A LA COMUNIDAD",
+    "grupo": "Hostelería, Turismo y Servicios",
+    "imagen": "../src/assets/SSCC.png",
+    "descripcion":
+    "La FP de Servicios Socioculturales y a la Comunidad capacita profesionales en la atención, educación y apoyo a colectivos para fomentar la inclusión y el bienestar social.",
+    "servicios": [
+      "Atención a personas en situación de dependencia",
+      "Animación sociocultural y comunitaria",
+      "Educación infantil y apoyo educativo",
+      "Gestión de proyectos de intervención social",
+      "Mediación y resolución de conflictos",
+      "Promoción de la igualdad de género",
+      "Dinamización de actividades de ocio y tiempo libre",
+      "Atención a colectivos en riesgo de exclusión",
+      "Gestión de asociaciones y entidades sociales",
+      "Coordinación de voluntariado y participación ciudadana"
+    ]
+  },
+  {
+    "titulo": "TEXTIL, CONFECCIÓN Y PIEL",
+    "grupo": "Industria y Fabricación",
+    "imagen": "../src/assets/TCP.png",
+    "descripcion":
+    "La FP de Textil, Confección y Piel capacita profesionales en el diseño, producción y personalización de prendas, calzado y artículos de piel, combinando creatividad y tecnología.",
+    "servicios": [
+      "Diseño y confección de prendas de vestir",
+      "Patronaje y corte de textiles",
+      "Fabricación de calzado y marroquinería",
+      "Técnicas de bordado y estampación",
+      "Acabados y personalización textil",
+      "Gestión de producción en la industria textil",
+      "Control de calidad en confección",
+      "Reparación y restauración de artículos de piel",
+      "Moda sostenible y reciclaje textil",
+      "Comercialización y ventas en el sector textil"
+    ]
+  },
+  {
+    "titulo": "VIDRIO Y CERÁMICA",
+    "grupo": "Industria y Fabricación",
+    "imagen": "../src/assets/VC.png",
+    "descripcion":
+    "La FP de Vidrio y Cerámica capacita profesionales en la fabricación, diseño y tratamiento de productos de vidrio y cerámica, combinando tradición e innovación tecnológica.",
+    "servicios": [
+      "Diseño y producción de piezas cerámicas",
+      "Fabricación y manipulación de vidrio",
+      "Decoración y esmaltado cerámico",
+      "Técnicas de moldeo y modelado",
+      "Restauración de piezas de vidrio y cerámica",
+      "Técnicas de vitrificación y vidriería artística",
+      "Control de calidad en procesos cerámicos",
+      "Innovación y diseño en cerámica y vidrio",
+      "Sostenibilidad en la industria vidriera y cerámica",
+      "Comercialización de productos cerámicos y de vidrio"
     ]
   }
 
