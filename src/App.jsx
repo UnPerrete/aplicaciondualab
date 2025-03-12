@@ -15,9 +15,9 @@ function App() {
     <AuthProvider>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        {/* <Route path="/" element={<Login />} /> */}
         <Route path="/tabla" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
-        <Route path="/servicio" element={<Servicios />} />
+        <Route path="/" element={<Servicios />} />
         <Route path="/register" element={<Signup />} />
       </Routes>
     </BrowserRouter>
