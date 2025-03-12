@@ -77,17 +77,28 @@ body {
   }
   
   /* Menú desplegable alineado a la izquierda */
+  /* .dropdown-container {
+    display: flex;
+    justify-content: flex-start;
+  } */
+
   .dropdown-container {
     display: flex;
-    justify-content: flex-start !important;
-  }
+    justify-content: flex-start; /* Alinea el menú a la izquierda */
+    margin-left: 20px; /* Espaciado desde el borde izquierdo */
+}
   
   /* Estilos del menú desplegable */
-  .dropdown {
+  /* .dropdown {
     position: relative;
     display: inline-block;
     cursor: pointer;
-  }
+  } */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: left; /* Asegura alineación de texto a la izquierda */
+}
   
   .title {
     background-color: #d8d7d7;

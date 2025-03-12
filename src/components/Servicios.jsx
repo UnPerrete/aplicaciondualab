@@ -63,15 +63,9 @@ const Servicios = () => {
           </div>
 
           <div className={`menu pointerCursor ${menuAbierto ? "" : "hide"}`}>
-            <div className="option" onClick={ordenarPorTitulo}>
-            • Ordenar alfabéticamente
-            </div>
-            <div className="option" onClick={ordenarPorGrupo}>
-            • Ordenar por grupo
-            </div>
-            <div className="option" onClick={restaurarOrden}>
-            • Volver al orden original
-            </div>
+            <div className="option" onClick={ordenarPorTitulo}>• Ordenar alfabéticamente</div>
+            <div className="option" onClick={ordenarPorGrupo}>• Ordenar por grupo</div>
+            <div className="option" onClick={restaurarOrden}>• Volver al orden original</div>
           </div>
         </div>
       </div>
