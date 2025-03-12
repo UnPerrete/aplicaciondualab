@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import Navbar from './Navbar';
 import axios from "axios";
 import "../styles/Tabla.css"
+
+
 export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,6 +27,7 @@ export const TablaEmpresas = () => {
 
   return (
     <div>
+      <Navbar/>
       <h1>Empresas</h1>
       <div>
         <table>
