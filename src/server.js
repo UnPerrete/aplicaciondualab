@@ -46,7 +46,7 @@ app.post("/api/login", (req, res) => {
 
 // Endpoint para obtener los datos de la tabla
 app.get("/api/data", (req, res) => {
-  const query = "SELECT * FROM dualab"; // Consulta SQL
+  const query = "SELECT * FROM empresas"; // Consulta SQL
   db.query(query, (err, results) => {
     if (err) {
       console.error("Error al obtener los datos:", err);

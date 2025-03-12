@@ -1,9 +1,9 @@
 import React, { createContext, useState, useContext } from 'react';
 
-// Crear el contexto
+
 const AuthContext = createContext();
 
-// Crear un proveedor para el contexto
+
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     const savedAuth = localStorage.getItem('isAuthenticated');
