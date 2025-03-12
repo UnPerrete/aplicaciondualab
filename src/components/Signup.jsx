@@ -22,25 +22,25 @@ export default function Signup() {
     
     
     
-        const handleSubmit = async () => {
+        const handleSubmit = async (e) => {
+          e.preventDefault();
             try{
-                await fetch("http://localhost:5000/api/addUser", {
+              const response = await fetch("http://localhost:5000/api/addUser", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({formData})
                   });
-
                   const data = await response.json();
-                  console.log(data.success)
                   if (data.success) {
+                    
                     login();
                     navigate(`/tabla`);
                   } else {
-                    setErr("Credenciales incorrectas");
+                    setErr(data.error);
                   }
 
             }catch (err){
-                setErr(err)
+                setErr(err.message)
             }
         }
 
@@ -48,6 +48,7 @@ export default function Signup() {
     <div className='login-container'>
         <form className="user-form" onSubmit={handleSubmit}>
           <h2>Sign Up</h2>
+          <p style={ {color: "red"} }>{err}</p>
           <div className="form-group">
             <label htmlFor="NIF">NIF:</label>
             <input type="text" name="nif" placeholder="NIF" onChange={handleChange} />
@@ -68,7 +69,7 @@ export default function Signup() {
                 <option value="empresa">Empresa</option>
             </select>
           </div>
-          <button type="submit">Añadir Usuario</button>
+          <button type="button" onClick={handleSubmit}>Añadir Usuario</button>
         </form>
         <p>
             ¿Ya tienes Cuenta? <Link to="/">Inicia sesion aquí</Link>

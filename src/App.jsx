@@ -6,7 +6,6 @@ import { TablaEmpresas } from './components/TablaEmpresas'
 import PrivateRoute from './context/PrivateRoute'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from './components/Signup';
-import Crud from './components/Signup';
 import Servicios from './components/Servicios'
 
 function App() {

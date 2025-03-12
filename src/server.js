@@ -31,7 +31,6 @@ app.post("/api/login", (req, res) => {
 
   // Ejecutar consulta en MySQL
   db.query(query, params, (err, results) => {
-    // console.log(results)
     if (err) {
       console.error("Error en la consulta:", err);
       return res.status(500).json({ success: false, message: "Error en el servidor" });
@@ -60,14 +59,14 @@ app.get("/api/data", (req, res) => {
 app.post("/api/addUser", (req, res) => {
   const query = "INSERT INTO `users` (nif, password, role) VALUES (?,?, ?)"
   const {nif, pass, confirmpass, role} = req.body.formData;
-  if(pass !== confirmpass) res.status(500).json({error: "Las Contraseñas no coinciden"})
+  if(pass !== confirmpass) return res.status(500).json({error: "Las Contraseñas no coinciden"})
   db.query(query, [nif, pass, role], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
-      return res.status(500).json({ error: "Error al subir los datos" });
+      return res.status(500).json({ error: "Este NIF ya esta registrado" });
     }
     console.log("Nuevo usuario añadido")
-    res.status(200).send()
+    res.status(200).json({success: true})
   });
 } );
 
