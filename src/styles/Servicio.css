@@ -84,9 +84,12 @@ body {
 
   .dropdown-container {
     display: flex;
-    justify-content: flex-start; /* Alinea el menú a la izquierda */
-    margin-left: 20px; /* Espaciado desde el borde izquierdo */
-}
+    /*justify-content: flex-start; /* Alinea el menú a la izquierda */
+    /*margin-left: 20px; /* Espaciado desde el borde izquierdo */
+
+    justify-content: center;
+    margin-bottom: 20px;
+  }
   
   /* Estilos del menú desplegable */
   /* .dropdown {
@@ -94,12 +97,7 @@ body {
     display: inline-block;
     cursor: pointer;
   } */
-  .dropdown {
-    position: relative;
-    width: max-content;
-    display: inline-block;
-    text-align: left; /* Asegura alineación de texto a la izquierda */
-}
+  
   
   .title {
     background-color: #d8d7d7;
@@ -193,3 +191,56 @@ body {
     transition: max-height 0.3s ease-in-out;
   }
   
+  .go-button {
+    background-color: #d1d1d1;
+    color: black;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    /*margin-left: 0;    Este a la izq*/
+
+    margin: 0 auto;  /*Esta centrado*/
+  }
+  
+  .go-button i {
+    margin-left: 10px;
+  }
+  
+  .go-button:hover {
+    background-color: #c1c1c1;
+  }
+
+  .dropdown {
+    position: relative;
+    width: fit-content;
+    /*display: inline-block;
+    text-align: left; /* Asegura alineación de texto a la izquierda */
+    /*background-color: #d1d1d1;
+    color: black;*/
+    padding: 15px 25px;
+    /*font-size: 1.2rem;
+    font-weight: bold;*/
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*width: fit-content;*/
+    margin-left: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
