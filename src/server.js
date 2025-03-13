@@ -10,14 +10,14 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  host: "192.168.0.111",
-  user: "admin",
-  password: "dualab2025",
-  database: "dualab",
-  // host: "localhost",
-  // user: "root",
-  // password: "root",
-  // database: "dualab",
+  //host: "192.168.0.111",
+  //user: "admin",
+  //password: "dualab2025",
+  //database: "dualab",
+  host: "localhost",
+  user: "root",
+  password: "1234",
+  database: "duapp",
 });
 
 db.connect((err) => {
@@ -92,6 +92,58 @@ app.post("/api/projectData", (req, res) => {
     res.status(200).json(results)
   });
 });
+
+// Ruta para recuperar la contraseña
+app.post("/api/forgot-password", (req, res) => {
+  const { nif } = req.body;
+
+  if (!nif) {
+    return res.status(400).json({ error: "El NIF es requerido." });
+  }
+
+  console.log("📩 Solicitando recuperación para el NIF:", nif); // Verificar el NIF recibido
+
+  // Consultar en la base de datos si el NIF existe (asegurarse de comparar sin importar mayúsculas/minúsculas)
+  db.query("SELECT * FROM users WHERE LOWER(nif) = LOWER(?)", [nif], (err, results) => {
+    if (err) {
+      console.error("❌ Error al buscar el NIF:", err); // Log detallado del error
+      return res.status(500).json({ error: "Error en el servidor" });
+    }
+
+    if (results.length === 0) {
+      console.log(`❌ No se encontró el NIF: ${nif}`); // Verificar si el NIF no existe
+      return res.status(404).json({ error: "No existe una cuenta con este NIF." });
+    }
+
+    console.log(`✔️ El NIF existe: ${nif}`); // Verificar si el NIF fue encontrado
+
+    res.json({ message: "NIF Confirmado" });
+  });
+});
+
+// Ruta para restablecer la contraseña
+app.post("/api/reset-password", (req, res) => {
+  const { nif, newPassword } = req.body;
+  const hashedPassword = CryptoJS.MD5(newPassword).toString(CryptoJS.enc.Hex);  // Cifrar la nueva contraseña
+
+  // Actualizar la contraseña en la base de datos
+  let query = "UPDATE users SET password = ? WHERE nif = ?";
+  let params = [hashedPassword, nif];
+
+  db.query(query, params, (err, results) => {
+    if (err) {
+      console.error("Error al restablecer la contraseña:", err);
+      return res.status(500).json({ message: "Error al restablecer la contraseña" });
+    }
+
+    if (results.affectedRows > 0) {
+      return res.json({ message: "Contraseña restablecida con éxito" });
+    } else {
+      return res.status(400).json({ message: "No se encontró el usuario" });
+    }
+  });
+});
+
 
 app.listen(5000, () => {
   console.log("Servidor corriendo en http://localhost:5000");
