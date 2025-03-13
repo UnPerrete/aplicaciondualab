@@ -45,3 +45,19 @@ table {
     color: #333;
   }
   
+  .filtro-municipio {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.filtro-municipio label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filtro-municipio select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
