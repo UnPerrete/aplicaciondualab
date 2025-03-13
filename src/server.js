@@ -9,9 +9,13 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  host: "192.168.0.111",
-  user: "admin",
-  password: "dualab2025",
+  // host: "192.168.0.111",
+  // user: "admin",
+  // password: "dualab2025",
+  // database: "dualab",
+  host: "localhost",
+  user: "root",
+  password: "root",
   database: "dualab",
 });
 
@@ -69,6 +73,18 @@ app.post("/api/addUser", (req, res) => {
     res.status(200).json({success: true})
   });
 } );
+
+app.post("/api/projectData", (req, res) => {
+  const query = "SELECT p.nombre, p.descripcion, p.microservicios FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE e.ID = ?;"
+  const ID = req.body.ID;
+  db.query(query, [ID], (err, results) => {
+    if (err) {
+      console.error("Error al subir los datos:", err);
+      return res.status(500).json({ error: err.errno });
+    }
+    res.status(200).json(results)
+  });
+});
 
 app.listen(5000, () => {
   console.log("Servidor corriendo en http://192.168.0.111:5000");

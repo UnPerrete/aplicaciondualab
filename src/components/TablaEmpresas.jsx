@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from './Navbar';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Proyectos from "./Proyectos";
 import "../styles/Tabla.css";
 
 export const TablaEmpresas = () => {
@@ -9,6 +10,8 @@ export const TablaEmpresas = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [municipioSeleccionado, setMunicipioSeleccionado] = useState("");
+  const [mostrarProyectos, setMostrarProyectos] = useState(false);
+  const [selectedRow, setSelectedRow] = useState(null);
 
   const municipios = [
     "Seleccionar municipio...",
@@ -73,14 +76,24 @@ export const TablaEmpresas = () => {
         </thead>
         <tbody>
           {municipiosFiltrados.map((row) => (
-            <tr key={row.ID}>
-              <td>{row.Municipio}</td>
-              <td>{row.Web && row.Web.trim() !== "" ? <Link to={row.Web}>{row.NombreComercial}</Link> : row.NombreComercial}</td>
-              <td>{row.Sector}</td>
-              <td>{row.Actividad}</td>
-              <td>{row.Calle + ", " + row.Nº}</td>
-              <td>{row.Nº}</td>
-            </tr>
+            <>
+              <tr key={row.ID}>
+                <td>{row.Municipio}</td>
+                <td>{row.Web && row.Web.trim() !== "" ? <Link to={row.Web}>{row.NombreComercial}</Link> : row.NombreComercial}</td>
+                <td>{row.Sector}</td>
+                <td>{row.Actividad}</td>
+                <td>{row.Calle + ", " + row.Nº}</td>
+                <td><button onClick={ () => {
+                  setMostrarProyectos(!mostrarProyectos);
+                  if (selectedRow === row.ID) {
+                    setSelectedRow(null);
+                  } else {
+                    setSelectedRow(row.ID);  // Establece la fila seleccionada
+                  }
+                }}>{selectedRow === row.ID ? "▴" : "▾"}</button></td>
+              </tr>
+              {selectedRow === row.ID && (<tr><Proyectos ID={row.ID} visibility={mostrarProyectos} /></tr>)}
+            </>
           ))}
         </tbody>
       </table>

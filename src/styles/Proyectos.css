@@ -1,0 +1,44 @@
+
+  
+  /* Estilo para la tarjeta de proyecto */
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: center;
+  }
+  
+  /* Estilo para el título del proyecto */
+  .titulo {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Estilo para la descripción del proyecto */
+  .descripcion {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  /* Estilo para el subtítulo "Microservicios" */
+  .subtitulo {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  /* Estilo para la lista de microservicios */
+  .lista {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Estilo para cada item de microservicio */
+  .item {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
