@@ -73,8 +73,9 @@ const SeleccionarServicios = () => {
     <div className="seleccionar-servicios-container">
       <h2>Seleccionar Servicios</h2>
       <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="grupo">Seleccione uno o más grupos:</label>
+        <label htmlFor="grupo">➤ Seleccione uno o más grupos:</label>
         <select id="grupo" multiple value={gruposSeleccionados} onChange={handleGrupoChange}>
+          <option value="">-- Ninguno --</option>
           {grupos.map((grupo) => (
             <option key={grupo} value={grupo}>{grupo}</option>
           ))}
@@ -82,8 +83,9 @@ const SeleccionarServicios = () => {
 
         {gruposSeleccionados.length > 0 && (
           <>
-            <label htmlFor="titulo">Seleccione uno o más títulos:</label>
+            <label htmlFor="titulo">➤ Seleccione uno o más títulos:</label>
             <select id="titulo" multiple value={titulosSeleccionados} onChange={handleTituloChange}>
+              <option value="">-- Ninguno --</option>
               {gruposSeleccionados.flatMap((grupo) => (
                 [
                   <option key={`grupo-${grupo}`} disabled>-- {grupo} --</option>,
@@ -102,7 +104,7 @@ const SeleccionarServicios = () => {
 
         {titulosSeleccionados.length > 0 && (
           <div>
-            <h3>Seleccione los servicios y la cantidad de personas:</h3>
+            <h3>➤ Seleccione los servicios y la cantidad de personas:</h3>
             {gruposSeleccionados.map((grupo) => (
               <div key={grupo}>
                 <hr />
@@ -114,7 +116,7 @@ const SeleccionarServicios = () => {
                       <h4>• {categoria.titulo}</h4>
                       {categoria.servicios.map((servicio) => (
                         <div key={servicio} className="servicio-item">
-                          <label>{servicio}</label>
+                          <label>◼ {servicio}</label>
                           <input
                             type="number"
                             min="0"

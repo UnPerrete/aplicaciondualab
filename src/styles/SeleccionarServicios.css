@@ -12,6 +12,7 @@ h2 {
   color: #333;
 }
 
+
 form {
   display: flex;
   flex-direction: column;
@@ -70,4 +71,4 @@ button.confirm {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} 
