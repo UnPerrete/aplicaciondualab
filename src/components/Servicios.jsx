@@ -70,7 +70,7 @@ const Servicios = () => {
             className="title pointerCursor"
             onClick={() => setMenuAbierto(!menuAbierto)}
           >
-            Seleccione una opción<i className="bi bi-chevron-down"></i>
+            Seleccione una opción<i className={menuAbierto ? "bi bi-chevron-up" : "bi bi-chevron-down"}></i>
           </div>
           <div className={`menu pointerCursor ${menuAbierto ? "" : "hide"}`}>
             <div className="option" onClick={ordenarPorGrupo}>• Ordenar alfabéticamente</div>
