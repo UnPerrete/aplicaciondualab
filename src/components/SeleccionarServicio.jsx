@@ -21,7 +21,7 @@ const SeleccionarServicios = () => {
 
   const titulosDisponibles = categoriasData
     .filter((categoria) => gruposSeleccionados.includes(categoria.grupo))
-    .sort((a, b) => a.titulo.localeCompare(b.titulo));
+    .sort((a, b) => a.grupo.localeCompare(b.grupo) || a.titulo.localeCompare(b.titulo));
 
   const handleTituloChange = (event) => {
     const titulo = event.target.value;
@@ -84,10 +84,17 @@ const SeleccionarServicios = () => {
           <>
             <label htmlFor="titulo">Seleccione uno o más títulos:</label>
             <select id="titulo" multiple value={titulosSeleccionados} onChange={handleTituloChange}>
-              {titulosDisponibles.map((categoria) => (
-                <option key={categoria.titulo} value={categoria.titulo}>
-                  {categoria.titulo}
-                </option>
+              {gruposSeleccionados.flatMap((grupo) => (
+                [
+                  <option key={`grupo-${grupo}`} disabled>-- {grupo} --</option>,
+                  ...titulosDisponibles
+                    .filter((categoria) => categoria.grupo === grupo)
+                    .map((categoria) => (
+                      <option key={categoria.titulo} value={categoria.titulo}>
+                        {categoria.titulo}
+                      </option>
+                    ))
+                ]
               ))}
             </select>
           </>
@@ -96,24 +103,30 @@ const SeleccionarServicios = () => {
         {titulosSeleccionados.length > 0 && (
           <div>
             <h3>Seleccione los servicios y la cantidad de personas:</h3>
-            {titulosDisponibles
-              .filter((categoria) => titulosSeleccionados.includes(categoria.titulo))
-              .map((categoria) => (
-                <div key={categoria.titulo}>
-                  <h4>{categoria.titulo}</h4>
-                  {categoria.servicios.map((servicio) => (
-                    <div key={servicio} className="servicio-item">
-                      <label>{servicio}</label>
-                      <input
-                        type="number"
-                        min="0"
-                        value={serviciosSeleccionados[servicio] || 0}
-                        onChange={(e) => handleServicioChange(servicio, e.target.value)}
-                      />
+            {gruposSeleccionados.map((grupo) => (
+              <div key={grupo}>
+                <hr />
+                <h3>{grupo}</h3>
+                {titulosDisponibles
+                  .filter((categoria) => categoria.grupo === grupo && titulosSeleccionados.includes(categoria.titulo))
+                  .map((categoria) => (
+                    <div key={categoria.titulo}>
+                      <h4>• {categoria.titulo}</h4>
+                      {categoria.servicios.map((servicio) => (
+                        <div key={servicio} className="servicio-item">
+                          <label>{servicio}</label>
+                          <input
+                            type="number"
+                            min="0"
+                            value={serviciosSeleccionados[servicio] || 0}
+                            onChange={(e) => handleServicioChange(servicio, e.target.value)}
+                          />
+                        </div>
+                      ))}
                     </div>
                   ))}
-                </div>
-              ))}
+              </div>
+            ))}
           </div>
         )}
 
