@@ -71,7 +71,7 @@ const SeleccionarServicios = () => {
 
   return (
     <div className="seleccionar-servicios-container">
-      <h2>Seleccionar Servicios</h2>
+      <h2>Selecciona los servicios que deseas</h2>
       <form onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="grupo">➤ Seleccione uno o más grupos:</label>
         <select id="grupo" multiple value={gruposSeleccionados} onChange={handleGrupoChange}>
