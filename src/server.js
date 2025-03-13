@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
+import CryptoJS from "crypto-js";
 
 const app = express();
 app.use(express.json());
@@ -9,14 +10,14 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  // host: "192.168.0.111",
-  // user: "admin",
-  // password: "dualab2025",
-  // database: "dualab",
-  host: "localhost",
-  user: "root",
-  password: "root",
+  host: "192.168.0.111",
+  user: "admin",
+  password: "dualab2025",
   database: "dualab",
+  // host: "localhost",
+  // user: "root",
+  // password: "root",
+  // database: "dualab",
 });
 
 db.connect((err) => {
@@ -30,8 +31,12 @@ db.connect((err) => {
 // Endpoint para el login
 app.post("/api/login", (req, res) => {
   const { role, nif, password } = req.body;
-  let query = "SELECT * FROM users WHERE nif = ? AND password = ? and role = ?";
-  let params = [nif, password, role];
+  const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
+
+  console.log(`🔑 Contraseña hasheada recibida desde el frontend: ${hashedPassword}`); // Verificar el hash recibido
+
+  let query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
+  let params = [nif, hashedPassword, role];
 
   // Ejecutar consulta en MySQL
   db.query(query, params, (err, results) => {
@@ -47,6 +52,7 @@ app.post("/api/login", (req, res) => {
     }
   });
 });
+
 
 // Endpoint para obtener los datos de la tabla
 app.get("/api/data", (req, res) => {
@@ -64,7 +70,8 @@ app.post("/api/addUser", (req, res) => {
   const query = "INSERT INTO `users` (nif, password, role) VALUES (?,?, ?)"
   const {nif, pass, confirmpass, role} = req.body.formData;
   if(pass !== confirmpass) return res.status(500).json({error: 79})
-  db.query(query, [nif, pass, role], (err, results) => {
+  const hashedPassword = CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex);
+  db.query(query, [nif, hashedPassword, role], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
       return res.status(500).json({ error: err.errno });
@@ -87,5 +94,5 @@ app.post("/api/projectData", (req, res) => {
 });
 
 app.listen(5000, () => {
-  console.log("Servidor corriendo en http://192.168.0.111:5000");
+  console.log("Servidor corriendo en http://localhost:5000");
 });

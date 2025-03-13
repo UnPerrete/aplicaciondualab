@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import "../styles/Servicio.css";
 import categoriasData from "./data/servicios.json";
 import Navbar from "./Navbar";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 const Servicios = () => {
   const [desplegados, setDesplegados] = useState([]);
@@ -13,6 +15,7 @@ const Servicios = () => {
   const [ordenAscendente, setOrdenAscendente] = useState(true);
   const [modoCompacto, setModoCompacto] = useState(false);
   const [grupoSeleccionado, setGrupoSeleccionado] = useState("Todos");
+  const navigate = useNavigate();
 
   const toggleDesplegable = (index) => {
     setDesplegados((prev) =>
@@ -79,6 +82,10 @@ const Servicios = () => {
         ¡Explore y descubra cómo podemos ayudarle!
       </h1>
 
+      <button className="go-button" type="button" onClick={() => navigate("/seleccionar-servicios")}>
+       Seleccionar servicios <i className="bi bi-clipboard"></i>
+      </button>
+
       <div className="dropdown-container">
         <div className="dropdown">
           <div
@@ -93,9 +100,11 @@ const Servicios = () => {
             <div className="option" onClick={expandirTodos}>• Expandir todos los grupos</div>
             <div className="option" onClick={colapsarTodos}>• Colapsar todos los grupos</div>
             <div className="option" onClick={toggleModoCompacto}>{modoCompacto ? "• Modo expandido" : "• Modo compacto"}</div>
+            <div className="option" onClick={() => navigate('/seleccionar-servicios')}>• Seleccionar servicios</div>
           </div>
         </div>
       </div>
+      
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {Object.entries(

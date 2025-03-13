@@ -85,3 +85,12 @@
     cursor: pointer;    
   filter: invert(1) brightness(100);
   }
+
+  .forgot-password {
+    cursor:pointer;
+    color: #007bff;
+  }
+
+  .forgot-password:hover {
+    color: #469fff;
+  }
