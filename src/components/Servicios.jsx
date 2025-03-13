@@ -5,7 +5,6 @@ import categoriasData from "./data/servicios.json";
 import Navbar from "./Navbar";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-
 const Servicios = () => {
   const [desplegados, setDesplegados] = useState([]);
   const [categorias, setCategorias] = useState(categoriasData);
@@ -14,7 +13,6 @@ const Servicios = () => {
   const [gruposVisibles, setGruposVisibles] = useState({});
   const [ordenAscendente, setOrdenAscendente] = useState(true);
   const [modoCompacto, setModoCompacto] = useState(false);
-  const [grupoSeleccionado, setGrupoSeleccionado] = useState("Todos");
   const navigate = useNavigate();
 
   const toggleDesplegable = (index) => {
@@ -32,44 +30,24 @@ const Servicios = () => {
     }));
   };
 
+  const cerrarMenu = () => {
+    setMenuAbierto(false);
+  };
+
   const ordenarPorGrupo = () => {
     setOrdenAscendente(!ordenAscendente);
-    setCategorias((prevCategorias) => {
-      const gruposOrdenados = Object.entries(
-        prevCategorias.reduce((acc, categoria) => {
-          const grupo = "• " + (categoria.grupo || "Otros");
-          if (!acc[grupo]) acc[grupo] = [];
-          acc[grupo].push(categoria);
-          return acc;
-        }, {})
-      );
-      
-      gruposOrdenados.sort((a, b) => ordenAscendente ? a[0].localeCompare(b[0]) : b[0].localeCompare(a[0]));
-
-      return gruposOrdenados.flatMap(([_, categoriasGrupo]) => 
-        categoriasGrupo.sort((a, b) => a.titulo.localeCompare(b.titulo))
+    setCategorias(() => {
+      const copiaCategorias = [...categoriasOriginal];
+      return copiaCategorias.sort((a, b) => 
+        ordenAscendente ? a.grupo.localeCompare(b.grupo) : b.grupo.localeCompare(a.grupo)
       );
     });
-  };
-
-  const restaurarOrden = () => {
-    setCategorias([...categoriasOriginal]);
-  };
-
-  const expandirTodos = () => {
-    const nuevosGruposVisibles = {};
-    categorias.forEach((categoria) => {
-      nuevosGruposVisibles["• " + (categoria.grupo || "Otros")] = true;
-    });
-    setGruposVisibles(nuevosGruposVisibles);
-  };
-
-  const colapsarTodos = () => {
-    setGruposVisibles({});
+    cerrarMenu();
   };
 
   const toggleModoCompacto = () => {
     setModoCompacto(!modoCompacto);
+    cerrarMenu();
   };
 
   return (
@@ -92,30 +70,29 @@ const Servicios = () => {
             className="title pointerCursor"
             onClick={() => setMenuAbierto(!menuAbierto)}
           >
-            Seleccione una opción ▾<i className="fa fa-angle-right"></i>
+            Seleccione una opción<i className="bi bi-chevron-down"></i>
           </div>
           <div className={`menu pointerCursor ${menuAbierto ? "" : "hide"}`}>
             <div className="option" onClick={ordenarPorGrupo}>• Ordenar alfabéticamente</div>
-            <div className="option" onClick={restaurarOrden}>• Restaurar orden original</div>
-            <div className="option" onClick={expandirTodos}>• Expandir todos los grupos</div>
-            <div className="option" onClick={colapsarTodos}>• Colapsar todos los grupos</div>
+            <div className="option" onClick={() => { setCategorias([...categoriasOriginal]); cerrarMenu(); }}>• Restaurar orden original</div>
+            <div className="option" onClick={() => { setGruposVisibles({}); cerrarMenu(); }}>• Colapsar todos los grupos</div>
+            <div className="option" onClick={() => { setGruposVisibles(Object.fromEntries(categorias.map(cat => [cat.grupo, true]))); cerrarMenu(); }}>• Expandir todos los grupos</div>
             <div className="option" onClick={toggleModoCompacto}>{modoCompacto ? "• Modo expandido" : "• Modo compacto"}</div>
-            <div className="option" onClick={() => navigate('/seleccionar-servicios')}>• Seleccionar servicios</div>
+            <div className="option" onClick={() => { navigate('/seleccionar-servicios'); cerrarMenu(); }}>• Seleccionar servicios</div>
           </div>
         </div>
       </div>
-      
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {Object.entries(
           categorias.reduce((acc, categoria) => {
-            const grupo = "• " + (categoria.grupo || "Otros");
+            const grupo = categoria.grupo || "Otros";
             if (!acc[grupo]) acc[grupo] = [];
             acc[grupo].push(categoria);
             return acc;
           }, {})
-        ).map(([grupo, categoriasGrupo], index) => (
-          <div key={index} className="w-full">
+        ).map(([grupo, categoriasGrupo]) => (
+          <div key={grupo} className="w-full">
             <div className="grupo-header" onClick={() => toggleGrupo(grupo)}>
               <h2>{grupo}</h2>
               <span className="grupo-icon">
@@ -123,8 +100,8 @@ const Servicios = () => {
               </span>
             </div>
             {gruposVisibles[grupo] &&
-              categoriasGrupo.sort((a, b) => a.titulo.localeCompare(b.titulo)).map((categoria, idx) => (
-                <div key={idx} className="text-center mt-4">
+              categoriasGrupo.map((categoria) => (
+                <div key={categoria.titulo} className={`text-center mt-4 ${modoCompacto ? 'compacto' : ''}`}>
                   {!modoCompacto && (
                     <img
                       src={categoria.imagen}
@@ -138,14 +115,14 @@ const Servicios = () => {
                   {!modoCompacto && <p className="mt-2 text-gray-600">{categoria.descripcion}</p>}
                   <button
                     className="mt-2 text-blue-500 flex items-center justify-center"
-                    onClick={() => toggleDesplegable(idx)}
+                    onClick={() => toggleDesplegable(categoria.titulo)}
                   >
-                    {desplegados.includes(idx) ? "Servicios ▴" : "Servicios ▾"}
+                    {desplegados.includes(categoria.titulo) ? "Servicios ▴" : "Servicios ▾"}
                   </button>
-                  {desplegados.includes(idx) && (
+                  {desplegados.includes(categoria.titulo) && (
                     <ul className="mt-2 text-gray-700 text-left mx-auto w-4/5">
-                      {categoria.servicios.map((servicio, i) => (
-                        <li key={i} className="text-sm">{servicio}</li>
+                      {categoria.servicios.map((servicio) => (
+                        <li key={servicio} className="text-sm">{servicio}</li>
                       ))}
                     </ul>
                   )}
