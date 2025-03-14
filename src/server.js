@@ -3,6 +3,7 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 import CryptoJS from "crypto-js";
+import { configDotenv } from "dotenv";
 
 const app = express();
 app.use(express.json());
@@ -14,10 +15,10 @@ const db = mysql.createConnection({
   //user: "admin",
   //password: "dualab2025",
   //database: "dualab",
-  host: "localhost",
-  user: "root",
-  password: "1234",
-  database: "duapp",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB,
 });
 
 db.connect((err) => {
