@@ -39,9 +39,13 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ role, ...formData })
       });
-      
+  
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+  
       const data = await response.json();
-      
+  
       if (data.success) {
         login();
         navigate(`/`);
@@ -49,7 +53,8 @@ const Login = () => {
         setError("Credenciales incorrectas");
       }
     } catch (error) {
-      setError("Error de conexión con el servidor");
+      console.error(error);
+      setError("Error de conexión con el servidor o credenciales incorrectas");
     }
   };
 
