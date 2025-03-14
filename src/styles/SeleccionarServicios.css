@@ -1,4 +1,4 @@
-.seleccionar-servicios-container {
+/* .seleccionar-servicios-container {
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
@@ -71,4 +71,103 @@ button.confirm {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-} 
+}  */
+
+.seleccionar-servicios-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+select,
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+/** Estilos para la sección de Datos del Solicitante **/
+.datos-solicitante-container {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.formulario-profesor,
+.formulario-empresa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.formulario-profesor label,
+.formulario-empresa label {
+  display: flex;
+  flex-direction: column;
+}
+
+.servicio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.servicio-item label {
+  flex: 1;
+  text-align: left;
+}
+
+.servicio-item input {
+  flex: 0.3;
+  text-align: center;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 10px;
+  background: #a1a1a1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background: #8f8f8f;
+}
+
+button.confirm {
+  margin-top: 1.5rem;
+  padding: 10px;
+  background: #48d23b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
