@@ -277,8 +277,11 @@ const SeleccionarServicios = () => {
     addFooter();
 
     // Mostrar vista previa antes de descargar
-    const pdfBlob = doc.output("bloburl");
-    window.open(pdfBlob, "_blank");
+    const pdfBlob = doc.output("blob");
+    const pdfUrl = URL.createObjectURL(pdfBlob);
+    window.open(pdfUrl, "_blank");
+    /*const pdfBlob = doc.output("bloburl");
+    window.open(pdfBlob, "_blank");*/
   }
 
   return (
