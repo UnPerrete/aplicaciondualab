@@ -3,7 +3,6 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 import CryptoJS from "crypto-js";
-import { configDotenv } from "dotenv";
 
 const app = express();
 app.use(express.json());
@@ -11,10 +10,14 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB,
+  //host: process.env.DB_HOST,
+  //user: process.env.DB_USER,
+  //password: process.env.DB_PASS,
+  //database: process.env.DB,
+  host: "localhost",
+  user: "root",
+  password: "1234",
+  database: "duapp",
 });
 
 db.connect((err) => {
@@ -41,9 +44,22 @@ app.post("/api/login", (req, res) => {
       console.error("Error en la consulta:", err);
       return res.status(500).json({ success: false, message: "Error en el servidor" });
     }
-
+  
+    console.log("Resultados de la consulta:", results); // Agrega este log para ver los resultados
+  
     if (results.length > 0) {
-      res.json({ success: true, message: "Login exitoso" });
+      const user = results[0];
+      res.json({
+        success: true,
+        message: "Login exitoso",
+        user: {
+          nombre: user.nombre,
+          apellido: user.apellido,
+          role: user.role,
+          nif: user.nif,
+          email: user.email || null
+        }
+      });
     } else {
       res.status(401).json({ success: false, message: "Credenciales incorrectas" });
     }
@@ -64,22 +80,32 @@ app.get("/api/data", (req, res) => {
 });
 
 app.post("/api/addUser", (req, res) => {
-  const query = "INSERT INTO `users` (nif, password, role) VALUES (?,?, ?)"
-  const {nif, pass, confirmpass, role} = req.body.formData;
-  if(pass !== confirmpass) return res.status(500).json({error: 79})
+  const { nif, pass, confirmpass, role, nombre, apellido } = req.body;
+
+  // Validación: Contraseñas coinciden
+  if (pass !== confirmpass) return res.status(500).json({ error: 79 });
+
+  // Hashear la contraseña (MD5, no recomendado para producción)
   const hashedPassword = CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex);
-  db.query(query, [nif, hashedPassword, role], (err, results) => {
+
+  console.log(`🔑 Añadiendo usuario con NIF: ${nif}, Role: ${role}, Nombre: ${nombre}, Apellido: ${apellido}, Contraseña: ${hashedPassword}`);
+
+  // Query para agregar el usuario a la base de datos
+  const query = "INSERT INTO `users` (nif, password, role, nombre, apellido) VALUES (?,?,?,?,?)";
+
+  db.query(query, [nif, hashedPassword, role, nombre, apellido], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
       return res.status(500).json({ error: err.errno });
     }
-    console.log("Nuevo usuario añadido")
-    res.status(200).json({success: true})
+    console.log("Nuevo usuario añadido");
+    res.status(200).json({ success: true });
   });
-} );
+});
 
-app.post("/api/projectData", (req, res) => {
-  const query = "SELECT p.nombre, p.descripcion, p.microservicios FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE e.ID = ?;"
+
+app.post("/api/listProjects", (req, res) => {
+  const query = "SELECT p.id_proyecto, p.nombre, p.descripcion FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE e.ID = ?;"
   const ID = req.body.ID;
   db.query(query, [ID], (err, results) => {
     if (err) {
@@ -141,7 +167,7 @@ app.post("/api/reset-password", (req, res) => {
   });
 });
 
-
+//Endpoint para añadir nuevos proyectos
 app.post("/api/new-proyect", (req, res) => {
   const query = "INSERT INTO proyectos (id_empresa, nombre, descripcion, microservicios) value (?, ?, ?, ?)";
   const {idEmpresa, nombre, descripcion, microservicio} = req.body;
@@ -152,6 +178,20 @@ app.post("/api/new-proyect", (req, res) => {
     }
     console.log("Proyecto añadido con exito")
     return res.status(200).json({ success: true })
+  });
+});
+
+
+//Endpoint para obtener informacion de un proyecto
+app.get("/api/projectInfo/:id", (req, res) => {
+  const query = "SELECT p.nombre, p.descripcion, p.microservicios, p.fecha_creacion, p.estado, e.RazonSocial FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE p.id_proyecto = ?";
+  const id = parseInt(req.params.id);
+  db.query(query, [id], (err, results) => {
+    if (err) {
+      console.error("Error al encontrar el proyecto:", err);
+      return res.status(500).json({ error: "Error al encontrar el proyecto" });
+    }
+    res.status(200).json(results)
   });
 });
 

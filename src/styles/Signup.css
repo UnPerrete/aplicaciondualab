@@ -1,69 +1,70 @@
-  /* Contenedor del formulario */
-  .signup-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    display: flex;
-    /* Usa flexbox */
-    flex-direction: column;
-    /* Apila los elementos en columna */
-    align-items: center;
-    /* Centra los elementos horizontalmente */
+/* Contenedor del formulario */
+.signup-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  }
-  
-  .signup-container form{
-    width: 100%;
-  }
+.signup-container form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
-  /* Título */
-  .signup-container h2 {
-    margin-bottom: 15px;
-    color: #333;
-  }
+/* Título */
+.signup-container h2 {
+  grid-column: span 2;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
 
-  /* Campos de entrada */
-  .signup-container input {
-    width: 90%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+/* Campos de entrada */
+.signup-container input,
+.signup-container select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-  .signup-container select {
-    width: 98%;
-    /* Ocupa todo el ancho */
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+.signup-container input {
+  margin: 8px 0;
+}
 
-  /* Botón */
-  .signup-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
+.signup-container select {
+  margin: 8px 0;
+}
 
-  .signup-container button:hover {
-    background-color: #0056b3;
-  }
+/* Botón */
+.signup-container button {
+  grid-column: span 2;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
 
-  /* Mensaje de error */
-  .signup-container p {
-    color: red;
-    margin-top: 10px;
-    font-size: 14px;
-  }
+.signup-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Mensaje de error */
+.signup-container p {
+  grid-column: span 2;
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
