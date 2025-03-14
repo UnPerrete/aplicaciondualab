@@ -39,11 +39,19 @@ const SeleccionarServicios = () => {
 
   const handleGeneratePDF = () => {
     const doc = new jsPDF();
-    doc.setFontSize(16);
-    doc.text("Resumen de Servicios Seleccionados", 20, 20);
+    const pageHeight = doc.internal.pageSize.height;
+    const footerHeight = 30;
+    let y = 20;
 
-    let y = 30;
+    doc.setFontSize(16);
+    doc.text("Resumen de Servicios Seleccionados", 20, y);
+    y += 10;
+
     gruposSeleccionados.forEach((grupo) => {
+      if (y + 20 > pageHeight - footerHeight) {
+        doc.addPage();
+        y = 20;
+      }
       doc.setFontSize(14);
       doc.text(`Grupo: ${grupo}`, 20, y);
       y += 10;
@@ -51,12 +59,20 @@ const SeleccionarServicios = () => {
       titulosDisponibles
         .filter((categoria) => categoria.grupo === grupo && titulosSeleccionados.includes(categoria.titulo))
         .forEach((categoria) => {
+          if (y + 15 > pageHeight - footerHeight) {
+            doc.addPage();
+            y = 20;
+          }
           doc.setFontSize(12);
           doc.text(`- ${categoria.titulo}`, 30, y);
           y += 6;
 
           categoria.servicios.forEach((servicio) => {
             if (serviciosSeleccionados[servicio]) {
+              if (y + 10 > pageHeight - footerHeight) {
+                doc.addPage();
+                y = 20;
+              }
               doc.setFontSize(10);
               doc.text(`   * ${servicio}: ${serviciosSeleccionados[servicio]} persona(s)`, 40, y);
               y += 5;
@@ -66,16 +82,35 @@ const SeleccionarServicios = () => {
         });
     });
 
+    const addFooter = () => {
+      const pageCount = doc.internal.getNumberOfPages();
+      for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        const footerY = pageHeight - 25;
+        doc.setFontSize(10);
+        doc.text("• Contacto:", 15, footerY);
+        doc.text("Correo: viaoptimadualab@gmail.com", 20, footerY + 5);
+        doc.text("Tel: +34 691 01 19 93", 20, footerY + 10);
+        doc.text("• Dirección:", 115, footerY);
+        doc.text("Calle Sao Paulo, 6. Las Palmas de Gran Canaria", 120, footerY + 5);
+        doc.text("País: España", 120, footerY + 10);
+        doc.text(`© ${new Date().getFullYear()} Via Optima Dualab. Todos los derechos reservados.`, 55, footerY + 20);
+      }
+    };
+
+    addFooter();
     doc.save("Servicios_Seleccionados.pdf");
   };
 
   return (
     <div className="seleccionar-servicios-container">
+      <h2>Datos del solicitante</h2>
+      
       <h2>Selecciona los servicios que deseas</h2>
       <form onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="grupo">➤ Seleccione uno o más grupos:</label>
         <select id="grupo" multiple value={gruposSeleccionados} onChange={handleGrupoChange}>
-          <option value="">-- Ninguno --</option>
+          <option value="">---- Ninguno ----</option>
           {grupos.map((grupo) => (
             <option key={grupo} value={grupo}>{grupo}</option>
           ))}
@@ -85,7 +120,7 @@ const SeleccionarServicios = () => {
           <>
             <label htmlFor="titulo">➤ Seleccione uno o más títulos:</label>
             <select id="titulo" multiple value={titulosSeleccionados} onChange={handleTituloChange}>
-              <option value="">-- Ninguno --</option>
+              <option value="">---- Ninguno ----</option>
               {gruposSeleccionados.flatMap((grupo) => (
                 [
                   <option key={`grupo-${grupo}`} disabled>-- {grupo} --</option>,
