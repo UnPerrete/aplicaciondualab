@@ -20,8 +20,8 @@ function App() {
         <Route path="/" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
         <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/seleccionar-servicios" element={<SeleccionarServicios />} />
-        <Route path="/info-proyecto/:id" element={<ProyectoInfo></ProyectoInfo>} />
+        <Route path="/seleccionar-servicios" element={<PrivateRoute><SeleccionarServicios /></PrivateRoute>} />
+        <Route path="/info-proyecto/:id" element={<PrivateRoute><ProyectoInfo></ProyectoInfo></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
     </AuthProvider>
