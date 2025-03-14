@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { jsPDF } from "jspdf";
 import "../styles/SeleccionarServicios.css";
 import categoriasData from "./data/servicios.json";
+import logo from "../assets/logo.png";
 
 const SeleccionarServicios = () => {
   const [tipoSolicitante, setTipoSolicitante] = useState("");
@@ -50,34 +51,42 @@ const SeleccionarServicios = () => {
     //let y = 20;
     let y = 20;
 
+    // Agregar imagen
+    doc.addImage(logo, "PNG", 5, 5, 15, 15);
+    //Encabezado
+    doc.setFontSize(14);
+    doc.setFont("courier", "italic");
+    doc.text("Via Optima Dualab", 20, 15);
+
+    doc.setFont("helvetica", "normal");
     doc.setFontSize(16);
-    doc.text("• Datos del Solicitante", 20, y);
+    doc.text("• Datos del Solicitante", 20, y + 10);
     y += 10;
 
     if (tipoSolicitante === "Profesor") {
       doc.setFontSize(12);
-      doc.text(`Nombre: ${formData.nombre || "No rellenó"}`, 20, y);
-      doc.text(`Apellidos: ${formData.apellidos || "No rellenó"}`, 110, y); //20, y + 10
-      doc.text(`DNI: ${formData.dni || "No rellenó"}`, 20, y + 10);
-      doc.text(`Centro Educativo: ${formData.centro || "No rellenó"}`, 20, y + 20);
-      doc.text(`Departamento: ${formData.departamento || "No rellenó"}`, 110, y + 20);
-      doc.text(`Teléfono: ${formData.telefono || "No rellenó"}`, 20, y + 30);
-      doc.text(`Correo: ${formData.correo || "No rellenó"}`, 110, y + 30);
-      y += 50;
+      doc.text(`Nombre: ${formData.nombre || "No rellenó"}`, 20, y + 10);
+      doc.text(`Apellidos: ${formData.apellidos || "No rellenó"}`, 110, y + 10); //20, y + 10
+      doc.text(`DNI: ${formData.dni || "No rellenó"}`, 20, y + 20);
+      doc.text(`Centro Educativo: ${formData.centro || "No rellenó"}`, 20, y + 30);
+      doc.text(`Departamento: ${formData.departamento || "No rellenó"}`, 110, y + 30);
+      doc.text(`Teléfono: ${formData.telefono || "No rellenó"}`, 20, y + 40);
+      doc.text(`Correo: ${formData.correo || "No rellenó"}`, 110, y + 40);
+      y += 60;
     } else if (tipoSolicitante === "Empresa") {
       doc.setFontSize(12);
-      doc.text(`Nombre: ${formData.nombreEmpresa || "No rellenó"}`, 20, y);
-      doc.text(`CIF/NIF: ${formData.cif || "No rellenó"}`, 20, y + 10);
-      doc.text(`Tipo de empresa: ${formData.tipoEmpresa || "No rellenó"}`, 110, y + 10);
-      doc.text(`Dirección: ${formData.direccion || "No rellenó"}`, 20, y + 20);
-      doc.text(`Código Postal: ${formData.codigoPostal || "No rellenó"}`, 110, y + 20);
-      doc.text(`Provincia: ${formData.provincia || "No rellenó"}`, 20, y + 30);
-      doc.text(`Ciudad: ${formData.ciudad || "No rellenó"}`, 110, y + 30);
-      doc.text(`País: ${formData.pais || "No rellenó"}`, 20, y + 40);
-      doc.text(`Teléfono: ${formData.telefonoEmpresa || "No rellenó"}`, 110, y + 40);
-      doc.text(`Correo: ${formData.correoEmpresa || "No rellenó"}`, 20, y + 50);
-      doc.text(`Página Web: ${formData.paginaWeb || "No rellenó"}`, 20, y + 60);
-      y += 70;
+      doc.text(`Nombre: ${formData.nombreEmpresa || "No rellenó"}`, 20, y + 10);
+      doc.text(`CIF/NIF: ${formData.cif || "No rellenó"}`, 20, y + 20);
+      doc.text(`Tipo de empresa: ${formData.tipoEmpresa || "No rellenó"}`, 110, y + 20);
+      doc.text(`Dirección: ${formData.direccion || "No rellenó"}`, 20, y + 30);
+      doc.text(`Código Postal: ${formData.codigoPostal || "No rellenó"}`, 110, y + 30);
+      doc.text(`Provincia: ${formData.provincia || "No rellenó"}`, 20, y + 40);
+      doc.text(`Ciudad: ${formData.ciudad || "No rellenó"}`, 110, y + 40);
+      doc.text(`País: ${formData.pais || "No rellenó"}`, 20, y + 50);
+      doc.text(`Teléfono: ${formData.telefonoEmpresa || "No rellenó"}`, 110, y + 50);
+      doc.text(`Correo: ${formData.correoEmpresa || "No rellenó"}`, 20, y + 60);
+      doc.text(`Página Web: ${formData.paginaWeb || "No rellenó"}`, 20, y + 70);
+      y += 80;
     }
 
     // Agregar línea separadora
@@ -90,15 +99,11 @@ const SeleccionarServicios = () => {
     y += 10;
 
     gruposSeleccionados.forEach((grupo) => {
-      if (y + 20 > pageHeight - footerHeight) {
-        doc.addPage();
-        y = 20;
-      }
       doc.setFontSize(14);
       doc.text(`-> Grupo: ${grupo}`, 25, y);
       y += 10;
 
-      titulosDisponibles
+      categoriasData
         .filter((categoria) => categoria.grupo === grupo && titulosSeleccionados.includes(categoria.titulo))
         .forEach((categoria) => {
           if (y + 15 > pageHeight - footerHeight) {
@@ -110,16 +115,15 @@ const SeleccionarServicios = () => {
           y += 6;
 
           categoria.servicios.forEach((servicio) => {
-            if (serviciosSeleccionados[servicio]) {
+            const cantidad = parseInt(serviciosSeleccionados[servicio] || 0, 10);
+            if (cantidad > 0) {
               if (y + 10 > pageHeight - footerHeight) {
                 doc.addPage();
                 y = 20;
               }
-              //doc.setFontSize(10);
-              //doc.text(`   * ${servicio}: ${serviciosSeleccionados[servicio]} persona(s)`, 40, y);
-              //doc.setFontSize(10);
+              doc.setFontSize(10);
               doc.text(`* ${servicio}:`, 40, y);
-              doc.text(`${serviciosSeleccionados[servicio]} personas`, 180, y, { align: "right" });
+              doc.text(`${cantidad} personas`, 180, y, { align: "right" });
               y += 5;
             }
           });
@@ -146,7 +150,12 @@ const SeleccionarServicios = () => {
     };
 
     addFooter();
-    doc.save("Servicios_Seleccionados.pdf");
+    if(tipoSolicitante === "Profesor"){
+      doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombre+".pdf");
+    } else{
+      doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombreEmpresa+".pdf");
+    }
+    //doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombreEmpresa || formData.nombre+".pdf");
   };
 
   return (
