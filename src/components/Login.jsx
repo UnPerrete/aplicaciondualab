@@ -44,7 +44,7 @@ const Login = () => {
       
       if (data.success) {
         login();
-        navigate(`/tabla`);
+        navigate(`/`);
       } else {
         setError("Credenciales incorrectas");
       }

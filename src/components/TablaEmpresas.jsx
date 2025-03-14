@@ -9,7 +9,7 @@ export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [municipioSeleccionado, setMunicipioSeleccionado] = useState("");
+  const [originalData, setOriginalData] = useState([]);
   const [mostrarProyectos, setMostrarProyectos] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 
@@ -20,15 +20,11 @@ export const TablaEmpresas = () => {
     "Valsequillo", "Sta. Brígida", "Valleseco", "Teror"
   ];
 
-  const federaciones = [
-    "Aega", "Edarte", "COA Arucas", "Proguía", "Acomisaba", "Asempral", "AEMoya", "Fomento Gáldar",
-    "Ace Schamann", "Vive Vegueta", "Aedal", "AEPY Guanarteme" ,"Asoesca", "Pymefir", "AESAM San Mateo",
-    "Tajinaste Azul", "Sataute Comercial", "AEV Valleseco", "ASE Teror"
-  ]
 
   useEffect(() => {
     axios.get("http://localhost:5000/api/data")
       .then((response) => {
+        setOriginalData(response.data);
         setData(response.data);
         setLoading(false);
       })
@@ -41,9 +37,13 @@ export const TablaEmpresas = () => {
   if (loading) return <p>Cargando datos...</p>;
   if (error) return <p>{error}</p>;
 
-  const municipiosFiltrados = municipioSeleccionado && municipioSeleccionado !== "Seleccionar municipio..."
-    ? data.filter((row) => row.Municipio === municipioSeleccionado)
-    : data;
+
+    const handleChangeMunicipios = (e) => {
+      const municipioSeleccionado = e.target.value;
+      setData(municipioSeleccionado && municipioSeleccionado !== "Seleccionar municipio..."
+        ? originalData.filter((row) => row.Municipio === municipioSeleccionado)
+        : originalData);
+    }
 
   return (
     <div>
@@ -55,8 +55,7 @@ export const TablaEmpresas = () => {
         <label htmlFor="municipio">Filtrar por municipio: </label>
         <select
           id="municipio"
-          value={municipioSeleccionado}
-          onChange={(e) => setMunicipioSeleccionado(e.target.value)}
+          onChange={handleChangeMunicipios}
         >
           {municipios.map((muni, index) => (
             <option key={index} value={index === 0 ? "" : muni}>{muni}</option>
@@ -75,7 +74,7 @@ export const TablaEmpresas = () => {
           </tr>
         </thead>
         <tbody>
-          {municipiosFiltrados.map((row) => (
+          {data.map((row) => (
             <>
               <tr key={row.ID}>
                 <td>{row.Municipio}</td>
@@ -88,7 +87,7 @@ export const TablaEmpresas = () => {
                   if (selectedRow === row.ID) {
                     setSelectedRow(null);
                   } else {
-                    setSelectedRow(row.ID);  // Establece la fila seleccionada
+                    setSelectedRow(row.ID);
                   }
                 }}>{selectedRow === row.ID ? "▴" : "▾"}</button></td>
               </tr>

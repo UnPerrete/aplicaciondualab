@@ -15,6 +15,15 @@ export default function ProyectoInfo() {
             
         }, []);
 
+        const getEstadoColor = (estado) => {
+            const colores = {
+              "pendiente": "red",
+              "en progreso": "orange",
+              "completado": "green"
+            };
+            return colores[estado.toLowerCase()] || "black";
+          };
+
   return (
     <div className="proyecto">
         {proyecto && (
@@ -29,7 +38,7 @@ export default function ProyectoInfo() {
                     ))}
                 </ul>
                 <p className="fecha-inicio-proyecto">Fecha de inicio: {proyecto[0].fecha_creacion}</p>
-                <p className="estado-proyecto" >{proyecto[0].estado}</p>
+                <p className="estado-proyecto" style={{ color: getEstadoColor(proyecto[0].estado) }}>{proyecto[0].estado}</p>
             </div>
         )}
     </div>
