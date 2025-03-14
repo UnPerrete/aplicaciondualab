@@ -11,10 +11,6 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  //host: "192.168.0.111",
-  //user: "admin",
-  //password: "dualab2025",
-  //database: "dualab",
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
@@ -142,6 +138,20 @@ app.post("/api/reset-password", (req, res) => {
     } else {
       return res.status(400).json({ message: "No se encontró el usuario" });
     }
+  });
+});
+
+
+app.post("/api/new-proyect", (req, res) => {
+  const query = "INSERT INTO proyectos (id_empresa, nombre, descripcion, microservicios) value (?, ?, ?, ?)";
+  const {idEmpresa, nombre, descripcion, microservicio} = req.body;
+  db.query(query, [idEmpresa, nombre, descripcion, JSON.stringify(microservicio)], (err, results) => {
+    if (err) {
+      console.error("Error al añadir nuevo proyecto", err);
+      return res.status(500).json({ error: "Error al añadir nuevo proyecto" });
+    }
+    console.log("Proyecto añadido con exito")
+    return res.status(200).json({ success: true })
   });
 });
 
