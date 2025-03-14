@@ -45,6 +45,11 @@ const SeleccionarServicios = () => {
   };
 
   const handleGeneratePDF = () => {
+    if (!tipoSolicitante || Object.keys(formData).length === 0) {
+      alert("Por favor, complete los datos del solicitante antes de generar el PDF.");
+      return;
+    }
+
     const doc = new jsPDF();
     const pageHeight = doc.internal.pageSize.height;
     const footerHeight = 30;
@@ -60,7 +65,7 @@ const SeleccionarServicios = () => {
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(16);
-    doc.text("• Datos del Solicitante", 20, y + 10);
+    doc.text("• Datos del Solicitante - "+tipoSolicitante, 20, y + 10);
     y += 10;
 
     if (tipoSolicitante === "Profesor") {
@@ -150,6 +155,7 @@ const SeleccionarServicios = () => {
     };
 
     addFooter();
+    
     if(tipoSolicitante === "Profesor"){
       doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombre+".pdf");
     } else{
@@ -157,6 +163,123 @@ const SeleccionarServicios = () => {
     }
     //doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombreEmpresa || formData.nombre+".pdf");
   };
+
+  const previewPDF = () => {
+    if (!tipoSolicitante || Object.keys(formData).length === 0) {
+      alert("Por favor, complete los datos del solicitante antes de generar el PDF.");
+      return;
+    }
+
+    const doc = new jsPDF();
+    const pageHeight = doc.internal.pageSize.height;
+    const footerHeight = 30;
+    //let y = 20;
+    let y = 20;
+
+    // Agregar imagen
+    doc.addImage(logo, "PNG", 5, 5, 15, 15);
+    //Encabezado
+    doc.setFontSize(14);
+    doc.setFont("courier", "italic");
+    doc.text("Via Optima Dualab", 20, 15);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(16);
+    doc.text("• Datos del Solicitante - "+tipoSolicitante, 20, y + 10);
+    y += 10;
+
+    if (tipoSolicitante === "Profesor") {
+      doc.setFontSize(12);
+      doc.text(`Nombre: ${formData.nombre || "No rellenó"}`, 20, y + 10);
+      doc.text(`Apellidos: ${formData.apellidos || "No rellenó"}`, 110, y + 10); //20, y + 10
+      doc.text(`DNI: ${formData.dni || "No rellenó"}`, 20, y + 20);
+      doc.text(`Centro Educativo: ${formData.centro || "No rellenó"}`, 20, y + 30);
+      doc.text(`Departamento: ${formData.departamento || "No rellenó"}`, 110, y + 30);
+      doc.text(`Teléfono: ${formData.telefono || "No rellenó"}`, 20, y + 40);
+      doc.text(`Correo: ${formData.correo || "No rellenó"}`, 110, y + 40);
+      y += 60;
+    } else if (tipoSolicitante === "Empresa") {
+      doc.setFontSize(12);
+      doc.text(`Nombre: ${formData.nombreEmpresa || "No rellenó"}`, 20, y + 10);
+      doc.text(`CIF/NIF: ${formData.cif || "No rellenó"}`, 20, y + 20);
+      doc.text(`Tipo de empresa: ${formData.tipoEmpresa || "No rellenó"}`, 110, y + 20);
+      doc.text(`Dirección: ${formData.direccion || "No rellenó"}`, 20, y + 30);
+      doc.text(`Código Postal: ${formData.codigoPostal || "No rellenó"}`, 110, y + 30);
+      doc.text(`Provincia: ${formData.provincia || "No rellenó"}`, 20, y + 40);
+      doc.text(`Ciudad: ${formData.ciudad || "No rellenó"}`, 110, y + 40);
+      doc.text(`País: ${formData.pais || "No rellenó"}`, 20, y + 50);
+      doc.text(`Teléfono: ${formData.telefonoEmpresa || "No rellenó"}`, 110, y + 50);
+      doc.text(`Correo: ${formData.correoEmpresa || "No rellenó"}`, 20, y + 60);
+      doc.text(`Página Web: ${formData.paginaWeb || "No rellenó"}`, 20, y + 70);
+      y += 80;
+    }
+
+    // Agregar línea separadora
+    doc.setLineWidth(0.5);
+    doc.line(10, y, 190, y);
+    y += 10;
+
+    doc.setFontSize(16);
+    doc.text("• Resumen de Servicios Seleccionados", 20, y);
+    y += 10;
+
+    gruposSeleccionados.forEach((grupo) => {
+      doc.setFontSize(14);
+      doc.text(`-> Grupo: ${grupo}`, 25, y);
+      y += 10;
+
+      categoriasData
+        .filter((categoria) => categoria.grupo === grupo && titulosSeleccionados.includes(categoria.titulo))
+        .forEach((categoria) => {
+          if (y + 15 > pageHeight - footerHeight) {
+            doc.addPage();
+            y = 20;
+          }
+          doc.setFontSize(12);
+          doc.text(`- ${categoria.titulo}`, 30, y);
+          y += 6;
+
+          categoria.servicios.forEach((servicio) => {
+            const cantidad = parseInt(serviciosSeleccionados[servicio] || 0, 10);
+            if (cantidad > 0) {
+              if (y + 10 > pageHeight - footerHeight) {
+                doc.addPage();
+                y = 20;
+              }
+              doc.setFontSize(10);
+              doc.text(`* ${servicio}:`, 40, y);
+              doc.text(`${cantidad} personas`, 180, y, { align: "right" });
+              y += 5;
+            }
+          });
+          y += 5;
+        });
+    });
+
+    const addFooter = () => {
+      const pageCount = doc.internal.getNumberOfPages();
+      for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        const footerY = pageHeight - 35;
+        doc.setLineWidth(0.5);
+        doc.line(0, footerY, 250, footerY); // Línea separadora
+        doc.setFontSize(10);
+        doc.text("• Contacto:", 15, footerY + 10);
+        doc.text("Correo: viaoptimadualab@gmail.com", 20, footerY + 15);
+        doc.text("Tel: +34 691 01 19 93", 20, footerY + 20);
+        doc.text("• Dirección:", 115, footerY + 10);
+        doc.text("Calle Sao Paulo, 6. Las Palmas de Gran Canaria", 120, footerY + 15);
+        doc.text("País: España", 120, footerY + 20);
+        doc.text(`© ${new Date().getFullYear()} Via Optima Dualab. Todos los derechos reservados.`, 55, footerY + 30);
+      }
+    };
+
+    addFooter();
+
+    // Mostrar vista previa antes de descargar
+    const pdfBlob = doc.output("bloburl");
+    window.open(pdfBlob, "_blank");
+  }
 
   return (
     <div className="seleccionar-servicios-container">
@@ -257,6 +380,7 @@ const SeleccionarServicios = () => {
         )}
 
         <button className="confirm" type="button" onClick={handleGeneratePDF}>Confirmar y Descargar PDF</button>
+        <button className="preview" type="button" onClick={previewPDF}>Vista previa del PDF</button>
         <button type="button" onClick={() => navigate("/servicio")} className="back-button">Volver a Servicios</button>
       </form>
     </div>
