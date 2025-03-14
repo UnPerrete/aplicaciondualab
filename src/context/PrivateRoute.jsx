@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
   // Realiza la redirección si el usuario no está autenticado
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate('/'); // Redirige a la página de login si no está autenticado
+      navigate('/login'); // Redirige a la página de login si no está autenticado
     }
   }, [isAuthenticated, navigate]);
 

@@ -3,7 +3,6 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 import CryptoJS from "crypto-js";
-import { configDotenv } from "dotenv";
 
 const app = express();
 app.use(express.json());
@@ -105,8 +104,8 @@ app.post("/api/addUser", (req, res) => {
 });
 
 
-app.post("/api/projectData", (req, res) => {
-  const query = "SELECT p.nombre, p.descripcion, p.microservicios FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE e.ID = ?;"
+app.post("/api/listProjects", (req, res) => {
+  const query = "SELECT p.id_proyecto, p.nombre, p.descripcion FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE e.ID = ?;"
   const ID = req.body.ID;
   db.query(query, [ID], (err, results) => {
     if (err) {
@@ -168,7 +167,7 @@ app.post("/api/reset-password", (req, res) => {
   });
 });
 
-
+//Endpoint para añadir nuevos proyectos
 app.post("/api/new-proyect", (req, res) => {
   const query = "INSERT INTO proyectos (id_empresa, nombre, descripcion, microservicios) value (?, ?, ?, ?)";
   const {idEmpresa, nombre, descripcion, microservicio} = req.body;
@@ -179,6 +178,20 @@ app.post("/api/new-proyect", (req, res) => {
     }
     console.log("Proyecto añadido con exito")
     return res.status(200).json({ success: true })
+  });
+});
+
+
+//Endpoint para obtener informacion de un proyecto
+app.get("/api/projectInfo/:id", (req, res) => {
+  const query = "SELECT p.nombre, p.descripcion, p.microservicios, p.fecha_creacion, p.estado, e.RazonSocial FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE p.id_proyecto = ?";
+  const id = parseInt(req.params.id);
+  db.query(query, [id], (err, results) => {
+    if (err) {
+      console.error("Error al encontrar el proyecto:", err);
+      return res.status(500).json({ error: "Error al encontrar el proyecto" });
+    }
+    res.status(200).json(results)
   });
 });
 

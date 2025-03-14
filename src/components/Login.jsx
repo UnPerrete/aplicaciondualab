@@ -32,7 +32,6 @@ const Login = () => {
     e.preventDefault();
     setError(null);
     
-    console.log("Formulario enviado:", formData); // Verifica lo que se está enviando
 
     try {
       const response = await fetch("http://localhost:5000/api/login", {
