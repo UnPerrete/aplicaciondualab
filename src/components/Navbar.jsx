@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="nav-links">
-        <li><Link to="/tabla">Empresas</Link></li>
+        <li><Link to="/">Empresas</Link></li>
         <li><Link to="/servicio">Servicios</Link></li>
         <li><Link to="/perfil">Perfil</Link></li>
         <button onClick={() => logout()}>Log Out</button>
