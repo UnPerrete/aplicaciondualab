@@ -92,7 +92,7 @@ export const TablaEmpresas = () => {
                   }
                 }}>{selectedRow === row.ID ? "▴" : "▾"}</button></td>
               </tr>
-              {selectedRow === row.ID && (<tr><Proyectos ID={row.ID} visibility={mostrarProyectos} /></tr>)}
+              {selectedRow === row.ID && (<tr><Proyectos ID={row.ID} /></tr>)}
             </>
           ))}
         </tbody>

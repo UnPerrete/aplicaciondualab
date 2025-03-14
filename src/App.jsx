@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from './components/Signup';
 import Servicios from './components/Servicios'
 import SeleccionarServicios from './components/SeleccionarServicio'
+import ProyectoInfo from './components/ProyectoInfo'
 
 function App() {
 
@@ -15,12 +16,12 @@ function App() {
     <AuthProvider>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/tabla" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
         <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/servicio" element={<Servicios />} />
         <Route path="/seleccionar-servicios" element={<SeleccionarServicios />} />
+        <Route path="/info-proyecto/:id" element={<ProyectoInfo></ProyectoInfo>} />
       </Routes>
     </BrowserRouter>
     </AuthProvider>
