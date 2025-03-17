@@ -47,14 +47,9 @@ const Login = () => {
       const data = await response.json();
   
       if (data.success) {
-<<<<<<< HEAD
         console.log("Datos del usuario", data.user); // Verifica los datos que recibes del backend
-        login(data.user); 
-        navigate(`/servicio`); 
-=======
-        login();
-        navigate(`/`);
->>>>>>> 293ea3484bf59633c11780b0068639fde88bd34a
+        login(data.user);  // Solo necesitamos esta línea
+        navigate(`/servicio`); // Redirigir a la página de servicio
       } else {
         setError("Credenciales incorrectas");
       }

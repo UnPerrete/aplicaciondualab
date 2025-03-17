@@ -15,7 +15,7 @@ const Profile = () => {
     nif: user?.nif || "",
   });
 
-  // Espera a que `loading` termine antes de decidir si redirigir
+  // Verifica el estado de carga y redirige si no está autenticado
   useEffect(() => {
     if (!loading && !isAuthenticated) {
       navigate("/login");
@@ -26,8 +26,8 @@ const Profile = () => {
     return <p>Cargando perfil...</p>;
   }
 
-  if (!isAuthenticated) {
-    return null; // Evita renderizado incorrecto si el usuario no está autenticado
+  if (!user) {
+    return <p>Usuario no encontrado o cargando...</p>;
   }
 
   const handleChange = (e) => {
@@ -119,6 +119,8 @@ const Profile = () => {
 };
 
 export default Profile;
+
+
 
 
 
