@@ -3,10 +3,11 @@ import React, { createContext, useState, useContext, useEffect } from "react";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // Nuevo estado para evitar parpadeo
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
+  // Cargar usuario desde localStorage al inicio
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
 
@@ -20,26 +21,25 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("user");
       }
     }
-    setLoading(false); // Una vez leído el usuario, dejamos de cargar
+
+    setLoading(false); // Solo ejecutarlo después de procesar el almacenamiento
   }, []);
 
+  // Guardar usuario en localStorage cuando cambie
   useEffect(() => {
-    if (isAuthenticated && user) {
+    if (user) {
       localStorage.setItem("user", JSON.stringify(user));
-    } else {
-      localStorage.removeItem("user");
+      setIsAuthenticated(true);
     }
-  }, [isAuthenticated, user]);
+  }, [user]);
 
   const login = (userData) => {
-    setIsAuthenticated(true);
     setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
   };
 
   const logout = () => {
-    setIsAuthenticated(false);
     setUser(null);
+    setIsAuthenticated(false);
     localStorage.removeItem("user");
   };
 

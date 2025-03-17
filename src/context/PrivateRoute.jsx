@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthProvider'; // Asegúrate de tener este hook de autenticación
+import { Navigate } from "react-router-dom";
+import { useAuth } from "./AuthProvider";
 
 const PrivateRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+  const { isAuthenticated, loading } = useAuth();
 
-  // Realiza la redirección si el usuario no está autenticado
-  useEffect(() => {
-    if (!isAuthenticated) {
-      navigate('/login'); // Redirige a la página de login si no está autenticado
-    }
-  }, [isAuthenticated, navigate]);
-
-  // Si está autenticado, renderiza el contenido de la ruta protegida
-  return isAuthenticated ? children : null;
+  if (loading) return <p>Cargando...</p>; // Evita redirigir antes de que se cargue el usuario
+  return isAuthenticated ? children : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;
