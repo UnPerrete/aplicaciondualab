@@ -35,6 +35,26 @@ const SeleccionarServicios = () => {
       return nuevos;
     });
   };
+
+  const handleRemoveNuevoServicio = (titulo, index) => {
+    setNuevoServicio((prev) => {
+      const nuevos = { ...prev };
+      if (nuevos[titulo]) {
+        nuevos[titulo] = nuevos[titulo].filter((_, i) => i !== index);
+        if (nuevos[titulo].length === 0) delete nuevos[titulo]; // Eliminar el título si no tiene más servicios
+      }
+      return nuevos;
+    });
+
+    setInputsNuevosServicios((prev) => {
+      const nuevos = { ...prev };
+      if (nuevos[titulo]) {
+        nuevos[titulo] = nuevos[titulo].filter((_, i) => i !== index);
+        if (nuevos[titulo].length === 0) delete nuevos[titulo];
+      }
+      return nuevos;
+    });
+  };
   
   const handleGrupoChange = (event) => {
     const grupo = event.target.value;
@@ -469,25 +489,13 @@ const SeleccionarServicios = () => {
                             onChange={(e) => handleNuevoServicioChange(categoria.titulo, index, "cantidad", e.target.value)}
                             //onChange={(e) => handleNuevoServicioChange(categoria.titulo, e.target.previousSibling.value.trim(), e.target.value)}// handleNuevoServicioChange(categoria.titulo, inputsNuevosServicios[categoria.titulo][index] || '', e.target.value, index)}
                           />
+                          <button type="button" onClick={() => handleRemoveNuevoServicio(categoria.titulo, index)}>-</button>
                         </div>
                       ))}
                       <button type="button" onClick={() => setInputsNuevosServicios((prev) => ({
                         ...prev,
                         [categoria.titulo]: [...(prev[categoria.titulo] || []), '']
                       }))}>+ Nuevo servicio +</button>
-                        {/* <input
-                          type="text"
-                          placeholder="Añadir nuevo servicio"
-                          onChange={(e) => handleNuevoServicioChange(categoria.titulo, e.target.value.trim(), 0)}
-                        />
-                        <input
-                          type="number"
-                          min="0"
-                          placeholder="Nº personas"
-                          onChange={(e) =>
-                            handleNuevoServicioChange(categoria.titulo, e.target.previousSibling.value.trim(), e.target.value)
-                          }
-                        /> */}
                       </div>
                     </div>
                   ))}
