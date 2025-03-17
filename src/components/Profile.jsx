@@ -46,44 +46,40 @@ const Profile = () => {
   
 
   const handleSave = async () => {
-    console.log("Datos a enviar:", formData);  // Verifica qué datos estás enviando al servidor
-    
+    let formattedData = { ...formData };
+  
+    if (formattedData.nacimiento) {
+      const fecha = new Date(formattedData.nacimiento);
+      formattedData.nacimiento = fecha.toISOString().split("T")[0]; // Convierte a 'YYYY-MM-DD'
+    }
+  
     try {
-      const response = await fetch(`http://localhost:5000/api/edit-profile/${formData.nif}`, {
+      const response = await fetch(`http://localhost:5000/api/edit-profile/${user.nif}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nombre: formData.nombre,
-          apellido: formData.apellido,
-          nacimiento: formData.nacimiento,
-          poblacion: formData.poblacion,
-          role: formData.role,
-          gmail: formData.gmail,
-          telefono: formData.telefono,
-          zona: formData.zona,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formattedData),
       });
   
       const data = await response.json();
-      console.log(data);  // Verifica lo que devuelve la respuesta de la API
   
       if (response.ok) {
-        alert("Perfil actualizado con éxito");
+        alert("Perfil actualizado correctamente");
+  
+        // 🔥 Actualiza el usuario en el contexto global
         setUser((prevUser) => ({
           ...prevUser,
-          ...formData,
+          ...formattedData, // Fusiona los nuevos datos con los existentes
         }));
-        setIsEditing(false);
       } else {
-        alert(data.error || "Error al actualizar el perfil");
+        console.error("Error:", data);
+        alert(data.error);
       }
     } catch (error) {
-      alert("Error de red o servidor al guardar los cambios");
-      console.error("Error:", error);
+      console.error("Error en la solicitud:", error);
+      alert("Error de conexión con el servidor");
     }
   };
+  
   
 
   return (

@@ -50,8 +50,6 @@ const Login = () => {
         console.log("Datos del usuario", data.user); // Verifica los datos que recibes del backend
         login(data.user); 
         navigate(`/servicio`); 
-        login();
-        navigate(`/`); 
         
       } else {
         setError("Credenciales incorrectas");
