@@ -1,62 +1,55 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect } from "react";
 
-// Crear el contexto de autenticación
 const AuthContext = createContext();
 
-// Componente proveedor de autenticación
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // Nuevo estado para evitar parpadeo
 
   useEffect(() => {
-    // Cargar la información desde el localStorage cuando la aplicación se monta
-    const savedAuth = localStorage.getItem('isAuthenticated');
-    const savedUser = localStorage.getItem('user');
+    const savedUser = localStorage.getItem("user");
 
-    if (savedAuth && savedUser) {
+    if (savedUser) {
       try {
-        setIsAuthenticated(JSON.parse(savedAuth));
-        setUser(JSON.parse(savedUser));
+        const parsedUser = JSON.parse(savedUser);
+        setUser(parsedUser);
+        setIsAuthenticated(true);
       } catch (e) {
-        console.error("Error al parsear datos de localStorage:", e);
-        // Si hay un error, puedes establecer valores por defecto o limpiar localStorage
-        localStorage.removeItem('isAuthenticated');
-        localStorage.removeItem('user');
+        console.error("❌ Error al parsear los datos del localStorage:", e);
+        localStorage.removeItem("user");
       }
     }
+    setLoading(false); // Una vez leído el usuario, dejamos de cargar
   }, []);
 
-  // Guardar en el localStorage cuando los estados cambian
   useEffect(() => {
     if (isAuthenticated && user) {
-      localStorage.setItem('isAuthenticated', JSON.stringify(isAuthenticated));
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify(user));
     } else {
-      localStorage.removeItem('isAuthenticated');
-      localStorage.removeItem('user');
+      localStorage.removeItem("user");
     }
   }, [isAuthenticated, user]);
 
-  // Función para iniciar sesión
   const login = (userData) => {
     setIsAuthenticated(true);
     setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
   };
 
-  // Función para cerrar sesión
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);
+    localStorage.removeItem("user");
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, setUser, loading }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// Hook para acceder al contexto
 export const useAuth = () => useContext(AuthContext);
 
 

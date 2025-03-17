@@ -49,7 +49,7 @@ const Login = () => {
       if (data.success) {
         console.log("Datos del usuario", data.user); // Verifica los datos que recibes del backend
         login(data.user); 
-        navigate(`/tabla`); 
+        navigate(`/servicio`); 
       } else {
         setError("Credenciales incorrectas");
       }

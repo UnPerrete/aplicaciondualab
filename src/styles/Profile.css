@@ -1,20 +1,20 @@
-/* Profile.css - Versión más ancha y bien centrada */
-
 .profile-page {
     min-height: 100vh;
     padding-top: 200px; /* Separación del navbar */
   }
   
-  /* Contenedor principal centrado */
   .profile-container {
     background-color: white;
-    width: 100%;
+    width: 90%; /* Asegura que ocupe todo el ancho disponible */
+    max-width: 1200px; /* Limita el ancho máximo a 1200px */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 10%; /* Añade relleno a los lados para que el contenido se expanda */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     gap: 30px;
-  }
+}
   
   /* Título */
   .profile-container h2 {
@@ -31,6 +31,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px 40px;
     color: #333;
+    text-align: left; /* Alinea todo el contenido a la izquierda */
   }
   
   .profile-info p {
@@ -63,6 +64,5 @@
   .profile-actions button:hover {
     background-color: #45a049;
   }
-  
   
   

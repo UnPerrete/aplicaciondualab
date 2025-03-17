@@ -66,6 +66,35 @@ app.post("/api/login", (req, res) => {
   });
 });
 
+app.put("/api/edit-profile/:nif", (req, res) => {
+  const { nif } = req.params;
+  const updates = req.body; // Recibe cualquier campo a actualizar
+
+  if (Object.keys(updates).length === 0) {
+    return res.status(400).json({ error: "No se enviaron datos para actualizar" });
+  }
+
+  // Construimos dinámicamente la consulta SQL
+  const fields = Object.keys(updates).map(field => `${field} = ?`).join(", ");
+  const values = Object.values(updates);
+
+  const query = `UPDATE users SET ${fields} WHERE nif = ?`;
+  
+  db.query(query, [...values, nif], (err, results) => {
+    if (err) {
+      console.error("Error al actualizar el perfil:", err);
+      return res.status(500).json({ error: "Error al actualizar los datos del perfil" });
+    }
+
+    if (results.affectedRows > 0) {
+      return res.status(200).json({ message: "Perfil actualizado con éxito" });
+    } else {
+      return res.status(404).json({ error: "No se encontró el usuario con ese NIF" });
+    }
+  });
+});
+
+
 
 // Endpoint para obtener los datos de la tabla
 app.get("/api/data", (req, res) => {
