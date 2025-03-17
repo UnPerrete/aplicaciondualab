@@ -55,9 +55,13 @@ app.post("/api/login", (req, res) => {
         user: {
           nombre: user.nombre,
           apellido: user.apellido,
+          nacimiento: user.nacimiento,
+          poblacion: user.poblacion,
           role: user.role,
           nif: user.nif,
-          email: user.email || null
+          gmail: user.gmail || null,
+          telefono: user.telefono || null,
+          zona: user.zona || null,
         }
       });
     } else {
@@ -79,7 +83,10 @@ app.put("/api/edit-profile/:nif", (req, res) => {
   const values = Object.values(updates);
 
   const query = `UPDATE users SET ${fields} WHERE nif = ?`;
-  
+
+  console.log("Consulta SQL:", query);  // Verifica la consulta generada
+  console.log("Valores:", [...values, nif]);  // Verifica los valores enviados
+
   db.query(query, [...values, nif], (err, results) => {
     if (err) {
       console.error("Error al actualizar el perfil:", err);
@@ -96,6 +103,7 @@ app.put("/api/edit-profile/:nif", (req, res) => {
 
 
 
+
 // Endpoint para obtener los datos de la tabla
 app.get("/api/data", (req, res) => {
   const query = "SELECT Municipio, ID, NombreComercial, Sector, Actividad, Calle, Nº, Web FROM empresas"; // Consulta SQL
@@ -109,7 +117,7 @@ app.get("/api/data", (req, res) => {
 });
 
 app.post("/api/addUser", (req, res) => {
-  const { nif, pass, confirmpass, role, nombre, apellido } = req.body;
+  const { nif, pass, confirmpass, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion } = req.body;
 
   // Validación: Contraseñas coinciden
   if (pass !== confirmpass) return res.status(500).json({ error: 79 });
@@ -117,12 +125,12 @@ app.post("/api/addUser", (req, res) => {
   // Hashear la contraseña (MD5, no recomendado para producción)
   const hashedPassword = CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex);
 
-  console.log(`🔑 Añadiendo usuario con NIF: ${nif}, Role: ${role}, Nombre: ${nombre}, Apellido: ${apellido}, Contraseña: ${hashedPassword}`);
+  console.log(`🔑 Añadiendo usuario con NIF: ${nif}, Role: ${role}, Nombre: ${nombre}, Apellido: ${apellido}, gmail: ${gmail}, telefono: ${telefono}, Zona: ${zona}, Fecha de Nacimiento: ${nacimiento}, Poblacion: ${poblacion}, Contraseña: ${hashedPassword}`);
 
   // Query para agregar el usuario a la base de datos
-  const query = "INSERT INTO `users` (nif, password, role, nombre, apellido) VALUES (?,?,?,?,?)";
+  const query = "INSERT INTO `users` (nif, password, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
-  db.query(query, [nif, hashedPassword, role, nombre, apellido], (err, results) => {
+  db.query(query, [nif, hashedPassword, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
       return res.status(500).json({ error: err.errno });
