@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from './Navbar';
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -75,7 +75,7 @@ export const TablaEmpresas = () => {
         </thead>
         <tbody>
           {data.map((row) => (
-            <>
+            <React.Fragment key={row.ID}>
               <tr key={row.ID}>
                 <td>{row.Municipio}</td>
                 <td>{row.Web && row.Web.trim() !== "" ? <Link to={row.Web}>{row.NombreComercial}</Link> : row.NombreComercial}</td>
@@ -91,8 +91,8 @@ export const TablaEmpresas = () => {
                   }
                 }}>{selectedRow === row.ID ? "▴" : "▾"}</button></td>
               </tr>
-              {selectedRow === row.ID && (<tr><Proyectos ID={row.ID} /></tr>)}
-            </>
+              {selectedRow === row.ID && (<tr key={`proyectos-${row.ID}`}><Proyectos ID={row.ID} /></tr>)}
+              </React.Fragment>
           ))}
         </tbody>
       </table>
