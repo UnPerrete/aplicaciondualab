@@ -12,8 +12,6 @@ const Navbar = () => {
         <li><Link to="/">Empresas</Link></li>
         <li><Link to="/servicio">Servicios</Link></li>
         <li><Link to="/perfil">Perfil</Link></li>
-        <button onClick={() => logout()}>Log Out</button>
-
       </ul>
     </nav>
   );

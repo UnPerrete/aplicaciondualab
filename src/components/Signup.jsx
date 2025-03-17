@@ -31,7 +31,7 @@ export default function Signup() {
 
           if (data.success) {
               login();
-              navigate(`/tabla`);
+              navigate(`/login`);
           } else {
               switch (data.error) {
                   case 1062:
@@ -64,7 +64,22 @@ export default function Signup() {
                   <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />
               </div>
               <div className="form-group">
+                  <input type="date" name="nacimiento" placeholder="Fecha de Nacimiento" onChange={handleChange} required />
+              </div>
+              <div className="form-group">
                   <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                  <input type="email" name="gmail" placeholder="Gmail" onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                  <input type="tel" name="telefono" placeholder="Telefono" onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                  <input type="text" name="poblacion" placeholder="Población" onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                  <input type="text" name="zona" placeholder="Zona" onChange={handleChange} required />
               </div>
               <div className="form-group">
                   <input type="password" name="pass" placeholder="Nueva Contraseña" onChange={handleChange} required />

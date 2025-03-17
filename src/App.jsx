@@ -18,8 +18,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
-        <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
+        <Route path="/" element={<TablaEmpresas />} />
+        <Route path="/servicio" element={<Servicios />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/servicio" element={<Servicios />} />
         <Route path="/perfil" element={<Profile />} />
