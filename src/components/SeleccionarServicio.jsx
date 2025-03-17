@@ -11,6 +11,8 @@ const SeleccionarServicios = () => {
   const [gruposSeleccionados, setGruposSeleccionados] = useState([]);
   const [titulosSeleccionados, setTitulosSeleccionados] = useState([]);
   const [serviciosSeleccionados, setServiciosSeleccionados] = useState({});
+  const [nuevoServicio, setNuevoServicio] = useState({});
+  const [inputsNuevosServicios, setInputsNuevosServicios] = useState({});
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -18,6 +20,41 @@ const SeleccionarServicios = () => {
   };
 
   const grupos = [...new Set(categoriasData.map((categoria) => categoria.grupo))].sort();
+
+  const handleNuevoServicioChange = (titulo, index, field, value) => {
+    setNuevoServicio((prev) => {
+      const nuevos = { ...prev };
+      if (!nuevos[titulo]) nuevos[titulo] = [];
+      if (!nuevos[titulo][index]) nuevos[titulo][index] = { nombre: "", cantidad: 0 };
+  
+      nuevos[titulo][index] = {
+        ...nuevos[titulo][index],
+        [field]: value,
+      };
+  
+      return nuevos;
+    });
+  };
+
+  const handleRemoveNuevoServicio = (titulo, index) => {
+    setNuevoServicio((prev) => {
+      const nuevos = { ...prev };
+      if (nuevos[titulo]) {
+        nuevos[titulo] = nuevos[titulo].filter((_, i) => i !== index);
+        if (nuevos[titulo].length === 0) delete nuevos[titulo]; // Eliminar el título si no tiene más servicios
+      }
+      return nuevos;
+    });
+
+    setInputsNuevosServicios((prev) => {
+      const nuevos = { ...prev };
+      if (nuevos[titulo]) {
+        nuevos[titulo] = nuevos[titulo].filter((_, i) => i !== index);
+        if (nuevos[titulo].length === 0) delete nuevos[titulo];
+      }
+      return nuevos;
+    });
+  };
   
   const handleGrupoChange = (event) => {
     const grupo = event.target.value;
@@ -78,6 +115,15 @@ const SeleccionarServicios = () => {
       doc.text(`Teléfono: ${formData.telefono || "No rellenó"}`, 20, y + 40);
       doc.text(`Correo: ${formData.correo || "No rellenó"}`, 110, y + 40);
       y += 60;
+    } else if (tipoSolicitante === "Profesional") {
+      doc.setFontSize(12);
+      doc.text(`Nombre: ${formData.nombre || "No rellenó"}`, 20, y + 10);
+      doc.text(`Apellidos: ${formData.apellidos || "No rellenó"}`, 110, y + 10); //20, y + 10
+      doc.text(`DNI: ${formData.dni || "No rellenó"}`, 20, y + 20);
+      doc.text(`Teléfono: ${formData.telefono || "No rellenó"}`, 20, y + 30);
+      doc.text(`Correo: ${formData.correo || "No rellenó"}`, 110, y + 30);
+      y += 50;
+
     } else if (tipoSolicitante === "Empresa") {
       doc.setFontSize(12);
       doc.text(`Nombre: ${formData.nombreEmpresa || "No rellenó"}`, 20, y + 10);
@@ -132,6 +178,20 @@ const SeleccionarServicios = () => {
               y += 5;
             }
           });
+
+          if (nuevoServicio[categoria.titulo] && nuevoServicio[categoria.titulo].length > 0) {
+            doc.text('-- Nuevos servicios --', 40, y);
+            y += 5;
+            nuevoServicio[categoria.titulo].forEach((servicio) => {
+              if (parseInt(servicio.cantidad, 10) > 0) {
+                doc.setFontSize(10);
+                doc.text(`* ${servicio.nombre}:`, 40, y);
+                doc.text(`${servicio.cantidad} personas`, 180, y, { align: "right" });
+                y += 5;
+              }
+            });
+          }
+
           y += 5;
         });
     });
@@ -158,8 +218,10 @@ const SeleccionarServicios = () => {
     
     if(tipoSolicitante === "Profesor"){
       doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombre+".pdf");
-    } else{
+    } else if ((tipoSolicitante === "Empresa")){
       doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombreEmpresa+".pdf");
+    } else if ((tipoSolicitante === "Profesional")){
+      doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombreProfesional+".pdf");
     }
     //doc.save("Servicios_Seleccionados_"+tipoSolicitante+"_"+formData.nombreEmpresa || formData.nombre+".pdf");
   };
@@ -198,6 +260,16 @@ const SeleccionarServicios = () => {
       doc.text(`Teléfono: ${formData.telefono || "No rellenó"}`, 20, y + 40);
       doc.text(`Correo: ${formData.correo || "No rellenó"}`, 110, y + 40);
       y += 60;
+
+    } else if (tipoSolicitante === "Profesional") {
+      doc.setFontSize(12);
+      doc.text(`Nombre: ${formData.nombreProfesional || "No rellenó"}`, 20, y + 10);
+      doc.text(`Apellidos: ${formData.apellidosProfesional || "No rellenó"}`, 110, y + 10); //20, y + 10
+      doc.text(`DNI: ${formData.dniProfesional || "No rellenó"}`, 20, y + 20);
+      doc.text(`Teléfono: ${formData.telefonoProfesional || "No rellenó"}`, 20, y + 30);
+      doc.text(`Correo: ${formData.correoProfesional || "No rellenó"}`, 110, y + 30);
+      y += 50;
+
     } else if (tipoSolicitante === "Empresa") {
       doc.setFontSize(12);
       doc.text(`Nombre: ${formData.nombreEmpresa || "No rellenó"}`, 20, y + 10);
@@ -252,6 +324,20 @@ const SeleccionarServicios = () => {
               y += 5;
             }
           });
+
+          if (nuevoServicio[categoria.titulo] && nuevoServicio[categoria.titulo].length > 0) {
+            doc.text('-- Nuevos servicios requeridos --', 40, y);
+            y += 5;
+            nuevoServicio[categoria.titulo].forEach((servicio) => {
+              if (parseInt(servicio.cantidad, 10) > 0) {
+                doc.setFontSize(10);
+                doc.text(`* ${servicio.nombre}:`, 40, y);
+                doc.text(`${servicio.cantidad} personas`, 180, y, { align: "right" });
+                y += 5;
+              }
+            });
+          }
+
           y += 5;
         });
     });
@@ -292,6 +378,7 @@ const SeleccionarServicios = () => {
         <option value="">-- Seleccione --</option>
         <option value="Profesor">Profesor</option>
         <option value="Empresa">Empresa</option>
+        <option value="Profesional">Profesional</option>
       </select>
 
       {tipoSolicitante === "Profesor" && (
@@ -303,6 +390,16 @@ const SeleccionarServicios = () => {
           <label>Departamento: <input type="text" name="departamento" onChange={handleInputChange} /></label>
           <label>Teléfono: <input type="tel" name="telefono" onChange={handleInputChange} /></label>
           <label>Correo: <input type="email" name="correo" onChange={handleInputChange} /></label>
+        </div>
+      )}
+
+      {tipoSolicitante === "Profesional" && (
+        <div className="formulario-profesor">
+          <label>Nombre: <input type="text" name="nombreProfesional" onChange={handleInputChange} /></label>
+          <label>Apellidos: <input type="text" name="apellidosProfesional" onChange={handleInputChange} /></label>
+          <label>DNI: <input type="text" name="dniProfesional" onChange={handleInputChange} /></label>
+          <label>Teléfono: <input type="tel" name="telefonoProfesional" onChange={handleInputChange} /></label>
+          <label>Correo: <input type="email" name="correoProfesional" onChange={handleInputChange} /></label>
         </div>
       )}
 
@@ -375,6 +472,31 @@ const SeleccionarServicios = () => {
                           />
                         </div>
                       ))}
+                      <div className="nuevo-servicio">
+                      {inputsNuevosServicios[categoria.titulo]?.map((_, index) => (
+                        <div key={index}>
+                          <input
+                            type="text"
+                            placeholder="Añadir nuevo servicio"
+                            //onChange={(e) => handleNuevoServicioChange(categoria.titulo, e.target.value.trim(), 0, index)}
+                            //onChange={(e) => handleNuevoServicioChange(categoria.titulo, e.target.value.trim(), 0)}
+                            onChange={(e) => handleNuevoServicioChange(categoria.titulo, index, "nombre", e.target.value.trim())}
+                          />
+                          <input
+                            type="number"
+                            min="0"
+                            placeholder="Nº personas"
+                            onChange={(e) => handleNuevoServicioChange(categoria.titulo, index, "cantidad", e.target.value)}
+                            //onChange={(e) => handleNuevoServicioChange(categoria.titulo, e.target.previousSibling.value.trim(), e.target.value)}// handleNuevoServicioChange(categoria.titulo, inputsNuevosServicios[categoria.titulo][index] || '', e.target.value, index)}
+                          />
+                          <button type="button" onClick={() => handleRemoveNuevoServicio(categoria.titulo, index)}>-</button>
+                        </div>
+                      ))}
+                      <button type="button" onClick={() => setInputsNuevosServicios((prev) => ({
+                        ...prev,
+                        [categoria.titulo]: [...(prev[categoria.titulo] || []), '']
+                      }))}>+ Nuevo servicio +</button>
+                      </div>
                     </div>
                   ))}
               </div>

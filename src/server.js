@@ -16,7 +16,7 @@ const db = mysql.createConnection({
   //database: process.env.DB,
   host: "localhost",
   user: "root",
-  password: "1234",
+  password: "1234",//"Riosdelaluna7",//"1234",
   database: "duapp",
 });
 

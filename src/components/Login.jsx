@@ -48,9 +48,17 @@ const Login = () => {
   
       if (data.success) {
         console.log("Datos del usuario", data.user); // Verifica los datos que recibes del backend
+<<<<<<< HEAD
         login(data.user);  // Solo necesitamos esta línea
         localStorage.setItem("token", data.token);  // Guarda el token en localStorage también
         navigate(`/servicio`); // Redirigir a la página de servicio
+=======
+        login(data.user); 
+        navigate(`/servicio`); 
+        login();
+        navigate(`/`); 
+        
+>>>>>>> 62490c1864e7e607b99c346e23967aa52738c3b2
       } else {
         setError("Credenciales incorrectas");
       }
