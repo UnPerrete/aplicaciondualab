@@ -1,6 +1,7 @@
 // Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUser } from "react-icons/fa";
 import { useAuth } from '../context/AuthProvider';
 import '../styles/Navbar.css';
 
@@ -11,7 +12,9 @@ const Navbar = () => {
       <ul className="nav-links">
         <li><Link to="/">Empresas</Link></li>
         <li><Link to="/servicio">Servicios</Link></li>
-        <li><Link to="/perfil">Perfil</Link></li>
+      </ul>
+      <ul className="navbar-nav ms-auto">
+        <li><Link to="/perfil"><FaUser size={22}/></Link></li>
       </ul>
     </nav>
   );
