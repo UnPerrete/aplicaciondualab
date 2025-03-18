@@ -9,6 +9,7 @@ export default function Signup() {
   // Estado local para manejar los datos del formulario, con "Profesor" como valor predeterminado para el rol
   const [formData, setFormData] = useState({'role': 'Profesor'}); 
   const [err, setErr] = useState(null); // Estado para manejar errores en el formulario
+  const [rol, setRol] = useState('Profesor'); // Estado para manejar rol
   const { login } = useAuth(); // Método para manejar el inicio de sesión después del registro
   const navigate = useNavigate(); // Hook de React Router para redirigir a otras páginas
 
@@ -21,6 +22,12 @@ export default function Signup() {
       }
       setFormData({ ...formData, [e.target.name]: value }); // Se actualiza el estado con los nuevos valores
   };
+
+    const handleChangeRole = (e) => {
+        setRol(e.target.value);
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
 
   // Maneja el envío del formulario
   const handleSubmit = async (e) => {
@@ -97,12 +104,42 @@ export default function Signup() {
                   <input type="password" name="confirmpass" placeholder="Confirmar Contraseña" onChange={handleChange} required />
               </div>
 
+            {/* Campos condicionales según el rol */}
+            {rol === "alumno" && (
+                <div className="form-group">
+                    <label>Profesor a cargo:</label>
+                    <input
+                        type="number"
+                        name="profesor_id"
+                        placeholder="ID del profesor"
+                        onChange={(e) =>
+                            setFormData({ ...formData, profesor_id: e.target.value })
+                        }
+                    />
+                </div>
+            )}
+
+            {rol === "profesor" && (
+                <div className="form-group">
+                    <label>Instituto:</label>
+                    <input
+                        type="text"
+                        name="instituto"
+                        placeholder="Nombre del instituto"
+                        onChange={(e) =>
+                            setFormData({ ...formData, instituto: e.target.value })
+                        }
+                    />
+                </div>
+            )}
+
+
               {/* Selección de rol */}
               <div className="form-group">
-                  <select name="role" onChange={handleChange}>
-                      <option value="profesor">Profesor</option>
-                      <option value="alumno">Alumno</option>
-                      <option value="empresa">Empresa</option>
+                  <select name="role" onChange={handleChangeRole}>
+                      <option value="Profesor">Profesor</option>
+                      <option value="Alumno">Alumno</option>
+                      <option value="Empresa">Empresa</option>
                   </select>
               </div>
 

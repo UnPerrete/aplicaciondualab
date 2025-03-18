@@ -3,7 +3,7 @@
 -- Host: localhost    Database: duapp
 -- ------------------------------------------------------
 -- Server version	8.0.41
-
+USE dualab;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -36,7 +36,9 @@ CREATE TABLE `empresas` (
   `Telefono` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
   `Web` varchar(255) DEFAULT NULL,
+   
   PRIMARY KEY (`ID`),
+  
   CONSTRAINT `empresas_chk_1` CHECK ((`CP` <= 99999))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -115,6 +117,31 @@ INSERT INTO `users` VALUES (1,'78592247M','bf3cf4427a27fd915d7910565d998de7','pr
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+
+
+CREATE TABLE alumnos (
+  id INT PRIMARY KEY,
+  user_id INT NOT NULL,
+  nombre VARCHAR(255) NOT NULL,
+  apellido VARCHAR(255) NOT NULL,
+  fecha_nacimiento DATE NOT NULL,
+  profesor_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (profesor_id) REFERENCES profesores(id)
+);
+
+
+
+CREATE TABLE profesores (
+  id INT PRIMARY KEY,
+  user_id INT NOT NULL,
+  nombre VARCHAR(255) NOT NULL,
+  apellido VARCHAR(255) NOT NULL,
+  instituto VARCHAR(255) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

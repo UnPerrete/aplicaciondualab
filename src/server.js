@@ -113,7 +113,21 @@ app.get("/api/data", (req, res) => {
 });
 
 app.post("/api/addUser", (req, res) => {
-  const { nif, pass, confirmpass, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion } = req.body;
+  const {
+      nif,
+      pass,
+      confirmpass,
+      role,
+      nombre,
+      apellido,
+      gmail,
+      telefono,
+      zona,
+      nacimiento,
+      poblacion,
+      instituto,
+      profesor_id
+  } = req.body;
 
   // Validación: Contraseñas coinciden
   if (pass !== confirmpass) return res.status(500).json({ error: 79 });
@@ -124,9 +138,9 @@ app.post("/api/addUser", (req, res) => {
   console.log(`🔑 Añadiendo usuario con NIF: ${nif}, Role: ${role}, Nombre: ${nombre}, Apellido: ${apellido}, gmail: ${gmail}, telefono: ${telefono}, Zona: ${zona}, Fecha de Nacimiento: ${nacimiento}, Poblacion: ${poblacion}, Contraseña: ${hashedPassword}`);
 
   // Query para agregar el usuario a la base de datos
-  const query = "INSERT INTO `users` (nif, password, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion) VALUES (?,?,?,?,?,?,?,?,?,?)";
+  const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-  db.query(query, [nif, hashedPassword, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion], (err, results) => {
+  db.query(query, [nif, hashedPassword, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion, instituto, profesor_id ], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
       return res.status(500).json({ error: err.errno });
