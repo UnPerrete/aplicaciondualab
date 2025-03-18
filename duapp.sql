@@ -52,6 +52,35 @@ INSERT INTO `empresas` VALUES ('Aega','Agaete',1,'Ahó patrimonio e identidad','
 UNLOCK TABLES;
 
 --
+-- Table structure for table `proyectos`
+--
+
+DROP TABLE IF EXISTS `proyectos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `proyectos` (
+  `id_proyecto` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(65) NOT NULL,
+  `descripcion` varchar(255) DEFAULT NULL,
+  `microservicios` json DEFAULT NULL,
+  `fecha_creacion` varchar(255) DEFAULT NULL,
+  `estado` enum('pendiente','en progreso','completado') NOT NULL DEFAULT 'pendiente',
+  `id_empresa` int DEFAULT NULL,
+  PRIMARY KEY (`id_proyecto`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `proyectos`
+--
+
+LOCK TABLES `proyectos` WRITE;
+/*!40000 ALTER TABLE `proyectos` DISABLE KEYS */;
+INSERT INTO `proyectos` VALUES (4,'Proyecto1','Alumnos del curso 1 hacen cosas','[\"servicio1\", \"servicio2\"]','19/07/2025','pendiente',1);
+/*!40000 ALTER TABLE `proyectos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -65,10 +94,15 @@ CREATE TABLE `users` (
   `role` varchar(25) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
+  `gmail` varchar(255) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `zona` varchar(255) NOT NULL,
+  `nacimiento` date DEFAULT NULL,
+  `poblacion` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nif` (`nif`),
   CONSTRAINT `users_chk_1` CHECK ((`role` in (_utf8mb4'profesor',_utf8mb4'empresa',_utf8mb4'alumno')))
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +111,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'78592247M','bf3cf4427a27fd915d7910565d998de7','profesor','',''),(9,'78592257M','81dc9bdb52d04dc20036dbd8313ed055','Profesor','',''),(10,'78592252M','bf3cf4427a27fd915d7910565d998de7','alumno','',''),(11,'78592258M','81dc9bdb52d04dc20036dbd8313ed055','alumno','',''),(14,'78592245M','81dc9bdb52d04dc20036dbd8313ed055','alumno','',''),(16,'78592227M','63a9f0ea7bb98050796b649e85481845','alumno','',''),(17,'78592237M','63a9f0ea7bb98050796b649e85481845','Profesor','',''),(18,'78592267M','bf3cf4427a27fd915d7910565d998de7','Profesor','',''),(19,'78592277M','4f0e879d0d295aab9a599126499e0917','Profesor','',''),(20,'78592223M','4f0e879d0d295aab9a599126499e0917','Profesor','',''),(21,'A12345611 ','bf3cf4427a27fd915d7910565d998de7','Profesor','',''),(22,'A123456','bf3cf4427a27fd915d7910565d998de7','alumno','',''),(23,'78592217M','4f0e879d0d295aab9a599126499e0917','Profesor','juan','Peña'),(24,'45334409M','4f0e879d0d295aab9a599126499e0917','Profesor','jonathana','sanchez'),(25,'45334701N','4f0e879d0d295aab9a599126499e0917','Profesor','juanpyr','Perezo');
+INSERT INTO `users` VALUES (1,'78592247M','bf3cf4427a27fd915d7910565d998de7','profesor','','','','','',NULL,NULL),(9,'78592257M','81dc9bdb52d04dc20036dbd8313ed055','Profesor','','','','','',NULL,NULL),(10,'78592252M','bf3cf4427a27fd915d7910565d998de7','alumno','','','','','',NULL,NULL),(11,'78592258M','81dc9bdb52d04dc20036dbd8313ed055','alumno','','','','','',NULL,NULL),(14,'78592245M','81dc9bdb52d04dc20036dbd8313ed055','alumno','','','','','',NULL,NULL),(16,'78592227M','63a9f0ea7bb98050796b649e85481845','alumno','','','','','',NULL,NULL),(17,'78592237M','63a9f0ea7bb98050796b649e85481845','Profesor','','','','','',NULL,NULL),(18,'78592267M','bf3cf4427a27fd915d7910565d998de7','Profesor','','','','','',NULL,NULL),(19,'78592277M','4f0e879d0d295aab9a599126499e0917','Profesor','','','','','',NULL,NULL),(20,'78592223M','4f0e879d0d295aab9a599126499e0917','Profesor','','','','','',NULL,NULL),(21,'A12345611 ','bf3cf4427a27fd915d7910565d998de7','Profesor','','','','','',NULL,NULL),(22,'A123456','bf3cf4427a27fd915d7910565d998de7','alumno','','','','','',NULL,NULL),(23,'78592217M','4f0e879d0d295aab9a599126499e0917','Profesor','juan','Peña','','','',NULL,NULL),(24,'45334409M','4f0e879d0d295aab9a599126499e0917','Profesor','jonathana','sanchez','','','',NULL,NULL),(25,'45334701N','4f0e879d0d295aab9a599126499e0917','profesor','juanito','Perezo','juanito@gmail.com','640804520','Calle marruecos','2004-03-10',''),(26,'45334234N','4f0e879d0d295aab9a599126499e0917','Profesor','gonzalo','Peña','gonzalo@gmail.com','640903270','Calle marruecos',NULL,NULL),(27,'43440893M','4f0e879d0d295aab9a599126499e0917','Profesor','lucas','Peña','lucas@gmail.com','650403920','Calle marruecos','2001-03-14','Las Palmas de Gran Canaria');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -90,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-17  8:37:03
+-- Dump completed on 2025-03-17 13:11:02
