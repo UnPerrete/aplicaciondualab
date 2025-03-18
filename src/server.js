@@ -10,14 +10,14 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  //host: process.env.DB_HOST,
-  //user: process.env.DB_USER,
-  //password: process.env.DB_PASS,
-  //database: process.env.DB,
-  host: "localhost",
-  user: "root",
-  password: "1234",//"Riosdelaluna7",//"1234",
-  database: "duapp",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB,
+  // host: "localhost",
+  // user: "root",
+  // password: "1234",//"Riosdelaluna7",//"1234",
+  // database: "duapp",
 });
 
 db.connect((err) => {
@@ -235,4 +235,23 @@ app.get("/api/projectInfo/:id", (req, res) => {
 
 app.listen(5000, () => {
   console.log("Servidor corriendo en http://localhost:5000");
+});
+
+app.post("/api/guardar-servicio", (req, res) => {
+  const { nombreSolicitante, tipoSolicitante, serviciosSeleccionados, numeroPersonas } = req.body;
+
+  if (!nombreSolicitante || !tipoSolicitante || !Object.keys(serviciosSeleccionados).length) {
+    return res.status(400).json({ error: "Faltan datos obligatorios" });
+  }
+
+  const query = "INSERT INTO tablaproyectos (nombre_solicitante, tipo_solicitante, servicios, numero_personas) VALUES (?, ?, ?, ?)";
+  const valores = [nombreSolicitante, tipoSolicitante, JSON.stringify(serviciosSeleccionados), numeroPersonas];
+
+  db.query(query, valores, (err, result) => {
+    if (err) {
+      console.error("Error al guardar los datos:", err);
+      return res.status(500).json({ error: "Error al guardar los datos en la base de datos" });
+    }
+    res.status(200).json({ success: true, message: "Datos guardados correctamente" });
+  });
 });
