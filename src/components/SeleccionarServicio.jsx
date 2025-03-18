@@ -89,6 +89,69 @@ const SeleccionarServicios = () => {
     }));
   };
 
+  /*const handleConfirmar = async () => {
+    if (!tipoSolicitante || Object.keys(formData).length === 0) {
+      alert("Por favor, complete los datos antes de confirmar.");
+      return;
+    }
+  
+    const nombre =
+      tipoSolicitante === "Profesor"
+        ? formData.nombre
+        : tipoSolicitante === "Empresa"
+        ? formData.nombreEmpresa
+        : formData.nombreProfesional;
+  
+    const descripcion = `Solicitud de servicios por ${tipoSolicitante}`;
+    
+    const serviciosSeleccionadosJSON = {};
+  
+    gruposSeleccionados.forEach((grupo) => {
+      categoriasData
+        .filter((categoria) => categoria.grupo === grupo && titulosSeleccionados.includes(categoria.titulo))
+        .forEach((categoria) => {
+          categoria.servicios.forEach((servicio) => {
+            const cantidad = parseInt(serviciosSeleccionados[servicio] || 0, 10);
+            if (cantidad > 0) {
+              serviciosSeleccionadosJSON[servicio] = cantidad;
+            }
+          });
+  
+          if (nuevoServicio[categoria.titulo] && nuevoServicio[categoria.titulo].length > 0) {
+            nuevoServicio[categoria.titulo].forEach((servicio) => {
+              if (parseInt(servicio.cantidad, 10) > 0) {
+                serviciosSeleccionadosJSON[servicio.nombre] = servicio.cantidad;
+              }
+            });
+          }
+        });
+    });
+  
+    const data = {
+      nombre,
+      descripcion,
+      microservicios: serviciosSeleccionadosJSON,
+    };
+  
+    try {
+      const response = await fetch("http://localhost:5000/guardar-proyecto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+  
+      if (response.ok) {
+        alert("Datos guardados correctamente en la base de datos.");
+        handleGeneratePDF();
+      } else {
+        alert("Error al guardar los datos en la base de datos.");
+      }
+    } catch (error) {
+      console.error("Error en la conexión con el servidor:", error);
+      alert("No se pudo conectar con el servidor.");
+    }
+  };*/
+
   const handleGeneratePDF = () => {
     // Verifica si el tipo de solicitante está definido y si hay datos en el formulario
     if (!tipoSolicitante || Object.keys(formData).length === 0) {
@@ -516,7 +579,8 @@ const SeleccionarServicios = () => {
           </div>
         )}
 
-      <button className="confirm" type="button" onClick={handleGeneratePDF}>Confirmar y Descargar PDF</button> {/* Botón para generar PDF */}
+      <button className="confirm" type="button" onClick={handleGeneratePDF}>Descargar PDF</button> {/* Botón para generar PDF */}
+      <button className="confirm" type="button" onClick={handleConfirmar && handleGeneratePDF}>Confirmar (enviar a BD) y Descargar PDF</button> {/* Botón para enviar datos a la BD generar PDF */}
       <button className="preview" type="button" onClick={previewPDF}>Vista previa del PDF</button> {/* Botón para previsualizar PDF */}
       <button type="button" onClick={() => navigate("/servicio")} className="back-button">Volver a Servicios</button> {/* Botón para volver a la página de servicios */}
     </form>
