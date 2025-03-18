@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import '../styles/Proyectos.css'
 
-export default function Proyectos( ID ) {
+export default function Proyectos(  ) {
     const [data, setData] = useState([])
+    const params = useParams();
+    const idEmpresa = params.id;
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("http://localhost:5000/api/listProjects", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(ID)
+                body: JSON.stringify({ ID: idEmpresa })
               });
               setData(await response.json())
         };
@@ -25,7 +27,6 @@ export default function Proyectos( ID ) {
                 <div className='card' key={proyecto.id_proyecto}>
                     <h2 className='titulo'>{proyecto.nombre}</h2>
                     <p className='descripcion'>{proyecto.descripcion}</p>
-                    <Link to={"/info-proyecto/"+proyecto.id_proyecto}><button>Ver Proyecto</button></Link>
                 </div>
             ))}
         </td>

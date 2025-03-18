@@ -10,9 +10,7 @@ export const TablaEmpresas = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [originalData, setOriginalData] = useState([]);
-  const [mostrarProyectos, setMostrarProyectos] = useState(false);
-  const [selectedRow, setSelectedRow] = useState(null);
-
+  const roleUser = JSON.parse(localStorage.getItem("user")).role
   const municipios = [
     "Seleccionar municipio...",
     "Agaete", "Artenara", "Arucas", "Sta. Mª de Guía", "San Bartolomé de Tirajana",
@@ -63,7 +61,7 @@ export const TablaEmpresas = () => {
         </select>
       </div>
 
-      <table>
+      <table> 
         <thead>
           <tr>
             <th>Municipio</th>
@@ -82,16 +80,10 @@ export const TablaEmpresas = () => {
                 <td>{row.Sector}</td>
                 <td>{row.Actividad}</td>
                 <td>{row.Calle + ", " + row.Nº}</td>
-                <td><button onClick={ () => {
-                  setMostrarProyectos(!mostrarProyectos);
-                  if (selectedRow === row.ID) {
-                    setSelectedRow(null);
-                  } else {
-                    setSelectedRow(row.ID);
-                  }
-                }}>{selectedRow === row.ID ? "▴" : "▾"}</button></td>
+                {roleUser === "Profesor" && 
+                  <td><Link to={"/info-proyecto/"+row.ID}><button>Ver Solicitudes</button></Link></td>
+                }
               </tr>
-              {selectedRow === row.ID && (<tr key={`proyectos-${row.ID}`}><Proyectos ID={row.ID} /></tr>)}
               </React.Fragment>
           ))}
         </tbody>

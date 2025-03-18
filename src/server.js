@@ -14,10 +14,6 @@ const db = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB,
-  // host: "localhost",
-  // user: "root",
-  // password: "1234",//"Riosdelaluna7",//"1234",
-  // database: "duapp",
 });
 
 db.connect((err) => {

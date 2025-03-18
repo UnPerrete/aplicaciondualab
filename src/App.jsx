@@ -9,7 +9,7 @@ import Signup from './components/Signup';
 import Servicios from './components/Servicios'
 import Profile from './components/Profile'
 import SeleccionarServicios from './components/SeleccionarServicio'
-import ProyectoInfo from './components/ProyectoInfo'
+import Proyectos from './components/Proyectos'
 
 function App() {
 
@@ -18,14 +18,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<TablaEmpresas />} />
-        <Route path="/servicio" element={<Servicios />} />
+        <Route path="/" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
+        <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/servicio" element={<Servicios />} />
-        <Route path="/perfil" element={<Profile />} />
-        <Route path="/seleccionar-servicios" element={<SeleccionarServicios />} />
+        <Route path="/perfil" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="/seleccionar-servicios" element={<PrivateRoute><SeleccionarServicios /></PrivateRoute>} />
-        <Route path="/info-proyecto/:id" element={<PrivateRoute><ProyectoInfo></ProyectoInfo></PrivateRoute>} />
+        <Route path="/info-proyecto/:id" element={<PrivateRoute><Proyectos></Proyectos></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
     </AuthProvider>
