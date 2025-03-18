@@ -1,24 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { useAuth } from "../context/AuthProvider";
-import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import "../styles/Profile.css";
+import React, { useState, useEffect } from "react"; // Importa React, useState y useEffect para gestionar el estado y efectos secundarios
+import { useAuth } from "../context/AuthProvider"; // Importa el hook para acceder al contexto de autenticación
+import { useNavigate } from "react-router-dom"; // Importa useNavigate para redirigir al usuario
+import Navbar from "./Navbar"; // Importa el componente de la barra de navegación
+import "../styles/Profile.css"; // Importa los estilos de CSS específicos para el perfil
 
 const Profile = () => {
-  const { user, isAuthenticated, setUser, logout, loading } = useAuth();
-  const navigate = useNavigate();
-  const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState({
-    nombre: user?.nombre || "",
-    apellido: user?.apellido || "",
-    nacimiento: user?.nacimiento || "",
-    role: user?.role || "",
-    nif: user?.nif || "",
-    gmail: user?.gmail || "",
-    telefono: user?.telefono || "",
-    poblacion: user?.poblacion || "",
-    zona: user?.zona || "",
-  });
+    // Extrae el estado y las funciones necesarias del contexto de autenticación
+    const { user, isAuthenticated, setUser, logout, loading } = useAuth();
+    const navigate = useNavigate(); // Hook para navegar a otras páginas
+    const [isEditing, setIsEditing] = useState(false); // Estado para controlar si está en modo de edición o no
+    const [formData, setFormData] = useState({
+      nombre: user?.nombre || "",
+      apellido: user?.apellido || "",
+      nacimiento: user?.nacimiento || "",
+      role: user?.role || "",
+      nif: user?.nif || "",
+      gmail: user?.gmail || "",
+      telefono: user?.telefono || "",
+      poblacion: user?.poblacion || "",
+      zona: user?.zona || "",
+    }); // Estado para almacenar los datos del formulario, inicializados con los datos del usuario
+  
 
   // Verifica el estado de carga y redirige si no está autenticado
   useEffect(() => {
@@ -84,10 +86,11 @@ const Profile = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar /> {/* Muestra la barra de navegación */}
       <div className="profile-container">
         <h2>Hola {user.nombre}</h2>
 
+        {/* Con esto editas los datos del usuario */}
         {isEditing ? (
           <div className="profile-info">
             <label>
@@ -136,7 +139,7 @@ const Profile = () => {
             </div>
           </div>
         ) : (
-          <div className="profile-info">
+          <div className="profile-info"> {/* Muestra por pantalla los datos del perfil */}
             <p><strong>Nombre:</strong> {user.nombre || "No disponible"}</p>
             <p><strong>Apellido:</strong> {user.apellido || "No disponible"}</p>
             <p><strong>Fecha de Nacimiento:</strong> {user.nacimiento ? new Date(user.nacimiento).toLocaleDateString('es-ES') : "No disponible"}</p>
