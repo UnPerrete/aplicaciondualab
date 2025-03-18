@@ -1,33 +1,66 @@
-/* Navbar.css */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-  }
-  
-  .logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    font-size: 18px;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
+  width: 97vw;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000; /* Se mantiene por encima de otros elementos */
+}
+
+/* Estilos de la lista de navegación */
+.nav-links, .navbar-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para los elementos de la Navbar */
+.nav-links li, .navbar-nav li {
+  margin: 0 15px;
+}
+
+/* Estilos de los enlaces */
+.navbar a {
+  color: rgb(148, 148, 148);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Efecto hover en los enlaces */
+.navbar a:hover {
+  color: #ffcc00; /* Cambia de color al pasar el mouse */
+}
+
+/* Aseguramos que el ícono de usuario esté alineado correctamente */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para los enlaces que contienen el ícono de usuario */
+.navbar-nav a {
+  color: rgb(0, 0, 0);  /* Establecer el color inicial del ícono */
+  transition: color 0.3s ease-in-out;
+  display: flex; /* Asegura que el ícono se alinee correctamente */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cambio de color al pasar el mouse */
+.navbar-nav a:hover {
+  color: #ffcc00;  /* Cambiar el color cuando se pasa el mouse */
+}
+
+/* Asegurarnos de que el ícono no esté demasiado grande o apartado */
+.navbar-nav .FaUser {
+  margin: 10; /* Eliminar márgenes si es necesario */
+}
+
