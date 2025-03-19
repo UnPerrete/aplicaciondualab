@@ -10,10 +10,16 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB,
+  //host: process.env.DB_HOST,
+  //user: process.env.DB_USER,
+  //password: process.env.DB_PASS,
+  //database: process.env.DB,
+
+  host: "localhost",
+  user: "root",
+  password: "1234",
+  database: "duapp",
+
 });
 
 db.connect((err) => {
