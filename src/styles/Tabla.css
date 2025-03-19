@@ -1,63 +1,109 @@
 /* Estilos generales */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Encabezado de la tabla */
-  th {
-    background-color: #4CAF50; /* Color de fondo verde */
-    padding: 12px 15px;
-    text-align: center;
-  }
-  
-  /* Celdas de la tabla */
-  td {
-    padding: 12px 15px;
-    border: 1px solid #ddd; /* Borde sutil */
-  }
-  
-  /* Filas alternadas para mejorar la legibilidad */
-  tr:nth-child(odd){
-    background-color: #7f7575;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-  }
+/* Encabezado de la tabla */
+th {
+  background-color:#8ccf84; /* Color de fondo oscuro */
+  color: #ecf0f1; /* Color de texto claro */
+  padding: 15px 20px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-  tr:nth-child(even) {
-    background-color: #cbbbbb;
-  }
-  
-  
-  /* Estilos del contenedor */
-  div {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Título */
-  h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .filtro-municipio {
-    text-align: left;
-    margin-bottom: 15px;
+/* Celdas de la tabla */
+td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd; /* Borde sutil */
+  color: #333;
+}
+
+/* Filas alternadas para mejorar la legibilidad */
+tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Fondo claro para filas impares */
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff; /* Fondo blanco para filas pares */
+}
+
+/* Efecto hover sobre las filas */
+tr:hover {
+  background-color: #f1f1f1; /* Color de fondo al pasar el ratón */
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos del contenedor */
+div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos para el filtro de municipio */
+.filtro-municipio {
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .filtro-municipio label {
-    font-weight: bold;
-    margin-right: 10px;
+  font-weight: 600;
+  margin-right: 10px;
+  color: #2c3e50;
 }
 
 .filtro-municipio select {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filtro-municipio select:hover {
+  border-color: #2c3e50; /* Cambio de color al pasar el ratón */
+}
+
+/* Estilos para los enlaces dentro de la tabla */
+a {
+  color: #3498db; /* Color azul moderno */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9; /* Color azul más oscuro al pasar el ratón */
+}
+
+/* Estilos para los botones */
+button {
+  padding: 8px 16px;
+  background-color: #3498db; /* Color azul moderno */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9; /* Color azul más oscuro al pasar el ratón */
+}
+
+button:disabled {
+  background-color: #bdc3c7; /* Color gris para botones deshabilitados */
+  cursor: not-allowed;
 }

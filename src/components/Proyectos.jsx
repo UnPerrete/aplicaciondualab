@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../styles/Proyectos.css'
 
-export default function Proyectos(  ) {
+export default function Proyectos() {
     const [data, setData] = useState([])
     const params = useParams();
     const idEmpresa = params.id;
@@ -12,24 +12,29 @@ export default function Proyectos(  ) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ ID: idEmpresa })
-              });
-              setData(await response.json())
+            });
+            setData(await response.json())
         };
         fetchData();
-        
+
     }, []);
 
 
-  return (
-    <>
-        <td colSpan="6">
-            {data.map((proyecto, index) => (
-                <div className='card' key={proyecto.id_proyecto}>
-                    <h2 className='titulo'>{proyecto.nombre}</h2>
-                    <p className='descripcion'>{proyecto.descripcion}</p>
+    return (
+        <>
+            {data.length > 0 ? (
+                data.map((proyecto) => (
+                    <div className='card' key={proyecto.id_proyecto}>
+                        <h2 className='titulo'>{proyecto.nombre}</h2>
+                        <p className='descripcion'>{proyecto.descripcion}</p>
+                    </div>
+                ))
+            ) : (
+                <div className='card'>
+                    <p className='descripcion'>No hay proyectos disponibles para esta empresa.</p>
                 </div>
-            ))}
-        </td>
-    </>
-  )
+            )}
+            <Link to={"/"}><button>Volver</button></Link>
+        </>
+    )
 }
