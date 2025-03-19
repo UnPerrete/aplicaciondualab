@@ -4,6 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	8.0.30
 
+USE dualab;
+
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -25,9 +28,6 @@ DROP TABLE IF EXISTS `alumnos`;
 CREATE TABLE `alumnos` (
   `id` int NOT NULL auto_increment,
   `user_id` int NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `apellido` varchar(255) NOT NULL,
-  `fecha_nacimiento` date NOT NULL,
   `profesor_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
@@ -125,6 +125,7 @@ CREATE TABLE `proyectos` (
   `microservicios` json DEFAULT NULL,
   `fecha_creacion` varchar(255) DEFAULT NULL,
   `estado` enum('pendiente','en progreso','completado') NOT NULL DEFAULT 'pendiente',
+  `isAcepted` bool default false,
   `id_empresa` int DEFAULT NULL,
   PRIMARY KEY (`id_proyecto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

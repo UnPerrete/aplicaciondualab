@@ -42,7 +42,7 @@ export default function Signup() {
 
           if (data.success) { // Si el registro fue exitoso
               login(); // Se inicia sesión automáticamente
-              navigate(`/login`); // Se redirige a la página de inicio de sesión
+              navigate(`/`); // Se redirige a la página de inicio de sesión
           } else {
               // Manejo de errores específicos según el código de error recibido
               switch (data.error) {
@@ -105,7 +105,7 @@ export default function Signup() {
               </div>
 
             {/* Campos condicionales según el rol */}
-            {rol === "alumno" && (
+            {rol === "Alumno" && (
                 <div className="form-group">
                     <label>Profesor a cargo:</label>
                     <input
@@ -119,7 +119,7 @@ export default function Signup() {
                 </div>
             )}
 
-            {rol === "profesor" && (
+            {rol === "Profesor" && (
                 <div className="form-group">
                     <label>Instituto:</label>
                     <input

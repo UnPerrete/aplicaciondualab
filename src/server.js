@@ -49,6 +49,7 @@ app.post("/api/login", (req, res) => {
         success: true,
         message: "Login exitoso",
         user: {
+          id: user.id,
           nombre: user.nombre,
           apellido: user.apellido,
           nacimiento: user.nacimiento,
@@ -265,3 +266,18 @@ app.post("/api/guardar-servicio", (req, res) => {
     res.status(200).json({ success: true, message: "Datos guardados correctamente" });
   });
 });
+
+app.post("/api/listStudents", (req, res) => {
+  const id_profesor = req.body.idProfesor 
+  const query = "SELECT u.id, u.nombre, u.apellido FROM users u JOIN alumnos a ON u.id = a.user_id JOIN profesores p ON a.profesor_id = p.id WHERE p.user_id = ?"
+  
+  db.query(query, [id_profesor], (err, result) => {
+    if (err) {
+      console.error("Error al guardar los datos:", err);
+      return res.status(500).json({ error: "Error al guardar los datos en la base de datos" });
+    }
+    console.log(result)
+    return res.status(200).json({ success: true, data: result })
+  });
+});
+

@@ -56,7 +56,6 @@ const Login = () => {
       const data = await response.json();  // Parseamos la respuesta como JSON
 
       if (data.success) {
-        console.log("Datos del usuario", data.user);  // Verificamos los datos del usuario recibidos
         login(data.user);  // Llamamos a la función login para autenticar al usuario
         navigate(`/servicio`);  // Navegamos a la página de servicio
       } else {
