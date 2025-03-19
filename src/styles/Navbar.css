@@ -9,7 +9,18 @@
   justify-content: space-between;
   padding: 0 20px;
   z-index: 1000; /* Se mantiene por encima de otros elementos */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+.navbar.active-scroll {
+  background-color: rgba(0, 0, 0, 0.8); /* Color de fondo al bajar */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Opcional: sombra para destacar */
+}
+
+.navbar.active-scroll a {
+  color: white;
+}
+
 
 /* Estilos de la lista de navegación */
 .nav-links, .navbar-nav {
@@ -36,7 +47,7 @@
 
 /* Efecto hover en los enlaces */
 .navbar a:hover {
-  color: #ffcc00; /* Cambia de color al pasar el mouse */
+  color: #0dff00; /* Cambia de color al pasar el mouse */
 }
 
 /* Aseguramos que el ícono de usuario esté alineado correctamente */
@@ -56,11 +67,7 @@
 
 /* Cambio de color al pasar el mouse */
 .navbar-nav a:hover {
-  color: #ffcc00;  /* Cambiar el color cuando se pasa el mouse */
+  color: #0dff00;  /* Cambiar el color cuando se pasa el mouse */
 }
 
-/* Asegurarnos de que el ícono no esté demasiado grande o apartado */
-.navbar-nav .FaUser {
-  margin: 10; /* Eliminar márgenes si es necesario */
-}
 

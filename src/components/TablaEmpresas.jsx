@@ -46,8 +46,6 @@ export const TablaEmpresas = () => {
   return (
     <div>
       <Navbar />
-      <h1>Empresas</h1>
-
       {/* Contenedor del select */}
       <div className="filtro-municipio">
         <label htmlFor="municipio">Filtrar por municipio: </label>
@@ -69,6 +67,7 @@ export const TablaEmpresas = () => {
             <th>Sector</th>
             <th>Actividad</th>
             <th>Direccion</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
