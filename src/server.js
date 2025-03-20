@@ -286,7 +286,6 @@ app.post("/api/listStudents", (req, res) => {
 
 app.post("/api/asignarProyecto", (req, res) => {
   const {id_proyecto, id_alumno} = req.body;
-  console.log(id_alumno)
   const query = "insert into proyectoalumno (id_proyecto, id_alumno) values (?, ?)";
 
   db.query(query, [id_proyecto, id_alumno], (err, result) => {
@@ -297,6 +296,18 @@ app.post("/api/asignarProyecto", (req, res) => {
     return res.status(200).json({ success: true });
   });
 });
+
+app.get("/api/listFinishedProjects", (req, res) => {
+  const query = "select * from proyectos where estado = 'completado'"
+  db.query(query, [], (err, result) => {
+    if(err){
+      console.error("Error al guardar los datos:", err);
+      return res.status(500).json({ error: "Error al obtener los datos" });
+    }
+    return res.status(200).json(result);
+  });
+});
+
 
 app.listen(5000, () => {
   console.log("Servidor corriendo en http://localhost:5000");
