@@ -33,7 +33,7 @@ body {
     right: 0;
     z-index: 1000;
 } */
-.navbar {
+.navbar1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,7 +66,7 @@ body {
     margin-right: 10px;
 }
 
-.nav-links a {
+.nav-links1 a {
     margin-left: 20px;
     text-decoration: none;
     color: gray;
@@ -74,11 +74,11 @@ body {
     
 }
 
-.nav-links a:hover {
+.nav-links1 a:hover {
     color: black;
 }
 
-.nav-links a.active {
+.nav-links1 a.active {
     color: black;
     font-weight: bold;
 }

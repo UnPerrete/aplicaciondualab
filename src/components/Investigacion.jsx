@@ -9,13 +9,13 @@ const Proyecto = () => {
     <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
     {/* <div className="bg-gray-100 min-h-screen w-full"> */}
       {/* Header con logo y menú de navegación */}
-      <div className="navbar">
+      <div className="navbar1">
         <div className="logo">
           <img src={logo} alt="Vía Óptima FAB LAB" className="logo-img"/>
           {/* <img src="../assets/logo.png" alt="Vía Óptima FAB LAB" className="logo-img"/> */}
           <h1>Vía Óptima Dualab</h1>
         </div>
-        <nav className="nav-links">
+        <nav className="nav-links1">
           <a href="#">Inicio</a>
           <a href="#">Servicios</a>
           <a href="#" className="active">Proyectos</a>
