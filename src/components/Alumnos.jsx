@@ -6,7 +6,6 @@ export default function Alumnos( id_proyecto ) {
   const id_profesor = JSON.parse(localStorage.getItem("user")).id;
 
   useEffect(() => {
-    console.log(id_proyecto.id_proyecto)
     const fetchData = async () => {
       const response = await fetch("http://localhost:5000/api/listStudents", {
         method: "POST",

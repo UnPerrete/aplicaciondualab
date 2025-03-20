@@ -4,9 +4,6 @@
 -- ------------------------------------------------------
 -- Server version	8.0.30
 
-USE dualab;
-
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -26,7 +23,7 @@ DROP TABLE IF EXISTS `alumnos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `alumnos` (
-  `id` int NOT NULL auto_increment,
+  `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `profesor_id` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -34,7 +31,7 @@ CREATE TABLE `alumnos` (
   KEY `profesor_id` (`profesor_id`),
   CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `alumnos_ibfk_2` FOREIGN KEY (`profesor_id`) REFERENCES `profesores` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +40,7 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
+INSERT INTO `alumnos` VALUES (1,2,1);
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +54,7 @@ DROP TABLE IF EXISTS `empresas`;
 CREATE TABLE `empresas` (
   `IdZCA` varchar(255) DEFAULT NULL,
   `Municipio` varchar(255) DEFAULT NULL,
-  `ID` int NOT NULL auto_increment,
+  `ID` int NOT NULL AUTO_INCREMENT,
   `NombreComercial` varchar(255) DEFAULT NULL,
   `RazonSocial` varchar(255) DEFAULT NULL,
   `Sector` varchar(255) DEFAULT NULL,
@@ -72,7 +70,7 @@ CREATE TABLE `empresas` (
   KEY `fk_user_id` (`user_id`),
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `empresas_chk_1` CHECK ((`CP` <= 99999))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=940 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,13 +91,13 @@ DROP TABLE IF EXISTS `profesores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `profesores` (
-  `id` int NOT NULL auto_increment,
+  `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `instituto` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `profesores_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,8 +106,56 @@ CREATE TABLE `profesores` (
 
 LOCK TABLES `profesores` WRITE;
 /*!40000 ALTER TABLE `profesores` DISABLE KEYS */;
+INSERT INTO `profesores` VALUES (1,1,'ieselrincon');
 /*!40000 ALTER TABLE `profesores` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `proyectoalumno`
+--
+
+DROP TABLE IF EXISTS `proyectoalumno`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `proyectoalumno` (
+  `id_proyecto` int NOT NULL,
+  `id_alumno` int NOT NULL,
+  PRIMARY KEY (`id_proyecto`,`id_alumno`),
+  KEY `id_alumno` (`id_alumno`),
+  CONSTRAINT `proyectoalumno_ibfk_1` FOREIGN KEY (`id_proyecto`) REFERENCES `proyectos` (`id_proyecto`) ON DELETE CASCADE,
+  CONSTRAINT `proyectoalumno_ibfk_2` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `proyectoalumno`
+--
+
+LOCK TABLES `proyectoalumno` WRITE;
+/*!40000 ALTER TABLE `proyectoalumno` DISABLE KEYS */;
+INSERT INTO `proyectoalumno` VALUES (4,1);
+/*!40000 ALTER TABLE `proyectoalumno` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `acept_proyecto` AFTER INSERT ON `proyectoalumno` FOR EACH ROW BEGIN
+    -- Disminuir en 1 el número de cupos disponibles en la tabla proyectos
+    UPDATE proyectos 
+    SET isAcepted = true
+    WHERE id_proyecto = NEW.id_proyecto;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `proyectos`
@@ -125,10 +171,10 @@ CREATE TABLE `proyectos` (
   `microservicios` json DEFAULT NULL,
   `fecha_creacion` varchar(255) DEFAULT NULL,
   `estado` enum('pendiente','en progreso','completado') NOT NULL DEFAULT 'pendiente',
-  `isAcepted` bool default false,
+  `isAcepted` tinyint(1) DEFAULT '0',
   `id_empresa` int DEFAULT NULL,
   PRIMARY KEY (`id_proyecto`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +183,7 @@ CREATE TABLE `proyectos` (
 
 LOCK TABLES `proyectos` WRITE;
 /*!40000 ALTER TABLE `proyectos` DISABLE KEYS */;
-INSERT INTO `proyectos` VALUES (4,'Proyecto1','Alumnos del curso 1 hacen cosas','[\"servicio1\", \"servicio2\"]','19/07/2025','pendiente',false, 1);
+INSERT INTO `proyectos` VALUES (4,'Proyecto1','Alumnos del curso 1 hacen cosas','[\"servicio1\", \"servicio2\"]','19/07/2025','pendiente',1,1),(7,'Landing Page','Creacion de una landing page profesional para los clientes de RocMan producciones','[{\"servicio\": \"Diseño de la página\"}, {\"servicio\": \"Desarrollo front-end\"}, {\"servicio\": \"Desarrollo back-end\"}, {\"servicio\": \"Pruebas de calidad\"}, {\"servicio\": \"Subida al hosting\"}, {\"servicio\": \"Optimización SEO\"}, {\"servicio\": \"Mantenimiento y actualización\"}]','2025-03-20','completado',0,23);
 /*!40000 ALTER TABLE `proyectos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,7 +209,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `nif` (`nif`),
   CONSTRAINT `users_chk_1` CHECK ((`role` in (_utf8mb4'profesor',_utf8mb4'empresa',_utf8mb4'alumno')))
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,54 +218,10 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'78592247M','bf3cf4427a27fd915d7910565d998de7','profesor','','','','','',NULL,NULL),(9,'78592257M','81dc9bdb52d04dc20036dbd8313ed055','Profesor','','','','','',NULL,NULL),(10,'78592252M','bf3cf4427a27fd915d7910565d998de7','alumno','','','','','',NULL,NULL),(11,'78592258M','81dc9bdb52d04dc20036dbd8313ed055','alumno','','','','','',NULL,NULL),(14,'78592245M','81dc9bdb52d04dc20036dbd8313ed055','alumno','','','','','',NULL,NULL),(16,'78592227M','63a9f0ea7bb98050796b649e85481845','alumno','','','','','',NULL,NULL),(17,'78592237M','63a9f0ea7bb98050796b649e85481845','Profesor','','','','','',NULL,NULL),(18,'78592267M','bf3cf4427a27fd915d7910565d998de7','Profesor','','','','','',NULL,NULL),(19,'78592277M','4f0e879d0d295aab9a599126499e0917','Profesor','','','','','',NULL,NULL),(20,'78592223M','4f0e879d0d295aab9a599126499e0917','Profesor','','','','','',NULL,NULL),(21,'A12345611 ','bf3cf4427a27fd915d7910565d998de7','Profesor','','','','','',NULL,NULL),(22,'A123456','bf3cf4427a27fd915d7910565d998de7','alumno','','','','','',NULL,NULL),(23,'78592217M','4f0e879d0d295aab9a599126499e0917','Profesor','juan','Peña','','','',NULL,NULL),(24,'45334409M','4f0e879d0d295aab9a599126499e0917','Profesor','jonathana','sanchez','','','',NULL,NULL),(25,'45334701N','4f0e879d0d295aab9a599126499e0917','profesor','juanito','Perezo','juanito@gmail.com','640804520','Calle marruecos','2004-03-10',''),(26,'45334234N','4f0e879d0d295aab9a599126499e0917','Profesor','gonzalo','Peña','gonzalo@gmail.com','640903270','Calle marruecos',NULL,NULL),(27,'43440893M','4f0e879d0d295aab9a599126499e0917','Profesor','lucas','Peña','lucas@gmail.com','650403920','Calle marruecos','2001-03-14','Las Palmas de Gran Canaria');
+INSERT INTO `users` VALUES (1,'78592247M','ec6a6536ca304edf844d1d248a4f08dc','Profesor','Rayco','Santana Alles','a@a.com','682841751','qweqwe','2025-03-02','San Bartolome'),(2,'78592248M','ec6a6536ca304edf844d1d248a4f08dc','Alumno','Rayco','Santana Alles','a@a.com','682841750','qweqwe','2025-03-03','San Bartolome');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-
-DELIMITER //
-DROP procedure if exists insertar_usuario;
-CREATE PROCEDURE insertar_usuario(
-    IN p_nif VARCHAR(255),
-    IN p_password VARCHAR(255),
-    IN p_role VARCHAR(25),
-    IN p_nombre VARCHAR(50),
-    IN p_apellido VARCHAR(50),
-    IN p_gmail VARCHAR(255),
-    IN p_telefono VARCHAR(15),
-    IN p_zona VARCHAR(255),
-    IN p_nacimiento DATE,
-    IN p_poblacion VARCHAR(255),
-    IN p_instituto VARCHAR(255),       -- Instituto para profesores
-    IN p_profesor_id INT               -- Profesor asignado para alumnos
-)
-BEGIN
-    DECLARE nuevo_user_id INT;
-
-    -- Insertar usuario en la tabla users
-    INSERT INTO users (nif, password, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion)
-    VALUES (p_nif, p_password, p_role, p_nombre, p_apellido, p_gmail, p_telefono, p_zona, p_nacimiento, p_poblacion);
-
-    -- Obtener el ID del usuario recién insertado
-    SET nuevo_user_id = LAST_INSERT_ID();
-
-    -- Insertar en la tabla correspondiente según el rol
-
-    IF p_role = 'profesor' THEN
-        INSERT INTO profesores (user_id, instituto)
-        VALUES (nuevo_user_id, p_instituto);
-
-    ELSEIF p_role = 'alumno' THEN
-        INSERT INTO alumnos (user_id, profesor_id)
-        VALUES (nuevo_user_id, p_profesor_id);
-    END IF;
-END //
-
-DELIMITER ;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -229,4 +231,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-18 12:01:55
+-- Dump completed on 2025-03-20 11:40:24

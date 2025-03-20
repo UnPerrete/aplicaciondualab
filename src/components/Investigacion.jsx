@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from '../components/ui/card';
 import '../styles/Investigacion.css';// './Investigacion.css';
 import logo from "../assets/logo.png";
 
 const Proyecto = () => {
+
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:5000/api/listFinishedProjects");
+      const responseJson = await response.json();
+      setData(responseJson);
+    }
+    fetchData();
+  });
+
   return (
     //<div className="bg-gray-100 min-h-screen">
     <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
@@ -41,22 +53,12 @@ const Proyecto = () => {
 
       {/* Sección de investigación */}
       <div className="card-grid">
-        {[
-          {title: 'ECOLOGÍA CÍVICA', image: '/images/ecologia.jpg', description: 'Acercar los sistemas ecológicos y la biodiversidad a los ciudadanos a través de exploraciones abiertas de alimentos, energía y biología.'},
-          {title: 'DISEÑO DISTRIBUIDO', image: '/images/diseno.jpg', description: 'Un nuevo enfoque de diseño que utiliza conectividad global para mover datos, en lugar de productos.'},
-          {title: 'FUTURO EMERGENTE', image: '/images/futuro.jpg', description: 'Explorar contextos emergentes, romper hábitos e identificar oportunidades en situaciones sociopolíticas actuales y futuras.'},
-          {title: 'APRENDIZAJE FUTURO', image: '/images/aprendizaje.jpg', description: 'Desarrollar herramientas y tecnologías que traduzcan entornos urbanos en datos tangibles.'},
-          {title: 'AGRICULTURA Y TECNOLOGÍA', image: '/images/agricultura.jpg', description: 'Innovación tecnológica aplicada al desarrollo agrícola sostenible.'},
-          {title: 'CIUDADES PRODUCTIVAS', image: '/images/ciudades.jpg', description: 'Transformar ciudades mediante procesos productivos más eficientes y amigables con el medio ambiente.'},
-          {title: 'FABLAB', image: '/images/fablab.jpg', description: 'Desarrollar herramientas y tecnologías que traduzcan entornos urbanos en datos tangibles.'},
-          {title: 'CREACIÓN DE SENTIDO', image: '/images/creacion.jpg', description: 'Innovación en la manera en que se perciben y comprenden las dinámicas sociales y productivas.'},
-          {title: 'ARTESANÍA', image: '/images/artesania.jpg', description: 'Rescate y modernización de técnicas artesanales para adaptarlas al presente.'},
-        ].map((item, index) => (
+        {data.map((item, index) => (
           <Card key={index} className="card">
-            <img src={item.image} alt={item.title} className="card-img" />
+            <img src={""} alt={item.nombre} className="card-img" />
             <CardContent>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <h3>{item.nombre}</h3>
+              <p>{item.descripcion}</p>
             </CardContent>
           </Card>
         ))}
