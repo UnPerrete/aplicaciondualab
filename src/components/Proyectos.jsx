@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Alumnos from './Alumnos';
 import '../styles/Proyectos.css'
 
@@ -28,6 +28,7 @@ export default function Proyectos() {
                     <div className='card' key={proyecto.id_proyecto}>
                         <h2 className='titulo'>{proyecto.nombre}</h2>
                         <p className='descripcion'>{proyecto.descripcion}</p>
+                        <Alumnos id_proyecto={proyecto.id_proyecto} />
                     </div>
                 ))
             ) : (

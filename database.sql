@@ -137,7 +137,7 @@ CREATE TABLE `proyectos` (
 
 LOCK TABLES `proyectos` WRITE;
 /*!40000 ALTER TABLE `proyectos` DISABLE KEYS */;
-INSERT INTO `proyectos` VALUES (4,'Proyecto1','Alumnos del curso 1 hacen cosas','[\"servicio1\", \"servicio2\"]','19/07/2025','pendiente',1);
+INSERT INTO `proyectos` VALUES (4,'Proyecto1','Alumnos del curso 1 hacen cosas','[\"servicio1\", \"servicio2\"]','19/07/2025','pendiente',false, 1);
 /*!40000 ALTER TABLE `proyectos` ENABLE KEYS */;
 UNLOCK TABLES;
 
