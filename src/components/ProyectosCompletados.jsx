@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardContent } from '../components/ui/card';
-import '../styles/Investigacion.css';// './Investigacion.css';
+import { Card, CardContent } from './ui/card';
+import '../styles/Investigacion.css';
 import logo from "../assets/logo.png";
+import Contactenos from './Contactenos';
+import { Link } from 'react-router-dom';
 
 const Proyecto = () => {
 
@@ -17,24 +19,20 @@ const Proyecto = () => {
   });
 
   return (
-    //<div className="bg-gray-100 min-h-screen">
     <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
-    {/* <div className="bg-gray-100 min-h-screen w-full"> */}
-      {/* Header con logo y menú de navegación */}
       <div className="navbar">
         <div className="logo">
           <img src={logo} alt="Vía Óptima FAB LAB" className="logo-img"/>
-          {/* <img src="../assets/logo.png" alt="Vía Óptima FAB LAB" className="logo-img"/> */}
           <h1>Vía Óptima Dualab</h1>
         </div>
         <nav className="nav-links">
-          <a href="#">Inicio</a>
-          <a href="#">Servicios</a>
-          <a href="#" className="active">Proyectos</a>
-          <a href="#">Formación</a>
-          <a href="#">Recursos</a>
-          <a href="#">Colaboraciones</a>
-          <a href="#">Equipo</a>
+          <Link to="/">Inicio</Link>
+          <Link to="/">Servicios</Link>
+          <Link to="/proyect">Proyectos</Link>
+          <Link to="/">Formación</Link>
+          <Link to="/">Recursos</Link>
+          <Link to="/contact">Contáctenos</Link>
+          <Link to="/">Equipo</Link>
         </nav>
       </div>
 

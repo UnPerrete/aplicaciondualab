@@ -1,0 +1,68 @@
+import React from 'react';
+import '../styles/Contacto.css';
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
+
+const Contactenos = () => {
+    return (
+        <div className="contact-page">
+            {/* Navbar */}
+            <div className="navbar">
+                <div className="logo">
+                    <img src={logo} alt="Vía Óptima Dualab" className="logo-img"/>
+                    <h1>Vía Óptima Dualab</h1>
+                </div>
+                <nav className="nav-links">
+                    <Link to="/">Inicio</Link>
+                    <Link to="/">Servicios</Link>
+                    <Link to="/proyect">Proyectos</Link>
+                    <Link to="/">Formación</Link>
+                    <Link to="/">Recursos</Link>
+                    <Link to="/contact">Contáctenos</Link>
+                    <Link to="/">Equipo</Link>
+                </nav>
+            </div>
+
+            {/* Contact Banner */}
+            <div className="contact-banner">
+                <h2>CONTÁCTENOS</h2>
+            </div>
+
+            {/* Contact Form and Info */}
+            <div className="contact-content">
+                <form className="contact-form">
+                    <div className="form-group">
+                        <label htmlFor="name">Nombre</label>
+                        <input type="text" id="name" placeholder="Nombre" required />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" placeholder="Email" required />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="company">Compañía/Organización</label>
+                        <input type="text" id="company" placeholder="Compañía u organización" />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="message">Mensaje</label>
+                        <textarea type="text" id="message" placeholder="Escriba el mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+
+                <div className="contact-info">
+                    <h3>Vía Óptima Dualab</h3>
+                    <p>Calle Juan de Quesada 22, Las Palmas G.C.</p>
+                    <p>659 02 16 03</p>
+                    <p>info@viaoptima.es</p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Contactenos;
