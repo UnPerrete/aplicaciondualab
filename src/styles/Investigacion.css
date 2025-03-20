@@ -1,0 +1,161 @@
+/* Investigacion.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+} */
+/* .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+} */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 4px solid #1e902c; /* Línea morada abajo */
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    white-space: nowrap;   /* Impide que el texto se divida en varias líneas */
+    overflow: hidden;       /* Oculta cualquier contenido que sobrepase el área disponible */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: gray;
+    transition: color 0.3s;
+    
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+.nav-links a.active {
+    color: black;
+    font-weight: bold;
+}
+
+.main-banner {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    background-image: url('https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg');
+    /*background-image: url('https://files.oaiusercontent.com/file-2G1nPNnA2kCN4mhq3dhE7E?se=2025-03-20T11%3A18%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D9b62dee7-792b-4292-b1df-b6749eb2aee6.webp&sig=PtzLfgD69ecDP%2BbpfRT6mWxlTbuvfgjPgt0R7Kn%2BMiM%3D');*/
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px; /* Para que el banner se vea bien debajo de la navbar fija */
+}
+
+.main-banner .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main-banner h2 {
+    color: white;
+    font-size: 4rem;
+    z-index: 1;
+}
+
+.intro-text {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.card p {
+    padding: 0 15px;
+    text-align: center;
+    color: #555;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: gray;
+}

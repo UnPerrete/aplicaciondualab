@@ -10,6 +10,7 @@ import Servicios from './components/Servicios'
 import Profile from './components/Profile'
 import SeleccionarServicios from './components/SeleccionarServicio'
 import Proyectos from './components/Proyectos'
+import Proyecto from './components/Investigacion'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     <AuthProvider>
     <BrowserRouter>
       <Routes>
+        <Route path="/proyect" element={<Proyecto />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
         <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
