@@ -11,7 +11,7 @@ const Empresas = () => {
             <NavbarWeb/>
 
             {/* Banner Principal */}
-            <div className="main-banner2">
+            <div className="main-banner3">
                 <h2>EMPRESAS</h2>
             </div>
 
