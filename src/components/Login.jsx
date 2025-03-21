@@ -34,6 +34,8 @@ const Login = () => {
       value = hashedPass;  // Hasheamos la contraseña antes de almacenarla
     }
     setFormData({ ...formData, [e.target.name]: value });  // Actualizamos el estado de formData
+    console.log(formData);
+    console.log(role);
   };
 
   // Enviar formulario de inicio de sesión (login)
@@ -138,7 +140,9 @@ const Login = () => {
           </>
         )}
 
-        <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
+        {role == "empresa" ? <input type="text" name="nif" placeholder="Nombre comercial" onChange={handleChange} required /> : <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />}
+
+        
 
         {!isRecovering && (
           <div className="password-container">
