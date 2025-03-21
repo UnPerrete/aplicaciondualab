@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Proyectos from "./Proyectos";
 import "../styles/Tabla.css";
+import SearchBar from "./SearchBar";
 
 export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
@@ -46,6 +47,7 @@ export const TablaEmpresas = () => {
   return (
     <div>
       <Navbar />
+      <SearchBar onSearch={setData}></SearchBar>
       {/* Contenedor del select */}
       <div className="filtro-municipio">
         <label htmlFor="municipio">Filtrar por municipio: </label>
