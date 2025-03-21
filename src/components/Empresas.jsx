@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/CentrosFP.css';
-import logo from '../assets/logo.png';
 import NavbarWeb from './NavbarWeb';
+import FooterWeb from './FooterWeb';
 
 const Empresas = () => {
     return (
@@ -81,9 +81,7 @@ const Empresas = () => {
             <hr className="section-divider" />
 
             {/* Footer */}
-            <div className="footer">
-                <p>info@viaoptima.es | Calle Juan de Quesada 22 Las Palmas G.C. | 659 02 16 03</p>
-            </div>
+            <FooterWeb/>
         </div>
     );
 };
