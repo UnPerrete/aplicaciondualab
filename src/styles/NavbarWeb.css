@@ -5,10 +5,13 @@
     background-color: white;
     padding: 10px 32px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 1000px;
+    width: 100%; /* Esto corrige tu problema */
     position: fixed;
     z-index: 1000;
-    border-bottom: 4px solid #1e902c; /* Línea morada abajo*/
+    border-bottom: 4px solid #1e902c;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .nav-links1{

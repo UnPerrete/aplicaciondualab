@@ -51,6 +51,7 @@
 .form-group label {
     margin-top: 5px;
     font-size: 0.9rem;
+    margin-right: auto;
 }
 
 .form-group input, .form-group textarea {
