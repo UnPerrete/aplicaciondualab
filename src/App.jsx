@@ -27,7 +27,7 @@ function App() {
         <Route path="/contact" element={<Contactenos />} />
         <Route path="/formacion" element={<Formacion />} />
         <Route path="/centrosfp" element={<CentrosFP />} />
-        <Route path="/empresas" element={<Empresas />} />
+        <Route path="/" element={<Empresas />} />
         <Route path="/administraciones" element={<Administraciones />} />
         <Route path="/login" element={<Login />} />
         <Route path="/tablaempresa" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
