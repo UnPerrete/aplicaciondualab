@@ -11,7 +11,7 @@ const CentrosFP = () => {
             <NavbarWeb/>
 
             {/* Banner Principal */}
-            <div className="main-banner2">
+            <div className="main-banner3">
                 <h2>CENTROS DE F.P.</h2>
             </div>
 

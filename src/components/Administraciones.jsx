@@ -11,7 +11,7 @@ const Administraciones = () => {
             <NavbarWeb/>
 
             {/* Banner Principal */}
-            <div className="main-banner2">
+            <div className="main-banner3">
                 <h2>ADMINISTRACIONES</h2>
             </div>
 

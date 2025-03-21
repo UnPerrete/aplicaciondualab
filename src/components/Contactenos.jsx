@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/Contacto.css';
 import NavbarWeb from "./NavbarWeb";
+import FooterWeb from './FooterWeb';
 
 const Contactenos = () => {
     return (
+        <div>
         <div className="contact-page">
             {/* Navbar */}
             <NavbarWeb/>
@@ -46,13 +48,10 @@ const Contactenos = () => {
                     <p>info@viaoptima.es</p>
                 </div>
             </div>
-
-            {/* Footer */}
-            <div className="footer">
-                <p>info@viaoptima.es | Calle Juan de Quesada 22 Las Palmas G.C. | 659 02 16 03</p>
-            </div>
-
         </div>
+        {/* Footer */}
+        <FooterWeb/>
+       </div> 
     );
 };
 
