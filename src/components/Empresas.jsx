@@ -34,7 +34,7 @@ const Empresas = () => {
             {/* Programas de Asesoramiento */}
             <div className="contact-content2">
                 <div className="card">
-                    {/* <img src="https://www.shutterstock.com/image-photo/customer-service-care-patron-protection-600nw-420395281.jpg" alt="Programa de Asesoramiento" className="card-img" /> */}
+                    <img src="https://lh3.googleusercontent.com/rEnS5m_2QC5CEkc_ayMNxhh0jFkiCpYCSJqTgYVvYG9iNPS-tGX8lzx1J_npocn0-Z1ffHsW5Dg_PIrl-1uKEl0oJr-PlQW-CZ6OTme_lp9dRzZNnGNulWB4FzTPnCI4wg=w1280" alt="Programa de Asesoramiento" className="card-img" />
                 </div>
                 <div className="contact-info2">
                     <h3>Comprender, Diseñar y Prototipar, Especular</h3>
@@ -54,6 +54,7 @@ const Empresas = () => {
             {/* Experiencias de aprendizaje inmersivo */}
             <div className="contact-content2">
                 <div className="card">
+                <img src="https://lh3.googleusercontent.com/rEnS5m_2QC5CEkc_ayMNxhh0jFkiCpYCSJqTgYVvYG9iNPS-tGX8lzx1J_npocn0-Z1ffHsW5Dg_PIrl-1uKEl0oJr-PlQW-CZ6OTme_lp9dRzZNnGNulWB4FzTPnCI4wg=w1280" alt="Programa de Asesoramiento" className="card-img" />
                     {/* <img src="https://www.shutterstock.com/image-photo/customer-service-care-patron-protection-600nw-420395281.jpg" alt="Experiencia de aprendizaje inmersivo" className="card-img" /> */}
                 </div>
                 <div className="contact-info2">
@@ -69,6 +70,7 @@ const Empresas = () => {
             {/* Experiencias de aprendizaje inmersivo */}
             <div className="contact-content2">
                 <div className="card">
+                <img src="https://lh3.googleusercontent.com/rEnS5m_2QC5CEkc_ayMNxhh0jFkiCpYCSJqTgYVvYG9iNPS-tGX8lzx1J_npocn0-Z1ffHsW5Dg_PIrl-1uKEl0oJr-PlQW-CZ6OTme_lp9dRzZNnGNulWB4FzTPnCI4wg=w1280" alt="Programa de Asesoramiento" className="card-img" />
                     {/* <img src="https://www.shutterstock.com/image-photo/customer-service-care-patron-protection-600nw-420395281.jpg" alt="Experiencia de aprendizaje inmersivo" className="card-img" /> */}
                 </div>
                 <div className="contact-info2">

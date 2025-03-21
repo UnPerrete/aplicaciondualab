@@ -36,7 +36,7 @@ const NavbarWeb = () => {
                 <Link to="/formacion">Formación</Link>
                 <Link to="/">Recursos</Link>
                 <Link to="/contact">Contáctenos</Link>
-                <Link to="/">Equipo</Link>
+                <Link to="/equipo">Equipo</Link>
             </nav>
         </div>
     );
