@@ -15,6 +15,7 @@ import Contactenos from './components/Contactenos'
 import Formacion from './components/Formacion'
 import CentrosFP from './components/CentroFP'
 import Empresas from './components/Empresas'
+import Administraciones from './components/Administraciones'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/formacion" element={<Formacion />} />
         <Route path="/centrosfp" element={<CentrosFP />} />
         <Route path="/empresas" element={<Empresas />} />
+        <Route path="/administraciones" element={<Administraciones />} />
         <Route path="/login" element={<Login />} />
         <Route path="/tablaempresa" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
         <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />

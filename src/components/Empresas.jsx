@@ -12,7 +12,7 @@ const Empresas = () => {
 
             {/* Banner Principal */}
             <div className="main-banner2">
-                <h2>Empresas</h2>
+                <h2>EMPRESAS</h2>
             </div>
 
             {/* Botón Ir a Empresas */}

@@ -28,6 +28,7 @@ const NavbarWeb = () => {
                         <div className="dropdown-menu">
                             <Link to="/centrosfp">• Centros FP</Link>
                             <Link to="/empresas">• Empresas</Link>
+                            <Link to="/administraciones">• Administraciones</Link>
                         </div>
                     )}
                 </div>
