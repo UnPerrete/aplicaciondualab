@@ -12,6 +12,7 @@ import SeleccionarServicios from './components/SeleccionarServicio'
 import Proyectos from './components/Proyectos'
 import Proyecto from './components/ProyectosCompletados'
 import Contactenos from './components/Contactenos'
+import Centros from './components/CentroFP'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/proyect" element={<Proyecto />} />
         <Route path="/contact" element={<Contactenos />} />
+        <Route path="/centros" element={<Centros />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
         <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />

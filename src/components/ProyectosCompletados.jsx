@@ -33,7 +33,7 @@ const Proyecto = () => {
           <a href="#" className="active">Proyectos</a>
           <a href="#">Formación</a>
           <a href="#">Recursos</a>
-          <a href="#">Colaboraciones</a>
+          <Link to="/contact">Contáctenos</Link>{/* <a href="#">Contáctenos</a> */}
           <a href="#">Equipo</a>
         </nav>
       </div>

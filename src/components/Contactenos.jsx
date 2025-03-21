@@ -7,12 +7,12 @@ const Contactenos = () => {
     return (
         <div className="contact-page">
             {/* Navbar */}
-            <div className="navbar">
+            <div className="navbar1">
                 <div className="logo">
                     <img src={logo} alt="Vía Óptima Dualab" className="logo-img"/>
                     <h1>Vía Óptima Dualab</h1>
                 </div>
-                <nav className="nav-links">
+                <nav className="nav-links1">
                     <Link to="/">Inicio</Link>
                     <Link to="/">Servicios</Link>
                     <Link to="/proyect">Proyectos</Link>
