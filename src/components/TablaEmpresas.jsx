@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Navbar from './Navbar';
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Proyectos from "./Proyectos";
 import "../styles/Tabla.css";
 import SearchBar from "./SearchBar";
+import NavbarWeb from "./NavbarWeb";
 
 export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
@@ -46,7 +45,7 @@ export const TablaEmpresas = () => {
 
   return (
     <div>
-      <Navbar />
+      <NavbarWeb />
       <SearchBar onSearch={setData}></SearchBar>
       {/* Contenedor del select */}
       <div className="filtro-municipio">

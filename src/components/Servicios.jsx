@@ -2,8 +2,8 @@ import React, { useState } from "react"; // Importa React y el hook useState
 import { useNavigate } from "react-router-dom"; // Importa useNavigate para la navegación entre páginas
 import "../styles/Servicio.css"; // Importa los estilos CSS para el componente
 import categoriasData from "./data/servicios.json"; // Importa los datos de servicios desde un archivo JSON
-import Navbar from "./Navbar"; // Importa el componente Navbar
 import "bootstrap-icons/font/bootstrap-icons.css"; // Importa los iconos de Bootstrap
+import NavbarWeb from "./NavbarWeb";
 
 const Servicios = () => {
   const [desplegados, setDesplegados] = useState([]); // Estado para almacenar los elementos desplegados
@@ -57,7 +57,7 @@ const Servicios = () => {
 
   return (
     <div className="p-6"> {/* Contenedor principal con padding */}
-      <Navbar /> {/* Navbar para la navegación */}
+      <NavbarWeb /> {/* Navbar para la navegación */}
       <h1 className="text-3xl font-bold text-center mb-4"> 
         En esta sección, podrá conocer nuestras principales áreas de
         especialización y los servicios que ofrecemos en cada una.

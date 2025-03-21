@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Alumnos from './Alumnos';
 import '../styles/Proyectos.css'
+import NavbarWeb from './NavbarWeb';
 
 export default function Proyectos() {
     const [data, setData] = useState([])
@@ -23,6 +24,7 @@ export default function Proyectos() {
 
     return (
         <>
+        <NavbarWeb/>
             {data.length > 0 ? (
                 data.map((proyecto) => (
                     <div className='card' key={proyecto.id_proyecto}>

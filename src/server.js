@@ -10,15 +10,15 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB,
+  //host: process.env.DB_HOST,
+  //user: process.env.DB_USER,
+  //password: process.env.DB_PASS,
+  //database: process.env.DB,
 
-  // host: "localhost",
-  // user: "root",
-  // password: "1234",
-  // database: "duapp",
+  host: "localhost",
+  user: "root",
+  password: "1234",
+  database: "duapp",
 
 });
 
@@ -36,8 +36,12 @@ app.post("/api/login", (req, res) => {
   const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
 
   console.log(`🔑 Contraseña hasheada recibida desde el frontend: ${hashedPassword}`); // Verificar el hash recibido
-
-  let query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
+  let query = "";
+  if (role != "empresa") {
+    query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
+  } else {
+    query = "SELECT e.* FROM users u JOIN empresas e ON u.nombre = e.NombreComercial WHERE u.nombre = ? AND u.password = ? AND u.role = ?;"
+  }
   let params = [nif, hashedPassword, role];
 
   // Ejecutar consulta en MySQL
@@ -46,10 +50,10 @@ app.post("/api/login", (req, res) => {
       console.error("Error en la consulta:", err);
       return res.status(500).json({ success: false, message: "Error en el servidor" });
     }
-  
+
     console.log("Resultados de la consulta:", results); // Agrega este log para ver los resultados
-  
-    if (results.length > 0) {
+
+    if (results.length > 0 && role != "empresa") {
       const user = results[0];
       res.json({
         success: true,
@@ -65,6 +69,28 @@ app.post("/api/login", (req, res) => {
           gmail: user.gmail || null,
           telefono: user.telefono || null,
           zona: user.zona || null,
+        }
+      });
+    } else if (results.length > 0 && role == "empresa") {
+      const user = results[0];
+      res.json({
+        success: true,
+        message: "Login exitoso",
+        user: {
+          idzca: user.IdZCA || null,
+          municipio: user.Municipio || null,
+          ID: user.ID || null,
+          nombrecomercial: user.NombreComercial || null,
+          razonsocial: user.RazonSocial || null,
+          role: role || null,
+          sector: user.Sector || null,
+          actividad: user.Actividad || null,
+          calle: user.Calle || null,
+          nº: user.Nº || null,
+          cp: user.CP || null,
+          telefono: user.Telefono || null,
+          email: user.Email || null,
+          web: user.Web || null,
         }
       });
     } else {
@@ -133,19 +159,19 @@ app.post("/api/data", (req, res) => {
 
 app.post("/api/addUser", (req, res) => {
   const {
-      nif,
-      pass,
-      confirmpass,
-      role,
-      nombre,
-      apellido,
-      gmail,
-      telefono,
-      zona,
-      nacimiento,
-      poblacion,
-      instituto,
-      profesor_id
+    nif,
+    pass,
+    confirmpass,
+    role,
+    nombre,
+    apellido,
+    gmail,
+    telefono,
+    zona,
+    nacimiento,
+    poblacion,
+    instituto,
+    profesor_id
   } = req.body;
 
   // Validación: Contraseñas coinciden
@@ -159,7 +185,7 @@ app.post("/api/addUser", (req, res) => {
   // Query para agregar el usuario a la base de datos
   const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-  db.query(query, [nif, hashedPassword, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion, instituto, profesor_id ], (err, results) => {
+  db.query(query, [nif, hashedPassword, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion, instituto, profesor_id], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
       return res.status(500).json({ error: err.errno });
@@ -236,7 +262,7 @@ app.post("/api/reset-password", (req, res) => {
 //Endpoint para añadir nuevos proyectos
 app.post("/api/new-proyect", (req, res) => {
   const query = "INSERT INTO proyectos (id_empresa, nombre, descripcion, microservicios) value (?, ?, ?, ?)";
-  const {idEmpresa, nombre, descripcion, microservicio} = req.body;
+  const { idEmpresa, nombre, descripcion, microservicio } = req.body;
   db.query(query, [idEmpresa, nombre, descripcion, JSON.stringify(microservicio)], (err, results) => {
     if (err) {
       console.error("Error al añadir nuevo proyecto", err);
@@ -265,14 +291,14 @@ app.get("/api/projectInfo/:id", (req, res) => {
 
 
 app.post("/api/guardar-servicio", (req, res) => {
-  const { nombreSolicitante, tipoSolicitante, serviciosSeleccionados, numeroPersonas } = req.body;
+  const { nombreSolicitante, tipoSolicitante, serviciosSeleccionados} = req.body;
 
   if (!nombreSolicitante || !tipoSolicitante || !Object.keys(serviciosSeleccionados).length) {
     return res.status(400).json({ error: "Faltan datos obligatorios" });
   }
 
-  const query = "INSERT INTO tablaproyectos (nombre_solicitante, tipo_solicitante, servicios, numero_personas) VALUES (?, ?, ?, ?)";
-  const valores = [nombreSolicitante, tipoSolicitante, JSON.stringify(serviciosSeleccionados), numeroPersonas];
+  const query = "INSERT INTO proyectos (nombre, descripcion, microservicios) VALUES (?, ?, ?)";
+  const valores = [nombreSolicitante, tipoSolicitante, JSON.stringify(serviciosSeleccionados)];
 
   db.query(query, valores, (err, result) => {
     if (err) {
@@ -286,7 +312,7 @@ app.post("/api/guardar-servicio", (req, res) => {
 app.post("/api/listStudents", (req, res) => {
   const id_profesor = req.body.idProfesor;
   const query = "SELECT a.id, u.nombre, u.apellido FROM users u JOIN alumnos a ON u.id = a.user_id JOIN profesores p ON a.profesor_id = p.id WHERE p.user_id = ?"
-  
+
   db.query(query, [id_profesor], (err, result) => {
     if (err) {
       console.error("Error al guardar los datos:", err);

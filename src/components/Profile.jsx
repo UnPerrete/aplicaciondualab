@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"; // Importa React, useState y useEffect para gestionar el estado y efectos secundarios
 import { useAuth } from "../context/AuthProvider"; // Importa el hook para acceder al contexto de autenticación
 import { useNavigate } from "react-router-dom"; // Importa useNavigate para redirigir al usuario
-import Navbar from "./Navbar"; // Importa el componente de la barra de navegación
 import "../styles/Profile.css"; // Importa los estilos de CSS específicos para el perfil
+import NavbarWeb from "./NavbarWeb";
 
 const Profile = () => {
     // Extrae el estado y las funciones necesarias del contexto de autenticación
@@ -86,7 +86,7 @@ const Profile = () => {
 
   return (
     <>
-      <Navbar /> {/* Muestra la barra de navegación */}
+      <NavbarWeb /> {/* Muestra la barra de navegación */}
       <div className="profile-container">
         <h2>Hola {user.nombre}</h2>
 
