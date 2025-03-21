@@ -159,3 +159,18 @@ body {
         width: 100%;
     }
 }
+
+.boton_empresas {
+    padding: 10px 20px;
+    background-color: #1e902c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.boton_empresas:hover {
+    background-color: #15751f;
+}

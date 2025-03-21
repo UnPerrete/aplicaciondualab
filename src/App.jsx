@@ -14,6 +14,7 @@ import Proyecto from './components/ProyectosCompletados'
 import Contactenos from './components/Contactenos'
 import Formacion from './components/Formacion'
 import CentrosFP from './components/CentroFP'
+import Empresas from './components/Empresas'
 
 function App() {
 
@@ -25,9 +26,9 @@ function App() {
         <Route path="/contact" element={<Contactenos />} />
         <Route path="/formacion" element={<Formacion />} />
         <Route path="/centrosfp" element={<CentrosFP />} />
-
+        <Route path="/empresas" element={<Empresas />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
+        <Route path="/tablaempresa" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
         <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
         <Route path="/register" element={<Signup />} />
         <Route path="/perfil" element={<PrivateRoute><Profile /></PrivateRoute>} />
