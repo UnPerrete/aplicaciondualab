@@ -48,7 +48,7 @@ body {
     font-weight: bold;
 }
 
-.main-banner2 {
+.main-banner3 {
     position: relative;
     height: 200px;
     /* background-color: #1e902c; */
@@ -58,7 +58,7 @@ body {
     margin-top: 70px;
 }
 
-.main-banner2 h2 {
+.main-banner3 h2 {
     color: rgb(0, 0, 0);
     font-size: 3rem;
 }
