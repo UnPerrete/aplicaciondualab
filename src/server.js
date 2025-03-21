@@ -10,15 +10,15 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-  //host: process.env.DB_HOST,
-  //user: process.env.DB_USER,
-  //password: process.env.DB_PASS,
-  //database: process.env.DB,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB,
 
-  host: "localhost",
-  user: "root",
-  password: "1234",
-  database: "duapp",
+  // host: "localhost",
+  // user: "root",
+  // password: "1234",
+  // database: "duapp",
 
 });
 
@@ -118,6 +118,18 @@ app.get("/api/data", (req, res) => {
     res.json(results);
   });
 });
+
+app.post("/api/data", (req, res) => {
+  const query = "SELECT Municipio, ID, NombreComercial, Sector, Actividad, Calle, Nº, Web FROM empresas where NombreComercial LIKE CONCAT('%', ?, '%')";
+  const { name } = req.body;
+  db.query(query,[name], (err, results) => {
+    if (err) {
+      console.error("Error al obtener los datos:", err);
+      return res.status(500).json({ error: "Error al obtener los datos" });
+    }
+    res.status(200).json(results);
+  });
+}); 
 
 app.post("/api/addUser", (req, res) => {
   const {
