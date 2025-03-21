@@ -46,6 +46,12 @@ const Contactenos = () => {
                     <p>info@viaoptima.es</p>
                 </div>
             </div>
+
+            {/* Footer */}
+            <div className="footer">
+                <p>info@viaoptima.es | Calle Juan de Quesada 22 Las Palmas G.C. | 659 02 16 03</p>
+            </div>
+
         </div>
     );
 };

@@ -1,0 +1,176 @@
+/* CentrosFP.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 4px solid #1e902c;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links1 a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: gray;
+    transition: color 0.3s;
+}
+
+.nav-links1 a:hover {
+    color: black;
+}
+
+.nav-links1 a.active {
+    color: black;
+    font-weight: bold;
+}
+
+.main-banner2 {
+    position: relative;
+    height: 200px;
+    /* background-color: #1e902c; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.main-banner2 h2 {
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+}
+
+.intro-text2 {
+    padding: 60px 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.intro-text2 h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    width: 55%;
+}
+
+.intro-text2 p {
+    font-size: 1.1rem;
+    width: 40%;
+    text-align: justify;
+}
+
+.section-title2 {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #c6c6c6;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.section-divider {
+    width: 90%;
+    margin: 30px auto;
+    border: none;
+    border-top: 3px solid #b9b9b9;
+}
+
+.contact-content2 {
+    display: flex;
+    padding: 40px 100px;
+    gap: 40px;
+}
+
+.card {
+    width: 45%;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.contact-info2 {
+    width: 55%;
+}
+
+.contact-info2 h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.contact-info2 p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.contact-info2 ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: gray;
+}
+
+@media (max-width: 768px) {
+    .intro-text2 {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-content2 {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .card, .contact-info2 {
+        width: 100%;
+    }
+
+    .intro-text2 h1, .intro-text2 p {
+        width: 100%;
+    }
+}
+
+.boton_empresas {
+    padding: 10px 20px;
+    background-color: #1e902c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.boton_empresas:hover {
+    background-color: #15751f;
+}

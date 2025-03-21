@@ -21,8 +21,8 @@ const Proyecto = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
-      {/* Navbar Importado */}
-      <NavbarWeb />
+    {/* Navbar Importado */}
+    <NavbarWeb />
 
       {/* Banner Principal */}
       <div className="main-banner">

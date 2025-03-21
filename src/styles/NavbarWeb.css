@@ -30,3 +30,45 @@
     color: black;
     font-weight: bold;
 }
+
+
+/* Estilos para el dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.dropdown-toggle {
+    color: gray;
+    transition: color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    color: black;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: gray;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
