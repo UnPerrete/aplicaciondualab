@@ -84,6 +84,8 @@ body {
 .intro-text {
     text-align: center;
     padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .card-grid {

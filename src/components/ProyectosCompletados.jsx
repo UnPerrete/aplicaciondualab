@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import '../styles/Investigacion.css';
 import NavbarWeb from "./NavbarWeb";
-import logo from "../assets/logo.png";
-import Contactenos from './Contactenos';
-import { Link } from 'react-router-dom';
 
 const Proyecto = () => {
   const [data, setData] = useState([]);
