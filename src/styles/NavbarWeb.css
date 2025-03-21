@@ -1,3 +1,5 @@
+/* NavbarWeb.css */
+
 .navbar1 {
     display: flex;
     justify-content: space-between;
@@ -5,23 +7,24 @@
     background-color: white;
     padding: 10px 32px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 1000px;
+    width: 100%;
     position: fixed;
+    top: 0;
     z-index: 1000;
-    border-bottom: 4px solid #1e902c; /* Línea morada abajo*/
+    border-bottom: 4px solid #1e902c; /* Línea verde abajo */
 }
 
-.nav-links1{
-    width: 70%;
+.nav-links1 {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 .nav-links1 a {
-    margin-left: 0px;
     text-decoration: none;
     color: gray;
     transition: color 0.3s;
     padding: 0 10px;
-    
 }
 
 .nav-links1 a:hover {
@@ -33,22 +36,19 @@
     font-weight: bold;
 }
 
-.logo{
+.logo {
     width: 10%;
-    padding: 0;
-    margin: 0px 10px;
 }
 
-.logo img{
+.logo img {
     width: 50%;
 }
 
 /* Estilos para el dropdown */
 .dropdown {
     position: relative;
-    display: inline-block;
-    cursor: pointer;
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-toggle {
@@ -69,6 +69,7 @@
     border-radius: 4px;
     padding: 10px;
     z-index: 999;
+    margin-top: 5px;
 }
 
 .dropdown-menu a {

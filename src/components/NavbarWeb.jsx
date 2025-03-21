@@ -38,6 +38,20 @@ const NavbarWeb = () => {
                 <Link to="/">Recursos</Link>
                 <Link to="/contact">Contáctenos</Link>
                 <Link to="/equipo">Equipo</Link>
+                <div 
+                    className="dropdown"
+                    onMouseEnter={toggleDropdown} 
+                    onMouseLeave={toggleDropdown}
+                >
+                    <span className="dropdown-toggle">Servicios</span>
+                    {dropdownOpen && (
+                        <div className="dropdown-menu">
+                            <Link to="/centrosfp">• Centros FP</Link>
+                            <Link to="/">• Empresas</Link>
+                            <Link to="/administraciones">• Administraciones</Link>
+                        </div>
+                    )}
+                </div>
             </nav>
         </div>
     );
