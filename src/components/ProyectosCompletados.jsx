@@ -1,44 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import '../styles/Investigacion.css';
+import NavbarWeb from "./NavbarWeb";
 import logo from "../assets/logo.png";
 import Contactenos from './Contactenos';
 import { Link } from 'react-router-dom';
 
 const Proyecto = () => {
-
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5000/api/listFinishedProjects");
-      const responseJson = await response.json();
-      setData(responseJson);
-    }
+      try {
+        const response = await fetch("http://localhost:5000/api/listFinishedProjects");
+        const responseJson = await response.json();
+        setData(responseJson);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
     fetchData();
-  });
+  }, []);
 
   return (
     <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
-    {/* <div className="bg-gray-100 min-h-screen w-full"> */}
-      {/* Header con logo y menú de navegación */}
-      <div className="navbar1">
-        <div className="logo">
-          <img src={logo} alt="Vía Óptima FAB LAB" className="logo-img"/>
-          <h1>Vía Óptima Dualab</h1>
-        </div>
-        <nav className="nav-links1">
-          <a href="#">Inicio</a>
-          <a href="#">Servicios</a>
-          <a href="#" className="active">Proyectos</a>
-          <a href="#">Formación</a>
-          <a href="#">Recursos</a>
-          <a href="#">Colaboraciones</a>
-          <a href="#">Equipo</a>
-        </nav>
-      </div>
+      {/* Navbar Importado */}
+      <NavbarWeb />
 
-      {/* Imagen principal con título */}
+      {/* Banner Principal */}
       <div className="main-banner">
         <div className="overlay"></div>
         <h2>Proyectos</h2>
@@ -51,17 +40,21 @@ const Proyecto = () => {
         </p>
       </div>
 
-      {/* Sección de investigación */}
+      {/* Sección de tarjetas con validación */}
       <div className="card-grid">
-        {data.map((item, index) => (
-          <Card key={index} className="card">
-            <img src={""} alt={item.nombre} className="card-img" />
-            <CardContent>
-              <h3>{item.nombre}</h3>
-              <p>{item.descripcion}</p>
-            </CardContent>
-          </Card>
-        ))}
+        {data && data.length > 0 ? (
+          data.map((item, index) => (
+            <Card key={index} className="card">
+              <img src={item.imagen || ""} alt={item.nombre} className="card-img" />
+              <CardContent>
+                <h3>{item.nombre}</h3>
+                <p>{item.descripcion}</p>
+              </CardContent>
+            </Card>
+          ))
+        ) : (
+          <p>No hay proyectos disponibles.</p>
+        )}
       </div>
 
       {/* Footer */}
