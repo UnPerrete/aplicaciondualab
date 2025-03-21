@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavbarWeb from "./NavbarWeb";
 import '../styles/Formacion.css';
+import FooterWeb from './FooterWeb';
 
 const Formacion = () => {
     return (
@@ -138,9 +139,7 @@ const Formacion = () => {
           </div>
         </div>
     
-          <div className="footer">
-            <p>info@viaoptima.es | Calle Juan de Quesada 22 Las Palmas G.C. | 659 02 16 03</p>
-          </div>
+          <FooterWeb/>
         </div>
       );
 };

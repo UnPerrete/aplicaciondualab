@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import '../styles/Investigacion.css';
 import NavbarWeb from "./NavbarWeb";
+import FooterWeb from './FooterWeb';
 
 const Proyecto = () => {
   const [data, setData] = useState([]);
@@ -55,9 +56,7 @@ const Proyecto = () => {
       </div>
 
       {/* Footer */}
-      <div className="footer">
-        <p>info@viaoptima.es | Calle Juan de Quesada 22 Las Palmas G.C. | 659 02 16 03</p>
-      </div>
+      <FooterWeb />
     </div>
   );
 };
