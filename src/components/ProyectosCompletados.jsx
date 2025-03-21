@@ -20,19 +20,21 @@ const Proyecto = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
-      <div className="navbar">
+    {/* <div className="bg-gray-100 min-h-screen w-full"> */}
+      {/* Header con logo y menú de navegación */}
+      <div className="navbar1">
         <div className="logo">
           <img src={logo} alt="Vía Óptima FAB LAB" className="logo-img"/>
           <h1>Vía Óptima Dualab</h1>
         </div>
-        <nav className="nav-links">
-          <Link to="/">Inicio</Link>
-          <Link to="/">Servicios</Link>
-          <Link to="/proyect">Proyectos</Link>
-          <Link to="/">Formación</Link>
-          <Link to="/">Recursos</Link>
-          <Link to="/contact">Contáctenos</Link>
-          <Link to="/">Equipo</Link>
+        <nav className="nav-links1">
+          <a href="#">Inicio</a>
+          <a href="#">Servicios</a>
+          <a href="#" className="active">Proyectos</a>
+          <a href="#">Formación</a>
+          <a href="#">Recursos</a>
+          <a href="#">Colaboraciones</a>
+          <a href="#">Equipo</a>
         </nav>
       </div>
 
