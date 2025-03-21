@@ -14,11 +14,11 @@ const NavbarWeb = () => {
         <div className="navbar1">
             <div className="logo">
                 <img src={logo} alt="Vía Óptima Dualab" className="logo-img" />
-                <h1>Vía Óptima Dualab</h1>
+
             </div>
             <nav className="nav-links1">
                 <Link to="/">Inicio</Link>
-                <div 
+                {/* <div 
                     className="dropdown"
                     onMouseEnter={toggleDropdown} 
                     onMouseLeave={toggleDropdown}
@@ -27,16 +27,17 @@ const NavbarWeb = () => {
                     {dropdownOpen && (
                         <div className="dropdown-menu">
                             <Link to="/centrosfp">• Centros FP</Link>
-                            <Link to="/empresas">• Empresas</Link>
+                            <Link to="/">• Empresas</Link>
                             <Link to="/administraciones">• Administraciones</Link>
                         </div>
                     )}
-                </div>
+                </div> */}
+                <Link to={"/servicio"}>Servicios</Link>
                 <Link to="/proyect">Proyectos</Link>
                 <Link to="/formacion">Formación</Link>
                 <Link to="/">Recursos</Link>
                 <Link to="/contact">Contáctenos</Link>
-                <Link to="/">Equipo</Link>
+                <Link to="/equipo">Equipo</Link>
             </nav>
         </div>
     );
