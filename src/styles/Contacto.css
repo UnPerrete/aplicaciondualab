@@ -1,0 +1,93 @@
+/* Contacto.css */
+
+.contact-page {
+    padding-top: 120px;
+    background-color: white;
+}
+
+.contact-banner {
+    background-image: url('https://files.oaiusercontent.com/file-AeG19xu7pdb7NsY9NvANqs?se=2025-03-20T12%3A55%3A23Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D4015c630-9764-42e2-88e8-50f9c58a2977.webp&sig=iyZ1ZJK0wpBwf0kVJj%2BgQ7RzbyKnRz5jAFbtmq7JxLM%3D');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.contact-banner h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.contact-banner p {
+    font-size: 1.2rem;
+    max-width: 800px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 80px;
+}
+
+.contact-form {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5px;
+}
+
+.form-group label {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #1e902c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.contact-form button:hover {
+    background-color: #15751f;
+}
+
+.contact-info {
+    flex: 0.4;
+    padding-left: 40px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
