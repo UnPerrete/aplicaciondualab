@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from './ui/card';
-import '../styles/Investigacion.css';
+import '../styles/ProyectosCompletados.css';
 import NavbarWeb from "./NavbarWeb";
 import FooterWeb from './FooterWeb';
 
