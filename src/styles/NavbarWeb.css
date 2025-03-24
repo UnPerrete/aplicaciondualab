@@ -7,22 +7,15 @@
     background-color: white;
     padding: 10px 32px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-    width: 100%; /* Esto corrige tu problema */
-=======
-    width: 100%;
->>>>>>> 3b705299d23c28601bea99ec6c86f32efe6c9d1d
+    width: 100%; 
     position: fixed;
     top: 0;
     z-index: 1000;
-<<<<<<< HEAD
     border-bottom: 4px solid #1e902c;
     top: 0;
     left: 0;
     right: 0;
-=======
     border-bottom: 4px solid #1e902c; /* Línea verde abajo */
->>>>>>> 3b705299d23c28601bea99ec6c86f32efe6c9d1d
 }
 
 .nav-links1 {
@@ -73,7 +66,7 @@
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: 80%;
     left: 0;
     background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
