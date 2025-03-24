@@ -36,15 +36,17 @@ const Contactenos = () => {
                         <label htmlFor="message">Mensaje</label>
                         <textarea type="text" id="message" placeholder="Escriba el mensaje" required></textarea>
                     </div>
-
-                    <button type="submit">Enviar mensaje</button>
+                    
+                    <button className="button-message" type="submit">Enviar mensaje</button>
                 </form>
 
                 <div className="contact-info">
+                <div className="border-dualab">
                     <h3>Vía Óptima Dualab</h3>
                     <p>Calle Juan de Quesada 22, Las Palmas G.C.</p>
                     <p>659 02 16 03</p>
                     <p>info@viaoptima.es</p>
+                </div>
                 </div>
             </div>
         </div>
