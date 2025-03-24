@@ -10,6 +10,8 @@
     background-size: cover;
     background-position: center;
     height: 300px;
+    width: 2500px;
+    margin-left: -2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,29 +41,29 @@
     flex: 0.6;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5px;
+    margin-left: -20px;
 }
 
 .form-group label {
-    margin-top: 5px;
-    font-size: 0.9rem;
+    margin-top: 1px;
+    font-size: 1.2rem;
     margin-right: auto;
 }
 
 .form-group input, .form-group textarea {
-    width: 100%;
+    width: 235%;
     max-width: 600px;
     padding: 15px;
-    border: 1px solid #ccc;
+    border: 2px solid #1e902c;
     border-radius: 5px;
     font-size: 1rem;
-    margin-top: 5px;
 }
 
 .contact-form button {

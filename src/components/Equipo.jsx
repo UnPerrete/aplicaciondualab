@@ -1,7 +1,7 @@
 import '../styles/Equipo.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import NavbarWeb from './NavbarWeb';
+import FooterWeb from './FooterWeb';
 
 const Equipo = () => {
     return (
@@ -46,11 +46,8 @@ const Equipo = () => {
                     <p>Describe brevemente qué cualidades deben tener tus compañeros.</p>
                     <button className="join-button">Enviar solicitud</button>
                 </div>
-
-                <div className="team-footer">
-                    <p>info@viaoptima.es | Calle Juan de Quesada 22 Las Palmas G.C. | 659 02 16 03</p>
-                </div>
             </div>
+            <FooterWeb/>
         </div>
     );
 };
