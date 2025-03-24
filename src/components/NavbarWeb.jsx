@@ -35,7 +35,7 @@ const NavbarWeb = () => {
                 <Link to={"/servicio"}>Servicios</Link>
                 <Link to="/proyect">Proyectos</Link>
                 <Link to="/formacion">Formación</Link>
-                <Link to="/">Recursos</Link>
+                <Link to="/recursos">Recursos</Link>
                 <Link to="/contact">Contáctenos</Link>
                 <Link to="/equipo">Equipo</Link>
                 <div 

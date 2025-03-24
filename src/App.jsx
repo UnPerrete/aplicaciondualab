@@ -17,6 +17,7 @@ import CentrosFP from './components/CentroFP'
 import Empresas from './components/Empresas'
 import Administraciones from './components/Administraciones'
 import Equipo from './components/Equipo'
+import Recursos from './components/Recursos'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/formacion" element={<Formacion />} />
         <Route path="/centrosfp" element={<CentrosFP />} />
         <Route path="/" element={<Empresas />} />
+        <Route path="/recursos" element={<Recursos />} />
         <Route path="/equipo" element={<Equipo />} />
         <Route path="/administraciones" element={<Administraciones />} />
         <Route path="/login" element={<Login />} />
