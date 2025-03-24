@@ -57,7 +57,9 @@ const Servicios = () => {
 
   return (
     <div className="p-6"> {/* Contenedor principal con padding */}
+    <div>
       <NavbarWeb /> {/* Navbar para la navegación */}
+    </div>
       <h1 className="text-3xl font-bold text-center mb-4"> 
         En esta sección, podrá conocer nuestras principales áreas de
         especialización y los servicios que ofrecemos en cada una.
