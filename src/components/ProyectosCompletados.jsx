@@ -55,6 +55,9 @@ const Proyecto = () => {
         )}
       </div>
 
+      {/* Línea divisoria */}
+      <hr className="section-divider" />
+
       {/* Footer */}
       <FooterWeb />
     </div>
