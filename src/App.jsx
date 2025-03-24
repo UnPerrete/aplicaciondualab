@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Login from './components/Login'
 import { AuthProvider } from './context/AuthProvider'
@@ -22,24 +21,24 @@ function App() {
 
   return (
     <AuthProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/proyect" element={<Proyecto />} />
-        <Route path="/contact" element={<Contactenos />} />
-        <Route path="/formacion" element={<Formacion />} />
-        <Route path="/centrosfp" element={<CentrosFP />} />
-        <Route path="/" element={<Empresas />} />
-        <Route path="/equipo" element={<Equipo />} />
-        <Route path="/administraciones" element={<Administraciones />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/tablaempresa" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
-        <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
-        <Route path="/register" element={<Signup />} />
-        <Route path="/perfil" element={<PrivateRoute><Profile /></PrivateRoute>} />
-        <Route path="/seleccionar-servicios" element={<PrivateRoute><SeleccionarServicios /></PrivateRoute>} />
-        <Route path="/info-proyecto/:id" element={<PrivateRoute><Proyectos></Proyectos></PrivateRoute>} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/proyect" element={<Proyecto />} />
+          <Route path="/contact" element={<Contactenos />} />
+          <Route path="/formacion" element={<Formacion />} /> 
+          <Route path="/centrosfp" element={<CentrosFP />} />
+          <Route path="/" element={<Empresas />} />
+          <Route path="/equipo" element={<Equipo />} />
+          <Route path="/administraciones" element={<Administraciones />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/tablaempresa" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
+          <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
+          <Route path="/register" element={<Signup />} />
+          <Route path="/perfil" element={<PrivateRoute><Profile /></PrivateRoute>} />
+          <Route path="/seleccionar-servicios" element={<PrivateRoute><SeleccionarServicios /></PrivateRoute>} />
+          <Route path="/info-proyecto/:id" element={<PrivateRoute><Proyectos></Proyectos></PrivateRoute>} />
+        </Routes>
+      </BrowserRouter>
     </AuthProvider>
   )
 }
