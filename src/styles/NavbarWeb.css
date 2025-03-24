@@ -41,11 +41,14 @@
 }
 
 .logo {
-    width: 10%;
+    width: 15%;
 }
 
 .logo img {
-    width: 50%;
+    width: 65%; /* Ajustar la imagen al 100% del contenedor */
+    height: auto; /* Mantener las proporciones de la imagen */
+    aspect-ratio: 1 / 1; /* Hacer que sea cuadrado si la imagen lo permite */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
 }
 
 /* Estilos para el dropdown */

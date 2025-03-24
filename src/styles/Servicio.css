@@ -1,150 +1,83 @@
+/* Servicio.css */
+
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0eeee;
-  }
-  
-  /* Título principal */
-  .text-3xl {
-    font-size: 2.25rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  @media (min-width: 768px) {
-    .grid-cols-3 {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 4rem; /* Aumentamos la separación entre columnas */
-    }
-  }
-  
-  /* Contenedor de cada apartado */
-  .text-center {
-    background-color: white;
-    padding: 2.5rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    margin-bottom: 3rem; /* Aumentamos la separación entre filas */
-  }
-  
-  .text-center:hover {
-    transform: translateY(-5px);
-  }
-  
-  /* Imágenes ajustadas para uniformidad */
-  .text-center img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  /* Títulos de cada apartado */
-  .text-xl {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #222;
-    margin-top: 1rem;
-  }
-  
-  /* Descripción */
-  .text-gray-600 {
-    color: #555;
-    line-height: 1.5;
-    text-align: center;
-  }
-  
-  /* Ajuste para la lista de servicios desplegada */
-  .text-center ul {
-    list-style-position: inside; /* Asegura que los puntos estén dentro del área del texto */
-    text-align: left; /* Alinea el texto a la izquierda */
-    margin: 0 auto; /* Centra la lista dentro del contenedor */
-    align-items: center;
-  }
-  
-  /* Aumentar separación entre cada elemento de la lista */
-  .text-center ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Menú desplegable alineado a la izquierda */
-  /* .dropdown-container {
-    display: flex;
-    justify-content: flex-start;
-  } */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0eeee;
+  box-sizing: border-box;
+}
 
-  .dropdown-container {
-    display: flex;
-    /*justify-content: flex-start; /* Alinea el menú a la izquierda */
-    /*margin-left: 20px; /* Espaciado desde el borde izquierdo */
+/* Ajuste para que la navbar no tape el contenido */
+.p-6 {
+  margin-top: 80px; /* Deja un margen superior para que no se coma el contenido */
+}
 
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos del menú desplegable */
-  /* .dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  } */
-  
-  
-  .title {
-    background-color: #d8d7d7;
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 180px;
-  }
-  
-  .title i {
-    transition: transform 0.3s ease;
-  }
-  
-  .menu {
-    position: absolute;
-    top: 100%;
-    left: -5px;
-    background: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 0; /* Elimina posibles rellenos */
-    margin: 0; /* Evita desplazamientos inesperados */
-  }
-  
-  .menu .option {
-    padding: 5px 10px; /* Ajusta el padding para alinear correctamente */
-    text-align: left !important;
-    display: flex; /* Garantiza que el texto se alinee bien */
-    justify-content: flex-start;
-  }
-  
-  .menu .option:hover {
-    background: #f0f0f0;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
-  /* Contenedor del grupo */
+/* Título principal */
+.text-3xl {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Contenedor de cada apartado */
+.text-center {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+.text-center:hover {
+  transform: translateY(-5px);
+}
+
+/* Imágenes ajustadas para uniformidad */
+.text-center img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Títulos de cada apartado */
+.text-xl {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  margin-top: 1rem;
+}
+
+/* Descripción */
+.text-gray-600 {
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Ajuste para la lista de servicios desplegada */
+.text-center ul {
+  list-style-position: inside;
+  text-align: left;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Aumentar separación entre cada elemento de la lista */
+.text-center ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Contenedor del grupo */
 .grupo-container {
   margin-top: 1.5rem;
   padding: 1rem;
@@ -160,7 +93,7 @@ body {
   cursor: pointer;
   padding: 15px;
   background: #d1d1d1;
-  border: 2px solid #a1a1a1; /* Borde del cuadro */
+  border: 2px solid #a1a1a1;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.2rem;
@@ -174,73 +107,109 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Ícono de expandir y colapsar */
-.grupo-icon {
-  font-size: 2.5rem;
+/* Animación de despliegue */
+.expandido {
+  max-height: 1000px;
+  transition: max-height 0.3s ease-in-out;
 }
-  
-  /* Animación de despliegue */
-  .expandido {
-    max-height: 1000px;
-    transition: max-height 0.3s ease-in-out;
-  }
-  
-  .colapsado {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
-  
-  .go-button {
-    background-color: #d1d1d1;
-    color: black;
-    padding: 15px 25px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    /*margin-left: 0;    Este a la izq*/
 
-    margin: 0 auto;  /*Esta centrado*/
-  }
-  
-  .go-button i {
-    margin-left: 10px;
-  }
-  
-  .go-button:hover {
-    background-color: #c1c1c1;
-  }
+.colapsado {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
 
-  .dropdown {
-    position: relative;
-    width: fit-content;
-    /*display: inline-block;
-    text-align: left; /* Asegura alineación de texto a la izquierda */
-    /*background-color: #d1d1d1;
-    color: black;*/
-    padding: 15px 25px;
-    /*font-size: 1.2rem;
-    font-weight: bold;*/
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*width: fit-content;*/
-    margin-left: 0;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
+/* Botón principal */
+.go-button {
+  background-color: #1e902c;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  transition: background-color 0.3s;
+}
+
+.go-button:hover {
+  background-color: #15751f;
+}
+
+.dropdown {
+  position: relative;
+  width: fit-content;
+  /*display: inline-block;
+  text-align: left; /* Asegura alineación de texto a la izquierda */
+  /*background-color: #d1d1d1;
+  color: black;*/
+  padding: 15px 25px;
+  /*font-size: 1.2rem;
+  font-weight: bold;*/
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*width: fit-content;*/
+  margin-left: 0;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Dropdown Title */
+.title {
+  background-color: #d8d7d7;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  cursor: pointer;
+}
+
+/* Menu Styles */
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  z-index: 999;
+}
+
+/* Options Styles */
+.menu .option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu .option:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hide Menu */
+.hide {
+  display: none;
+}
