@@ -17,22 +17,22 @@ const Contactenos = () => {
             {/* Contact Form and Info */}
             <div className="contact-content">
                 <form className="contact-form">
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="name">Nombre</label>
                         <input type="text" id="name" placeholder="Nombre" required />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" placeholder="Email" required />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="company">Compañía/Organización</label>
                         <input type="text" id="company" placeholder="Compañía u organización" />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="message">Mensaje</label>
                         <textarea type="text" id="message" placeholder="Escriba el mensaje" required></textarea>
                     </div>

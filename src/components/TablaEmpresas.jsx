@@ -45,7 +45,9 @@ export const TablaEmpresas = () => {
 
   return (
     <div>
-      <NavbarWeb />
+      <div>
+        <NavbarWeb />
+      </div>
       <SearchBar onSearch={setData}></SearchBar>
       {/* Contenedor del select */}
       <div className="filtro-municipio">
