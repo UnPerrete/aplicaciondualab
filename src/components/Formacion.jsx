@@ -25,7 +25,7 @@ const Formacion = () => {
           <div className="section-container">
           <img
             src="https://cfp.ucm.es/formacionprofesorado/sites/default/files/2024-08/Evaluaci%C3%B3n%20educativa%20Instrumentos%20y%20procedimientos_0.png"
-            alt="Profesorado"
+            alt="Profesorado" className= "section-image"
           />
           <div className="section-text">
             <h2>PROFESORADO</h2>
@@ -50,7 +50,7 @@ const Formacion = () => {
         <div className="section-container">
           <img
             src="https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg"
-            alt="Academia Makemakers"
+            alt="Academia Makemakers" className= "section-image"
           />
           <div className="section-text">
             <h2>ACADEMIA MAKEMAKERS</h2>
@@ -69,7 +69,7 @@ const Formacion = () => {
                     <div className="section-image">
                         <img
                             src="https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg"
-                            alt="Proyecto Tecnológico"
+                            alt="Proyecto Tecnológico" className= "section-image"
                         />
                         <h1 className="section-title highlighted">Proyecto Tecnológico</h1>
                     </div>
@@ -77,7 +77,7 @@ const Formacion = () => {
                     <div className="section-image">
                         <img
                             src="https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg"
-                            alt="Talleres"
+                            alt="Talleres" className= "section-image"
                         />
                         <h1 className="section-title">Talleres</h1>
                     </div>
@@ -85,7 +85,7 @@ const Formacion = () => {
                     <div className="section-image">
                         <img
                             src="https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg"
-                            alt="Desarrollo"
+                            alt="Desarrollo" className= "section-image"
                         />
                         <h1 className="section-title">Desarrollo</h1>
                     </div>
@@ -93,7 +93,7 @@ const Formacion = () => {
                     <div className="section-image">
                         <img
                             src="https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg"
-                            alt="Recursos"
+                            alt="Recursos" className= "section-image"
                         />
                         <h1 className="section-title">Recursos</h1>
                     </div>
@@ -104,7 +104,7 @@ const Formacion = () => {
         <div className="section-container">
           <img
             src="https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg"
-            alt="Ecoacademy"
+            alt="Ecoacademy" className= "section-image"
           />
           <div className="section-text">
             <h2>ECOCADEMY</h2>
@@ -123,7 +123,7 @@ const Formacion = () => {
         <div className="section-container">
           <img
             src="https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg"
-            alt="Jornadas de puertas abiertas"
+            alt="Jornadas de puertas abiertas" className= "section-image"
           />
           <div className="section-text">
             <h2>JORNADAS DE PUERTAS ABIERTAS</h2>

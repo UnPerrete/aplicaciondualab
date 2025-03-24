@@ -1,6 +1,6 @@
 .main-banner2 {
     position: relative;
-    height: 800px;
+    height: 600px;
     width: 700%;
     background-image: url('https://fedfinancees-production.s3.amazonaws.com/system/image/name_type/364/compress_actuality_teaser_1639653658.jpg');
     background-size: cover;
@@ -79,6 +79,11 @@
 
 .section-image {
     text-align: center;
+    transition: transform 0.5s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.05);
 }
 
 .section-image img {
