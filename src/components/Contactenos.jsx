@@ -6,7 +6,6 @@ import FooterWeb from './FooterWeb';
 const Contactenos = () => {
     return (
         <div>
-        <div className="contact-page">
             {/* Navbar */}
             <NavbarWeb/>
 
@@ -14,7 +13,7 @@ const Contactenos = () => {
             <div className="contact-banner">
                 <h2>CONTÁCTENOS</h2>
             </div>
-
+        <div className="contact-page">
             {/* Contact Form and Info */}
             <div className="contact-content">
                 <form className="contact-form">

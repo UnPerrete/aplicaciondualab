@@ -1,13 +1,14 @@
 .main-banner2 {
     position: relative;
-    height: 600px;
-    width: 100%;
+    height: 800px;
+    width: 700%;
     background-image: url('https://fedfinancees-production.s3.amazonaws.com/system/image/name_type/364/compress_actuality_teaser_1639653658.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -20px;
     margin-top: 70px; /* Para que el banner se vea bien debajo de la navbar fija */
 }
 
