@@ -39,11 +39,12 @@ const Proyecto = () => {
       </div>
 
       {/* Sección de tarjetas con validación */}
-      <div className="card-grid">
+      {/* <div className="card-grid"> */}
+      <div className="card-gridd" style={{ maxWidth: '1600px', margin: 'auto' }}>
         {data && data.length > 0 ? (
           data.map((item, index) => (
-            <Card key={index} className="card">
-              <img src={item.imagen || ""} alt={item.nombre} className="card-img" />
+            <Card key={index} className="cardd">
+              <img src={item.imagen || ""} alt={item.nombre} className="cardd-img" />
               <CardContent>
                 <h3>{item.nombre}</h3>
                 <p>{item.descripcion}</p>
