@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'; 
+import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
 
 const NavbarWeb = () => {
@@ -50,6 +51,7 @@ const NavbarWeb = () => {
                 <Link to="/recursos">Recursos</Link>
                 <Link to="/contact">Contáctenos</Link>
                 <Link to="/equipo">Equipo</Link>
+                <Link to="/perfil"><i class="bi bi-person-fill"></i></Link>
             </nav>
         </div>
     );
