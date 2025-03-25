@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/Tabla.css";
 import SearchBar from "./SearchBar";
 import NavbarWeb from "./NavbarWeb";
+import ArrowUp from "./ui/ArrowUp";
 
 export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
@@ -91,6 +92,7 @@ export const TablaEmpresas = () => {
           ))}
         </tbody>
       </table>
+      <ArrowUp/>
     </div>
   );
 };

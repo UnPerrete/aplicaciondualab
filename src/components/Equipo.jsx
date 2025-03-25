@@ -2,6 +2,7 @@ import '../styles/Equipo.css';
 import React from 'react';
 import NavbarWeb from './NavbarWeb';
 import FooterWeb from './FooterWeb';
+import ArrowUp from './ui/ArrowUp';
 
 const Equipo = () => {
     return (
@@ -47,6 +48,7 @@ const Equipo = () => {
                     <button className="join-button">Enviar solicitud</button>
                 </div>
             </div>
+            <ArrowUp/>
             <FooterWeb/>
         </div>
     );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NavbarWeb from "./NavbarWeb";
 import '../styles/Recursos.css';
 import FooterWeb from './FooterWeb';
+import ArrowUp from './ui/ArrowUp';
 
 const Recursos = () => {
     return (
@@ -45,7 +46,7 @@ const Recursos = () => {
             </div>
 
             <hr className="section-divider" />
-
+            <ArrowUp/>
             <div>
                 <FooterWeb />
             </div>

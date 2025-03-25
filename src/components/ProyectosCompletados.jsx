@@ -3,6 +3,7 @@ import { Card, CardContent } from './ui/card';
 import '../styles/Investigacion.css';
 import NavbarWeb from "./NavbarWeb";
 import FooterWeb from './FooterWeb';
+import ArrowUp from './ui/ArrowUp';
 
 const Proyecto = () => {
   const [data, setData] = useState([]);
@@ -57,7 +58,7 @@ const Proyecto = () => {
 
       {/* Línea divisoria */}
       <hr className="section-divider" />
-
+        <ArrowUp/>
       {/* Footer */}
       <FooterWeb />
     </div>

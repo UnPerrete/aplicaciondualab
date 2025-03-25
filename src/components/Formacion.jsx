@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NavbarWeb from "./NavbarWeb";
 import '../styles/Formacion.css';
 import FooterWeb from './FooterWeb';
+import ArrowUp from './ui/ArrowUp';
 
 const Formacion = () => {
     return (
@@ -138,7 +139,7 @@ const Formacion = () => {
             </p>
           </div>
         </div>
-    
+          <ArrowUp/>
           <FooterWeb/>
         </div>
       );

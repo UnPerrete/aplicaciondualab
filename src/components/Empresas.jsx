@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/CentrosFP.css';
 import NavbarWeb from './NavbarWeb';
 import FooterWeb from './FooterWeb';
+import ArrowUp from './ui/ArrowUp';
 
 const Empresas = () => {
     return (
@@ -81,6 +82,7 @@ const Empresas = () => {
 
             {/* Línea divisoria */}
             <hr className="section-divider" />
+            <ArrowUp/>
 
             {/* Footer */}
             <FooterWeb/>
