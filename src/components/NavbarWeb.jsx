@@ -31,26 +31,25 @@ const NavbarWeb = () => {
             </div>
             <nav className="nav-links1">
                 <Link to="/">Inicio</Link>
-                <Link to="/servicio">Servicios</Link>
-                <Link to="/proyect">Proyectos</Link>
-                <Link to="/formacion">Formación</Link>
-                <Link to="/recursos">Recursos</Link>
-                <Link to="/contact">Contáctenos</Link>
-                <Link to="/equipo">Equipo</Link>
                 <div 
                     className="dropdown"
                     onMouseEnter={toggleDropdown} 
                     onMouseLeave={toggleDropdown}
                 >
-                    <span className="dropdown-toggle">Servicios</span>
+                    <Link to="/servicio"><span className="dropdown-toggle">Servicios</span></Link>
                     {dropdownOpen && (
                         <div className="dropdown-menu">
-                            <Link to="/centrosfp">• Centros FP</Link>
-                            <Link to="/">• Empresas</Link>
-                            <Link to="/administraciones">• Administraciones</Link>
+                            <Link to="/centrosfp">Centros FP</Link>
+                            <Link to="/">Empresas</Link>
+                            <Link to="/administraciones">Administraciones</Link>
                         </div>
                     )}
                 </div>
+                <Link to="/proyect">Proyectos</Link>
+                <Link to="/formacion">Formación</Link>
+                <Link to="/recursos">Recursos</Link>
+                <Link to="/contact">Contáctenos</Link>
+                <Link to="/equipo">Equipo</Link>
             </nav>
         </div>
     );
