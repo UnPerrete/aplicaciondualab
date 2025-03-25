@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/CentrosFP.css';
 import NavbarWeb from './NavbarWeb';
 import FooterWeb from './FooterWeb';
+import ArrowUp from './ui/ArrowUp';
 
 const CentrosFP = () => {
     return (
@@ -59,7 +60,7 @@ const CentrosFP = () => {
 
             {/* Línea divisoria */}
             <hr className="section-divider" />
-
+            <ArrowUp/>
             {/* Footer */}
             <FooterWeb/>
         </div>

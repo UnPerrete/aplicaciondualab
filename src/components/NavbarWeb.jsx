@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Cambia esta ruta según tu estructura
+import logo from '../assets/logo.png'; 
 import '../styles/NavbarWeb.css';
 
 const NavbarWeb = () => {
@@ -10,11 +10,7 @@ const NavbarWeb = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-          if (window.scrollY < lastScrollY) {
-            setScrollingUp(true); // Si se está desplazando hacia arriba
-          } else {
-            setScrollingUp(false); // Si se está desplazando hacia abajo
-          }
+          setScrollingUp(window.scrollY < lastScrollY)
           setLastScrollY(window.scrollY);
         };
     
