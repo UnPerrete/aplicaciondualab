@@ -5,6 +5,7 @@ import "../styles/SeleccionarServicios.css"; // Importa los estilos CSS para el 
 import categoriasData from "./data/servicios.json"; // Importa los datos de servicios desde un archivo JSON
 import { useAuth } from '../context/AuthProvider'; // Hook para manejar la autenticación
 import logo from "../assets/logo.png"; // Importa el logo para incluir en el PDF
+import InfoB from './ui/Info';
 
 const SeleccionarServicios = () => {
   const [formData, setFormData] = useState({}); // Estado para almacenar los datos del formulario
@@ -563,6 +564,7 @@ const SeleccionarServicios = () => {
         <button className="preview" type="button" onClick={previewPDF}>Vista previa del PDF</button> {/* Botón para previsualizar PDF */}
         <button type="button" onClick={() => navigate("/servicio")} className="back-button">Volver a Servicios</button> {/* Botón para volver a la página de servicios */}
       </form>
+      <InfoB/>
     </div>
   );
 }

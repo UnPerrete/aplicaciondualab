@@ -4,6 +4,7 @@ import '../styles/ProyectosCompletados.css';
 import NavbarWeb from "./NavbarWeb";
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
+import InfoB from './ui/Info';
 
 const Proyecto = () => {
   const [data, setData] = useState([]);
@@ -60,6 +61,7 @@ const Proyecto = () => {
       {/* Línea divisoria */}
       <hr className="section-divider" />
         <ArrowUp/>
+        <InfoB/>
       {/* Footer */}
       <FooterWeb />
     </div>
