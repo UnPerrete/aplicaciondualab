@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Contacto.css';
 import NavbarWeb from "./NavbarWeb";
 import FooterWeb from './FooterWeb';
+import InfoB from './ui/Info';
 
 const Contactenos = () => {
     return (
@@ -50,6 +51,7 @@ const Contactenos = () => {
                 </div>
             </div>
         </div>
+        <InfoB/>
         {/* Footer */}
         <FooterWeb/>
        </div> 

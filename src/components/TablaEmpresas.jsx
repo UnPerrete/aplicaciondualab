@@ -5,6 +5,7 @@ import "../styles/Tabla.css";
 import SearchBar from "./SearchBar";
 import NavbarWeb from "./NavbarWeb";
 import ArrowUp from "./ui/ArrowUp";
+import InfoB from './ui/Info';
 
 export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
@@ -92,6 +93,7 @@ export const TablaEmpresas = () => {
           ))}
         </tbody>
       </table>
+      <InfoB/>
       <ArrowUp/>
     </div>
   );

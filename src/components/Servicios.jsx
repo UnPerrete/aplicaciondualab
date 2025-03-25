@@ -5,6 +5,7 @@ import categoriasData from "./data/servicios.json"; // Importa los datos de serv
 import "bootstrap-icons/font/bootstrap-icons.css"; // Importa los iconos de Bootstrap
 import NavbarWeb from "./NavbarWeb";
 import ArrowUp from "./ui/ArrowUp";
+import InfoB from './ui/Info';
 
 const Servicios = () => {
   const [desplegados, setDesplegados] = useState([]); // Estado para almacenar los elementos desplegados
@@ -140,6 +141,7 @@ const Servicios = () => {
         ))}
       </div>
       <ArrowUp/>
+      <InfoB/>
     </div>
   );
 };
