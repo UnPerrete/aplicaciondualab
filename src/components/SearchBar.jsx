@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/SearchBar.css";
 
 export default function SearchBar( {onSearch} ) {
 
@@ -13,7 +14,8 @@ export default function SearchBar( {onSearch} ) {
 
   return (
     <div>
-        <input type="text" onChange={handleSearch}/>
+        <label htmlFor="search" className="busqueda">Búsqueda:</label>
+        <input type="text" onChange={handleSearch} className="search-bar" placeholder='Buscar'/>
     </div>
   )
 }
