@@ -1,0 +1,12 @@
+.busqueda {
+    margin-right: 940px;
+}
+
+.search-bar {
+    width:1000px;
+}
+
+.search-bar::placeholder{
+    color: #000;
+    font-size: 16px;
+}
