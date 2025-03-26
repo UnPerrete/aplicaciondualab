@@ -41,7 +41,6 @@ const NavbarWeb = () => {
 
     const isMobile = window.innerWidth <= 768;
 
-
     return (
         <div className={`navbar1 ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="logo">
