@@ -41,7 +41,7 @@ const NavbarWeb = () => {
                     onMouseEnter={toggleDropdown} 
                     onMouseLeave={toggleDropdown}
                 >
-                    <Link to="/servicio"><span className="dropdown-toggle">Servicios</span></Link>
+                    <Link to="/servicio"><span className="dropdown-toggle">Retos</span></Link>
                     {dropdownOpen && (
                         <div className="dropdown-menu">
                             <Link to="/centrosfp">Centros FP</Link>
