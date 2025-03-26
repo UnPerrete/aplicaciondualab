@@ -9,6 +9,7 @@ const NavbarWeb = () => {
     const [scrollingUp, setScrollingUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [searchOpen, setSearchOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
@@ -25,28 +26,45 @@ const NavbarWeb = () => {
         setDropdownOpen(!dropdownOpen);
     };
 
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+        setDropdownOpen(false);
+    };
+
     const toggleSearch = () => {
         setSearchOpen(!searchOpen);
     };
+
+    const isMobile = window.innerWidth <= 768;
 
     return (
         <div className={`navbar1 ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="logo">
                 <Link to="/"><img src={logo} alt="Vía Óptima Dualab" className="logo-img" /></Link>
             </div>
-            <nav className="nav-links1">
+
+            {/* Ícono del menú responsive */}
+            <div className="menu-icon" onClick={toggleMenu}>
+                <i className="bi bi-grid"></i>
+            </div>
+
+            <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
                 <Link to="/">Inicio</Link>
                 <div 
                     className="dropdown"
-                    onMouseEnter={toggleDropdown} 
-                    onMouseLeave={toggleDropdown}
+                    onMouseEnter={() => !menuOpen && setDropdownOpen(true)} 
+                    onMouseLeave={() => !menuOpen && setDropdownOpen(false)}
                 >
                     <Link to="/servicio"><span className="dropdown-toggle">Retos</span></Link>
                     {dropdownOpen && (
                         <div className="dropdown-menu">
-                            <Link to="/centrosfp">Centros FP</Link>
-                            <Link to="/">Empresas</Link>
-                            <Link to="/administraciones">Administraciones</Link>
+                            <Link to="/centrosfp" onClick={closeMenu}>Centros FP</Link>
+                            <Link to="/" onClick={closeMenu}>Empresas</Link>
+                            <Link to="/administraciones" onClick={closeMenu}>Administraciones</Link>
                         </div>
                     )}
                 </div>

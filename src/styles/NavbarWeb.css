@@ -8,7 +8,7 @@
     padding: 10px 32px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    position: fixed; /* Descomenta esta línea */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -22,7 +22,7 @@
 }
 
 .navbar-hidden {
-    top: -170px !important; /* Ajusta esta cantidad para que sea igual o mayor a la altura de tu navbar */
+    top: -170px !important;
 }
 
 .nav-links1 {
@@ -52,13 +52,13 @@
 }
 
 .logo img {
-    width: 65%; /* Ajustar la imagen al 100% del contenedor */
-    height: auto; /* Mantener las proporciones de la imagen */
-    aspect-ratio: 1 / 1; /* Hacer que sea cuadrado si la imagen lo permite */
-    object-fit: contain; /* Asegura que la imagen no se deforme */
+    width: 65%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
 }
 
-/* Estilos para el dropdown */
+/* Dropdown */
 .dropdown {
     position: relative;
     display: flex;
@@ -99,4 +99,101 @@
     background-color: #f0f0f0;
     color: black;
 }
+
+.dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.dropdown-arrow {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: gray;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    color: green;
+    transition: color 0.5s ease;
+}
+
+.menu-icon:hover {
+    color: black;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+/* --------------------- */
+/*       RESPONSIVE      */
+/* --------------------- */
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links1 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+        display: none;
+        border-bottom: 4px solid #1e902c;
+    }
+
+    .nav-links1.active {
+        display: flex;
+    }
+
+    .dropdown {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 5px 0 5px 5px;
+        position: static;
+        box-shadow: none;
+        margin-top: 0;
+    }
+    
+    .dropdown.open .dropdown-menu {
+        display: flex;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-toggle {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: auto !important;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 30%;
+        margin-right: 40px;
+    }
+}
+
 
