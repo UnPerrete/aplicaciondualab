@@ -34,7 +34,7 @@ function App() {
         <Route path="/administraciones" element={<Administraciones />} />
         <Route path="/login" element={<Login />} />
         <Route path="/tablaempresa" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
-        <Route path="/servicio" element={<PrivateRoute><Servicios /></PrivateRoute>} />
+        <Route path="/servicio" element={<Servicios />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/perfil" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="/seleccionar-servicios" element={<PrivateRoute><SeleccionarServicios /></PrivateRoute>} />
