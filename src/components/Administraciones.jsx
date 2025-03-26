@@ -3,6 +3,8 @@ import '../styles/CentrosFP.css';
 import NavbarWeb from './NavbarWeb';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
+import InfoB from './ui/Info';
+
 const Administraciones = () => {
     return (
         <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
@@ -39,6 +41,7 @@ const Administraciones = () => {
             {/* Línea divisoria */}
             <hr className="section-divider" />
             <ArrowUp/>
+            <InfoB/>
             {/* Footer */}
             <FooterWeb/>
         </div>

@@ -87,6 +87,7 @@ const Profile = () => {
   return (
     <>
       <NavbarWeb /> {/* Muestra la barra de navegación */}
+      <div style={{ marginTop: "90px" }}></div>
       <div className="profile-container">
         <h2>Hola {user.nombre}</h2>
 

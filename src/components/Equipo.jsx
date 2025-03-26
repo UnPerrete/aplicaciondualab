@@ -3,6 +3,7 @@ import React from 'react';
 import NavbarWeb from './NavbarWeb';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
+import InfoB from './ui/Info';
 
 const Equipo = () => {
     return (
@@ -49,6 +50,7 @@ const Equipo = () => {
                 </div>
             </div>
             <ArrowUp/>
+            <InfoB/>
             <FooterWeb/>
         </div>
     );

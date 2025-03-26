@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; 
+import logo from '../assets/logo.png';
+import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
 
 const NavbarWeb = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
     const [scrollingUp, setScrollingUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [searchOpen, setSearchOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrollingUp(window.scrollY < lastScrollY);
+            setScrollingUp(window.scrollY < lastScrollY)
             setLastScrollY(window.scrollY);
         };
 
@@ -19,12 +22,12 @@ const NavbarWeb = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
+    };
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
     };
 
     const closeMenu = () => {
@@ -32,38 +35,44 @@ const NavbarWeb = () => {
         setDropdownOpen(false);
     };
 
+    const toggleSearch = () => {
+        setSearchOpen(!searchOpen);
+    };
+
     const isMobile = window.innerWidth <= 768;
+
 
     return (
         <div className={`navbar1 ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="logo">
-                <Link to="/" onClick={closeMenu}>
-                    <img src={logo} alt="Vía Óptima Dualab" className="logo-img" />
-                </Link>
+                <Link to="/"><img src={logo} alt="Vía Óptima Dualab" className="logo-img" /></Link>
             </div>
 
-            {/* Menú hamburguesa */}
+            {/* Ícono del menú responsive */}
             <div className="menu-icon" onClick={toggleMenu}>
-                <i className="bi bi-grid-3x3-gap"></i>
+                <i className="bi bi-grid"></i>
             </div>
 
             <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
-                <Link to="/" onClick={closeMenu}>Inicio</Link>
-
+                <Link to="/">Inicio</Link>
                 <div 
                     className="dropdown"
                     onMouseEnter={() => !menuOpen && setDropdownOpen(true)} 
                     onMouseLeave={() => !menuOpen && setDropdownOpen(false)}
                 >
-                    <div className="dropdown-toggle" onClick={() => {
-                        if (isMobile) {
-                            toggleDropdown(); // despliega submenú en móvil
-                        } else {
-                            setDropdownOpen(true); // comportamiento normal en desktop
-                        }
-                    }}>
-                        <Link to="/servicio" onClick={closeMenu}>Servicios</Link>
-                    </div>
+                    <Link
+                        to="/servicio"
+                        className="dropdown-toggle"
+                        onClick={(e) => {
+                            if (isMobile) {
+                                toggleDropdown();   // despliega submenú
+                            } else {
+                                closeMenu(); // comportamiento normal en desktop
+                            }
+                        }}
+                    >
+                        Servicios
+                    </Link>
 
 
                     {(dropdownOpen || menuOpen) && (
@@ -74,13 +83,25 @@ const NavbarWeb = () => {
                         </div>
                     )}
                 </div>
-
-                <Link to="/proyect" onClick={closeMenu}>Proyectos</Link>
-                <Link to="/formacion" onClick={closeMenu}>Formación</Link>
-                <Link to="/recursos" onClick={closeMenu}>Recursos</Link>
-                <Link to="/contact" onClick={closeMenu}>Contáctenos</Link>
-                <Link to="/equipo" onClick={closeMenu}>Equipo</Link>
+                <Link to="/proyect">Proyectos</Link>
+                <Link to="/formacion">Formación</Link>
+                <Link to="/recursos">Recursos</Link>
+                <Link to="/contact">Contáctenos</Link>
+                <Link to="/equipo">Equipo</Link>
+                <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
+                <i className="bi bi-search" onClick={toggleSearch}></i>
             </nav>
+
+            {searchOpen && (
+                <div className="search-bar">
+                    <input
+                        type="text"
+                        placeholder="Busca en este sitio web"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                </div>
+            )}
         </div>
     );
 };

@@ -3,6 +3,7 @@ import NavbarWeb from "./NavbarWeb";
 import '../styles/Recursos.css';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
+import InfoB from './ui/Info';
 
 const Recursos = () => {
     return (
@@ -47,6 +48,7 @@ const Recursos = () => {
 
             <hr className="section-divider" />
             <ArrowUp/>
+            <InfoB/>
             <div>
                 <FooterWeb />
             </div>

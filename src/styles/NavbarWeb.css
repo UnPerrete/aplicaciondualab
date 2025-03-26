@@ -184,7 +184,10 @@
     }
 
     .dropdown-toggle {
-        display: block;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: auto !important;
+        align-items: flex-start;
     }
 
     .logo {

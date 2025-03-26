@@ -3,6 +3,7 @@ import NavbarWeb from "./NavbarWeb";
 import '../styles/Formacion.css';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
+import InfoB from './ui/Info';
 
 const Formacion = () => {
     return (
@@ -140,6 +141,7 @@ const Formacion = () => {
           </div>
         </div>
           <ArrowUp/>
+          <InfoB/>
           <FooterWeb/>
         </div>
       );
