@@ -5,9 +5,9 @@ import { TablaEmpresas } from './components/TablaEmpresas'
 import PrivateRoute from './context/PrivateRoute'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from './components/Signup';
-import Servicios from './components/Servicios'
+import Servicios from './components/Retos'
 import Profile from './components/Profile'
-import SeleccionarServicios from './components/SeleccionarServicio'
+import SeleccionarServicios from './components/SeleccionarRetos'
 import Proyectos from './components/Proyectos'
 import Proyecto from './components/ProyectosCompletados'
 import Contactenos from './components/Contactenos'

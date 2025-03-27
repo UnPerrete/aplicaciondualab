@@ -59,22 +59,8 @@ const NavbarWeb = () => {
                     onMouseEnter={() => setDropdownOpen(true)} 
                     onMouseLeave={() => setDropdownOpen(false)}
                 >
-                    <Link
-                        to="/servicio"
-                        className="dropdown-toggle"
-                        onClick={(e) => {
-                            if (isMobile) {
-                                toggleDropdown();   // despliega submenú
-                            } else {
-                                closeMenu(); // comportamiento normal en desktop
-                            }
-                        }}
-                    >
-                        Servicios
-                    </Link>
-
-
-                    {(dropdownOpen || menuOpen) && (
+                    <Link to="/servicio"><span className="dropdown-toggle">Retos</span></Link>
+                    {dropdownOpen && (
                         <div className="dropdown-menu">
                             <Link to="/centrosfp" onClick={closeMenu}>Centros FP</Link>
                             <Link to="/" onClick={closeMenu}>Empresas</Link>

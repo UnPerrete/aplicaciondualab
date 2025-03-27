@@ -64,13 +64,13 @@ const Servicios = () => {
     </div>
       <h1 className="text-3xl font-bold text-center mb-4"> 
         En esta sección, podrá conocer nuestras principales áreas de
-        especialización y los servicios que ofrecemos en cada una.
+        especialización y los retos que ofrecemos en cada una.
         <br />
         ¡Explore y descubra cómo podemos ayudarle!
       </h1>
 
       <button className="go-button" type="button" onClick={() => navigate("/seleccionar-servicios")}>
-       Seleccionar servicios <i className="bi bi-clipboard"></i> {/* Botón para navegar a la selección de servicios */}
+       Seleccionar retos_<i className="bi bi-clipboard"></i> {/* Botón para navegar a la selección de servicios */}
       </button>
 
       <div className="dropdown-container"> {/* Contenedor del menú desplegable */}
@@ -87,7 +87,7 @@ const Servicios = () => {
             <div className="option" onClick={() => { setGruposVisibles({}); cerrarMenu(); }}>• Colapsar todos los grupos</div>
             <div className="option" onClick={() => { setGruposVisibles(Object.fromEntries(categorias.map(cat => [cat.grupo, true]))); cerrarMenu(); }}>• Expandir todos los grupos</div>
             <div className="option" onClick={toggleModoCompacto}>{modoCompacto ? "• Modo expandido" : "• Modo compacto"}</div>
-            <div className="option" onClick={() => { navigate('/seleccionar-servicios'); cerrarMenu(); }}>• Seleccionar servicios</div>
+            <div className="option" onClick={() => { navigate('/seleccionar-servicios'); cerrarMenu(); }}>• Seleccionar retos</div>
           </div>
         </div>
       </div>

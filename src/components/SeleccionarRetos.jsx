@@ -236,7 +236,7 @@ const SeleccionarServicios = () => {
 
     // Sección de servicios seleccionados
     doc.setFontSize(16);
-    doc.text("• Resumen de Servicios Seleccionados", 20, y);
+    doc.text("• Resumen de Retos Seleccionados", 20, y);
     y += 10;
 
     gruposSeleccionados.forEach((grupo) => {
@@ -270,7 +270,7 @@ const SeleccionarServicios = () => {
           });
 
           if (nuevoServicio[categoria.titulo] && nuevoServicio[categoria.titulo].length > 0) {
-            doc.text('-- Nuevos servicios --', 40, y);
+            doc.text('-- Nuevos retos --', 40, y);
             y += 5;
             nuevoServicio[categoria.titulo].forEach((servicio) => {
               if (parseInt(servicio.cantidad, 10) > 0) {
@@ -383,7 +383,7 @@ const SeleccionarServicios = () => {
 
     // Agregar sección de resumen de servicios seleccionados
     doc.setFontSize(16);
-    doc.text("• Resumen de Servicios Seleccionados", 20, y);
+    doc.text("• Resumen de Retos Seleccionados", 20, y);
     y += 10;
 
     // Iterar sobre los grupos seleccionados
@@ -422,7 +422,7 @@ const SeleccionarServicios = () => {
 
           // Agregar nuevos servicios requeridos
           if (nuevoServicio[categoria.titulo] && nuevoServicio[categoria.titulo].length > 0) {
-            doc.text('-- Nuevos servicios requeridos --', 40, y);
+            doc.text('-- Nuevos retos requeridos --', 40, y);
             y += 5;
             nuevoServicio[categoria.titulo].forEach((servicio) => {
               if (parseInt(servicio.cantidad, 10) > 0) {
@@ -481,7 +481,7 @@ const SeleccionarServicios = () => {
       )}
 
 
-      <h2>Selecciona los servicios que deseas</h2> {/* Título de la sección de selección de servicios */}
+      <h2>Selecciona los retos que deseas</h2> {/* Título de la sección de selección de servicios */}
       
         <label htmlFor="grupo">➤ Seleccione uno o más grupos:</label>
         <select id="grupo" multiple value={gruposSeleccionados} onChange={handleGrupoChange}> {/* Selector de grupos */}
@@ -509,7 +509,7 @@ const SeleccionarServicios = () => {
         )}
         {titulosSeleccionados.length > 0 && (
           <div>
-            <h3>➤ Seleccione los servicios y la cantidad de personas:</h3> {/* Subtítulo */}
+            <h3>➤ Seleccione los retos y la cantidad de personas:</h3> {/* Subtítulo */}
             {gruposSeleccionados.map((grupo) => (
               <div key={grupo}>
                 <hr />
@@ -550,7 +550,7 @@ const SeleccionarServicios = () => {
                         <button type="button" onClick={() => setInputsNuevosServicios((prev) => ({
                           ...prev,
                           [categoria.titulo]: [...(prev[categoria.titulo] || []), '']
-                        }))}>+ Nuevo servicio +</button>
+                        }))}>+ Nuevo reto +</button>
                       </div>
                     </div>
                   ))}
@@ -562,7 +562,7 @@ const SeleccionarServicios = () => {
         {/* <button className="confirm" type="button" onClick={handleGeneratePDF}>Descargar PDF</button> Botón para generar PDF */}
         <button className="confirm" type="submit">Confirmar (enviar a BD) y Descargar PDF</button> {/* Botón para enviar datos a la BD generar PDF */}
         <button className="preview" type="button" onClick={previewPDF}>Vista previa del PDF</button> {/* Botón para previsualizar PDF */}
-        <button type="button" onClick={() => navigate("/servicio")} className="back-button">Volver a Servicios</button> {/* Botón para volver a la página de servicios */}
+        <button type="button" onClick={() => navigate("/servicio")} className="back-button">Volver a Retos</button> {/* Botón para volver a la página de servicios */}
       </form>
       <InfoB/>
     </div>
