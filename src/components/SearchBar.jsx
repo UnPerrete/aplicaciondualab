@@ -15,7 +15,7 @@ export default function SearchBar( {onSearch} ) {
   return (
     <div>
         <label htmlFor="search" className="busqueda">Búsqueda:</label>
-        <input type="text" onChange={handleSearch} className="search-bar" placeholder='Buscar'/>
+        <input type="text" onChange={handleSearch} className="searchbar" placeholder='Buscar'/>
     </div>
   )
 }

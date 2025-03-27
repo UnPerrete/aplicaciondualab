@@ -50,7 +50,7 @@
 .nav-icons-inline {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
 }
 
 .search-bar {
