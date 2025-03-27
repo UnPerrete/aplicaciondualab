@@ -297,7 +297,7 @@ const SeleccionarServicios = () => {
         doc.setFontSize(10);
         doc.text("• Contacto:", 15, footerY + 10);
         doc.text("Correo: viaoptimadualab@gmail.com", 20, footerY + 15);
-        doc.text("Tel: +34 691 01 19 93", 20, footerY + 20);
+        doc.text("Tel: +34 659 02 16 03", 20, footerY + 20);
         doc.text("• Dirección:", 115, footerY + 10);
         doc.text("Calle Sao Paulo, 6. Las Palmas de Gran Canaria", 120, footerY + 15);
         doc.text("País: España", 120, footerY + 20);
@@ -449,7 +449,7 @@ const SeleccionarServicios = () => {
         doc.setFontSize(10);
         doc.text("• Contacto:", 15, footerY + 10);
         doc.text("Correo: viaoptimadualab@gmail.com", 20, footerY + 15);
-        doc.text("Tel: +34 691 01 19 93", 20, footerY + 20);
+        doc.text("Tel: +34 659 02 16 03", 20, footerY + 20);
         doc.text("• Dirección:", 115, footerY + 10);
         doc.text("Calle Sao Paulo, 6. Las Palmas de Gran Canaria", 120, footerY + 15);
         doc.text("País: España", 120, footerY + 20);
