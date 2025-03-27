@@ -1,0 +1,69 @@
+{
+    "centrosFP": [
+      {
+        "nombre": "CIFP Cruz de Piedra",
+        "descripcion": "Centro con oferta educativa en comercio, marketing, administración, informática y telecomunicaciones.",
+        "ubicacion": "Crta, Carr. del Nte., 40, Km 2، 35013 Las Palmas de Gran Canaria, Las Palmas",
+        "tipo": "Centro Integrado de FP",
+        "paginaWeb": "http://www.cifpcruzdepiedra.org/",
+        "imagen":"https://yt3.googleusercontent.com/Yz0T5ny6Mw53leh1MFZ-UbCQdQSXzVlUv9EQT_sP1vSoXjS70dlhZCa8VvUYVt3K54y0oDXDwPY=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "nombre": "IES Politécnico Las Palmas",
+        "descripcion": "Ofrece ciclos formativos en áreas técnicas y tecnológicas, incluyendo fabricación mecánica y electricidad.",
+        "ubicacion": "C. Canalejas, 43, 35003 Las Palmas de Gran Canaria, Las Palmas",
+        "tipo": "Instituto",
+        "paginaWeb": "https://www3.gobiernodecanarias.org/medusa/edublog/iespolitecnicolaspalmas/",
+        "imagen":"https://pbs.twimg.com/media/GmFEwDMWUAEU0vw.jpg"
+      },
+      {
+        "nombre": "IES El Rincón",
+        "descripcion": "Centro público que ofrece ciclos formativos en informática y telecomunicaciones, administración y gestión, entre otros.",
+        "ubicacion": "Industrial José Sánchez Peñate, s/n, 35001 Las Palmas de Gran Canaria, Las Palmas",
+        "tipo": "Instituto",
+        "paginaWeb": "http://www.ieselrincon.org/",
+        "imagen":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWjP-5-AjiwguH_PcdhRZL1dUBCMnhcfm4rg&s"
+      },
+      {
+        "nombre": "Radio Ecca",
+        "descripcion": "Institución educativa que ofrece formación a distancia en diversas áreas, incluyendo Educación Básica, Secundaria, Bachillerato y ciclos formativos de grado superior.",
+        "ubicacion": "Av Escaleritas, 51, 35011 Las Palmas de Gran Canaria, Canarias",
+        "tipo": "Institución educativa",
+        "paginaWeb": "https://ecca.edu.es/",
+        "imagen":"https://static.mytuner.mobi/media/tvos_radios/d6jfgjf6dsdq.jpg"
+      },
+      {
+        "nombre": "Instituto Focan",
+        "descripcion": "Centro de formación que ofrece cursos para personas desempleadas y ocupadas, ciclos de FP Dual a distancia y preparación para exámenes oficiales.",
+        "ubicacion": "Calle Bravo Murillo, Las Palmas de Gran Canaria, Canarias",
+        "tipo": "Centro de formación",
+        "paginaWeb": "https://focan.es/",
+        "imagen":"https://focan.es/wp-content/uploads/LOGO_FOCAN-vertical-1.jpg"
+      },
+      {
+        "nombre": "Centro Internacional Politécnico",
+        "descripcion": "Ofrece ciclos formativos de grado medio y superior en modalidad semipresencial, homologados por la Consejería de Educación del Gobierno de Canarias.",
+        "ubicacion": "Calle Miguel de Cervantes, 2, Las Palmas, Canarias",
+        "tipo": "Centro de estudiantes",
+        "paginaWeb": "http://www.formacioncip.com/",
+        "imagen":"https://formacioncip.com/wp-content/uploads/2021/03/logo-retina.png"
+      },
+      {
+        "nombre": "CIFP Villa de Agüimes",
+        "descripcion": "Centro especializado en formación profesional con ciclos de grado medio y superior en diversas áreas.",
+        "ubicacion": "Polígono Residencial de Arinaga, C. Alcorac, 50, 35118 Agüimes, Las Palmas",
+        "tipo": "Centro Integrado de FP",
+        "paginaWeb": "http://cifpvilladeaguimes.es/",
+        "imagen":"https://www3.gobiernodecanarias.org/medusa/edublog/cifpvilladeaguimes/wp-content/uploads/sites/706/2024/01/cropped-logovilla250-300x300.png"
+      },
+      {
+        "nombre": "IES Faro de Maspalomas",
+        "descripcion": "Ofrece formación en servicios socioculturales, turismo y hostelería, entre otras áreas.",
+        "ubicacion": "C. Secundino Delgado, 4, 35100 Maspalomas, Las Palmas",
+        "tipo": "Instituto",
+        "paginaWeb": "https://www3.gobiernodecanarias.org/medusa/edublog/iesfarodemaspalomas/",
+        "imagen":"https://static.eldiario.es/clip/e2fd1713-8b5d-4ac8-81c8-890b9123ea30_16-9-discover-aspect-ratio_default_0.webp"
+      }
+    ]
+  }
+  
