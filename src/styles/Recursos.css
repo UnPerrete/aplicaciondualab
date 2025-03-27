@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -110px;
+    margin-left: -20px;
     margin-top: 70px; /* Para que el banner se vea bien debajo de la navbar fija */
 }
 
