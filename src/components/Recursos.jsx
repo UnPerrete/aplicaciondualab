@@ -1,11 +1,42 @@
 import React, { useEffect, useState } from 'react';
+import { Card, CardContent } from './ui/card';
 import NavbarWeb from "./NavbarWeb";
 import '../styles/Recursos.css';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
+import { Link } from 'react-router-dom';
 
 const Recursos = () => {
+
+    const [projects, setProjects] = useState([]);
+    const [companies, setCompanies] = useState([]);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const response = await fetch("http://localhost:5000/api/listFinishedProjects");
+                const data = await response.json();
+                setProjects(data);
+            } catch (error) {
+                console.error("Error fetching projects:", error);
+            }
+        };
+
+        const fetchCompanies = async () => {
+            try {
+                const response = await fetch("http://localhost:5000/api/data");
+                const data = await response.json();
+                setCompanies(data);
+            } catch (error) {
+                console.error("Error fetching companies:", error);
+            }
+        };
+
+        fetchProjects();
+        fetchCompanies();
+    }, []);
+
     return (
         <div>
             <NavbarWeb />
@@ -19,40 +50,78 @@ const Recursos = () => {
             {/* Nuevo Apartado */}
             <div className="section-text">
                 <h1>Creación de Entornos de Aprendizaje</h1>
-                <p>Creemos entornos y experiencias de aprendizaje contemporáneos para apoyar el aprendizaje, el crecimiento y la innovación para las intervenciones para lograr objetivos y comprensión para los desafíos futuros.</p>
+                <p>Creemos entornos y experiencias de aprendizaje contemporáneos para apoyar el aprendizaje, el crecimiento y la innovación para las intervenciones futuras.</p>
             </div>
 
-            {/* Sección Guías */}
             <div className="section-container">
-                <div className="section-image">
-                    {/* <img src={GuiaImage} alt="Guías" /> */}
-                    <h1>GUÍAS</h1>
-                </div>
+                <h1>GUÍAS</h1>
                 <div className="section-text">
                     <h3>Máquina SPML</h3>
-                    <p>La Máquina SPML (Simple Personal Mini Lab o Six Pack Mobile Lab) es una máquina portátil de código abierto diseñada por Fab Lab Barcelona. Este dispositivo multi-herramienta permite realizar tareas durante el confinamiento por COVID-19 con un costo aproximado de 60 €. Inspirado en mini máquinas CNC creadas a partir de reproductores de DVD reciclados.</p>
+                    <p>Máquina portátil de código abierto para tareas múltiples, inspirada en mini máquinas CNC.</p>
+                    <Link to="/descargar/spml">Descargar Guía</Link>
                 </div>
             </div>
 
-            {/* Sección Manuales */}
             <div className="section-container">
-                <div className="section-image">
-                    {/* <img src={ManualImage} alt="Manuales" /> */}
-                    <h1>MANUALES</h1>
-                </div>
+                <h1>MANUALES</h1>
                 <div className="section-text">
-                    <h3>Detección Ciudadana: Un Conjunto de Herramientas</h3>
-                    <p>Estas herramientas permiten a las comunidades locales usar hardware y software de código abierto para crear tecnología que aborde problemas ambientales relacionados con aire, agua, suelo y contaminación acústica. Desarrolladas para fomentar la innovación desde la base, utilizando recursos accesibles y sostenibles.</p>
+                    <h3>Detección Ciudadana</h3>
+                    <p>Herramientas para crear tecnología que aborde problemas ambientales utilizando recursos accesibles y sostenibles.</p>
+                    <Link to="/descargar/deteccion">Descargar Manual</Link>
                 </div>
             </div>
 
-            <hr className="section-divider" />
+            <div className="section-container">
+                <h1>PROYECTOS COMPLETADOS</h1>
+                <div className="card-gridd" style={{ maxWidth: '1600px', margin: 'auto' }}>
+                    {projects.length > 0 ? (
+                        projects.map((project, index) => (
+                            <Card key={index} className="cardd">
+                                <img src={project.imagen || ""} alt={project.nombre} className="cardd-img" />
+                                <CardContent>
+                                    <h3>{project.nombre}</h3>
+                                    <p>{project.descripcion}</p>
+                                </CardContent>
+                            </Card>
+                        ))
+                    ) : (
+                        <p>No hay proyectos disponibles.</p>
+                    )}
+                </div>
+            </div>
+
+            <div className="section-container">
+                <h1>BASES DE DATOS DE EMPRESAS</h1>
+                {companies.length > 0 ? (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre Comercial</th>
+                                <th>Sector</th>
+                                <th>Actividad</th>
+                                <th>Municipio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {companies.slice(0, 5).map((company) => (
+                                <tr key={company.ID}>
+                                    <td>{company.NombreComercial}</td>
+                                    <td>{company.Sector}</td>
+                                    <td>{company.Actividad}</td>
+                                    <td>{company.Municipio}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No hay datos disponibles.</p>
+                )}
+                <Link to="/tablaempresa">Ver todas las empresas</Link>
+            </div>
+
             <ArrowUp/>
             <InfoB/>
-            <div>
-                <FooterWeb />
-            </div>
-            
+            <FooterWeb />
         </div>
     );
 };
