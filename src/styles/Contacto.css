@@ -136,7 +136,7 @@
 
     .form-group2 input, 
     .form-group2 textarea {
-        width: 75%; /* Ocupa todo el ancho disponible */
+        width: 80%; /* Ocupa todo el ancho disponible */
         max-width: 100%; /* Se ajusta perfectamente a pantallas pequeñas */
     }
 
