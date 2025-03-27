@@ -5,7 +5,7 @@
   
   .profile-container {
     background-color: white;
-    width: 90%; /* Asegura que ocupe todo el ancho disponible */
+    width: 80%; /* Asegura que ocupe todo el ancho disponible */
     max-width: 1200px; /* Limita el ancho máximo a 1200px */
     margin: 0 auto; /* Centra el contenedor */
     padding: 0 10%; /* Añade relleno a los lados para que el contenido se expanda */
@@ -46,14 +46,15 @@
   .profile-actions {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 40px;
+    margin-top: 10px;
   }
   
   .profile-actions button {
     padding: 14px 28px;
     font-size: 1rem;
     background-color: #4CAF50;
+    width: 180px;
     color: white;
     border: none;
     border-radius: 6px;
@@ -64,5 +65,56 @@
   .profile-actions button:hover {
     background-color: #45a049;
   }
+
+  /* Responsive Profile.css */
+
+@media screen and (max-width: 768px) {
+
+  .profile-container {
+      width: 95%;
+      padding: 15px;
+      margin-top: 80px; /* ajuste para navbar responsive */
+  }
+
+  .profile-container h2 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+  }
+
+  .profile-info {
+      grid-template-columns: 1fr; /* Todos los campos en una sola columna */
+      gap: 10px;
+      font-size: 1rem;
+  }
+
+  .profile-info label, 
+  .profile-info p {
+      width: 100%;
+      text-align: left;
+  }
+
+  .profile-info input,
+  .profile-info textarea,
+  .profile-info select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      font-size: 1rem;
+  }
+
+  .profile-actions {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      margin-top: -30px;
+  }
+
+  .profile-actions button {
+      width: 90%;
+      padding: 10px;
+      font-size: 1rem;
+  }
+}
+
   
   
