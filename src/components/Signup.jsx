@@ -1,156 +1,112 @@
 import React, { useState } from 'react';
-import CryptoJS from "crypto-js"; // Librería para encriptar la contraseña
-import { Link } from "react-router-dom"; // Para la navegación entre páginas
-import { useNavigate } from "react-router-dom"; // Para redireccionar al usuario después del registro
-import { useAuth } from '../context/AuthProvider'; // Hook para manejar la autenticación
-import "../styles/Signup.css"; // Estilos para el formulario de registro
+import CryptoJS from "crypto-js";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from '../context/AuthProvider';
+import "../styles/Signup.css";
 
 export default function Signup() {
-  // Estado local para manejar los datos del formulario, con "Profesor" como valor predeterminado para el rol
-  const [formData, setFormData] = useState({'role': 'Profesor'}); 
-  const [err, setErr] = useState(null); // Estado para manejar errores en el formulario
-  const [rol, setRol] = useState('Profesor'); // Estado para manejar rol
-  const { login } = useAuth(); // Método para manejar el inicio de sesión después del registro
-  const navigate = useNavigate(); // Hook de React Router para redirigir a otras páginas
+  const [formData, setFormData] = useState({ role: 'Profesor' });
+  const [err, setErr] = useState(null);
+  const [rol, setRol] = useState('Profesor');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-  // Maneja los cambios en los campos del formulario
   const handleChange = (e) => {
-      let value = e.target.value;
-      // Si el campo es de tipo "password", se encripta usando MD5
-      if (e.target.type === "password") {
-          value = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
-      }
-      setFormData({ ...formData, [e.target.name]: value }); // Se actualiza el estado con los nuevos valores
+    let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
-    const handleChangeRole = (e) => {
-        setRol(e.target.value);
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+  const handleChangeRole = (e) => {
+    setRol(e.target.value);
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-
-  // Maneja el envío del formulario
   const handleSubmit = async (e) => {
-      e.preventDefault(); // Evita el comportamiento predeterminado del formulario
-      try {
-          const response = await fetch("http://localhost:5000/api/addUser", { // Se envían los datos al backend
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formData) // Se convierten los datos a JSON antes de enviarlos
-          });
-          const data = await response.json(); // Se obtiene la respuesta del servidor
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/api/addUser", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+      const data = await response.json();
 
-          if (data.success) { // Si el registro fue exitoso
-              login(); // Se inicia sesión automáticamente
-              navigate(`/`); // Se redirige a la página de inicio de sesión
-          } else {
-              // Manejo de errores específicos según el código de error recibido
-              switch (data.error) {
-                  case 1062:
-                      setErr("Este NIF ya ha sido registrado"); // Error de duplicado (NIF ya existente)
-                      break;
-                  case 1048:
-                      setErr("Complete todos los campos"); // Error por campos vacíos
-                      break;
-                  case 79:
-                      setErr("Las contraseñas no coinciden"); // Error si las contraseñas no son iguales
-                      break;
-                  default:
-                      setErr("Error desconocido"); // Si el error no está identificado
-              }
-          }
-      } catch (err) {
-          setErr(err.message); // Si ocurre un error de conexión o inesperado
+      if (data.success) {
+        login();
+        navigate(`/login`);
+      } else {
+        const errors = {
+          1062: "Este NIF ya ha sido registrado",
+          1048: "Complete todos los campos",
+          79: "Las contraseñas no coinciden"
+        };
+        setErr(errors[data.error] || "Error desconocido");
       }
+    } catch (err) {
+      setErr(err.message);
+    }
   };
 
   return (
-      <div className='signup-container'>
-          <form className="user-form" onSubmit={handleSubmit}> 
-              <h2>Sign Up</h2>
-              <p style={{ color: "red" }}>{err}</p> {/* Muestra los errores en pantalla si existen */}
+    <div className='signup-container'>
+      <form className="user-form" onSubmit={handleSubmit}> 
+        <h2>Registro de Usuario</h2>
 
-              {/* Campos del formulario */}
-              <div className="form-group">
-                  <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="date" name="nacimiento" placeholder="Fecha de Nacimiento" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="email" name="gmail" placeholder="Gmail" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="tel" name="telefono" placeholder="Telefono" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="text" name="poblacion" placeholder="Población" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="text" name="zona" placeholder="Zona" onChange={handleChange} required />
-              </div>
+        <p className="error-message">{err}</p>
+    <div className="form-cuadro">
+        <fieldset>
+          <legend>Datos Personales</legend>
+          <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} required />
+          <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />
+          <input type="date" name="nacimiento" placeholder="Fecha de Nacimiento" onChange={handleChange} required />
+          <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
+        </fieldset>
 
-              {/* Contraseñas (se encriptan antes de enviarse) */}
-              <div className="form-group">
-                  <input type="password" name="pass" placeholder="Nueva Contraseña" onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                  <input type="password" name="confirmpass" placeholder="Confirmar Contraseña" onChange={handleChange} required />
-              </div>
+        <fieldset>
+          <legend>Contacto</legend>
+          <input type="email" name="gmail" placeholder="Email" onChange={handleChange} required />
+          <input type="tel" name="telefono" placeholder="Teléfono" onChange={handleChange} required />
+          <input type="text" name="poblacion" placeholder="Población" onChange={handleChange} required />
+          <input type="text" name="zona" placeholder="Zona" onChange={handleChange} required />
+        </fieldset>
 
-            {/* Campos condicionales según el rol */}
-            {rol === "Alumno" && (
-                <div className="form-group">
-                    <label>Profesor a cargo:</label>
-                    <input
-                        type="number"
-                        name="profesor_id"
-                        placeholder="ID del profesor"
-                        onChange={(e) =>
-                            setFormData({ ...formData, profesor_id: e.target.value })
-                        }
-                    />
-                </div>
-            )}
+        <fieldset>
+          <legend>Seguridad</legend>
+          <input type="password" name="pass" placeholder="Nueva Contraseña" onChange={handleChange} required />
+          <input type="password" name="confirmpass" placeholder="Confirmar Contraseña" onChange={handleChange} required />
+        </fieldset>
 
-            {rol === "Profesor" && (
-                <div className="form-group">
-                    <label>Instituto:</label>
-                    <input
-                        type="text"
-                        name="instituto"
-                        placeholder="Nombre del instituto"
-                        onChange={(e) =>
-                            setFormData({ ...formData, instituto: e.target.value })
-                        }
-                    />
-                </div>
-            )}
+        {rol === "Alumno" && (
+          <fieldset>
+            <legend>Información del Alumno</legend>
+            <input type="number" name="profesor_id" placeholder="ID del profesor" onChange={handleChange} required />
+          </fieldset>
+        )}
 
+        {rol === "Profesor" && (
+          <fieldset>
+            <legend>Información del Profesor</legend>
+            <input type="text" name="instituto" placeholder="Nombre del instituto" onChange={handleChange} required />
+          </fieldset>
+        )}
 
-              {/* Selección de rol */}
-              <div className="form-group">
-                  <select name="role" onChange={handleChangeRole}>
-                      <option value="Profesor">Profesor</option>
-                      <option value="Alumno">Alumno</option>
-                      <option value="Empresa">Empresa</option>
-                  </select>
-              </div>
+        <fieldset>
+          <legend>Rol</legend>
+          <select name="role" onChange={handleChangeRole} className="select-rol">
+            <option value="Profesor">Profesor</option>
+            <option value="Alumno">Alumno</option>
+            <option value="Empresa">Empresa</option>
+          </select>
+        </fieldset>
+    </div>
 
-              <button type="submit">Añadir Usuario</button> {/* Botón para enviar el formulario */}
-          </form>
+      <button type="submit" className="registro-button">Registrar Usuario</button>
+    </form>
 
-          {/* Enlace a la página de inicio de sesión si el usuario ya tiene cuenta */}
-          <p>
-              ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
-          </p>
-      </div>
+    <p className="login-link">
+      ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
+    </p>
+  </div>
   );
 }
 

@@ -1,70 +1,144 @@
-/* Contenedor del formulario */
+.form-cuadro {
+  background-color: white;
+  border-radius: 20px;
+  max-width: 450px;
+  margin: auto;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
 .signup-container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .signup-container form {
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
 }
 
-/* Título */
-.signup-container h2 {
-  grid-column: span 2;
-  margin-bottom: 15px;
-  color: #333;
-  text-align: center;
+.signup-container fieldset {
+  grid-column: span 1;
+  border: 2px solid #1e902c;
+  width: 94%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-/* Campos de entrada */
+.signup-container legend {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
 .signup-container input,
 .signup-container select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.signup-container input {
-  margin: 8px 0;
-}
-
-.signup-container select {
-  margin: 8px 0;
-}
-
-/* Botón */
-.signup-container button {
-  grid-column: span 2;
-  padding: 10px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;
+  width: 90%;
+  padding: 8px;
+  border: 2px solid #1e902c;
   border-radius: 5px;
 }
 
-.signup-container button:hover {
-  background-color: #0056b3;
-}
-
-/* Mensaje de error */
-.signup-container p {
-  grid-column: span 2;
-  color: red;
-  margin-top: 10px;
-  font-size: 14px;
+.signup-container .error-message {
+  color: #ff4d4d;
+  font-weight: bold;
   text-align: center;
+}
+
+.signup-container .login-link {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.signup-container .login-link a {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-container .login-link a:hover {
+  text-decoration: underline;
+}
+
+.select-rol {
+  border: 2px solid #1e902c;
+  border-radius: 5px;
+}
+
+.registro-button {
+  background-color: #1e902c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.registro-button:hover {
+  background-color: #176c21;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 400px) {
+  .form-cuadro {
+    width: 95%;
+    padding: 10px;
+    margin: 0 auto; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+  }
+
+  .signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .signup-container fieldset {
+    padding: 8px;
+    width: 90%; 
+    margin: 0 auto; 
+    border-radius: 8px; 
+  }
+
+  .signup-container legend {
+    font-size: 12px; 
+    padding: 0 5px;
+  }
+
+  .signup-container input,
+  .signup-container select {
+    width: 90%; 
+    padding: 6px; 
+    font-size: 12px; 
+    margin-bottom: 8px; 
+  }
+
+  .registro-button {
+    padding: 8px;
+    font-size: 13px;
+    width: 100%; 
+    margin-top: 10px; 
+  }
+
+  .signup-container .login-link {
+    font-size: 12px; 
+    margin-top: 10px; 
+    text-align: center;
+  }
+
+  .signup-container .login-link a {
+    font-size: 12px; 
+  }
 }
