@@ -126,7 +126,7 @@ const Servicios = () => {
                     className="mt-2 text-blue-500 flex items-center justify-center"
                     onClick={() => toggleDesplegable(categoria.titulo)} // Alterna la visibilidad de los servicios
                   >
-                    {desplegados.includes(categoria.titulo) ? "Servicios ▴" : "Servicios ▾"}
+                    {desplegados.includes(categoria.titulo) ? "Retos ▴" : "Retos ▾"}
                   </button>
                   {desplegados.includes(categoria.titulo) && (
                     <ul className="mt-2 text-gray-700 text-left mx-auto w-4/5">

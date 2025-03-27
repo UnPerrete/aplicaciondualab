@@ -494,6 +494,130 @@
       "Sostenibilidad en la industria vidriera y cerámica",
       "Comercialización de productos cerámicos y de vidrio"
     ]
+  },
+  {
+    "titulo": "Administración de Sistemas Operativos ([ADD])",
+    "grupo": "Tecnología y Comunicación",
+    "imagen": "../src/assets/add.png",
+    "descripcion":
+    "La FP de Administración de Sistemas Operativos (ASO) forma profesionales capaces de instalar, configurar, administrar y mantener sistemas operativos y redes, asegurando su funcionamiento, seguridad y eficiencia en entornos empresariales.",
+    "servicios": [
+      "Instalación y configuración de sistemas operativos como Windows Server y distribuciones de Linux (Ubuntu, CentOS, Debian).",
+      "Creación y gestión de cuentas de usuario, permisos y políticas de seguridad.",
+      "Configuración de almacenamiento y gestión de discos duros, particiones y sistemas de archivos.",
+      "Automatización de tareas mediante scripts en PowerShell o Bash.",
+      "Supervisión y mantenimiento del rendimiento del sistema mediante herramientas de monitoreo."
+    ]
+  },
+  {
+    "titulo": "Servicios de Red e Internet ([SRD])",
+    "grupo": "Tecnología y Comunicación",
+    "imagen": "../src/assets/srd.png",
+    "descripcion":
+    "La FP de Servicios de Red e Internet (SRD) se centra en configurar, administrar y mantener redes informáticas y servicios de Internet, garantizando su funcionamiento seguro y eficiente.",
+    "servicios": [
+      "Diseño, instalación y administración de redes LAN y WAN.",
+      "Configuración de routers, switches y firewalls para garantizar la conectividad y seguridad.",
+      "Implementación y mantenimiento de servicios de red como DNS, DHCP, FTP y correo electrónico.",
+      "Gestión de acceso remoto mediante VPN y SSH.",
+      "Supervisión del tráfico de red para detectar y prevenir ataques cibernéticos."
+    ]
+  },
+  {
+    "titulo": "Implantación de Aplicaciones Web ([IMW])",
+    "grupo": "Tecnología y Comunicación",
+    "imagen": "../src/assets/imw.png",
+    "descripcion":
+    "La FP de Implantación de Aplicaciones Web (IMW) se centra en desarrollar, implementar y mantener aplicaciones web, abarcando programación, diseño, gestión de bases de datos y tecnologías web modernas.",
+    "servicios": [
+      "Instalación y configuración de servidores web como Apache, Nginx o IIS.",
+      "Despliegue de aplicaciones web en entornos locales y en la nube.",
+      "Configuración y mantenimiento de bases de datos para aplicaciones web.",
+      "Optimización del rendimiento y seguridad de las aplicaciones.",
+      "Implementación de certificados SSL y configuraciones de HTTPS."
+    ]
+  },
+  {
+    "titulo": "Administración de Bases de Datos ([ADE])",
+    "grupo": "Tecnología y Comunicación",
+    "imagen": "../src/assets/ade.png",
+    "descripcion":
+    "La FP de Administración de Bases de Datos (ADE) forma profesionales capaces de diseñar, implementar, gestionar y mantener sistemas de bases de datos, garantizando su seguridad, integridad y disponibilidad.",
+    "servicios": [
+      "Creación, mantenimiento y optimización de bases de datos relacionales (MySQL, PostgreSQL, SQL Server).",
+      "Diseño de esquemas y normalización de bases de datos.",
+      "Administración de permisos y seguridad en bases de datos.",
+      "Implementación de copias de seguridad y restauración de bases de datos.",
+      "Optimización de consultas SQL para mejorar el rendimiento de las aplicaciones."
+    ]
+  },
+  {
+    "titulo": "Seguridad y Alta Disponibilidad ([SGY])",
+    "grupo": "Tecnología y Comunicación",
+    "imagen": "../src/assets/sgy.png",
+    "descripcion":
+    "La FP de Seguridad y Alta Disponibilidad ([SGY]) forma profesionales en la protección de sistemas informáticos, redes y datos, garantizando su disponibilidad, integridad y confidencialidad mediante técnicas avanzadas de ciberseguridad y mantenimiento de infraestructuras críticas.",
+    "servicios": [
+      "Implementación de sistemas de seguridad como firewalls, antivirus y VPN.",
+      "Monitorización de logs y detección de intrusos (IDS/IPS).",
+      "Configuración de mecanismos de alta disponibilidad como clústeres y balanceadores de carga.",
+      "Aplicación de políticas de backup y recuperación ante desastres.",
+      "Auditoría y análisis de vulnerabilidades en sistemas y redes."
+    ]
+  },
+  {
+    "titulo": "Empresa e Iniciativa Emprendedora ([EMR])",
+    "grupo": "Administración, Comercio y Marketing",
+    "imagen": "../src/assets/emr.png",
+    "descripcion":
+    "La FP de Empresa e Iniciativa Emprendedora (EMR) enseña habilidades para crear y gestionar empresas, incluyendo planificación, financiamiento, marketing, viabilidad económica y aspectos legales, fomentando la iniciativa emprendedora.",
+    "servicios": [
+      "Planificación y gestión de proyectos en el sector tecnológico.",
+      "Desarrollo de planes de negocio en informática.",
+      "Evaluación de costes, rentabilidad y viabilidad de proyectos IT.",
+      "Conocimientos de normativas y aspectos legales relacionados con el sector informático.",
+      "Estrategias de marketing y comercialización de productos tecnológicos."
+    ]
+  },
+  {
+    "titulo": "Proyecto de Administración de Sistemas Informáticos en Red ([PMR])",
+    "grupo": "Tecnología y Comunicación",
+    "imagen": "../src/assets/pmr.jpg",
+    "descripcion":
+    "La FP de Proyecto de Administración de Sistemas Informáticos en Red (PMR) forma a profesionales en la instalación, configuración y gestión de sistemas informáticos en red, garantizando su funcionamiento, seguridad y rendimiento en entornos empresariales.",
+    "servicios": [
+      "Desarrollo y documentación de un proyecto técnico aplicando conocimientos adquiridos.",
+      "Implementación de soluciones reales en entornos empresariales.",
+      "Integración de distintas tecnologías en un único proyecto.",
+      "Elaboración de informes técnicos y presentación de resultados."
+    ]
+  },
+  {
+    "titulo": "Formación en Centros de Trabajo ([FCT])",
+    "grupo": "Formación en Centros de Trabajo",
+    "imagen": "../src/assets/centros.png",
+    "descripcion":
+    "La Formación en Centros de Trabajo (FCT) es un módulo obligatorio de prácticas profesionales no laborales que se realiza en empresas, permitiendo al alumnado aplicar y complementar los conocimientos adquiridos en su formación teórica y práctica.",
+    "servicios": [
+      "Aplicación de conocimientos en un entorno real mediante prácticas en empresas.",
+      "Gestión de infraestructuras informáticas empresariales.",
+      "Resolución de incidencias técnicas y soporte a usuarios.",
+      "Trabajo en equipo dentro de departamentos de IT.",
+      "Implementación de mejoras en la infraestructura tecnológica de la empresa."
+    ]
+  },
+  {
+    "titulo": "Idioma Extranjero (inglés) ([IDK])", 
+    "grupo": "Idiomas", 
+    "imagen": "../src/assets/Ingles.png",
+    "descripcion": 
+    "La FP de Idioma Extranjero (Inglés) [IDK] se enfoca en desarrollar habilidades avanzadas de comprensión, expresión oral y escrita en inglés, orientadas al ámbito profesional y académico.",
+    "servicios":[
+      "Lectura y comprensión de manuales y documentación técnica en inglés.",
+      "Comunicación en inglés en reuniones y entornos de trabajo internacionales.",
+      "Redacción de informes y correos electrónicos en inglés.",
+      "Presentación de proyectos y propuestas en inglés."
+    ]
   }
 
 

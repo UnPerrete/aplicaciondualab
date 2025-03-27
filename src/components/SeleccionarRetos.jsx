@@ -309,11 +309,11 @@ const SeleccionarServicios = () => {
 
     // Guardar el PDF con el nombre correspondiente
     if (tipoSolicitante === "Profesor") {
-      doc.save("Servicios_Seleccionados_" + user.nombre + ".pdf");
+      doc.save("Retos_Seleccionados_" + user.nombre + ".pdf");
     } else if ((tipoSolicitante === "empresa")) {
-      doc.save("Servicios_Seleccionados_" + user.nombrecomercial + ".pdf");
+      doc.save("Retos_Seleccionados_" + user.nombrecomercial + ".pdf");
     } else {
-      doc.save("Servicios_Seleccionados_" + formData.nombreProfesional + ".pdf");
+      doc.save("Retos_Seleccionados_" + formData.nombreProfesional + ".pdf");
     }
   };
 
