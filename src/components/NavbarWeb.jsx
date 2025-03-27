@@ -39,8 +39,6 @@ const NavbarWeb = () => {
         setSearchOpen(!searchOpen);
     };
 
-    const isMobile = window.innerWidth <= 768;
-
     return (
         <div className={`navbar1 ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="logo">
@@ -76,20 +74,19 @@ const NavbarWeb = () => {
                 <span className="nav-icons-inline">
                     <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
                     <i className="bi bi-search" onClick={toggleSearch}></i>
+                    {searchOpen && (
+            <div className="search-bar">
+                <input
+                    type="text"
+                    placeholder="Busca en este sitio web"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </div>
+        )}
                 </span>
 
             </nav>
-
-            {searchOpen && (
-                <div className="search-bar">
-                    <input
-                        type="text"
-                        placeholder="Busca en este sitio web"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                </div>
-            )}
         </div>
     );
 };

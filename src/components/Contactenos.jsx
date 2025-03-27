@@ -3,6 +3,7 @@ import '../styles/Contacto.css';
 import NavbarWeb from "./NavbarWeb";
 import FooterWeb from './FooterWeb';
 import InfoB from './ui/Info';
+import ArrowUp from "./ui/ArrowUp";
 
 const Contactenos = () => {
     return (
@@ -52,6 +53,7 @@ const Contactenos = () => {
             </div>
         </div>
         <InfoB/>
+        <ArrowUp/>
         {/* Footer */}
         <FooterWeb/>
        </div> 
