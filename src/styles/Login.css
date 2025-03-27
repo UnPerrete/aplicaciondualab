@@ -1,96 +1,164 @@
-  /* Contenedor del formulario */
+.login-container {
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto; /* Centra horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centra verticalmente */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Título */
+.login-container h2 {
+  color: #495057;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Inputs y select */
+.login-container input,
+.login-container select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #1e902c;
+  background-color: transparent;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus,
+.login-container select:focus {
+  border-color: #495057;
+  outline: none;
+  box-shadow: 0 0 8px rgba(73, 80, 87, 0.3); /* Sombra suave */
+}
+
+/* Contenedor de la contraseña */
+.password-container {
+  position: relative;
+  width: 85%;
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido dentro del contenedor */
+}
+
+/* Icono del ojo */
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* Botón de inicio de sesión */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-container button:hover {
+  background-color: #218838;
+  transform: scale(1.02); /* Efecto de agrandamiento */
+}
+
+.login-container button:active {
+  background-color: #1e7e34;
+  transform: scale(0.98); /* Efecto de clic */
+}
+
+/* Mensaje de error */
+.login-container p {
+  color: #dc3545;
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Enlace de contraseña olvidada */
+.forgot-password {
+  cursor: pointer;
+  color: #17a2b8;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #138496;
+  text-decoration: underline;
+}
+
+/* --------------------- */
+/* Responsividad */
+/* --------------------- */
+@media screen and (max-width: 768px) {
   .login-container {
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    display: flex;
-    /* Usa flexbox */
-    flex-direction: column;
-    /* Apila los elementos en columna */
-    align-items: center;
-    /* Centra los elementos horizontalmente */
-
+    max-width: 90%; /* Ocupa el 90% del ancho disponible */
   }
 
-  /* Título */
   .login-container h2 {
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 22px;
   }
 
-  /* Campos de entrada */
-  .login-container input {
-    width: 90%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-
-  .login-container select {
-    width: 95%;
-    /* Ocupa todo el ancho */
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-
-  /* Botón */
+  .login-container input,
+  .login-container select,
   .login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-
-  .login-container button:hover {
-    background-color: #0056b3;
-  }
-
-  /* Mensaje de error */
-  .login-container p {
-    color: red;
-    margin-top: 10px;
     font-size: 14px;
-  }
-
-  /* Contenedor de la contraseña */
-  .password-container {
-    position: relative;
-    padding: 0;
-  }
-
-  .password-container input {
-    width: 82%;
-    padding-right: 40px;
+    padding: 10px;
   }
 
   .eye-icon {
-    position: absolute;
-    right: 22px;
-    top: 50%;
-    transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    cursor: pointer;    
-  filter: invert(1) brightness(100);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .login-container {
+    padding: 15px;
+    max-width: 95%; /* Ocupa casi todo el ancho */
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .login-container input,
+  .login-container select,
+  .login-container button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .eye-icon {
+    width: 18px;
+    height: 18px;
   }
 
   .forgot-password {
-    cursor:pointer;
-    color: #007bff;
+    font-size: 12px;
   }
-
-  .forgot-password:hover {
-    color: #469fff;
-  }
+}

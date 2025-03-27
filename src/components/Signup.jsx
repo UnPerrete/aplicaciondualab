@@ -33,7 +33,7 @@ export default function Signup() {
 
       if (data.success) {
         login();
-        navigate(`/`);
+        navigate(`/login`);
       } else {
         const errors = {
           1062: "Este NIF ya ha sido registrado",
