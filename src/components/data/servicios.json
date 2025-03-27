@@ -496,7 +496,7 @@
     ]
   },
   {
-    "titulo": "Administración de Sistemas Operativos ([ADD])",
+    "titulo": "ADMINISTRACIÓN DE SISTEMAS OPERATIVOS ([ADD])",
     "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/add.png",
     "descripcion":
@@ -510,7 +510,7 @@
     ]
   },
   {
-    "titulo": "Servicios de Red e Internet ([SRD])",
+    "titulo": "SERVICIOS DE RED E INTERNET ([SRD])",
     "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/srd.png",
     "descripcion":
@@ -524,7 +524,7 @@
     ]
   },
   {
-    "titulo": "Implantación de Aplicaciones Web ([IMW])",
+    "titulo": "IMPLEMENTACIÓN DE APLICACIONES WEB ([IMW])",
     "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/imw.png",
     "descripcion":
@@ -538,7 +538,7 @@
     ]
   },
   {
-    "titulo": "Administración de Bases de Datos ([ADE])",
+    "titulo": "ADMINISTRACIÓN DE BASES DE DATOS ([ADE])",
     "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/ade.png",
     "descripcion":
@@ -552,7 +552,7 @@
     ]
   },
   {
-    "titulo": "Seguridad y Alta Disponibilidad ([SGY])",
+    "titulo": "SEGURIDAD Y ALTA DISPONIBILIDAD ([SGY])",
     "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/sgy.png",
     "descripcion":
@@ -566,7 +566,7 @@
     ]
   },
   {
-    "titulo": "Empresa e Iniciativa Emprendedora ([EMR])",
+    "titulo": "EMPRESA E INICIATIVA EMPRENDEDORA ([EMR])",
     "grupo": "Administración, Comercio y Marketing",
     "imagen": "../src/assets/emr.png",
     "descripcion":
@@ -580,7 +580,7 @@
     ]
   },
   {
-    "titulo": "Proyecto de Administración de Sistemas Informáticos en Red ([PMR])",
+    "titulo": "PROYECTO DE ADMINISTRACIÓN DE SISTEMAS INFORMÁTICOS EN RED ([PMR])",
     "grupo": "Tecnología y Comunicación",
     "imagen": "../src/assets/pmr.jpg",
     "descripcion":
@@ -593,7 +593,7 @@
     ]
   },
   {
-    "titulo": "Formación en Centros de Trabajo ([FCT])",
+    "titulo": "FORMACIÓN EN CENTROS DE TRABAJO ([FCT])",
     "grupo": "Formación en Centros de Trabajo",
     "imagen": "../src/assets/centros.png",
     "descripcion":
@@ -607,7 +607,7 @@
     ]
   },
   {
-    "titulo": "Idioma Extranjero (inglés) ([IDK])", 
+    "titulo": "IDIOMA EXTRANJERO (INGLÉS) ([IDK])", 
     "grupo": "Idiomas", 
     "imagen": "../src/assets/Ingles.png",
     "descripcion": 
