@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthProvider"; // Importa el hook para acced
 import { useNavigate } from "react-router-dom"; // Importa useNavigate para redirigir al usuario
 import "../styles/Profile.css"; // Importa los estilos de CSS específicos para el perfil
 import NavbarWeb from "./NavbarWeb";
+import ArrowUp from "./ui/ArrowUp";
 
 const Profile = () => {
     // Extrae el estado y las funciones necesarias del contexto de autenticación
@@ -86,7 +87,9 @@ const Profile = () => {
 
   return (
     <>
+    <div>
       <NavbarWeb /> {/* Muestra la barra de navegación */}
+    </div>
       <div style={{ marginTop: "90px" }}></div>
       <div className="profile-container">
         <h2>Hola {user.nombre}</h2>
@@ -161,6 +164,7 @@ const Profile = () => {
           </div>
         )}
       </div>
+      <ArrowUp/>
     </>
   );
 };

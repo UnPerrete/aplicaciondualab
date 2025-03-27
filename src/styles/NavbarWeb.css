@@ -34,7 +34,7 @@
 .nav-links1 a {
     text-decoration: none;
     color: gray;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
     padding: 0 10px;
 }
 
@@ -48,8 +48,35 @@
 }
 
 .nav-icons-inline {
+    position: relative;
     display: flex;
     flex-direction: row;
+}
+
+.search-bar {
+    position: absolute; /* posiciona respecto al icono de lupa */
+    top: 220%; 
+    right: -10px; /* ajusta según desees */
+    transform: translateY(-50%);
+    width: 150px;
+    z-index: 1000;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bi {
+    cursor: pointer;
+   transition: color 0.5s ease;
+}
+
+.bi:hover {
+    color: black;
 }
 
 .logo {
@@ -171,6 +198,15 @@
         display: flex;
     }
 
+    .nav-links1 a {
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-links1 a:hover {
+        background-color: #f0f0f0;
+    }
+
     .dropdown {
         width: 100%;
         flex-direction: column; /* mejor vertical en móvil */
@@ -209,6 +245,13 @@
         flex-wrap: nowrap;
     }
 
+    .search-bar {
+        position: absolute; 
+        top: -250%; 
+        left: 80px; 
+        transform: translateY(50%);
+        width: 190px;
+    }
     
 }
 
