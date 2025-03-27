@@ -56,8 +56,8 @@ const NavbarWeb = () => {
                 <Link to="/">Inicio</Link>
                 <div 
                     className="dropdown"
-                    onMouseEnter={() => !menuOpen && setDropdownOpen(true)} 
-                    onMouseLeave={() => !menuOpen && setDropdownOpen(false)}
+                    onMouseEnter={() => setDropdownOpen(true)} 
+                    onMouseLeave={() => setDropdownOpen(false)}
                 >
                     <Link
                         to="/servicio"
@@ -87,8 +87,11 @@ const NavbarWeb = () => {
                 <Link to="/recursos">Recursos</Link>
                 <Link to="/contact">Contáctenos</Link>
                 <Link to="/equipo">Equipo</Link>
-                <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
-                <i className="bi bi-search" onClick={toggleSearch}></i>
+                <span className="nav-icons-inline">
+                    <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
+                    <i className="bi bi-search" onClick={toggleSearch}></i>
+                </span>
+
             </nav>
 
             {searchOpen && (
