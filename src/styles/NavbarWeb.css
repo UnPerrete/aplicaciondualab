@@ -47,6 +47,11 @@
     font-weight: bold;
 }
 
+.nav-icons-inline {
+    display: flex;
+    flex-direction: row;
+}
+
 .logo {
     width: 15%;
 }
@@ -76,14 +81,20 @@
 
 .dropdown-menu {
     position: absolute;
-    top: 80%;
+    top: 100%;
     left: 0;
     background-color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
     padding: 10px;
-    z-index: 999;
-    margin-top: 5px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+/* Mostrar menú al rozar en Desktop y Responsive */
+.dropdown:hover .dropdown-menu {
+    display: flex;
 }
 
 .dropdown-menu a {
@@ -162,25 +173,20 @@
 
     .dropdown {
         width: 100%;
-        flex-direction: row;
+        flex-direction: column; /* mejor vertical en móvil */
+        align-items: flex-start;
     }
 
     .dropdown-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        padding: 5px 0 5px 5px;
-        position: static;
+        position: static; /* para que el menú fluya correctamente hacia abajo */
         box-shadow: none;
-        margin-top: 0;
-    }
-    
-    .dropdown.open .dropdown-menu {
-        display: flex;
+        border-radius: 0;
+        width: 100%;
+        padding-left: 15px;
     }
 
     .dropdown:hover .dropdown-menu {
-        display: none;
+        display: flex; /* asegura el hover en responsive también */
     }
 
     .dropdown-toggle {
@@ -194,6 +200,16 @@
         width: 30%;
         margin-right: 40px;
     }
+
+    .nav-icons-inline {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: nowrap;
+    }
+
+    
 }
 
 
