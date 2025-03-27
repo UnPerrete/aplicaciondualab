@@ -72,6 +72,15 @@ const Recursos = () => {
             </div>
 
             <div className="section-container">
+                <h1>TÍTULOS FP</h1>
+                <div className="section-text">
+                    <h3>Ciclos Formativos de Grado Básico, Medio y Superior en Canarias</h3>
+                    <p>A través del siguiente enlace podrá consultar la información sobre los distintos tipos de ciclos y sus grados en Canarias.</p>
+                    <Link to="https://www.gobiernodecanarias.org/educacion/web/formacion_profesional/ensenanzas/titulos/">Ver títulos</Link>
+                </div>
+            </div>
+
+            <div className="section-container">
                 <h1>PROYECTOS COMPLETADOS</h1>
                 <div className="card-gridd" style={{ maxWidth: '1600px', margin: 'auto' }}>
                     {projects.length > 0 ? (
