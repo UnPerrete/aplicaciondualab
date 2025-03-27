@@ -4,8 +4,18 @@ import '../styles/Formacion.css';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
+import categoriasData from "./data/servicios.json";
 
 const Formacion = () => {
+
+    const [servicios, setServicios] = useState([]);
+
+    useEffect(() => {
+        if (categoriasData && categoriasData.length > 0) {
+            setServicios(categoriasData);
+        }
+    }, []);
+
     return (
         <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
           <NavbarWeb/>
@@ -140,6 +150,45 @@ const Formacion = () => {
             </p>
           </div>
         </div>
+
+        {/* Áreas de Formación - Mostrar en cards de 3 por fila */}
+        <div className="section-container">
+                <h1>ÁREAS DE FORMACIÓN</h1>
+                <div className="cardds-grid">
+                  {servicios.map((servicio, index) => (
+                      <div key={index} className="area-cardds">
+                          <img src={servicio.imagen || ""} alt={servicio.titulo} className="area-cardds-img" />
+                          <div className="area-cardds-content">
+                              <h2>{servicio.titulo}</h2>
+                              <p>{servicio.descripcion}</p>
+                          </div>
+                      </div>
+                  ))}
+                </div>
+          </div>
+
+            {/* Programas de Asesoramiento y Experiencias de Aprendizaje Inmersivo */}
+            <div className="section-container">
+                <h1>PROGRAMAS DE ASESORAMIENTO Y APRENDIZAJE INMERSIVO</h1>
+                <div className="section-text">
+                    <h2>Programas de Asesoramiento</h2>
+                    <p>Participa en nuestros programas de asesoramiento para desarrollar estrategias educativas innovadoras y mejorar los procesos de enseñanza-aprendizaje.</p>
+                    <ul>
+                        <li>Sesiones de formación en herramientas y técnicas innovadoras.</li>
+                        <li>Promoción de la cultura Maker dentro de tu institución.</li>
+                        <li>Diseño de itinerarios formativos adaptados a tus necesidades.</li>
+                    </ul>
+
+                    <h2>Experiencias de Aprendizaje Inmersivo</h2>
+                    <p>Explora nuevos modelos educativos con metodologías creativas y contemporáneas para entornos innovadores de aprendizaje.</p>
+                    <ul>
+                        <li>Programas personalizados para estudiantes y profesores.</li>
+                        <li>Capacitación en alfabetización digital y tecnologías avanzadas.</li>
+                        <li>Exploración de escenarios educativos emergentes.</li>
+                    </ul>
+                </div>
+            </div>
+
           <ArrowUp/>
           <InfoB/>
           <FooterWeb/>

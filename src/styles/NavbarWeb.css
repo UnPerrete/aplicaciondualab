@@ -84,7 +84,7 @@
 }
 
 .logo img {
-    width: 65%;
+    width: 85px;
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: contain;
@@ -175,7 +175,12 @@
 /*       RESPONSIVE      */
 /* --------------------- */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
+    .logo img{
+        width: 120px; 
+        flex-shrink: 0; 
+    }
+
     .menu-icon {
         display: flex;
     }
