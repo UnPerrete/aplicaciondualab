@@ -22,9 +22,6 @@ const NavbarWeb = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
 
-    const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
-    };
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -52,7 +49,7 @@ const NavbarWeb = () => {
 
             <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
                 <Link to="/">Inicio</Link>
-                <div 
+                <li
                     className="dropdown"
                     onMouseEnter={() => setDropdownOpen(true)} 
                     onMouseLeave={() => setDropdownOpen(false)}
@@ -65,7 +62,7 @@ const NavbarWeb = () => {
                             <Link to="/administraciones" onClick={closeMenu}>Administraciones</Link>
                         </div>
                     )}
-                </div>
+                </li>
                 <Link to="/proyect">Proyectos</Link>
                 <Link to="/formacion">Formación</Link>
                 <Link to="/recursos">Recursos</Link>
