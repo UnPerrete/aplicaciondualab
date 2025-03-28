@@ -156,6 +156,7 @@ app.post("/api/data", (req, res) => {
 }); 
 
 app.post("/api/addUser", (req, res) => {
+  console.log(req.body);
   const {
     nif,
     pass,
@@ -337,7 +338,18 @@ app.get("/api/listFinishedProjects", (req, res) => {
   const query = "select * from proyectos where estado = 'completado'"
   db.query(query, [], (err, result) => {
     if(err){
-      console.error("Error al guardar los datos:", err);
+      console.error("Error al obtener los datos:", err);
+      return res.status(500).json({ error: "Error al obtener los datos" });
+    }
+    return res.status(200).json(result);
+  });
+});
+
+app.get("/api/listProfesores", (req, res) => {
+  const query = "select id, nombre, apellido from users where role = 'Profesor'"
+  db.query(query, [], (err, result) => {
+    if(err){
+      console.error("Error al obtener los datos:", err);
       return res.status(500).json({ error: "Error al obtener los datos" });
     }
     return res.status(200).json(result);

@@ -12,6 +12,7 @@ export const TablaEmpresas = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [originalData, setOriginalData] = useState([]);
+  const [totalEmpresas, setTotalEmpresas] = useState(40);
   const roleUser = JSON.parse(localStorage.getItem("user")).role
   const municipios = [
     "Seleccionar municipio...",
@@ -78,8 +79,12 @@ export const TablaEmpresas = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((row) => (
-            <React.Fragment key={row.ID}>
+          {data.map((row, index) => {
+            if(totalEmpresas <= index){
+              return null;
+            }
+            return(
+              <React.Fragment key={row.ID}>
               <tr key={row.ID}>
                 <td>{row.Municipio}</td>
                 <td>{row.Web && row.Web.trim() !== "" ? <Link to={row.Web}>{row.NombreComercial}</Link> : row.NombreComercial}</td>
@@ -91,9 +96,13 @@ export const TablaEmpresas = () => {
                 }
               </tr>
               </React.Fragment>
-          ))}
+            )
+          })}
         </tbody>
       </table>
+      <p className="link" onClick={() => { setTotalEmpresas(totalEmpresas *2) }}>
+        Mostrar más ...
+      </p>
       <InfoB/>
       <ArrowUp/>
     </div>
