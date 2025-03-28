@@ -32,14 +32,17 @@ db.connect((err) => {
 app.post("/api/login", (req, res) => {
   const { role, nif, password } = req.body;
   const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
-
+  console.log(role)
   console.log(`🔑 Contraseña hasheada recibida desde el frontend: ${hashedPassword}`); // Verificar el hash recibido
   let query = "";
-  if (role != "empresa") {
+  if (role == "Profesor") {
     query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
+  }else if (role == "Alumno"){
+    query = "SELECT u.*, CONCAT(p.nombre, ' ', p.apellido) AS nombre_profesor FROM users u LEFT JOIN alumnos a ON u.id = a.user_id LEFT JOIN users p ON a.profesor_id = p.id WHERE u.nif = ? AND u.password = ? AND u.role = ?;"
   } else {
     query = "SELECT e.* FROM users u JOIN empresas e ON u.nombre = e.NombreComercial WHERE u.nombre = ? AND u.password = ? AND u.role = ?;"
   }
+  
   let params = [nif, hashedPassword, role];
 
   // Ejecutar consulta en MySQL
@@ -67,6 +70,7 @@ app.post("/api/login", (req, res) => {
           gmail: user.gmail || null,
           telefono: user.telefono || null,
           zona: user.zona || null,
+          profesor: user.nombre_profesor || null,
         }
       });
     } else if (results.length > 0 && role == "empresa") {
@@ -156,7 +160,6 @@ app.post("/api/data", (req, res) => {
 }); 
 
 app.post("/api/addUser", (req, res) => {
-  console.log(req.body);
   const {
     nif,
     pass,

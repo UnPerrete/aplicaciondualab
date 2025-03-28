@@ -21,6 +21,7 @@ const Profile = () => {
       telefono: user?.telefono || "",
       poblacion: user?.poblacion || "",
       zona: user?.zona || "",
+      profesor: user?.nombre_profesor || "",
     }); // Estado para almacenar los datos del formulario, inicializados con los datos del usuario
   
 
@@ -154,6 +155,7 @@ const Profile = () => {
             <p><strong>Población:</strong> {user.poblacion || "No disponible"}</p>
             <p><strong>Zona:</strong> {user.zona || "No disponible"}</p>
             <p><strong>Rol:</strong> {user.role}</p>
+            {user.role == "Alumno" && (<p><strong>Profesor:</strong> {user.profesor}</p>)}
           </div>
         )}
 

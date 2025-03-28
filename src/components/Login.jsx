@@ -9,7 +9,7 @@ import eyeClosed from "../assets/eye-closed.svg"; // Ruta de la imagen del ojo c
 
 const Login = () => {
   // Estado para el rol de usuario (por defecto es 'profesor')
-  const [role, setRole] = useState("profesor");
+  const [role, setRole] = useState("Profesor");
   // Estado para los datos del formulario de login (NIF, contraseña, etc.)
   const [formData, setFormData] = useState({});
   // Estado para manejar errores de login (como credenciales incorrectas)
@@ -34,8 +34,6 @@ const Login = () => {
       value = hashedPass;  // Hasheamos la contraseña antes de almacenarla
     }
     setFormData({ ...formData, [e.target.name]: value });  // Actualizamos el estado de formData
-    console.log(formData);
-    console.log(role);
   };
 
   // Enviar formulario de inicio de sesión (login)
@@ -133,9 +131,9 @@ const Login = () => {
             {/* Selector de rol */}
             <label>Rol:</label>
             <select name="role" value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="profesor">Profesor</option>
-              <option value="alumno">Alumno</option>
-              <option value="empresa">Empresa</option>
+              <option value="Profesor">Profesor</option>
+              <option value="Alumno">Alumno</option>
+              <option value="Empresa">Empresa</option>
             </select>
           </>
         )}

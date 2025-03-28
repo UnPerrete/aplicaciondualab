@@ -91,7 +91,6 @@ export default function Signup() {
         {rol === "Alumno" && (
           <fieldset>
             <legend>Información del Alumno</legend>
-            {/* <input type="number" name="profesor_id" placeholder="ID del profesor" onChange={handleChange} required /> */}
             <select name="profesor_id" id="profesor_id" onChange={handleChange}>
               <option value="">Elige un profesor</option>
               {profesores.map( (profe) => (
