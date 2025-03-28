@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CryptoJS from "crypto-js";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../context/AuthProvider';
+import centrosData from "./data/centrosFP.json";
 import "../styles/Signup.css";
 
 export default function Signup() {
@@ -10,6 +11,7 @@ export default function Signup() {
   const [rol, setRol] = useState('Profesor');
   const { login } = useAuth();
   const navigate = useNavigate();
+  const centerData = centrosData.centrosFP
 
   const handleChange = (e) => {
     let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
@@ -86,7 +88,11 @@ export default function Signup() {
         {rol === "Profesor" && (
           <fieldset>
             <legend>Información del Profesor</legend>
-            <input type="text" name="instituto" placeholder="Nombre del instituto" onChange={handleChange} required />
+            <select name="instituto" id="insti" onChange={handleChange}>
+              {centerData.map( (centro, index) => (
+                <option value={centro.nombre}>{centro.nombre}</option>
+              ) )}
+            </select>
           </fieldset>
         )}
 
