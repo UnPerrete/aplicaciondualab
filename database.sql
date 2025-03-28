@@ -198,7 +198,7 @@ CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nif` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` varchar(25) NOT NULL,
+  `role` enum('Profesor','Alumno','Empresa') NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `gmail` varchar(255) NOT NULL,
@@ -218,7 +218,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'78592247M','ec6a6536ca304edf844d1d248a4f08dc','Profesor','Rayco','Santana Alles','a@a.com','682841751','qweqwe','2025-03-02','San Bartolome'),(2,'78592248M','ec6a6536ca304edf844d1d248a4f08dc','Alumno','Rayco','Santana Alles','a@a.com','682841750','qweqwe','2025-03-03','San Bartolome');
+INSERT INTO `users` VALUES (1,'78592247M','ec6a6536ca304edf844d1d248a4f08dc','Profesor','Rayco','Santana Alles','a@a.com','682841751','qweqwe','2025-03-01','San Bartolome'),(2,'78592248M','ec6a6536ca304edf844d1d248a4f08dc','Alumno','Rayco','Santana Alles','a@a.com','682841750','qweqwe','2025-03-03','San Bartolome');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -231,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-20 11:40:24
+-- Dump completed on 2025-03-28  9:08:17
