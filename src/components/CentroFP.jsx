@@ -80,7 +80,7 @@ const CentrosFP = () => {
                         <div className="contact-info2">
                             <h3>{centro.nombre}</h3>
                             <p>{centro.descripcion}</p>                    
-                            <ul>
+                            <ul style={{ textAlign: 'left' }}>
                                 <li><strong>Ubicación:</strong> {centro.ubicacion}</li>
                                 <li><strong>Tipo:</strong> {centro.tipo}</li>
                                 <li><Link to={centro.paginaWeb}>Página Web</Link></li>
@@ -92,7 +92,7 @@ const CentrosFP = () => {
             ))}            
 
             {/* Línea divisoria */}
-            <hr className="section-divider" />
+            {/* <hr className="section-divider" /> */}
             <ArrowUp/>
             <InfoB/>
             {/* Footer */}
