@@ -27,7 +27,6 @@ const Login = () => {
   // Maneja los cambios en los campos del formulario (NIF, contraseña)
   const handleChange = (e) => {
     let value = e.target.value;
-
     // Si es la contraseña, la hasheamos antes de guardarla
     if (e.target.name === "password" && !isRecovering && !isResetting) {
       const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
