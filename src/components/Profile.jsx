@@ -12,7 +12,7 @@ const Profile = () => {
     const navigate = useNavigate(); // Hook para navegar a otras páginas
     const [isEditing, setIsEditing] = useState(false); // Estado para controlar si está en modo de edición o no
     const [formData, setFormData] = useState(() => {
-      if (user?.role === "Empresa") {
+      if (user?.role === "empresa") {
         return {
           nombrecomercial: user?.nombrecomercial || "",
           razonsocial: user?.razonsocial || "",
@@ -78,7 +78,11 @@ const Profile = () => {
       const response = await fetch(`http://localhost:5000/api/edit-profile/${user.nif}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formattedData),
+        body: JSON.stringify({
+          ...formattedData,
+          role: user.role,
+          nombrecomercial: user.nombrecomercial,
+        }),
       });
 
       const data = await response.json();
@@ -109,11 +113,11 @@ const Profile = () => {
       </div>
       <div style={{ marginTop: "80px" }}></div>
       <div className="profile-container">
-        {user.role !== "Empresa" && (
+        {user.role !== "empresa" && (
           <h2>Hola {user.nombre}</h2>
         )}
 
-        {user.role === "Empresa" && (
+        {user.role === "empresa" && (
           <h2>Hola {user.nombrecomercial}</h2>
         )}
 
@@ -121,7 +125,7 @@ const Profile = () => {
         {isEditing ? (
           <div className="profile-info">
             {/* Renderizado condicional basado en el rol */}
-            {formData.role === "Empresa" ? (
+            {user.role === "empresa" ? (
               <>
                 <label>
                   <strong>Nombre Comercial:</strong>
@@ -209,7 +213,7 @@ const Profile = () => {
         ) : (
           <>
             {/* Renderizado de datos basado en el rol */}
-            {user.role === "Empresa" ? (
+            {user.role === "empresa" ? (
               <div className="profile-info">
                 <p><strong>Nombre Comercial:</strong> {user.nombrecomercial || "No disponible"}</p>
                 <p><strong>Razón Social:</strong> {user.razonsocial || "No disponible"}</p>

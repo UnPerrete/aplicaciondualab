@@ -32,34 +32,53 @@ db.connect((err) => {
 app.post("/api/login", (req, res) => {
   const { role, nif, nombre_comercial, password } = req.body;
   const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
-  console.log(`🔑 Contraseña hasheada recibida desde el frontend: ${hashedPassword}`); // Verificar el hash recibido
+  const roleNormalized = role?.toLowerCase();
+
+  console.log("🟡 Login recibido:", {
+    roleOriginal: role,
+    roleNormalized,
+    nif,
+    nombre_comercial,
+    hashedPassword
+  });
+
   let query = "";
   let params = [];
-  if (role == "Profesor") {
+
+  if (roleNormalized === "profesor") {
     query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
     params = [nif, hashedPassword, role];
-  }else if (role == "Alumno"){
-    query = "SELECT u.*, CONCAT(p.nombre, ' ', p.apellido) AS nombre_profesor FROM users u LEFT JOIN alumnos a ON u.id = a.user_id LEFT JOIN users p ON a.profesor_id = p.id WHERE u.nif = ? AND u.password = ? AND u.role = ?;"
-    params = [nif, hashedPassword, role];
-  } else {
+  } else if (roleNormalized === "alumno") {
     query = `
-    SELECT e.*, u.password as user_password FROM users u
-    JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
-    WHERE u.nombre = ? AND u.role = ?;
-  `;
-  params = [nombre_comercial, role];  
-}
+      SELECT u.*, CONCAT(p.nombre, ' ', p.apellido) AS nombre_profesor
+      FROM users u
+      LEFT JOIN alumnos a ON u.id = a.user_id
+      LEFT JOIN users p ON a.profesor_id = p.id
+      WHERE u.nif = ? AND u.password = ? AND u.role = ?;
+    `;
+    params = [nif, hashedPassword, role];
+  } else if (roleNormalized === "empresa") {
+    query = `
+      SELECT e.*, u.password as user_password
+      FROM users u
+      JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
+      WHERE TRIM(LOWER(u.nombre)) = TRIM(LOWER(?)) AND u.password = ? AND u.role = ?;
+    `;
+    params = [nombre_comercial, hashedPassword, role];
+  } else {
+    return res.status(400).json({ success: false, message: "Rol no reconocido" });
+  }
 
   db.query(query, params, (err, results) => {
     if (err) {
-      console.error("Error en la consulta:", err);
+      console.error("❌ Error en la consulta:", err);
       return res.status(500).json({ success: false, message: "Error en el servidor" });
     }
 
-    console.log("Resultados obtenidos en login:");
-    console.table(results)
+    console.log("📦 Resultados obtenidos en login:");
+    console.table(results);
 
-    if (results.length > 0 && role !== "empresa") {
+    if (results.length > 0 && roleNormalized !== "empresa") {
       const user = results[0];
       res.json({
         success: true,
@@ -78,41 +97,35 @@ app.post("/api/login", (req, res) => {
           profesor: user.nombre_profesor || null,
         }
       });
-    } else if (results.length > 0 && role === "empresa") {
+    } else if (results.length > 0 && roleNormalized === "empresa") {
       const user = results[0];
-
-      // Verifica claramente la contraseña
-      if (user.user_password === hashedPassword) {
-        res.json({
-          success: true,
-          message: "Login exitoso",
-          user: {
-            idzca: user.IdZCA || null,
-            municipio: user.Municipio || null,
-            ID: user.ID || null,
-            nombrecomercial: user.NombreComercial || null,
-            razonsocial: user.RazonSocial || null,
-            role: role || null,
-            sector: user.Sector || null,
-            actividad: user.Actividad || null,
-            calle: user.Calle || null,
-            nº: user.Nº || null,
-            cp: user.CP || null,
-            telefono: user.Telefono || null,
-            email: user.Email || null,
-            web: user.Web || null,
-          }
-        });
-      } else {
-        console.log("Contraseña incorrecta para empresa:", nombre_comercial);
-        res.status(401).json({ success: false, message: "Contraseña incorrecta" });
-      }
+      res.json({
+        success: true,
+        message: "Login exitoso",
+        user: {
+          idzca: user.IdZCA || null,
+          municipio: user.Municipio || null,
+          ID: user.ID || null,
+          nombrecomercial: user.NombreComercial || null,
+          razonsocial: user.RazonSocial || null,
+          role: role,
+          sector: user.Sector || null,
+          actividad: user.Actividad || null,
+          calle: user.Calle || null,
+          nº: user.Nº || null,
+          cp: user.CP || null,
+          telefono: user.Telefono || null,
+          email: user.Email || null,
+          web: user.Web || null,
+        }
+      });
     } else {
-      console.log("No se encontró empresa o usuario:", nombre_comercial);
+      console.log("⚠️ No se encontró empresa o usuario:", role, nif || nombre_comercial);
       res.status(401).json({ success: false, message: "Credenciales incorrectas" });
     }
   });
 });
+
 
 
 // Endpoint para obtener nombres comerciales (dropdown)
@@ -131,7 +144,8 @@ app.get("/api/empresas", (req, res) => {
 app.put("/api/edit-profile/:nif", (req, res) => {
   const { nif } = req.params;
   const updates = req.body;
-  const isEmpresa = updates.role === "Empresa";
+  const isEmpresa = updates.role?.toLowerCase() === "empresa";
+
 
   if (Object.keys(updates).length === 0) {
     return res.status(400).json({ error: "No se enviaron datos para actualizar" });
