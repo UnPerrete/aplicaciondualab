@@ -4,13 +4,13 @@
 }
 
 .searchbar {
-    width:90%;
+    width:60%;
     display: inline-block;
     transition: all 0.5s ease;
 } 
 
 .searchbar:focus {
-    width: 60%;
+    width: 90%;
     box-shadow: 0 0 5px black,
               0 0 10px black,
               0 0 15px black,

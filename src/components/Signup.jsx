@@ -22,6 +22,11 @@ export default function Signup() {
   }, []);
 
 
+  const comprobarPass = (pass) => {
+    return /^(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Z]).{8,}$/.test(pass);
+  }
+
+
   const handleChange = (e) => {
     let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
     
@@ -35,17 +40,26 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let data = {};
+
+    //Comprobar requisitos de la contraseña
     try {
+      if (!comprobarPass(formData.pass)){
+        setErr("La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minuscula y un número.");
+        data = {success: false};
+        return;
+      }
+
+      //Llamada a la API
       const response = await fetch("http://localhost:5000/api/addUser", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
-      const data = await response.json();
-
+      data = await response.json();
       if (data.success) {
         login();
-        navigate(`/login`);
+        navigate(`/`);
       } else {
         const errors = {
           1062: "Este NIF ya ha sido registrado",
@@ -64,7 +78,7 @@ export default function Signup() {
       <form className="user-form" onSubmit={handleSubmit}> 
         <h2>Registro de Usuario</h2>
 
-        <p className="error-message">{err}</p>
+        
     <div className="form-cuadro">
         <fieldset>
             {rol !== "Empresa" && (
@@ -130,7 +144,7 @@ export default function Signup() {
           </select>
         </fieldset>
     </div>
-
+    <p className="error-message">{err}</p>
       <button type="submit" className="registro-button">Registrar Usuario</button>
     </form>
 

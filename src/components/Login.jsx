@@ -9,7 +9,7 @@ import eyeClosed from "../assets/eye-closed.svg"; // Ruta de la imagen del ojo c
 
 const Login = () => {
   // Estado para el rol de usuario (por defecto es 'profesor')
-  const [role, setRole] = useState("Profesor");
+  const [role, setRole] = useState("profesor");
   // Estado para los datos del formulario de login (NIF, contraseña, etc.)
   const [formData, setFormData] = useState({});
   // Estado para manejar errores de login (como credenciales incorrectas)
@@ -20,14 +20,13 @@ const Login = () => {
   const [isRecovering, setIsRecovering] = useState(false);
   // Estado para controlar si estamos en el modo de restablecimiento de contraseña
   const [isResetting, setIsResetting] = useState(false);
-  
+
   const { login } = useAuth();  // Hook para acceder a las funciones de autenticación
   const navigate = useNavigate();  // Hook para navegar entre rutas de la app
 
   // Maneja los cambios en los campos del formulario (NIF, contraseña)
   const handleChange = (e) => {
     let value = e.target.value;
-
     // Si es la contraseña, la hasheamos antes de guardarla
     if (e.target.name === "password" && !isRecovering && !isResetting) {
       const hashedPass = CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex);
@@ -71,7 +70,7 @@ const Login = () => {
   const handleRecover = async (e) => {
     e.preventDefault();  // Prevenimos el comportamiento por defecto del formulario
     setError(null);  // Limpiamos el mensaje de error antes de realizar la petición
-    
+
     try {
       // Enviamos una petición POST a la API para solicitar la recuperación de contraseña
       const response = await fetch("http://localhost:5000/api/forgot-password", {
@@ -79,9 +78,9 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nif: formData.nif })  // Enviamos el NIF para verificar si existe
       });
-      
+
       const data = await response.json();  // Parseamos la respuesta como JSON
-      
+
       if (data.message === "NIF Confirmado") {
         setIsResetting(true);  // Si el NIF es confirmado, cambiamos el estado a "restablecimiento de contraseña"
       } else {
@@ -96,10 +95,10 @@ const Login = () => {
   const handleReset = async (e) => {
     e.preventDefault();  // Prevenimos el comportamiento por defecto del formulario
     setError(null);  // Limpiamos el mensaje de error antes de realizar la petición
-  
+
     // Hasheamos la nueva contraseña antes de enviarla al servidor
     const hashedNewPassword = CryptoJS.MD5(formData.newPassword).toString(CryptoJS.enc.Hex);
-  
+
     try {
       // Enviamos una petición POST a la API para restablecer la contraseña
       const response = await fetch("http://localhost:5000/api/reset-password", {
@@ -107,9 +106,9 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nif: formData.nif, newPassword: hashedNewPassword })  // Enviamos el NIF y la nueva contraseña
       });
-      
+
       const data = await response.json();  // Parseamos la respuesta como JSON
-      
+
       if (data.message === "Contraseña restablecida con éxito") {
         setIsResetting(false);  // Si la contraseña se restablece correctamente, cambiamos el estado
         setIsRecovering(false);  // Terminamos el proceso de recuperación
@@ -131,16 +130,15 @@ const Login = () => {
             {/* Selector de rol */}
             <label>Rol:</label>
             <select name="role" value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="Profesor">Profesor</option>
-              <option value="Alumno">Alumno</option>
-              <option value="Empresa">Empresa</option>
+              <option value="profesor">Profesor</option>
+              <option value="alumno">Alumno</option>
+              <option value="empresa">Empresa</option>
             </select>
           </>
         )}
 
         {role === "Empresa" ? <input type="text" name="nombre_comercial" placeholder="Nombre comercial" onChange={handleChange} required /> : <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />}
 
-        
 
         {!isRecovering && (
           <div className="password-container">
