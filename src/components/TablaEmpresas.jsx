@@ -13,12 +13,23 @@ export const TablaEmpresas = () => {
   const [error, setError] = useState(null);
   const [originalData, setOriginalData] = useState([]);
   const [totalEmpresas, setTotalEmpresas] = useState(40);
-  const roleUser = JSON.parse(localStorage.getItem("user")).role
+  const [selectedMunicipio, setSelectedMunicipio] = useState("");
+  const [selectedSector, setSelectedSector] = useState("");
+  const roleUser = JSON.parse(localStorage.getItem("user")).role;
+
   const municipios = [
     "Seleccionar municipio...",
     "Agaete", "Artenara", "Arucas", "Sta. Mª de Guía", "San Bartolomé de Tirajana",
     "La Aldea", "Moya", "Gáldar", "Las Palmas G.C.", "Firgas", "San Mateo",
     "Valsequillo", "Sta. Brígida", "Valleseco", "Teror"
+  ];
+
+  const sectores = [
+    "Seleccionar sector...",
+    "Art. y Entretenimiento", "Comercio", "Hostelería", "Servicios", "Educación",
+    "Alojamiento", "Industria", "Turismo", "Const. y Act. Inmob.", "Alimentación",
+    "Transportes", "Construcción", "Energía", "Asesoría", "Comunicaciones",
+    "Interm. Financiera", "Act. Adm. y Serv. Aux.", "Servicios Jurídicos"
   ];
 
 
@@ -35,38 +46,43 @@ export const TablaEmpresas = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (!loading && !error) {
+      let filteredData = originalData;
+      if (selectedMunicipio && selectedMunicipio !== "Seleccionar municipio...") {
+        filteredData = filteredData.filter(row => row.Municipio === selectedMunicipio);
+      }
+      if (selectedSector && selectedSector !== "Seleccionar sector...") {
+        filteredData = filteredData.filter(row => row.Sector === selectedSector);
+      }
+      setData(filteredData);
+    }
+  }, [selectedMunicipio, selectedSector, originalData, loading, error]);
+
   if (loading) return <p>Cargando datos...</p>;
   if (error) return <p>{error}</p>;
 
 
-    const handleChangeMunicipios = (e) => {
-      const municipioSeleccionado = e.target.value;
-      setData(municipioSeleccionado && municipioSeleccionado !== "Seleccionar municipio..."
-        ? originalData.filter((row) => row.Municipio === municipioSeleccionado)
-        : originalData);
-    }
-
   return (
     <div>
-      <div>
-        <NavbarWeb />
-      </div>
+      <NavbarWeb />
       <div style={{ marginTop: "90px" }}>
-      <SearchBar onSearch={setData}></SearchBar>
+        <SearchBar onSearch={setData} />
       </div>
-      {/* Contenedor del select */}
-      <div className="filtro-municipio">
+      <div className="filtros">
         <label htmlFor="municipio">Filtrar por municipio: </label>
-        <select
-          id="municipio"
-          onChange={handleChangeMunicipios}
-        >
+        <select id="municipio" value={selectedMunicipio} onChange={(e) => setSelectedMunicipio(e.target.value)}>
           {municipios.map((muni, index) => (
             <option key={index} value={index === 0 ? "" : muni}>{muni}</option>
           ))}
         </select>
+        <label htmlFor="sector">Filtrar por sector: </label>
+        <select id="sector" value={selectedSector} onChange={(e) => setSelectedSector(e.target.value)}>
+          {sectores.map((sec, index) => (
+            <option key={index} value={index === 0 ? "" : sec}>{sec}</option>
+          ))}
+        </select>
       </div>
-
       <table> 
         <thead>
           <tr>
@@ -79,32 +95,23 @@ export const TablaEmpresas = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((row, index) => {
-            if(totalEmpresas <= index){
-              return null;
-            }
-            return(
-              <React.Fragment key={row.ID}>
+          {data.map((row, index) => (
+            index < totalEmpresas && (
               <tr key={row.ID}>
                 <td>{row.Municipio}</td>
                 <td>{row.Web && row.Web.trim() !== "" ? <Link to={row.Web}>{row.NombreComercial}</Link> : row.NombreComercial}</td>
                 <td>{row.Sector}</td>
                 <td>{row.Actividad}</td>
                 <td>{row.Calle + ", " + row.Nº}</td>
-                {roleUser === "Profesor" && 
-                  <td><Link to={"/info-proyecto/"+row.ID}><button>Ver Solicitudes</button></Link></td>
-                }
+                {roleUser === "Profesor" && <td><Link to={`/info-proyecto/${row.ID}`}><button>Ver Solicitudes</button></Link></td>}
               </tr>
-              </React.Fragment>
             )
-          })}
+          ))}
         </tbody>
       </table>
-      <p className="link" onClick={() => { setTotalEmpresas(totalEmpresas *2) }}>
-        Mostrar más ...
-      </p>
-      <InfoB/>
-      <ArrowUp/>
+      <p className="link" onClick={() => setTotalEmpresas(totalEmpresas * 2)}>Mostrar más ...</p>
+      <InfoB />
+      <ArrowUp />
     </div>
   );
 };
