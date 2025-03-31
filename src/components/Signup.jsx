@@ -81,11 +81,21 @@ export default function Signup() {
         
     <div className="form-cuadro">
         <fieldset>
-          <legend>Datos Personales</legend>
-          <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} required />
-          <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />
-          <input type="date" name="nacimiento" placeholder="Fecha de Nacimiento" onChange={handleChange} required />
-          <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
+            {rol !== "Empresa" && (
+              <>
+                <legend>Datos Personales</legend>
+                <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} required />
+                <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />
+                <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
+                <input type="date" name="nacimiento" placeholder="Fecha de Nacimiento" onChange={handleChange} required />
+              </>
+            )}
+          {rol === "Empresa" && (
+            <>
+              <legend>Datos de Empresa</legend>
+              <input type="text" name="nombre_comercial" placeholder="Nombre Comercial" onChange={handleChange} required />
+              </>
+            )}
         </fieldset>
 
         <fieldset>
