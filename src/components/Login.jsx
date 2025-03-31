@@ -138,7 +138,7 @@ const Login = () => {
           </>
         )}
 
-        {role == "empresa" ? <input type="text" name="nombre_comercial" placeholder="Nombre comercial" onChange={handleChange} required /> : <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />}
+        {role === "Empresa" ? <input type="text" name="nombre_comercial" placeholder="Nombre comercial" onChange={handleChange} required /> : <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />}
 
         
 
