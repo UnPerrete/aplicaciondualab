@@ -1,23 +1,25 @@
 .busqueda {
-    margin-right: 940px;
-    display: inline-block;
-}
-
-.searchbar {
-    width:60%;
-    display: inline-block;
+    display: block;          /* Esto asegura que se muestre como bloque encima */
+    margin: 0 auto 8px auto; /* Centrado + separación debajo */
+    font-weight: bold;       /* Opcional: que se vea como título */
+  }
+  
+  .searchbar {
+    width: 60%;
+    display: block;          /* Asegura que se ponga debajo del label */
+    margin: 0 auto;
     transition: all 0.5s ease;
-} 
+  }
 
 .searchbar:focus {
     width: 90%;
-    box-shadow: 0 0 5px black,
-              0 0 10px black,
-              0 0 15px black,
-              0 0 20px black;
+    box-shadow: 0 0 2px green,
+              0 0 10px green,
+              0 0 15px green,
+              0 0 20px green;
 }
 
 .searchbar::placeholder{
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
 }
