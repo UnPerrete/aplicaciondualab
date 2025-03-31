@@ -11,17 +11,34 @@ const Profile = () => {
     const { user, isAuthenticated, setUser, logout, loading } = useAuth();
     const navigate = useNavigate(); // Hook para navegar a otras páginas
     const [isEditing, setIsEditing] = useState(false); // Estado para controlar si está en modo de edición o no
-    const [formData, setFormData] = useState({
-      nombre: user?.nombre || "",
-      apellido: user?.apellido || "",
-      nacimiento: user?.nacimiento || "",
-      role: user?.role || "",
-      nif: user?.nif || "",
-      gmail: user?.gmail || "",
-      telefono: user?.telefono || "",
-      poblacion: user?.poblacion || "",
-      zona: user?.zona || "",
-      profesor: user?.nombre_profesor || "",
+    const [formData, setFormData] = useState(() => {
+      if (user?.role === "Empresa") {
+        return {
+          nombrecomercial: user?.nombrecomercial || "",
+          razonsocial: user?.razonsocial || "",
+          sector: user?.sector || "",
+          actividad: user?.actividad || "",
+          calle: user?.calle || "",
+          nº: user?.nº || "",
+          cp: user?.cp || "",
+          municipio: user?.municipio || "",
+          email: user?.email || "",
+          telefono: user?.telefono || "",
+          web: user?.web || "",
+        };
+      } else {
+        return {
+          nombre: user?.nombre || "",
+          apellido: user?.apellido || "",
+          nacimiento: user?.nacimiento || "",
+          role: user?.role || "",
+          nif: user?.nif || "",
+          gmail: user?.gmail || "",
+          telefono: user?.telefono || "",
+          poblacion: user?.poblacion || "",
+          zona: user?.zona || "",
+        };
+      }
     }); // Estado para almacenar los datos del formulario, inicializados con los datos del usuario
   
 
@@ -156,6 +173,22 @@ const Profile = () => {
             <p><strong>Zona:</strong> {user.zona || "No disponible"}</p>
             <p><strong>Rol:</strong> {user.role}</p>
             {user.role == "Alumno" && (<p><strong>Profesor:</strong> {user.profesor}</p>)}
+          </div>
+        )}
+
+        {user.role === "Empresa" && (
+          <div className="profile-info">
+            <h3>Datos de la Empresa</h3>
+            <p><strong>Nombre Comercial:</strong> {user.nombrecomercial || "No disponible"}</p>
+            <p><strong>Razón Social:</strong> {user.razonsocial || "No disponible"}</p>
+            <p><strong>Sector:</strong> {user.sector || "No disponible"}</p>
+            <p><strong>Actividad:</strong> {user.actividad || "No disponible"}</p>
+            <p><strong>Dirección:</strong> {user.calle || "No disponible"} Nº {user.nº || "-"}</p>
+            <p><strong>CP:</strong> {user.cp || "No disponible"}</p>
+            <p><strong>Municipio:</strong> {user.municipio || "No disponible"}</p>
+            <p><strong>Email Empresa:</strong> {user.email || "No disponible"}</p>
+            <p><strong>Web:</strong> {user.web || "No disponible"}</p>
+            <p><strong>Teléfono Empresa:</strong> {user.telefono || "No disponible"}</p>
           </div>
         )}
 
