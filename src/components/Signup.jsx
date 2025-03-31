@@ -1,18 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CryptoJS from "crypto-js";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../context/AuthProvider';
+import centrosData from "./data/centrosFP.json";
 import "../styles/Signup.css";
 
 export default function Signup() {
   const [formData, setFormData] = useState({ role: 'Profesor' });
   const [err, setErr] = useState(null);
   const [rol, setRol] = useState('Profesor');
+  const [profesores, setProfesores] = useState({});
   const { login } = useAuth();
   const navigate = useNavigate();
+  const centerData = centrosData.centrosFP
+
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/listProfesores")
+    .then(result => result.json())
+    .then(data => setProfesores(data));
+  }, []);
+
 
   const handleChange = (e) => {
     let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
+    
     setFormData({ ...formData, [e.target.name]: value });
   };
 
@@ -89,14 +101,23 @@ export default function Signup() {
         {rol === "Alumno" && (
           <fieldset>
             <legend>Información del Alumno</legend>
-            <input type="number" name="profesor_id" placeholder="ID del profesor" onChange={handleChange} required />
+            <select name="profesor_id" id="profesor_id" onChange={handleChange}>
+              <option value="">Elige un profesor</option>
+              {profesores.map( (profe) => (
+                <option value={profe.id}>{profe.nombre + " " + profe.apellido}</option>
+              ) )}
+            </select>
           </fieldset>
         )}
 
         {rol === "Profesor" && (
           <fieldset>
             <legend>Información del Profesor</legend>
-            <input type="text" name="instituto" placeholder="Nombre del instituto" onChange={handleChange} required />
+            <select name="instituto" id="insti" onChange={handleChange}>
+              {centerData.map( (centro, index) => (
+                <option value={centro.nombre}>{centro.nombre}</option>
+              ) )}
+            </select>
           </fieldset>
         )}
 

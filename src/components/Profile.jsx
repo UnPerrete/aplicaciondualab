@@ -11,6 +11,7 @@ const Profile = () => {
     const { user, isAuthenticated, setUser, logout, loading } = useAuth();
     const navigate = useNavigate(); // Hook para navegar a otras páginas
     const [isEditing, setIsEditing] = useState(false); // Estado para controlar si está en modo de edición o no
+<<<<<<< HEAD
     const [formData, setFormData] = useState(() => {
       if (user?.role === "Empresa") {
         return {
@@ -39,6 +40,19 @@ const Profile = () => {
           zona: user?.zona || "",
         };
       }
+=======
+    const [formData, setFormData] = useState({
+      nombre: user?.nombre || "",
+      apellido: user?.apellido || "",
+      nacimiento: user?.nacimiento || "",
+      role: user?.role || "",
+      nif: user?.nif || "",
+      gmail: user?.gmail || "",
+      telefono: user?.telefono || "",
+      poblacion: user?.poblacion || "",
+      zona: user?.zona || "",
+      profesor: user?.nombre_profesor || "",
+>>>>>>> c9eb9ae63fcd355c503902ed1f02bcd16b49fcf5
     }); // Estado para almacenar los datos del formulario, inicializados con los datos del usuario
   
 
@@ -172,6 +186,7 @@ const Profile = () => {
             <p><strong>Población:</strong> {user.poblacion || "No disponible"}</p>
             <p><strong>Zona:</strong> {user.zona || "No disponible"}</p>
             <p><strong>Rol:</strong> {user.role}</p>
+            {user.role == "Alumno" && (<p><strong>Profesor:</strong> {user.profesor}</p>)}
           </div>
         )}
 

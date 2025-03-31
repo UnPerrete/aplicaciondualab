@@ -4,8 +4,14 @@ import NavbarWeb from './NavbarWeb';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
+import { Link } from 'react-router-dom';
+//import centrosFP from "./data/centrosFP.json";
+import centrosData from "./data/centrosFP.json";
 
 const CentrosFP = () => {
+
+    const centrosFP = centrosData.centrosFP;
+
     return (
         <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
             {/* Navbar */}
@@ -59,8 +65,34 @@ const CentrosFP = () => {
                 </div>
             </div>
 
+            {/* ¿Qué ofrecemos? */}
+            <div className="section-title2">
+                <h2>CENTROS FP</h2>
+            </div>
+
+            {/* Lista de Centros de FP */}
+            {centrosFP.map((centro, index) => (
+                <div key={index}>
+                    <div className="contact-content2">
+                        <div className="card">
+                            <img src={centro.imagen} alt={centro.nombre} className="card-img" />
+                        </div>
+                        <div className="contact-info2">
+                            <h3>{centro.nombre}</h3>
+                            <p>{centro.descripcion}</p>                    
+                            <ul style={{ textAlign: 'left' }}>
+                                <li><strong>Ubicación:</strong> {centro.ubicacion}</li>
+                                <li><strong>Tipo:</strong> {centro.tipo}</li>
+                                <li><Link to={centro.paginaWeb}>Página Web</Link></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr className="section-divider" />  {/* Línea divisoria entre centros */}
+                </div>
+            ))}            
+
             {/* Línea divisoria */}
-            <hr className="section-divider" />
+            {/* <hr className="section-divider" /> */}
             <ArrowUp/>
             <InfoB/>
             {/* Footer */}
