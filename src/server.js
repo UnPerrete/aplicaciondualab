@@ -30,28 +30,35 @@ db.connect((err) => {
 
 // Endpoint para el login
 app.post("/api/login", (req, res) => {
-  const { role, nif, password } = req.body;
+  const { role, nif, nombre_comercial, password } = req.body;
   const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
 
-  console.log(`🔑 Contraseña hasheada recibida desde el frontend: ${hashedPassword}`); // Verificar el hash recibido
   let query = "";
-  if (role != "empresa") {
-    query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
-  } else {
-    query = "SELECT e.* FROM users u JOIN empresas e ON u.nombre = e.NombreComercial WHERE u.nombre = ? AND u.password = ? AND u.role = ?;"
-  }
-  let params = [nif, hashedPassword, role];
+  let params = [];
 
-  // Ejecutar consulta en MySQL
+  if (role !== "empresa") {
+    query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
+    params = [nif, hashedPassword, role];
+  } else {
+    query = `
+      SELECT e.*, u.password as user_password FROM users u
+      JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
+      WHERE u.nombre = ? AND u.role = ?;
+    `;
+    params = [nombre_comercial, role];
+  }
+
+  console.log("Datos recibidos en login:", { role, nombre_comercial, hashedPassword });
+
   db.query(query, params, (err, results) => {
     if (err) {
       console.error("Error en la consulta:", err);
       return res.status(500).json({ success: false, message: "Error en el servidor" });
     }
 
-    console.log("Resultados de la consulta:", results); // Agrega este log para ver los resultados
+    console.log("Resultados obtenidos en login:", results);
 
-    if (results.length > 0 && role != "empresa") {
+    if (results.length > 0 && role !== "empresa") {
       const user = results[0];
       res.json({
         success: true,
@@ -69,33 +76,54 @@ app.post("/api/login", (req, res) => {
           zona: user.zona || null,
         }
       });
-    } else if (results.length > 0 && role == "empresa") {
+    } else if (results.length > 0 && role === "empresa") {
       const user = results[0];
-      res.json({
-        success: true,
-        message: "Login exitoso",
-        user: {
-          idzca: user.IdZCA || null,
-          municipio: user.Municipio || null,
-          ID: user.ID || null,
-          nombrecomercial: user.NombreComercial || null,
-          razonsocial: user.RazonSocial || null,
-          role: role || null,
-          sector: user.Sector || null,
-          actividad: user.Actividad || null,
-          calle: user.Calle || null,
-          nº: user.Nº || null,
-          cp: user.CP || null,
-          telefono: user.Telefono || null,
-          email: user.Email || null,
-          web: user.Web || null,
-        }
-      });
+
+      // Verifica claramente la contraseña
+      if (user.user_password === hashedPassword) {
+        res.json({
+          success: true,
+          message: "Login exitoso",
+          user: {
+            idzca: user.IdZCA || null,
+            municipio: user.Municipio || null,
+            ID: user.ID || null,
+            nombrecomercial: user.NombreComercial || null,
+            razonsocial: user.RazonSocial || null,
+            role: role || null,
+            sector: user.Sector || null,
+            actividad: user.Actividad || null,
+            calle: user.Calle || null,
+            nº: user.Nº || null,
+            cp: user.CP || null,
+            telefono: user.Telefono || null,
+            email: user.Email || null,
+            web: user.Web || null,
+          }
+        });
+      } else {
+        console.log("Contraseña incorrecta para empresa:", nombre_comercial);
+        res.status(401).json({ success: false, message: "Contraseña incorrecta" });
+      }
     } else {
+      console.log("No se encontró empresa o usuario:", nombre_comercial);
       res.status(401).json({ success: false, message: "Credenciales incorrectas" });
     }
   });
 });
+
+// Endpoint para obtener nombres comerciales (dropdown)
+app.get("/api/empresas", (req, res) => {
+  const query = "SELECT NombreComercial FROM empresas ORDER BY NombreComercial ASC";
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error al obtener empresas:", err);
+      return res.status(500).json({ error: "Error al obtener empresas" });
+    }
+    res.json(results);
+  });
+});
+
 
 app.put("/api/edit-profile/:nif", (req, res) => {
   const { nif } = req.params;
@@ -157,41 +185,42 @@ app.post("/api/data", (req, res) => {
 
 app.post("/api/addUser", (req, res) => {
   const {
-    nif,
-    pass,
-    confirmpass,
-    role,
-    nombre,
-    apellido,
-    gmail,
-    telefono,
-    zona,
-    nacimiento,
-    poblacion,
-    instituto,
-    profesor_id
+    nif, pass, confirmpass, role,
+    nombre, nombre_comercial, apellido,
+    gmail, telefono, zona,
+    nacimiento, poblacion, instituto, profesor_id
   } = req.body;
 
-  // Validación: Contraseñas coinciden
+  // Validación de contraseña
   if (pass !== confirmpass) return res.status(500).json({ error: 79 });
 
-  // Hashear la contraseña (MD5, no recomendado para producción)
+  // Hashear contraseña
   const hashedPassword = CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex);
 
-  console.log(`🔑 Añadiendo usuario con NIF: ${nif}, Role: ${role}, Nombre: ${nombre}, Apellido: ${apellido}, gmail: ${gmail}, telefono: ${telefono}, Zona: ${zona}, Fecha de Nacimiento: ${nacimiento}, Poblacion: ${poblacion}, Contraseña: ${hashedPassword}`);
+  // Verifica que recibes correctamente el nombre comercial
+  console.log("Nombre comercial recibido:", nombre_comercial);
 
-  // Query para agregar el usuario a la base de datos
+  // Asignación según rol
+  const nombreValue = role === "Empresa" ? nombre_comercial.trim() : nombre;
+  const apellidoValue = role === "Empresa" ? null : apellido;
+
   const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-  db.query(query, [nif, hashedPassword, role, nombre, apellido, gmail, telefono, zona, nacimiento, poblacion, instituto, profesor_id], (err, results) => {
+  db.query(query, [
+    nif, hashedPassword, role,
+    nombreValue, apellidoValue,
+    gmail, telefono, zona,
+    nacimiento, poblacion, instituto, profesor_id
+  ], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
       return res.status(500).json({ error: err.errno });
     }
-    console.log("Nuevo usuario añadido");
+    console.log("✅ Nuevo usuario añadido:", nombreValue);
     res.status(200).json({ success: true });
   });
 });
+
 
 
 app.post("/api/listProjects", (req, res) => {
