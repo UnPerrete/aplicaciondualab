@@ -61,7 +61,7 @@
   },
   {
     "titulo": "ADMINISTRACIÓN Y GESTIÓN",
-    "grupo": "Administración, Comercio y Marketing",
+    "grupo": "Administración y Gestión",
     "imagen": "../src/assets/Adm.jpg",
     "descripcion":
       "La FP de Administración y Gestión forma profesionales en la organización y gestión de empresas, abarcando contabilidad, finanzas, recursos humanos, gestión documental y atención al cliente. Prepara para trabajar en entornos administrativos, optimizando procesos y asegurando el correcto funcionamiento de una empresa.",
@@ -87,7 +87,7 @@
   },
   {
     "titulo": "COMERCIO Y MARKETING",
-    "grupo": "Administración, Comercio y Marketing",
+    "grupo": "Comercio y Marketing",
     "imagen": "../src/assets/ComMar.jpg",
     "descripcion":
       "La FP de Comercio y Marketing forma profesionales especializados en la gestión comercial, ventas, estrategias de marketing y atención al cliente. Prepara para desempeñar funciones en el ámbito del comercio nacional e internacional, publicidad, investigación de mercados y comercio digital, combinando conocimientos teóricos con formación práctica para adaptarse a las necesidades del mercado actual.",
@@ -135,7 +135,7 @@
   },
   {
     "titulo": "HOSTELERÍA Y TURISMO",
-    "grupo": "Hostelería, Turismo y Servicios",
+    "grupo": "Hostelería y Turismo",
     "imagen": "../src/assets/HosTur.png",
     "descripcion":
     "La FP de Hostelería y Turismo prepara profesionales en la gestión de alojamientos, restauración, agencias de viajes y organización de eventos, combinando atención al cliente, administración y promoción turística.",
@@ -440,7 +440,7 @@
   },
   {
     "titulo": "SERVICIOS SOCIOCULTURALES Y A LA COMUNIDAD",
-    "grupo": "Hostelería, Turismo y Servicios",
+    "grupo": "Servicios Socioculturales y a la Comunidad",
     "imagen": "../src/assets/SSCC.png",
     "descripcion":
     "La FP de Servicios Socioculturales y a la Comunidad capacita profesionales en la atención, educación y apoyo a colectivos para fomentar la inclusión y el bienestar social.",
@@ -567,7 +567,7 @@
   },
   {
     "titulo": "EMPRESA E INICIATIVA EMPRENDEDORA ([EMR])",
-    "grupo": "Administración, Comercio y Marketing",
+    "grupo": "Administración y Gestión",
     "imagen": "../src/assets/emr.png",
     "descripcion":
     "La FP de Empresa e Iniciativa Emprendedora (EMR) enseña habilidades para crear y gestionar empresas, incluyendo planificación, financiamiento, marketing, viabilidad económica y aspectos legales, fomentando la iniciativa emprendedora.",
@@ -622,7 +622,7 @@
   {
     "titulo": "Título Profesional Básico en Acceso y Conservación en Instalaciones Deportivas",
     "grupo": "Actividades Físicas y Deportivas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ACID.png",
     "descripcion": "La titulación de Título Profesional Básico en Acceso y Conservación en Instalaciones Deportivas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en título profesional básico en acceso y conservación en instalaciones deportivas",
@@ -634,7 +634,7 @@
   {
     "titulo": "Técnico en Guía en el Medio Natural y de Tiempo Libre",
     "grupo": "Actividades Físicas y Deportivas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GMNTL.png",
     "descripcion": "La titulación de Técnico en Guía en el Medio Natural y de Tiempo Libre prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en guía en el medio natural y de tiempo libre",
@@ -646,7 +646,7 @@
   {
     "titulo": "Técnico Superior en Acondicionamiento Físico",
     "grupo": "Actividades Físicas y Deportivas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AF.png",
     "descripcion": "La titulación de Técnico Superior en Acondicionamiento Físico prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en acondicionamiento físico",
@@ -658,7 +658,7 @@
   {
     "titulo": "Técnico Superior en Enseñanza y Animación Sociodeportiva",
     "grupo": "Actividades Físicas y Deportivas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EAS.png",
     "descripcion": "La titulación de Técnico Superior en Enseñanza y Animación Sociodeportiva prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en enseñanza y animación sociodeportiva",
@@ -718,7 +718,7 @@
   {
     "titulo": "Técnico Básico en Actividades Agropecuarias",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AA.png",
     "descripcion": "La titulación de Técnico Básico en Actividades Agropecuarias prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en actividades agropecuarias",
@@ -730,7 +730,7 @@
   {
     "titulo": "Técnico Básico en Agro-jardinería y Composiciones Florales",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AJCF.png",
     "descripcion": "La titulación de Técnico Básico en Agro-jardinería y Composiciones Florales prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en agro-jardinería y composiciones florales",
@@ -742,7 +742,7 @@
   {
     "titulo": "Técnico Básico en Aprovechamientos Forestales",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AFO.png",
     "descripcion": "La titulación de Técnico Básico en Aprovechamientos Forestales prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en aprovechamientos forestales",
@@ -754,7 +754,7 @@
   {
     "titulo": "Técnico en Aprovechamiento y Conservación del Medio Natural",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ACMN.png",
     "descripcion": "La titulación de Técnico en Aprovechamiento y Conservación del Medio Natural prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en aprovechamiento y conservación del medio natural",
@@ -766,7 +766,7 @@
   {
     "titulo": "Técnico en Jardinería y Floristería",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/JF.png",
     "descripcion": "La titulación de Técnico en Jardinería y Floristería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en jardinería y floristería",
@@ -778,7 +778,7 @@
   {
     "titulo": "Técnico en Producción Agroecológica",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PA.png",
     "descripcion": "La titulación de Técnico en Producción Agroecológica prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en producción agroecológica",
@@ -790,7 +790,7 @@
   {
     "titulo": "Técnico en Producción Agropecuaria",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PAG.png",
     "descripcion": "La titulación de Técnico en Producción Agropecuaria prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en producción agropecuaria",
@@ -802,7 +802,7 @@
   {
     "titulo": "Técnico Superior en Ganadería y Asistencia en Sanidad Animal",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GASA.png",
     "descripcion": "La titulación de Técnico Superior en Ganadería y Asistencia en Sanidad Animal prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en ganadería y asistencia en sanidad animal",
@@ -814,7 +814,7 @@
   {
     "titulo": "Técnico Superior en Gestión Forestal y del Medio Natural",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GFMN.png",
     "descripcion": "La titulación de Técnico Superior en Gestión Forestal y del Medio Natural prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en gestión forestal y del medio natural",
@@ -826,7 +826,7 @@
   {
     "titulo": "Técnico Superior en Paisajismo y Medio Rural",
     "grupo": "Agraria",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PMRU.png",
     "descripcion": "La titulación de Técnico Superior en Paisajismo y Medio Rural prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en paisajismo y medio rural",
@@ -838,7 +838,7 @@
   {
     "titulo": "Técnico Básico en Artes Gráficas",
     "grupo": "Artes Gráficas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ArtGra.png",
     "descripcion": "La titulación de Técnico Básico en Artes Gráficas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en artes gráficas",
@@ -850,7 +850,7 @@
   {
     "titulo": "Técnico en Impresión Gráfica",
     "grupo": "Artes Gráficas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IG.png",
     "descripcion": "La titulación de Técnico en Impresión Gráfica prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en impresión gráfica",
@@ -862,7 +862,7 @@
   {
     "titulo": "Técnico en Preimpresión Digital",
     "grupo": "Artes Gráficas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PD.png",
     "descripcion": "La titulación de Técnico en Preimpresión Digital prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en preimpresión digital",
@@ -874,7 +874,7 @@
   {
     "titulo": "Técnico Superior en Diseño y Gestión de la Producción Gráfica",
     "grupo": "Artes Gráficas",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DGPG.png",
     "descripcion": "La titulación de Técnico Superior en Diseño y Gestión de la Producción Gráfica prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en diseño y gestión de la producción gráfica",
@@ -982,7 +982,7 @@
   {
     "titulo": "Técnico Básico en Reforma y Mantenimiento de Edificios",
     "grupo": "Edificación y Obra Civil",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/RME.png",
     "descripcion": "La titulación de Técnico Básico en Reforma y Mantenimiento de Edificios prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en reforma y mantenimiento de edificios",
@@ -994,7 +994,7 @@
   {
     "titulo": "Técnico en Obras de Interior, Decoración y Rehabilitación",
     "grupo": "Edificación y Obra Civil",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/OIDR.png",
     "descripcion": "La titulación de Técnico en Obras de Interior, Decoración y Rehabilitación prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en obras de interior, decoración y rehabilitación",
@@ -1006,7 +1006,7 @@
   {
     "titulo": "Técnico Superior en Proyectos de Edificación",
     "grupo": "Edificación y Obra Civil",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PE.png",
     "descripcion": "La titulación de Técnico Superior en Proyectos de Edificación prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en proyectos de edificación",
@@ -1018,7 +1018,7 @@
   {
     "titulo": "Técnico Superior en Proyectos de Obra Civil",
     "grupo": "Edificación y Obra Civil",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/POC.png",
     "descripcion": "La titulación de Técnico Superior en Proyectos de Obra Civil prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en proyectos de obra civil",
@@ -1030,7 +1030,7 @@
   {
     "titulo": "Técnico Superior en Organización y Control de Obras de Construcción",
     "grupo": "Edificación y Obra Civil",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/OCOC.png",
     "descripcion": "La titulación de Técnico Superior en Organización y Control de Obras de Construcción prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en organización y control de obras de construcción",
@@ -1282,7 +1282,7 @@
   {
     "titulo": "Técnico Básico en Alojamiento y Lavandería",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AL.png",
     "descripcion": "La titulación de Técnico Básico en Alojamiento y Lavandería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en alojamiento y lavandería",
@@ -1294,7 +1294,7 @@
   {
     "titulo": "Técnico Básico en Cocina y Restauración",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CR.png",
     "descripcion": "La titulación de Técnico Básico en Cocina y Restauración prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en cocina y restauración",
@@ -1306,7 +1306,7 @@
   {
     "titulo": "Técnico en Cocina y Gastronomía",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CG.png",
     "descripcion": "La titulación de Técnico en Cocina y Gastronomía prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en cocina y gastronomía",
@@ -1318,7 +1318,7 @@
   {
     "titulo": "Técnico en Servicios en Restauración",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SR.png",
     "descripcion": "La titulación de Técnico en Servicios en Restauración prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en servicios en restauración",
@@ -1330,7 +1330,7 @@
   {
     "titulo": "Técnico Superior en Agencias de Viajes y Gestión de Eventos",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AVGE.png",
     "descripcion": "La titulación de Técnico Superior en Agencias de Viajes y Gestión de Eventos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en agencias de viajes y gestión de eventos",
@@ -1342,7 +1342,7 @@
   {
     "titulo": "Técnico Superior en Dirección de Cocina",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DC.png",
     "descripcion": "La titulación de Técnico Superior en Dirección de Cocina prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en dirección de cocina",
@@ -1354,7 +1354,7 @@
   {
     "titulo": "Técnico Superior en Dirección de Servicios de Restauración",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DSR.png",
     "descripcion": "La titulación de Técnico Superior en Dirección de Servicios de Restauración prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en dirección de servicios de restauración",
@@ -1366,7 +1366,7 @@
   {
     "titulo": "Técnico Superior en Gestión de Alojamientos Turísticos",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GAT.png",
     "descripcion": "La titulación de Técnico Superior en Gestión de Alojamientos Turísticos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en gestión de alojamientos turísticos",
@@ -1378,7 +1378,7 @@
   {
     "titulo": "Técnico Superior en Guía, Información y Asistencias Turísticas",
     "grupo": "Hostelería y Turismo",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GIAT.png",
     "descripcion": "La titulación de Técnico Superior en Guía, Información y Asistencias Turísticas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en guía, información y asistencias turísticas",
@@ -1474,7 +1474,7 @@
   {
     "titulo": "Técnico en Vídeo, Disc-jockey y Sonido",
     "grupo": "Imagen y Sonido",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DJ.png",
     "descripcion": "La titulación de Técnico en Vídeo, Disc-jockey y Sonido prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en vídeo, disc-jockey y sonido",
@@ -1486,7 +1486,7 @@
   {
     "titulo": "Técnico Superior en Animaciones 3D, Juegos y Entornos Interactivos",
     "grupo": "Imagen y Sonido",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/3D.png",
     "descripcion": "La titulación de Técnico Superior en Animaciones 3D, Juegos y Entornos Interactivos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en animaciones 3d, juegos y entornos interactivos",
@@ -1498,7 +1498,7 @@
   {
     "titulo": "Técnico Superior en Iluminación, Captación y Tratamiento de Imagen",
     "grupo": "Imagen y Sonido",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ICTI.png",
     "descripcion": "La titulación de Técnico Superior en Iluminación, Captación y Tratamiento de Imagen prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en iluminación, captación y tratamiento de imagen",
@@ -1510,7 +1510,7 @@
   {
     "titulo": "Técnico Superior en Producción de Audiovisuales y Espectáculos",
     "grupo": "Imagen y Sonido",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PAE.png",
     "descripcion": "La titulación de Técnico Superior en Producción de Audiovisuales y Espectáculos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en producción de audiovisuales y espectáculos",
@@ -1522,7 +1522,7 @@
   {
     "titulo": "Técnico Superior en Realización de Proyectos Audiovisuales y Espectáculos",
     "grupo": "Imagen y Sonido",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/RPAE1.png",
     "descripcion": "La titulación de Técnico Superior en Realización de Proyectos Audiovisuales y Espectáculos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en realización de proyectos audiovisuales y espectáculos",
@@ -1534,7 +1534,7 @@
   {
     "titulo": "Técnico Superior en Sonido para Audiovisuales y Espectáculos",
     "grupo": "Imagen y Sonido",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SAE.png",
     "descripcion": "La titulación de Técnico Superior en Sonido para Audiovisuales y Espectáculos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en sonido para audiovisuales y espectáculos",
@@ -1606,7 +1606,7 @@
   {
     "titulo": "Técnico Básico en Informática y Comunicaciones",
     "grupo": "Informática y Comunicaciones",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/Inf.png",
     "descripcion": "La titulación de Técnico Básico en Informática y Comunicaciones prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en informática y comunicaciones",
@@ -1618,7 +1618,7 @@
   {
     "titulo": "Técnico Básico en Informática de Oficina",
     "grupo": "Informática y Comunicaciones",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/InfOfi.png",
     "descripcion": "La titulación de Técnico Básico en Informática de Oficina prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en informática de oficina",
@@ -1630,7 +1630,7 @@
   {
     "titulo": "Técnico en Sistemas Microinformáticos y Redes",
     "grupo": "Informática y Comunicaciones",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SRM.png",
     "descripcion": "La titulación de Técnico en Sistemas Microinformáticos y Redes prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en sistemas microinformáticos y redes",
@@ -1642,7 +1642,7 @@
   {
     "titulo": "Técnico Superior en Administración de Sistemas Informáticos en Red",
     "grupo": "Informática y Comunicaciones",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ASR1.png",
     "descripcion": "La titulación de Técnico Superior en Administración de Sistemas Informáticos en Red prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en administración de sistemas informáticos en red",
@@ -1654,7 +1654,7 @@
   {
     "titulo": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma",
     "grupo": "Informática y Comunicaciones",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DAM.png",
     "descripcion": "La titulación de Técnico Superior en Desarrollo de Aplicaciones Multiplataforma prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en desarrollo de aplicaciones multiplataforma",
@@ -1666,7 +1666,7 @@
   {
     "titulo": "Técnico Superior en Desarrollo de Aplicaciones Web",
     "grupo": "Informática y Comunicaciones",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DAW.png",
     "descripcion": "La titulación de Técnico Superior en Desarrollo de Aplicaciones Web prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en desarrollo de aplicaciones web",
@@ -2266,7 +2266,7 @@
   {
     "titulo": "Técnico Básico en Mantenimiento de Vehículos",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MV.png",
     "descripcion": "La titulación de Técnico Básico en Mantenimiento de Vehículos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en mantenimiento de vehículos",
@@ -2278,7 +2278,7 @@
   {
     "titulo": "Técnico en Carrocería",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/TC.png",
     "descripcion": "La titulación de Técnico en Carrocería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en carrocería",
@@ -2290,7 +2290,7 @@
   {
     "titulo": "Técnico en Mantenimiento de Material Rodante Ferroviario",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MMRF.png",
     "descripcion": "La titulación de Técnico en Mantenimiento de Material Rodante Ferroviario prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en mantenimiento de material rodante ferroviario",
@@ -2302,7 +2302,7 @@
   {
     "titulo": "Técnico en Electromecánica de maquinaria",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EM.png",
     "descripcion": "La titulación de Técnico en Electromecánica de maquinaria prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en electromecánica de maquinaria",
@@ -2314,7 +2314,7 @@
   {
     "titulo": "Técnico en Electromecánica de Vehículos Automóviles",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EVA.png",
     "descripcion": "La titulación de Técnico en Electromecánica de Vehículos Automóviles prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en electromecánica de vehículos automóviles",
@@ -2326,7 +2326,7 @@
   {
     "titulo": "Técnico en Mantenimiento de Estructuras de Madera y Mobiliario de Embarcaciones de Recreo",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MEMMER.png",
     "descripcion": "La titulación de Técnico en Mantenimiento de Estructuras de Madera y Mobiliario de Embarcaciones de Recreo prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en mantenimiento de estructuras de madera y mobiliario de embarcaciones de recreo",
@@ -2338,7 +2338,7 @@
   {
     "titulo": "Técnico Superior en Automoción",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SA.png",
     "descripcion": "La titulación de Técnico Superior en Automoción prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en automoción",
@@ -2350,7 +2350,7 @@
   {
     "titulo": "Curso de Especialización en Aeronaves pilotadas de forma remota-Drones",
     "grupo": "Transporte y Mantenimiento de Vehículos",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/APFR.png",
     "descripcion": "La titulación de Curso de Especialización en Aeronaves pilotadas de forma remota-Drones prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en curso de especialización en aeronaves pilotadas de forma remota-drones",
