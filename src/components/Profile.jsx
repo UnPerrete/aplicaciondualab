@@ -7,41 +7,40 @@ import ArrowUp from "./ui/ArrowUp";
 import InfoB from './ui/Info';
 
 const Profile = () => {
-  // Extrae el estado y las funciones necesarias del contexto de autenticación
-  const { user, isAuthenticated, setUser, logout, loading } = useAuth();
-  const navigate = useNavigate(); // Hook para navegar a otras páginas
-  const [isEditing, setIsEditing] = useState(false); // Estado para controlar si está en modo de edición o no
-
-  // Inicializa formData basado en el rol del usuario
-  const [formData, setFormData] = useState(() => {
-    if (user?.role === "Empresa") {
-      return {
-        nombrecomercial: user?.nombrecomercial || "",
-        razonsocial: user?.razonsocial || "",
-        sector: user?.sector || "",
-        actividad: user?.actividad || "",
-        calle: user?.calle || "",
-        nº: user?.nº || "",
-        cp: user?.cp || "",
-        municipio: user?.municipio || "",
-        email: user?.email || "",
-        telefono: user?.telefono || "",
-        web: user?.web || "",
-      };
-    } else {
-      return {
-        nombre: user?.nombre || "",
-        apellido: user?.apellido || "",
-        nacimiento: user?.nacimiento || "",
-        role: user?.role || "",
-        nif: user?.nif || "",
-        gmail: user?.gmail || "",
-        telefono: user?.telefono || "",
-        poblacion: user?.poblacion || "",
-        zona: user?.zona || "",
-      };
-    }
-  });
+    // Extrae el estado y las funciones necesarias del contexto de autenticación
+    const { user, isAuthenticated, setUser, logout, loading } = useAuth();
+    const navigate = useNavigate(); // Hook para navegar a otras páginas
+    const [isEditing, setIsEditing] = useState(false); // Estado para controlar si está en modo de edición o no
+    const [formData, setFormData] = useState(() => {
+      if (user?.role === "Empresa") {
+        return {
+          nombrecomercial: user?.nombrecomercial || "",
+          razonsocial: user?.razonsocial || "",
+          sector: user?.sector || "",
+          actividad: user?.actividad || "",
+          calle: user?.calle || "",
+          nº: user?.nº || "",
+          cp: user?.cp || "",
+          municipio: user?.municipio || "",
+          email: user?.email || "",
+          telefono: user?.telefono || "",
+          web: user?.web || "",
+        };
+      } else {
+        return {
+          nombre: user?.nombre || "",
+          apellido: user?.apellido || "",
+          nacimiento: user?.nacimiento || "",
+          role: user?.role || "",
+          nif: user?.nif || "",
+          gmail: user?.gmail || "",
+          telefono: user?.telefono || "",
+          poblacion: user?.poblacion || "",
+          zona: user?.zona || "",
+        };
+      }
+    }); // Estado para almacenar los datos del formulario, inicializados con los datos del usuario
+  
 
   // Verifica el estado de carga y redirige si no está autenticado
   useEffect(() => {

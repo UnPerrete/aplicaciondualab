@@ -32,23 +32,23 @@ db.connect((err) => {
 app.post("/api/login", (req, res) => {
   const { role, nif, nombre_comercial, password } = req.body;
   const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
-
+  console.log(`🔑 Contraseña hasheada recibida desde el frontend: ${hashedPassword}`); // Verificar el hash recibido
   let query = "";
   let params = [];
-
-  if (role !== "empresa") {
+  if (role == "Profesor") {
     query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
+    params = [nif, hashedPassword, role];
+  }else if (role == "Alumno"){
+    query = "SELECT u.*, CONCAT(p.nombre, ' ', p.apellido) AS nombre_profesor FROM users u LEFT JOIN alumnos a ON u.id = a.user_id LEFT JOIN users p ON a.profesor_id = p.id WHERE u.nif = ? AND u.password = ? AND u.role = ?;"
     params = [nif, hashedPassword, role];
   } else {
     query = `
-      SELECT e.*, u.password as user_password FROM users u
-      JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
-      WHERE u.nombre = ? AND u.role = ?;
-    `;
-    params = [nombre_comercial, role];
-  }
-
-  console.log("Datos recibidos en login:", { role, nombre_comercial, hashedPassword });
+    SELECT e.*, u.password as user_password FROM users u
+    JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
+    WHERE u.nombre = ? AND u.role = ?;
+  `;
+  params = [nombre_comercial, role];  
+}
 
   db.query(query, params, (err, results) => {
     if (err) {
@@ -56,7 +56,8 @@ app.post("/api/login", (req, res) => {
       return res.status(500).json({ success: false, message: "Error en el servidor" });
     }
 
-    console.log("Resultados obtenidos en login:", results);
+    console.log("Resultados obtenidos en login:");
+    console.table(results)
 
     if (results.length > 0 && role !== "empresa") {
       const user = results[0];
