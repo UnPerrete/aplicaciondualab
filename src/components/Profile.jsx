@@ -11,7 +11,6 @@ const Profile = () => {
     const { user, isAuthenticated, setUser, logout, loading } = useAuth();
     const navigate = useNavigate(); // Hook para navegar a otras páginas
     const [isEditing, setIsEditing] = useState(false); // Estado para controlar si está en modo de edición o no
-<<<<<<< HEAD
     const [formData, setFormData] = useState(() => {
       if (user?.role === "Empresa") {
         return {
@@ -29,30 +28,18 @@ const Profile = () => {
         };
       } else {
         return {
-          nombre: user?.nombre || "",
-          apellido: user?.apellido || "",
-          nacimiento: user?.nacimiento || "",
-          role: user?.role || "",
-          nif: user?.nif || "",
-          gmail: user?.gmail || "",
-          telefono: user?.telefono || "",
-          poblacion: user?.poblacion || "",
-          zona: user?.zona || "",
+            nombre: user?.nombre || "",
+            apellido: user?.apellido || "",
+            nacimiento: user?.nacimiento || "",
+            role: user?.role || "",
+            nif: user?.nif || "",
+            gmail: user?.gmail || "",
+            telefono: user?.telefono || "",
+            poblacion: user?.poblacion || "",
+            zona: user?.zona || "",
+            profesor: user?.nombre_profesor || "",
         };
       }
-=======
-    const [formData, setFormData] = useState({
-      nombre: user?.nombre || "",
-      apellido: user?.apellido || "",
-      nacimiento: user?.nacimiento || "",
-      role: user?.role || "",
-      nif: user?.nif || "",
-      gmail: user?.gmail || "",
-      telefono: user?.telefono || "",
-      poblacion: user?.poblacion || "",
-      zona: user?.zona || "",
-      profesor: user?.nombre_profesor || "",
->>>>>>> c9eb9ae63fcd355c503902ed1f02bcd16b49fcf5
     }); // Estado para almacenar los datos del formulario, inicializados con los datos del usuario
   
 
@@ -221,8 +208,6 @@ const Profile = () => {
 };
 
 export default Profile;
-
-{user.gmail || "No disponible"}
 
 
 

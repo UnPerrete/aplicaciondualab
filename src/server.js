@@ -32,26 +32,6 @@ db.connect((err) => {
 app.post("/api/login", (req, res) => {
   const { role, nif, nombre_comercial, password } = req.body;
   const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
-<<<<<<< HEAD
-
-  let query = "";
-  let params = [];
-
-  if (role !== "empresa") {
-    query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
-    params = [nif, hashedPassword, role];
-  } else {
-    query = `
-      SELECT e.*, u.password as user_password FROM users u
-      JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
-      WHERE u.nombre = ? AND u.role = ?;
-    `;
-    params = [nombre_comercial, role];
-  }
-
-  console.log("Datos recibidos en login:", { role, nombre_comercial, hashedPassword });
-=======
-  console.log(role)
   console.log(`🔑 Contraseña hasheada recibida desde el frontend: ${hashedPassword}`); // Verificar el hash recibido
   let query = "";
   if (role == "Profesor") {
@@ -63,7 +43,6 @@ app.post("/api/login", (req, res) => {
   }
   
   let params = [nif, hashedPassword, role];
->>>>>>> c9eb9ae63fcd355c503902ed1f02bcd16b49fcf5
 
   db.query(query, params, (err, results) => {
     if (err) {
@@ -71,7 +50,8 @@ app.post("/api/login", (req, res) => {
       return res.status(500).json({ success: false, message: "Error en el servidor" });
     }
 
-    console.log("Resultados obtenidos en login:", results);
+    console.log("Resultados obtenidos en login:");
+    console.table(results)
 
     if (results.length > 0 && role !== "empresa") {
       const user = results[0];
