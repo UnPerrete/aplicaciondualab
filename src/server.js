@@ -32,33 +32,53 @@ db.connect((err) => {
 app.post("/api/login", (req, res) => {
   const { role, nif, nombre_comercial, password } = req.body;
   const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
+  const roleNormalized = role?.toLowerCase();
+
+  console.log("🟡 Login recibido:", {
+    roleOriginal: role,
+    roleNormalized,
+    nif,
+    nombre_comercial,
+    hashedPassword
+  });
 
   let query = "";
   let params = [];
 
-  if (role !== "empresa") {
+  if (roleNormalized === "profesor") {
     query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
     params = [nif, hashedPassword, role];
-  } else {
+  } else if (roleNormalized === "alumno") {
     query = `
-      SELECT e.*, u.password as user_password FROM users u
-      JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
-      WHERE u.nombre = ? AND u.role = ?;
+      SELECT u.*, CONCAT(p.nombre, ' ', p.apellido) AS nombre_profesor
+      FROM users u
+      LEFT JOIN alumnos a ON u.id = a.user_id
+      LEFT JOIN users p ON a.profesor_id = p.id
+      WHERE u.nif = ? AND u.password = ? AND u.role = ?;
     `;
-    params = [nombre_comercial, role];
+    params = [nif, hashedPassword, role];
+  } else if (roleNormalized === "empresa") {
+    query = `
+      SELECT e.*, u.password as user_password
+      FROM users u
+      JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
+      WHERE TRIM(LOWER(u.nombre)) = TRIM(LOWER(?)) AND u.password = ? AND u.role = ?;
+    `;
+    params = [nombre_comercial, hashedPassword, role];
+  } else {
+    return res.status(400).json({ success: false, message: "Rol no reconocido" });
   }
-
-  console.log("Datos recibidos en login:", { role, nombre_comercial, hashedPassword });
 
   db.query(query, params, (err, results) => {
     if (err) {
-      console.error("Error en la consulta:", err);
+      console.error("❌ Error en la consulta:", err);
       return res.status(500).json({ success: false, message: "Error en el servidor" });
     }
 
-    console.log("Resultados obtenidos en login:", results);
+    console.log("📦 Resultados obtenidos en login:");
+    console.table(results);
 
-    if (results.length > 0 && role !== "empresa") {
+    if (results.length > 0 && roleNormalized !== "empresa") {
       const user = results[0];
       res.json({
         success: true,
@@ -77,41 +97,36 @@ app.post("/api/login", (req, res) => {
           profesor: user.nombre_profesor || null,
         }
       });
-    } else if (results.length > 0 && role === "empresa") {
+    } else if (results.length > 0 && roleNormalized === "empresa") {
       const user = results[0];
-
-      // Verifica claramente la contraseña
-      if (user.user_password === hashedPassword) {
-        res.json({
-          success: true,
-          message: "Login exitoso",
-          user: {
-            idzca: user.IdZCA || null,
-            municipio: user.Municipio || null,
-            ID: user.ID || null,
-            nombrecomercial: user.NombreComercial || null,
-            razonsocial: user.RazonSocial || null,
-            role: role || null,
-            sector: user.Sector || null,
-            actividad: user.Actividad || null,
-            calle: user.Calle || null,
-            nº: user.Nº || null,
-            cp: user.CP || null,
-            telefono: user.Telefono || null,
-            email: user.Email || null,
-            web: user.Web || null,
-          }
-        });
-      } else {
-        console.log("Contraseña incorrecta para empresa:", nombre_comercial);
-        res.status(401).json({ success: false, message: "Contraseña incorrecta" });
-      }
+      res.json({
+        success: true,
+        message: "Login exitoso",
+        user: {
+          idzca: user.IdZCA || null,
+          municipio: user.Municipio || null,
+          ID: user.ID || null,
+          nombrecomercial: user.NombreComercial || null,
+          razonsocial: user.RazonSocial || null,
+          role: role,
+          sector: user.Sector || null,
+          actividad: user.Actividad || null,
+          calle: user.Calle || null,
+          nº: user.Nº || null,
+          cp: user.CP || null,
+          telefono: user.Telefono || null,
+          email: user.Email || null,
+          web: user.Web || null,
+        }
+      });
     } else {
-      console.log("No se encontró empresa o usuario:", nombre_comercial);
+      console.log("⚠️ No se encontró empresa o usuario:", role, nif || nombre_comercial);
       res.status(401).json({ success: false, message: "Credenciales incorrectas" });
     }
   });
 });
+
+
 
 // Endpoint para obtener nombres comerciales (dropdown)
 app.get("/api/empresas", (req, res) => {
@@ -128,34 +143,56 @@ app.get("/api/empresas", (req, res) => {
 
 app.put("/api/edit-profile/:nif", (req, res) => {
   const { nif } = req.params;
-  const updates = req.body; // Recibe cualquier campo a actualizar
+  const updates = req.body;
+  const isEmpresa = updates.role?.toLowerCase() === "empresa";
+
 
   if (Object.keys(updates).length === 0) {
     return res.status(400).json({ error: "No se enviaron datos para actualizar" });
   }
 
-  // Construimos dinámicamente la consulta SQL
-  const fields = Object.keys(updates).map(field => `${field} = ?`).join(", ");
-  const values = Object.values(updates);
+  // Campos permitidos por tabla
+  const camposEmpresa = [
+    "nombrecomercial", "razonsocial", "sector", "actividad",
+    "calle", "nº", "cp", "municipio", "email", "web", "telefono"
+  ];
 
-  const query = `UPDATE users SET ${fields} WHERE nif = ?`;
+  const camposUsuario = [
+    "nombre", "apellido", "nacimiento", "nif", "gmail",
+    "telefono", "poblacion", "zona"
+  ];
 
-  console.log("Consulta SQL:", query);  // Verifica la consulta generada
-  console.log("Valores:", [...values, nif]);  // Verifica los valores enviados
+  const camposValidos = isEmpresa ? camposEmpresa : camposUsuario;
 
-  db.query(query, [...values, nif], (err, results) => {
+  const fields = camposValidos
+    .filter(field => updates[field] !== undefined)
+    .map(field => `${field} = ?`)
+    .join(", ");
+
+  const values = camposValidos
+    .filter(field => updates[field] !== undefined)
+    .map(field => updates[field]);
+
+  const query = isEmpresa
+    ? `UPDATE empresas SET ${fields} WHERE NombreComercial = ?`
+    : `UPDATE users SET ${fields} WHERE nif = ?`;
+
+  const whereValue = isEmpresa ? updates.nombrecomercial : nif;
+
+  db.query(query, [...values, whereValue], (err, result) => {
     if (err) {
-      console.error("Error al actualizar el perfil:", err);
-      return res.status(500).json({ error: "Error al actualizar los datos del perfil" });
+      console.error("❌ Error al actualizar el perfil:", err);
+      return res.status(500).json({ error: "Error al actualizar perfil" });
     }
 
-    if (results.affectedRows > 0) {
-      return res.status(200).json({ message: "Perfil actualizado con éxito" });
+    if (result.affectedRows > 0) {
+      res.status(200).json({ success: true, message: "Perfil actualizado con éxito" });
     } else {
-      return res.status(404).json({ error: "No se encontró el usuario con ese NIF" });
+      res.status(404).json({ error: "No se encontró el registro" });
     }
   });
 });
+
 
 
 
@@ -367,18 +404,7 @@ app.get("/api/listFinishedProjects", (req, res) => {
   const query = "select * from proyectos where estado = 'completado'"
   db.query(query, [], (err, result) => {
     if(err){
-      console.error("Error al obtener los datos:", err);
-      return res.status(500).json({ error: "Error al obtener los datos" });
-    }
-    return res.status(200).json(result);
-  });
-});
-
-app.get("/api/listProfesores", (req, res) => {
-  const query = "select id, nombre, apellido from users where role = 'Profesor'"
-  db.query(query, [], (err, result) => {
-    if(err){
-      console.error("Error al obtener los datos:", err);
+      console.error("Error al guardar los datos:", err);
       return res.status(500).json({ error: "Error al obtener los datos" });
     }
     return res.status(200).json(result);

@@ -38,7 +38,7 @@ export default function Proyectos() {
                     <p className='descripcion'>No hay proyectos disponibles para esta empresa.</p>
                 </div>
             )}
-            <Link to={"/"}><button>Volver</button></Link>
+            <Link to={"/tablaempresa"}><button>Volver</button></Link>
         </>
     )
 }
