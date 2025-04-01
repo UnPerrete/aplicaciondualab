@@ -155,7 +155,7 @@
   },
   {
     "titulo": "INSTALACIÓN Y MANTENIMIENTO",
-    "grupo": "Industria y Fabricación",
+    "grupo": "Instalación y Mantenimiento",
     "imagen": "../src/assets/InsMan.png",
     "descripcion":
     "La FP de Instalación y Mantenimiento forma profesionales en el montaje, mantenimiento y reparación de sistemas industriales, equipos mecánicos, térmicos y redes de fluidos, asegurando su correcto funcionamiento y eficiencia.",
@@ -174,7 +174,7 @@
   },
   {
     "titulo": "ELECTRICIDAD Y ELECTRÓNICA",
-    "grupo": "Industria y Fabricación",
+    "grupo": "Electricidad y Electrónica",
     "imagen": "../src/assets/Elec.png",
     "descripcion":
     "La FP de Electricidad y Electrónica forma profesionales en la instalación, mantenimiento y reparación de sistemas eléctricos, electrónicos y automatizados, esenciales en sectores industriales y tecnológicos.",
@@ -269,7 +269,7 @@
   },
   {
     "titulo": "ENERGÍA Y AGUA",
-    "grupo": "Industria y Fabricación",
+    "grupo": "Energía y Agua",
     "imagen": "../src/assets/EnAg.png",
     "descripcion":
     "La FP de Energía y Agua capacita profesionales en la generación, distribución y gestión eficiente de recursos energéticos e hídricos, promoviendo el uso sostenible y tecnológico.",
@@ -288,7 +288,7 @@
   },
   {
     "titulo": "FABRICACIÓN MECÁNICA",
-    "grupo": "Industria y Fabricación",
+    "grupo": "Fabricación Mecánica",
     "imagen": "../src/assets/FaMec.png",
     "descripcion":
     "La FP de Fabricación Mecánica forma profesionales en la producción, montaje y mantenimiento de piezas y estructuras metálicas, utilizando maquinaria y tecnologías avanzadas para la industria.",
@@ -345,7 +345,7 @@
   },
   {
     "titulo": "MADERA, MUEBLE Y CORCHO",
-    "grupo": "Industria y Fabricación",
+    "grupo": "Madera, Mueble y Corcho",
     "imagen": "../src/assets/MMC.png",
     "descripcion":
     "La FP de Madera, Mueble y Corcho capacita profesionales en la fabricación, diseño y mantenimiento de mobiliario, carpintería y productos derivados de la madera.",
@@ -459,7 +459,7 @@
   },
   {
     "titulo": "TEXTIL, CONFECCIÓN Y PIEL",
-    "grupo": "Industria y Fabricación",
+    "grupo": "Textil, Confección y Piel",
     "imagen": "../src/assets/TCP.png",
     "descripcion":
     "La FP de Textil, Confección y Piel capacita profesionales en el diseño, producción y personalización de prendas, calzado y artículos de piel, combinando creatividad y tecnología.",
@@ -478,7 +478,7 @@
   },
   {
     "titulo": "VIDRIO Y CERÁMICA",
-    "grupo": "Industria y Fabricación",
+    "grupo": "Vídrio y Cerámica",
     "imagen": "../src/assets/VC.png",
     "descripcion":
     "La FP de Vidrio y Cerámica capacita profesionales en la fabricación, diseño y tratamiento de productos de vidrio y cerámica, combinando tradición e innovación tecnológica.",
@@ -1390,7 +1390,7 @@
   {
     "titulo": "Técnico Básico en Peluquería y Estética",
     "grupo": "Imagen Personal",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ImgPer.png",
     "descripcion": "La titulación de Técnico Básico en Peluquería y Estética prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en peluquería y estética",
@@ -1402,7 +1402,7 @@
   {
     "titulo": "Técnico en Estética y Belleza",
     "grupo": "Imagen Personal",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EB.png",
     "descripcion": "La titulación de Técnico en Estética y Belleza prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en estética y belleza",
@@ -1414,7 +1414,7 @@
   {
     "titulo": "Técnico en Peluquería y Cosmética Capilar",
     "grupo": "Imagen Personal",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PCC.png",
     "descripcion": "La titulación de Técnico en Peluquería y Cosmética Capilar prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en peluquería y cosmética capilar",
@@ -1426,7 +1426,7 @@
   {
     "titulo": "Técnico Superior en Asesoría de Imagen Personal y Corporativa",
     "grupo": "Imagen Personal",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AIMC.png",
     "descripcion": "La titulación de Técnico Superior en Asesoría de Imagen Personal y Corporativa prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en asesoría de imagen personal y corporativa",
@@ -1438,7 +1438,7 @@
   {
     "titulo": "Técnico Superior en Caracterización y Maquillaje Profesional",
     "grupo": "Imagen Personal",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CMP.png",
     "descripcion": "La titulación de Técnico Superior en Caracterización y Maquillaje Profesional prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en caracterización y maquillaje profesional",
@@ -1450,7 +1450,7 @@
   {
     "titulo": "Técnico Superior en Estética Integral y Bienestar",
     "grupo": "Imagen Personal",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EIB.png",
     "descripcion": "La titulación de Técnico Superior en Estética Integral y Bienestar prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en estética integral y bienestar",
@@ -1462,7 +1462,7 @@
   {
     "titulo": "Técnico Superior en Estilismo y Dirección de Peluquería",
     "grupo": "Imagen Personal",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EDP.png",
     "descripcion": "La titulación de Técnico Superior en Estilismo y Dirección de Peluquería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en estilismo y dirección de peluquería",
@@ -1678,7 +1678,7 @@
   {
     "titulo": "Técnico Básico en Mantenimiento de Viviendas",
     "grupo": "Instalación y Mantenimiento",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MVI.png",
     "descripcion": "La titulación de Técnico Básico en Mantenimiento de Viviendas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en mantenimiento de viviendas",
@@ -1690,7 +1690,7 @@
   {
     "titulo": "Técnico en Instalaciones de Producción de Calor",
     "grupo": "Instalación y Mantenimiento",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PC.png",
     "descripcion": "La titulación de Técnico en Instalaciones de Producción de Calor prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en instalaciones de producción de calor",
@@ -1702,7 +1702,7 @@
   {
     "titulo": "Técnico en Instalaciones Frigoríficas y de Climatización",
     "grupo": "Instalación y Mantenimiento",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IFC.png",
     "descripcion": "La titulación de Técnico en Instalaciones Frigoríficas y de Climatización prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en instalaciones frigoríficas y de climatización",
@@ -1714,7 +1714,7 @@
   {
     "titulo": "Técnico en Mantenimiento Electromecánico",
     "grupo": "Instalación y Mantenimiento",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/E.png",
     "descripcion": "La titulación de Técnico en Mantenimiento Electromecánico prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en mantenimiento electromecánico",
