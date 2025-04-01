@@ -670,7 +670,7 @@
   {
     "titulo": "Técnico Básico en Servicios Administrativos",
     "grupo": "Administración y Gestión",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SAD.png",
     "descripcion": "La titulación de Técnico Básico en Servicios Administrativos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en servicios administrativos",
@@ -680,9 +680,9 @@
     ]
   },
   {
-    "titulo": "Técnico en Gestión Administrativa O",
+    "titulo": "Técnico en Gestión Administrativa",
     "grupo": "Administración y Gestión",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GA.png",
     "descripcion": "La titulación de Técnico en Gestión Administrativa O prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en gestión administrativa o",
@@ -692,9 +692,9 @@
     ]
   },
   {
-    "titulo": "Técnico Superior en Administración y Finanzas Open",
+    "titulo": "Técnico Superior en Administración y Finanzas",
     "grupo": "Administración y Gestión",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ADF.png",
     "descripcion": "La titulación de Técnico Superior en Administración y Finanzas Open prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en administración y finanzas open",
@@ -706,7 +706,7 @@
   {
     "titulo": "Técnico Superior en Asistencia a la Dirección",
     "grupo": "Administración y Gestión",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AD.png",
     "descripcion": "La titulación de Técnico Superior en Asistencia a la Dirección prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en asistencia a la dirección",
@@ -886,7 +886,7 @@
   {
     "titulo": "Técnico Básico en Servicios Comerciales",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SC.png",
     "descripcion": "La titulación de Técnico Básico en Servicios Comerciales prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en servicios comerciales",
@@ -898,7 +898,7 @@
   {
     "titulo": "Técnico en Actividades Comerciales",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AC.png",
     "descripcion": "La titulación de Técnico en Actividades Comerciales prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en actividades comerciales",
@@ -910,7 +910,7 @@
   {
     "titulo": "Técnico Superior en Comercio Internacional",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CI.png",
     "descripcion": "La titulación de Técnico Superior en Comercio Internacional prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en comercio internacional",
@@ -922,7 +922,7 @@
   {
     "titulo": "Técnico Superior en Gestión de Ventas y Espacios Comerciales",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GVEC.png",
     "descripcion": "La titulación de Técnico Superior en Gestión de Ventas y Espacios Comerciales prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en gestión de ventas y espacios comerciales",
@@ -934,7 +934,7 @@
   {
     "titulo": "Técnico Superior en Marketing y Publicidad",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MP.png",
     "descripcion": "La titulación de Técnico Superior en Marketing y Publicidad prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en marketing y publicidad",
@@ -946,7 +946,7 @@
   {
     "titulo": "Técnico Superior en Transporte y Logística",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/TL.png",
     "descripcion": "La titulación de Técnico Superior en Transporte y Logística prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en transporte y logística",
@@ -958,7 +958,7 @@
   {
     "titulo": "Curso de Especialización en Posicionamiento en Buscadores (SEO/SEM) y Comunicación en Redes Sociales",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PBCRRSS.png",
     "descripcion": "La titulación de Curso de Especialización en Posicionamiento en Buscadores (SEO/SEM) y Comunicación en Redes Sociales prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en curso de especialización en posicionamiento en buscadores (seo/sem) y comunicación en redes sociales",
@@ -970,7 +970,7 @@
   {
     "titulo": "Curso de Especialización en Redacción de Contenidos Digitales para Marketing y Ventas",
     "grupo": "Comercio y Marketing",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/RCDMV.png",
     "descripcion": "La titulación de Curso de Especialización en Redacción de Contenidos Digitales para Marketing y Ventas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en curso de especialización en redacción de contenidos digitales para marketing y ventas",
@@ -1042,7 +1042,7 @@
   {
     "titulo": "Técnico Básico en Instalaciones Electrotécnicas y Mecánicas",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IEM.png",
     "descripcion": "La titulación de Técnico Básico en Instalaciones Electrotécnicas y Mecánicas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en instalaciones electrotécnicas y mecánicas",
@@ -1054,7 +1054,7 @@
   {
     "titulo": "Técnico Básico en Electricidad y Electrónica",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EE.png",
     "descripcion": "La titulación de Técnico Básico en Electricidad y Electrónica prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en electricidad y electrónica",
@@ -1066,7 +1066,7 @@
   {
     "titulo": "Técnico en Instalaciones de Telecomunicaciones",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IT.png",
     "descripcion": "La titulación de Técnico en Instalaciones de Telecomunicaciones prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en instalaciones de telecomunicaciones",
@@ -1078,7 +1078,7 @@
   {
     "titulo": "Técnico en Instalaciones Eléctricas y Automáticas",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IEA.png",
     "descripcion": "La titulación de Técnico en Instalaciones Eléctricas y Automáticas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en instalaciones eléctricas y automáticas",
@@ -1090,7 +1090,7 @@
   {
     "titulo": "Técnico Superior en Automatización y Robótica Industrial",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ARI.png",
     "descripcion": "La titulación de Técnico Superior en Automatización y Robótica Industrial prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en automatización y robótica industrial",
@@ -1102,7 +1102,7 @@
   {
     "titulo": "Técnico Superior en Electromedicina Clínica",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EC.png",
     "descripcion": "La titulación de Técnico Superior en Electromedicina Clínica prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en electromedicina clínica",
@@ -1114,7 +1114,7 @@
   {
     "titulo": "Técnico Superior en Mantenimiento Electrónico",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ME.png",
     "descripcion": "La titulación de Técnico Superior en Mantenimiento Electrónico prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en mantenimiento electrónico",
@@ -1126,7 +1126,7 @@
   {
     "titulo": "Técnico Superior en Sistemas de Telecomunicaciones e Informáticos",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/STI.png",
     "descripcion": "La titulación de Técnico Superior en Sistemas de Telecomunicaciones e Informáticos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en sistemas de telecomunicaciones e informáticos",
@@ -1138,7 +1138,7 @@
   {
     "titulo": "Técnico Superior en Sistemas Electrotécnicos y Automatizados",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SEA.png",
     "descripcion": "La titulación de Técnico Superior en Sistemas Electrotécnicos y Automatizados prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en sistemas electrotécnicos y automatizados",
@@ -1150,7 +1150,7 @@
   {
     "titulo": "Curso de Especialización en Robótica colaborativa",
     "grupo": "Electricidad y Electrónica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/RC.png",
     "descripcion": "La titulación de Curso de Especialización en Robótica colaborativa prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en curso de especialización en robótica colaborativa",
@@ -1162,7 +1162,7 @@
   {
     "titulo": "Técnico en Redes y Estaciones de Tratamiento de Aguas",
     "grupo": "Energía y Agua",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/RETA.png",
     "descripcion": "La titulación de Técnico en Redes y Estaciones de Tratamiento de Aguas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en redes y estaciones de tratamiento de aguas",
@@ -1174,7 +1174,7 @@
   {
     "titulo": "Técnico Superior en Eficiencia Energética y Energía Solar Térmica",
     "grupo": "Energía y Agua",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EEEST.png",
     "descripcion": "La titulación de Técnico Superior en Eficiencia Energética y Energía Solar Térmica prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en eficiencia energética y energía solar térmica",
