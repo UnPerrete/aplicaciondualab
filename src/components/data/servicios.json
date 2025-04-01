@@ -1726,7 +1726,7 @@
   {
     "titulo": "Técnico Superior en Mantenimiento de Instalaciones Térmicas y de Fluidos",
     "grupo": "Instalación y Mantenimiento",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MITF.png",
     "descripcion": "La titulación de Técnico Superior en Mantenimiento de Instalaciones Térmicas y de Fluidos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en mantenimiento de instalaciones térmicas y de fluidos",
@@ -1738,7 +1738,7 @@
   {
     "titulo": "Técnico Superior en Mecatrónica Industrial",
     "grupo": "Instalación y Mantenimiento",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MI.png",
     "descripcion": "La titulación de Técnico Superior en Mecatrónica Industrial prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en mecatrónica industrial",
@@ -1750,7 +1750,7 @@
   {
     "titulo": "Técnico Superior en Prevención de Riesgos Profesionales",
     "grupo": "Instalación y Mantenimiento",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PRP.png",
     "descripcion": "La titulación de Técnico Superior en Prevención de Riesgos Profesionales prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en prevención de riesgos profesionales",
