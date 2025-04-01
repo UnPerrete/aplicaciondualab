@@ -42,6 +42,14 @@
   box-shadow: 0 0 8px rgba(73, 80, 87, 0.3); /* Sombra suave */
 }
 
+.login-input {
+  border: 2px solid green !important;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* Contenedor de la contraseña */
 .password-container {
   position: relative;
