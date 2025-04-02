@@ -20,27 +20,34 @@ const Equipo = () => {
                     <h3>Liderazgo</h3>
                     <p>¿Quién lidera el equipo? Describe al fundador o a los miembros del equipo que actúen como líderes.</p>
                     <div className="team-section">
-                        <img src="https://via.placeholder.com/600x400" alt="Equipo" className="team-image" />
-                        <p className="team-caption">Subtítulo de la foto de equipo</p>
+                        <img src="../src/assets/lider.png" alt="Equipo" className="team-image" />
+                        <p className="team-caption">Un objetivo fundamental</p>
                     </div>
                 </div>
 
                 <div className="description-section">
                     <h3>Este es nuestro equipo</h3>
-                    <p>Escribe una breve descripción del equipo.</p>
+                    <p>Un equipo humilde, trabajador, pobres con dinero, autodidacta.</p>
                     <div className="team-section">
-                        <img src="https://via.placeholder.com/600x400" alt="Equipo" className="team-image" />
-                        <p className="team-caption">Subtítulo de la foto de equipo</p>
+                        <img src="../src/assets/equipo.png" alt="Equipo" className="team-image" />
+                        <p className="team-caption">Pedazo de equipo</p>
                     </div>
                 </div>
 
                 <div className="team-grid">
-                    {Array(6).fill().map((_, index) => (
-                        <div key={index} className="team-member">
-                            <div className="member-image"></div>
-                            <p>[Nombre]</p>
-                        </div>
-                    ))}
+                {Array(6).fill().map((_, index) => (
+                    <div key={index} className="team-member">
+                    <div className="member-image">
+                        {index === 0 && (
+                        <img src="../src/assets/PERRO.jpg" alt="Foto del miembro del equipo" className="member-image"/>
+                        )}
+                        {index === 1 && (
+                        <img src="../src/assets/Calvoo.jpg" alt="Foto del miembro del equipo" className="member-image"/>
+                        )}
+                    </div>
+                    <p>{index === 0 ? 'Obama' : index === 1 ? 'Gonzalo' : '[Nombre]'}</p>
+                    </div>
+                ))}
                 </div>
 
                 <div className="team-join">

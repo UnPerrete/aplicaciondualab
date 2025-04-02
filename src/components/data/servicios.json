@@ -1930,7 +1930,7 @@
   {
     "titulo": "Técnico Superior en Laboratorio de Análisis y Control de Calidad",
     "grupo": "Química",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/LACC.png",
     "descripcion": "La titulación de Técnico Superior en Laboratorio de Análisis y Control de Calidad prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en laboratorio de análisis y control de calidad",
@@ -1942,7 +1942,7 @@
   {
     "titulo": "Técnico Superior en Química Industrial",
     "grupo": "Química",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/QI.png",
     "descripcion": "La titulación de Técnico Superior en Química Industrial prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en química industrial",
@@ -1954,7 +1954,7 @@
   {
     "titulo": "Técnico en Cuidados Auxiliares de Enfermería",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CAE.png",
     "descripcion": "La titulación de Técnico en Cuidados Auxiliares de Enfermería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en cuidados auxiliares de enfermería",
@@ -1966,7 +1966,7 @@
   {
     "titulo": "Técnico en Emergencias Sanitarias",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ES.png",
     "descripcion": "La titulación de Técnico en Emergencias Sanitarias prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en emergencias sanitarias",
@@ -1978,7 +1978,7 @@
   {
     "titulo": "Técnico en Farmacia y Parafarmacia",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/FP.png",
     "descripcion": "La titulación de Técnico en Farmacia y Parafarmacia prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en farmacia y parafarmacia",
@@ -1990,7 +1990,7 @@
   {
     "titulo": "Técnico Superior en Anatomía Patológica y Citodiagnóstico",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/APC.png",
     "descripcion": "La titulación de Técnico Superior en Anatomía Patológica y Citodiagnóstico prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en anatomía patológica y citodiagnóstico",
@@ -2002,7 +2002,7 @@
   {
     "titulo": "Técnico Superior en Dietética",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/D.png",
     "descripcion": "La titulación de Técnico Superior en Dietética prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en dietética",
@@ -2014,7 +2014,7 @@
   {
     "titulo": "Técnico Superior en Documentación y Administración Sanitarias",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DAS.png",
     "descripcion": "La titulación de Técnico Superior en Documentación y Administración Sanitarias prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en documentación y administración sanitarias",
@@ -2026,7 +2026,7 @@
   {
     "titulo": "Técnico Superior en Higiene Bucodental",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/HB.png",
     "descripcion": "La titulación de Técnico Superior en Higiene Bucodental prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en higiene bucodental",
@@ -2038,7 +2038,7 @@
   {
     "titulo": "Técnico Superior en Imagen para el Diagnóstico y Medicina Nuclear",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IDMN.png",
     "descripcion": "La titulación de Técnico Superior en Imagen para el Diagnóstico y Medicina Nuclear prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en imagen para el diagnóstico y medicina nuclear",
@@ -2050,7 +2050,7 @@
   {
     "titulo": "Técnico Superior en Laboratorio Clínico y Biomédico",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/LCB.png",
     "descripcion": "La titulación de Técnico Superior en Laboratorio Clínico y Biomédico prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en laboratorio clínico y biomédico",
@@ -2062,7 +2062,7 @@
   {
     "titulo": "Técnico Superior en Radioterapia y Dosimetría",
     "grupo": "Sanidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/RD.png",
     "descripcion": "La titulación de Técnico Superior en Radioterapia y Dosimetría prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en radioterapia y dosimetría",
@@ -2074,7 +2074,7 @@
   {
     "titulo": "Técnico en Seguridad",
     "grupo": "Seguridad y Medio Ambiente",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/S.png",
     "descripcion": "La titulación de Técnico en Seguridad prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en seguridad",
@@ -2086,7 +2086,7 @@
   {
     "titulo": "Técnico Superior en Coordinación de Emergencias y Protección Civil",
     "grupo": "Seguridad y Medio Ambiente",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CEPC.png",
     "descripcion": "La titulación de Técnico Superior en Coordinación de Emergencias y Protección Civil prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en coordinación de emergencias y protección civil",
@@ -2098,7 +2098,7 @@
   {
     "titulo": "Técnico Superior en Educación y Control Ambiental",
     "grupo": "Seguridad y Medio Ambiente",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ECA.png",
     "descripcion": "La titulación de Técnico Superior en Educación y Control Ambiental prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en educación y control ambiental",
@@ -2110,7 +2110,7 @@
   {
     "titulo": "Técnico Superior en Química y Salud Ambiental",
     "grupo": "Seguridad y Medio Ambiente",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/QSA.png",
     "descripcion": "La titulación de Técnico Superior en Química y Salud Ambiental prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en química y salud ambiental",
@@ -2122,7 +2122,7 @@
   {
     "titulo": "Técnico Básico en Actividades Domésticas y Limpieza de Edificios",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ADLE.png",
     "descripcion": "La titulación de Técnico Básico en Actividades Domésticas y Limpieza de Edificios prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en actividades domésticas y limpieza de edificios",
@@ -2134,7 +2134,7 @@
   {
     "titulo": "Técnico en Atención a Personas en Situación de Dependencia",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/APSD.png",
     "descripcion": "La titulación de Técnico en Atención a Personas en Situación de Dependencia prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en atención a personas en situación de dependencia",
@@ -2146,7 +2146,7 @@
   {
     "titulo": "Técnico Superior en Animación Sociocultural y Turística",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AST.png",
     "descripcion": "La titulación de Técnico Superior en Animación Sociocultural y Turística prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en animación sociocultural y turística",
@@ -2158,7 +2158,7 @@
   {
     "titulo": "Técnico Superior en Educación Infantil",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/EI.png",
     "descripcion": "La titulación de Técnico Superior en Educación Infantil prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en educación infantil",
@@ -2170,7 +2170,7 @@
   {
     "titulo": "Técnico Superior en Integración Social",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IS.png",
     "descripcion": "La titulación de Técnico Superior en Integración Social prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en integración social",
@@ -2182,7 +2182,7 @@
   {
     "titulo": "Técnico Superior en Mediación Comunicativa",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MC.png",
     "descripcion": "La titulación de Técnico Superior en Mediación Comunicativa prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en mediación comunicativa",
@@ -2194,7 +2194,7 @@
   {
     "titulo": "Técnico Superior en Promoción de Igualdad de Género",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PIG.png",
     "descripcion": "La titulación de Técnico Superior en Promoción de Igualdad de Género prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en promoción de igualdad de género",
@@ -2206,7 +2206,7 @@
   {
     "titulo": "Técnico Superior en Formación para la Movilidad Segura y Sostenible",
     "grupo": "Servicios Socioculturales y a la Comunidad",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/FMSS.png",
     "descripcion": "La titulación de Técnico Superior en Formación para la Movilidad Segura y Sostenible prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en formación para la movilidad segura y sostenible",
@@ -2218,7 +2218,7 @@
   {
     "titulo": "Técnico Básico en Tapicería y Cortinaje",
     "grupo": "Textil, Confección y Piel",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/TAPIC.png",
     "descripcion": "La titulación de Técnico Básico en Tapicería y Cortinaje prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en tapicería y cortinaje",
@@ -2230,7 +2230,7 @@
   {
     "titulo": "Técnico en Confección y Moda",
     "grupo": "Textil, Confección y Piel",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CMODA.png",
     "descripcion": "La titulación de Técnico en Confección y Moda prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en confección y moda",
@@ -2242,7 +2242,7 @@
   {
     "titulo": "Técnico Superior en Patronaje y Moda",
     "grupo": "Textil, Confección y Piel",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PM.png",
     "descripcion": "La titulación de Técnico Superior en Patronaje y Moda prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en patronaje y moda",
@@ -2254,7 +2254,7 @@
   {
     "titulo": "Técnico Superior en Vestuario a Medida y de Espectáculos",
     "grupo": "Textil, Confección y Piel",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/VME.png",
     "descripcion": "La titulación de Técnico Superior en Vestuario a Medida y de Espectáculos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en vestuario a medida y de espectáculos",
@@ -2362,7 +2362,7 @@
   {
     "titulo": "Título Profesional Básico en Vidriería y Alfarería",
     "grupo": "Vídrio y Cerámica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/VA.png",
     "descripcion": "La titulación de Título Profesional Básico en Vidriería y Alfarería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en título profesional básico en vidriería y alfarería",

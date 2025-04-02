@@ -9,6 +9,17 @@ import categoriasData from "./data/servicios.json";
 const Formacion = () => {
 
     const [servicios, setServicios] = useState([]);
+    const [selectedIndex, setSelectedIndex] = useState("");
+    const [selectedGrupo, setSelectedGrupo] = useState("");
+    const [gruposUnicos, setGruposUnicos] = useState([]);
+
+    useEffect(() => {
+      if (categoriasData && categoriasData.length > 0) {
+        setServicios(categoriasData);
+        const grupos = [...new Set(categoriasData.map(item => item.grupo))];
+        setGruposUnicos(grupos);
+      }
+    }, []);
 
     useEffect(() => {
         if (categoriasData && categoriasData.length > 0) {
@@ -153,6 +164,36 @@ const Formacion = () => {
 
         {/* Áreas de Formación - Mostrar en cards de 3 por fila */}
         <div className="section-container">
+        <h1>ÁREAS DE FORMACIÓN</h1>
+
+        <div className="dropdown-formacion">
+          <select
+            onChange={(e) => setSelectedGrupo(e.target.value)}
+            className="dropdown-select"
+          >
+            <option value="">Selecciona un grupo</option>
+            {gruposUnicos.map((grupo, idx) => (
+              <option key={idx} value={grupo}>{grupo}</option>
+            ))}
+          </select>
+
+          <div className="cardds-grid">
+            {servicios
+              .filter(servicio => servicio.grupo === selectedGrupo)
+              .map((servicio, index) => (
+                <div key={index} className="area-cardds">
+                  <img src={servicio.imagen || ""} alt={servicio.titulo} className="area-cardds-img" />
+                  <div className="area-cardds-content">
+                    <h2>{servicio.titulo}</h2>
+                    <p>{servicio.descripcion}</p>
+                  </div>
+                </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+        {/* <div className="section-container">
                 <h1>ÁREAS DE FORMACIÓN</h1>
                 <div className="cardds-grid">
                   {servicios.map((servicio, index) => (
@@ -164,8 +205,8 @@ const Formacion = () => {
                           </div>
                       </div>
                   ))}
-                </div>
-          </div>
+                </div> 
+          </div>*/}
 
             {/* Programas de Asesoramiento y Experiencias de Aprendizaje Inmersivo */}
             <div className="section-container">

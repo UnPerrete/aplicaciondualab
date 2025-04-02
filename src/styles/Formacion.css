@@ -134,3 +134,20 @@
     color: #555;
     font-size: 0.95rem;
 }
+
+.dropdown-formacion {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dropdown-select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
+  }
