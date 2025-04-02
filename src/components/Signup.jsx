@@ -9,7 +9,7 @@ export default function Signup() {
   const [formData, setFormData] = useState({ role: 'Profesor' });
   const [err, setErr] = useState(null);
   const [rol, setRol] = useState('Profesor');
-  const [profesores, setProfesores] = useState({});
+  const [profesores, setProfesores] = useState([]);
   const { login } = useAuth();
   const navigate = useNavigate();
   const centerData = centrosData.centrosFP
@@ -33,12 +33,18 @@ const comprobarPass = (pass) => {
 }
 
 
-  const handleChange = (e) => {
-    let value = e.target.value;
-    if (e.target.type === "password") value = comprobarPass(value);
-    if (e.target.type === "select") setRol(value);
-    setFormData({ ...formData, [e.target.name]: value });
+const handleChange = (e) => {
+  let value = e.target.type === "password"
+    ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex)
+    : e.target.value;
+
+  if (e.target.name === "role") {
+    setRol(value);
+    console.log("🔄 Rol actualizado a:", value); // <--- Añade esto
   }
+
+  setFormData({ ...formData, [e.target.name]: value });
+};
 
   // const handleChange = (e) => {
   //   let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
