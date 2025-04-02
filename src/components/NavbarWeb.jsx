@@ -49,15 +49,16 @@ const NavbarWeb = () => {
                 <i className="bi bi-grid"></i>
             </div>
 
+            <div className="nav-wrapper">
             <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
                 <Link to="/">Inicio</Link>
                 {user?.role == "Alumno" && <Link to="/info-proyecto/0">Proyectos</Link>}
                 <li
                     className="dropdown"
-                    onMouseEnter={() => setDropdownOpen(true)} 
+                    onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                 >
-                    <Link to="/servicio"><span className="dropdown-toggle">Retos</span></Link>
+                    <Link to="/servicio" className="dropdown-toggle">Retos</Link>
                     {dropdownOpen && (
                         <div className="dropdown-menu">
                             <Link to="/centrosfp" onClick={closeMenu}>Centros FP</Link>
@@ -75,18 +76,18 @@ const NavbarWeb = () => {
                     <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
                     <i className="bi bi-search" onClick={toggleSearch}></i>
                     {searchOpen && (
-            <div className="search-bar">
-                <input
-                    type="text"
-                    placeholder="Busca en este sitio web"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                />
-            </div>
-        )}
+                        <div className="search-bar">
+                            <input
+                                type="text"
+                                placeholder="Buscar"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                        </div>
+                    )}
                 </span>
-
             </nav>
+            </div>
         </div>
     );
 };

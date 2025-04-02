@@ -17,6 +17,7 @@ export const TablaEmpresas = () => {
   const [selectedSector, setSelectedSector] = useState("");
   const roleUser = JSON.parse(localStorage.getItem("user")).role;
 
+
   const municipios = [
     "Seleccionar municipio...",
     "Agaete", "Artenara", "Arucas", "Sta. Mª de Guía", "San Bartolomé de Tirajana",
@@ -83,7 +84,7 @@ export const TablaEmpresas = () => {
           ))}
         </select>
       </div>
-      <table> 
+      <table>
         <thead>
           <tr>
             <th>Municipio</th>
@@ -103,7 +104,9 @@ export const TablaEmpresas = () => {
                 <td>{row.Sector}</td>
                 <td>{row.Actividad}</td>
                 <td>{row.Calle + ", " + row.Nº}</td>
-                {roleUser === "Profesor" && <td><Link to={`/info-proyecto/${row.ID}`}><button>Ver Solicitudes</button></Link></td>}
+                {roleUser === "Profesor" && row.hasProjects ? (
+                  <td><Link to={`/info-proyecto/${row.ID}`}><button><strong>Ver solicitudes</strong></button></Link></td>
+                ) : <td></td>}
               </tr>
             )
           ))}

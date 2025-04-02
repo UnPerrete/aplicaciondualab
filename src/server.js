@@ -199,7 +199,7 @@ app.put("/api/edit-profile/:nif", (req, res) => {
 
 // Endpoint para obtener los datos de la tabla
 app.get("/api/data", (req, res) => {
-  const query = "SELECT Municipio, ID, NombreComercial, Sector, Actividad, Calle, Nº, Web FROM empresas"; // Consulta SQL
+  const query = "SELECT e.Municipio, e.ID, e.NombreComercial, e.Sector, e.Actividad, e.Calle, e.Nº, e.Web, EXISTS(SELECT 1 FROM proyectos WHERE id_empresa = e.ID) AS hasProjects FROM empresas e"; // Consulta SQL
   db.query(query, (err, results) => {
     if (err) {
       console.error("Error al obtener los datos:", err);
@@ -412,7 +412,7 @@ app.get("/api/listFinishedProjects", (req, res) => {
 });
 
 app.get("/api/listProfesores", (req, res) => {
-  const query = "SELECT p.id, u.nombre, u.apellido FROM users u JOIN profesores p ON u.id = p.user_id WHERE u.id = 1"
+  const query = "SELECT p.id, u.nombre, u.apellido FROM users u JOIN profesores p ON u.id = p.user_id"
   db.query(query, [], (err, result) => {
     if(err){
       console.error("Error al obtener los datos:", err);
