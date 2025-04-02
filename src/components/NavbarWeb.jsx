@@ -51,7 +51,7 @@ const NavbarWeb = () => {
 
             <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
                 <Link to="/">Inicio</Link>
-                {user.role == "Alumno" && <Link to="/info-proyecto/0">Proyectos</Link>}
+                {user?.role == "Alumno" && <Link to="/info-proyecto/0">Proyectos</Link>}
                 <li
                     className="dropdown"
                     onMouseEnter={() => setDropdownOpen(true)} 

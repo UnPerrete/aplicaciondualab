@@ -232,8 +232,6 @@ app.post("/api/addUser", (req, res) => {
   // Validación de contraseña
   if (pass !== confirmpass) return res.status(500).json({ error: 79 });
 
-  // Hashear contraseña
-  const hashedPassword = CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex);
 
   // Verifica que recibes correctamente el nombre comercial
   console.log("Nombre comercial recibido:", nombre_comercial);
@@ -245,7 +243,7 @@ app.post("/api/addUser", (req, res) => {
   const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
   db.query(query, [
-    nif, hashedPassword, role,
+    nif, pass, role,
     nombreValue, apellidoValue,
     gmail, telefono, zona,
     nacimiento, poblacion, instituto, profesor_id
