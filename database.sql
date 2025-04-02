@@ -31,7 +31,7 @@ CREATE TABLE `alumnos` (
   KEY `profesor_id` (`profesor_id`),
   CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `alumnos_ibfk_2` FOREIGN KEY (`profesor_id`) REFERENCES `profesores` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1,2,1);
+INSERT INTO `alumnos` VALUES (1,2,1),(2,3,1);
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +123,7 @@ CREATE TABLE `proyectoalumno` (
   PRIMARY KEY (`id_proyecto`,`id_alumno`),
   KEY `id_alumno` (`id_alumno`),
   CONSTRAINT `proyectoalumno_ibfk_1` FOREIGN KEY (`id_proyecto`) REFERENCES `proyectos` (`id_proyecto`) ON DELETE CASCADE,
-  CONSTRAINT `proyectoalumno_ibfk_2` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id`) ON DELETE CASCADE
+  CONSTRAINT `proyectoalumno_ibfk_2` FOREIGN KEY (`id_alumno`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -133,7 +133,7 @@ CREATE TABLE `proyectoalumno` (
 
 LOCK TABLES `proyectoalumno` WRITE;
 /*!40000 ALTER TABLE `proyectoalumno` DISABLE KEYS */;
-INSERT INTO `proyectoalumno` VALUES (4,1);
+INSERT INTO `proyectoalumno` VALUES (4,1),(4,3),(8,3);
 /*!40000 ALTER TABLE `proyectoalumno` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -174,7 +174,7 @@ CREATE TABLE `proyectos` (
   `isAcepted` tinyint(1) DEFAULT '0',
   `id_empresa` int DEFAULT NULL,
   PRIMARY KEY (`id_proyecto`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,7 +183,7 @@ CREATE TABLE `proyectos` (
 
 LOCK TABLES `proyectos` WRITE;
 /*!40000 ALTER TABLE `proyectos` DISABLE KEYS */;
-INSERT INTO `proyectos` VALUES (4,'Proyecto1','Alumnos del curso 1 hacen cosas','[\"servicio1\", \"servicio2\"]','19/07/2025','pendiente',1,1),(7,'Landing Page','Creacion de una landing page profesional para los clientes de RocMan producciones','[{\"servicio\": \"Diseño de la página\"}, {\"servicio\": \"Desarrollo front-end\"}, {\"servicio\": \"Desarrollo back-end\"}, {\"servicio\": \"Pruebas de calidad\"}, {\"servicio\": \"Subida al hosting\"}, {\"servicio\": \"Optimización SEO\"}, {\"servicio\": \"Mantenimiento y actualización\"}]','2025-03-20','completado',0,23);
+INSERT INTO `proyectos` VALUES (4,'Proyecto1','Alumnos del curso 1 hacen cosas','[\"servicio1\", \"servicio2\"]','19/07/2025','en progreso',1,1),(7,'Landing Page','Creacion de una landing page profesional para los clientes de RocMan producciones','[{\"servicio\": \"Diseño de la página\"}, {\"servicio\": \"Desarrollo front-end\"}, {\"servicio\": \"Desarrollo back-end\"}, {\"servicio\": \"Pruebas de calidad\"}, {\"servicio\": \"Subida al hosting\"}, {\"servicio\": \"Optimización SEO\"}, {\"servicio\": \"Mantenimiento y actualización\"}]','2025-03-20','completado',0,23),(8,'Nuevo Proyecto','Descripción del nuevo proyecto','[]','2025-04-02 09:34:55','pendiente',1,2);
 /*!40000 ALTER TABLE `proyectos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -209,7 +209,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `nif` (`nif`),
   CONSTRAINT `users_chk_1` CHECK ((`role` in (_utf8mb4'profesor',_utf8mb4'empresa',_utf8mb4'alumno')))
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'78592247M','ec6a6536ca304edf844d1d248a4f08dc','Profesor','Rayco','Santana Alles','a@a.com','682841751','qweqwe','2025-03-01','San Bartolome'),(2,'78592248M','ec6a6536ca304edf844d1d248a4f08dc','Alumno','Rayco','Santana Alles','a@a.com','682841750','qweqwe','2025-03-03','San Bartolome');
+INSERT INTO `users` VALUES (1,'78592247M','ec6a6536ca304edf844d1d248a4f08dc','Profesor','Rayco','Santana Alles','a@a.com','682841751','qweqwe','2025-03-01','San Bartolome'),(2,'78592248M','ec6a6536ca304edf844d1d248a4f08dc','Alumno','Rayco','Santana Alles','a@a.com','682841750','qweqwe','2025-03-03','San Bartolome'),(3,'78592240M','ec6a6536ca304edf844d1d248a4f08dc','Alumno','Flavio','Melian Santana','rayco7958@gmail.com','682841750','Moya','2025-04-02','San Bartolome');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -231,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-28  9:08:17
+-- Dump completed on 2025-04-02  9:40:02

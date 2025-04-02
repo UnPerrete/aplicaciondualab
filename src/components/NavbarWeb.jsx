@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
+import { useAuth } from "../context/AuthProvider";
 
 const NavbarWeb = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -11,6 +12,7 @@ const NavbarWeb = () => {
     const [searchOpen, setSearchOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const { user } = useAuth();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,7 +52,7 @@ const NavbarWeb = () => {
             <div className="nav-wrapper">
             <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
                 <Link to="/">Inicio</Link>
-                <div
+                <li
                     className="dropdown"
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
@@ -63,7 +65,7 @@ const NavbarWeb = () => {
                             <Link to="/administraciones" onClick={closeMenu}>Administraciones</Link>
                         </div>
                     )}
-                </div>
+                </li>
                 <Link to="/proyect">Proyectos</Link>
                 <Link to="/formacion">Formación</Link>
                 <Link to="/recursos">Recursos</Link>

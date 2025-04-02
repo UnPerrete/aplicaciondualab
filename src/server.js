@@ -10,14 +10,14 @@ app.use(cors());
 
 // Parámetros para la conexión a MySQL
 const db = mysql.createConnection({
-   host: process.env.DB_HOST,
-   user: process.env.DB_USER,
-   password: process.env.DB_PASS,
-   database: process.env.DB,
-  //host: "localhost",
-  //user: "root",
-  //password:"Riosdelaluna7",
-  //database:"duapp",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB,
+  // host: "localhost",
+  // user: "root",
+  // password:"Riosdelaluna7",
+  // database:"duapp",
 });
 
 db.connect((err) => {
@@ -199,7 +199,7 @@ app.put("/api/edit-profile/:nif", (req, res) => {
 
 // Endpoint para obtener los datos de la tabla
 app.get("/api/data", (req, res) => {
-  const query = "SELECT Municipio, ID, NombreComercial, Sector, Actividad, Calle, Nº, Web FROM empresas"; // Consulta SQL
+  const query = "SELECT e.Municipio, e.ID, e.NombreComercial, e.Sector, e.Actividad, e.Calle, e.Nº, e.Web, EXISTS(SELECT 1 FROM proyectos WHERE id_empresa = e.ID) AS hasProjects FROM empresas e"; // Consulta SQL
   db.query(query, (err, results) => {
     if (err) {
       console.error("Error al obtener los datos:", err);
@@ -262,7 +262,9 @@ app.post("/api/addUser", (req, res) => {
 
 
 app.post("/api/listProjects", (req, res) => {
-  const query = "SELECT p.id_proyecto, p.nombre, p.descripcion FROM proyectos as p JOIN empresas as e ON p.id_empresa = e.ID WHERE e.ID = ?;"
+  const query = req.body.role == "Alumno" ? "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE u.ID = ? GROUP BY p.id_proyecto;" 
+  :
+   "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE e.ID = ? GROUP BY p.id_proyecto;"
   const ID = req.body.ID;
   db.query(query, [ID], (err, results) => {
     if (err) {
@@ -376,7 +378,7 @@ app.post("/api/guardar-servicio", (req, res) => {
 
 app.post("/api/listStudents", (req, res) => {
   const id_profesor = req.body.idProfesor;
-  const query = "SELECT a.id, u.nombre, u.apellido FROM users u JOIN alumnos a ON u.id = a.user_id JOIN profesores p ON a.profesor_id = p.id WHERE p.user_id = ?"
+  const query = "SELECT u.id, u.nombre, u.apellido FROM users u JOIN alumnos a ON u.id = a.user_id JOIN profesores p ON a.profesor_id = p.id WHERE p.user_id = ?"
 
   db.query(query, [id_profesor], (err, result) => {
     if (err) {
@@ -411,6 +413,16 @@ app.get("/api/listFinishedProjects", (req, res) => {
   });
 });
 
+app.get("/api/listProfesores", (req, res) => {
+  const query = "SELECT p.id, u.nombre, u.apellido FROM users u JOIN profesores p ON u.id = p.user_id"
+  db.query(query, [], (err, result) => {
+    if(err){
+      console.error("Error al obtener los datos:", err);
+      return res.status(500).json({ error: "Error al obtener los datos" });
+    }
+    return res.status(200).json(result);
+  });
+});
 
 app.listen(5000, () => {
   console.log("Servidor corriendo en http://localhost:5000");
