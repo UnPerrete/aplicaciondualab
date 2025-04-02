@@ -30,7 +30,13 @@ export default function Proyectos() {
                     <div className='card' key={proyecto.id_proyecto}>
                         <h2 className='titulo'>{proyecto.nombre}</h2>
                         <p className='descripcion'>{proyecto.descripcion}</p>
-                        <Alumnos id_proyecto={proyecto.id_proyecto} />
+                        {proyecto.estado === "en progreso" ? (
+                            <ul>
+                                {proyecto.colaboradores.map( (colaborador) => (
+                                    <li>{colaborador}</li>
+                                ) )}
+                            </ul>
+                        ) : (<Alumnos id_proyecto={proyecto.id_proyecto} />)}
                     </div>
                 ))
             ) : (
