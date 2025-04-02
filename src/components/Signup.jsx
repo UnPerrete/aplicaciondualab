@@ -22,9 +22,7 @@ export default function Signup() {
   }, []);
 
 
-  const comprobarPass = (pass) => {
-    return /^(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Z]).{8,}$/.test(pass);
-  }
+  
 
 
   const handleChange = (e) => {
@@ -44,11 +42,6 @@ export default function Signup() {
 
     //Comprobar requisitos de la contraseña
     try {
-      if (!comprobarPass(formData.pass)){
-        setErr("La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minuscula y un número.");
-        data = {success: false};
-        return;
-      }
 
       //Llamada a la API
       const response = await fetch("http://localhost:5000/api/addUser", {
