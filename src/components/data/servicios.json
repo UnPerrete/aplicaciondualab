@@ -383,7 +383,7 @@
   },
   {
     "titulo": "QUÍMICA",
-    "grupo": "Ciencia y Medio Ambiente",
+    "grupo": "Química",
     "imagen": "../src/assets/Quimica.png",
     "descripcion":
     "La FP de Química forma profesionales en el análisis, producción y control de sustancias químicas, garantizando seguridad y calidad en laboratorios e industrias.",
@@ -421,7 +421,7 @@
   },
   {
     "titulo": "SEGURIDAD Y MEDIO AMBIENTE",
-    "grupo": "Ciencia y Medio Ambiente",
+    "grupo": "Seguridad y Medio Ambiente",
     "imagen": "../src/assets/SegMed.png",
     "descripcion":
     "La FP de Seguridad y Medio Ambiente capacita profesionales en la prevención de riesgos, gestión ambiental y protección de personas y ecosistemas.",
@@ -1186,7 +1186,7 @@
   {
     "titulo": "Técnico Superior en Energías Renovables",
     "grupo": "Energía y Agua",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ER.png",
     "descripcion": "La titulación de Técnico Superior en Energías Renovables prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en energías renovables",
@@ -1198,7 +1198,7 @@
   {
     "titulo": "Técnico Superior en Gestión del Agua",
     "grupo": "Energía y Agua",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/GAGUA.png",
     "descripcion": "La titulación de Técnico Superior en Gestión del Agua prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en gestión del agua",
@@ -1210,7 +1210,7 @@
   {
     "titulo": "Técnico Básico en Fabricación de Elementos Metálicos",
     "grupo": "Fabricación Mecánica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/FEM.png",
     "descripcion": "La titulación de Técnico Básico en Fabricación de Elementos Metálicos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en fabricación de elementos metálicos",
@@ -1222,7 +1222,7 @@
   {
     "titulo": "Técnico Básico en Fabricación y Montaje",
     "grupo": "Fabricación Mecánica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/FM.png",
     "descripcion": "La titulación de Técnico Básico en Fabricación y Montaje prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en fabricación y montaje",
@@ -1234,7 +1234,7 @@
   {
     "titulo": "Técnico en Mecanizado",
     "grupo": "Fabricación Mecánica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/M.png",
     "descripcion": "La titulación de Técnico en Mecanizado prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en mecanizado",
@@ -1246,7 +1246,7 @@
   {
     "titulo": "Técnico en Soldadura y Calderería",
     "grupo": "Fabricación Mecánica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/SYC.png",
     "descripcion": "La titulación de Técnico en Soldadura y Calderería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en soldadura y calderería",
@@ -1258,7 +1258,7 @@
   {
     "titulo": "Técnico Superior en Construcciones Metálicas",
     "grupo": "Fabricación Mecánica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CM.png",
     "descripcion": "La titulación de Técnico Superior en Construcciones Metálicas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en construcciones metálicas",
@@ -1270,7 +1270,7 @@
   {
     "titulo": "Técnico Superior en Programación de la Producción en Fabricación Mecánica",
     "grupo": "Fabricación Mecánica",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/FMC.png",
     "descripcion": "La titulación de Técnico Superior en Programación de la Producción en Fabricación Mecánica prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en programación de la producción en fabricación mecánica",
@@ -1546,7 +1546,7 @@
   {
     "titulo": "Técnico Básico en Actividades de Panadería y Pastelería",
     "grupo": "Industrias Alimentarias",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/APP.png",
     "descripcion": "La titulación de Técnico Básico en Actividades de Panadería y Pastelería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en actividades de panadería y pastelería",
@@ -1558,7 +1558,7 @@
   {
     "titulo": "Técnico Básico en Industrias Alimentarias",
     "grupo": "Industrias Alimentarias",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/IA.png",
     "descripcion": "La titulación de Técnico Básico en Industrias Alimentarias prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en industrias alimentarias",
@@ -1570,7 +1570,7 @@
   {
     "titulo": "Técnico en Aceites de Oliva y Vinos",
     "grupo": "Industrias Alimentarias",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/AOV.png",
     "descripcion": "La titulación de Técnico en Aceites de Oliva y Vinos prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en aceites de oliva y vinos",
@@ -1582,7 +1582,7 @@
   {
     "titulo": "Técnico en Panadería, Repostería y Confitería",
     "grupo": "Industrias Alimentarias",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/PRC.png",
     "descripcion": "La titulación de Técnico en Panadería, Repostería y Confitería prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en panadería, repostería y confitería",
@@ -1594,7 +1594,7 @@
   {
     "titulo": "Técnico Superior en Vitivinicultura",
     "grupo": "Industrias Alimentarias",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/V.png",
     "descripcion": "La titulación de Técnico Superior en Vitivinicultura prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en vitivinicultura",
@@ -1762,7 +1762,7 @@
   {
     "titulo": "Técnico Básico en Carpintería y Mueble",
     "grupo": "Madera, Mueble y Corcho",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CAM.png",
     "descripcion": "La titulación de Técnico Básico en Carpintería y Mueble prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico básico en carpintería y mueble",
@@ -1774,7 +1774,7 @@
   {
     "titulo": "Técnico en Carpintería y Mueble",
     "grupo": "Madera, Mueble y Corcho",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CARM.png",
     "descripcion": "La titulación de Técnico en Carpintería y Mueble prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en carpintería y mueble",
@@ -1786,7 +1786,7 @@
   {
     "titulo": "Técnico en Instalación y Amueblamiento",
     "grupo": "Madera, Mueble y Corcho",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/INSA.png",
     "descripcion": "La titulación de Técnico en Instalación y Amueblamiento prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en instalación y amueblamiento",
@@ -1798,7 +1798,7 @@
   {
     "titulo": "Técnico Superior en Diseño y Amueblamiento",
     "grupo": "Madera, Mueble y Corcho",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/DA.png",
     "descripcion": "La titulación de Técnico Superior en Diseño y Amueblamiento prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en diseño y amueblamiento",
@@ -1810,7 +1810,7 @@
   {
     "titulo": "Título Profesional Básico en Mantenimiento de Embarcaciones Deportivas y de Recreo",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MEDR.png",
     "descripcion": "La titulación de Título Profesional Básico en Mantenimiento de Embarcaciones Deportivas y de Recreo prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en título profesional básico en mantenimiento de embarcaciones deportivas y de recreo",
@@ -1822,7 +1822,7 @@
   {
     "titulo": "Técnico en Cultivos Acuícolas",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/CA.png",
     "descripcion": "La titulación de Técnico en Cultivos Acuícolas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en cultivos acuícolas",
@@ -1834,7 +1834,7 @@
   {
     "titulo": "Técnico en Mantenimiento y Control de la Maquinaria de Buques y Embarcaciones",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/MCMBE.png",
     "descripcion": "La titulación de Técnico en Mantenimiento y Control de la Maquinaria de Buques y Embarcaciones prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en mantenimiento y control de la maquinaria de buques y embarcaciones",
@@ -1846,7 +1846,7 @@
   {
     "titulo": "Técnico en Navegación y Pesca de Litoral",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/NPL.png",
     "descripcion": "La titulación de Técnico en Navegación y Pesca de Litoral prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en navegación y pesca de litoral",
@@ -1858,7 +1858,7 @@
   {
     "titulo": "Técnico en Operaciones Subacuáticas e Hiperbáricas",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/OSH.png",
     "descripcion": "La titulación de Técnico en Operaciones Subacuáticas e Hiperbáricas prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en operaciones subacuáticas e hiperbáricas",
@@ -1870,7 +1870,7 @@
   {
     "titulo": "Técnico Superior en Acuicultura",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/ACUICULTURA.png",
     "descripcion": "La titulación de Técnico Superior en Acuicultura prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en acuicultura",
@@ -1882,7 +1882,7 @@
   {
     "titulo": "Técnico Superior en Organización del Mantenimiento de Maquinaria de Buques y Embarcaciones",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/OMMBE.png",
     "descripcion": "La titulación de Técnico Superior en Organización del Mantenimiento de Maquinaria de Buques y Embarcaciones prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en organización del mantenimiento de maquinaria de buques y embarcaciones",
@@ -1894,7 +1894,7 @@
   {
     "titulo": "Técnico Superior en Transporte Marítimo y Pesca de Altura",
     "grupo": "Marítimo-Pesquera",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/TMPA.png",
     "descripcion": "La titulación de Técnico Superior en Transporte Marítimo y Pesca de Altura prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en transporte marítimo y pesca de altura",
@@ -1906,7 +1906,7 @@
   {
     "titulo": "Técnico en Operaciones de Laboratorio",
     "grupo": "Química",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/OL.png",
     "descripcion": "La titulación de Técnico en Operaciones de Laboratorio prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico en operaciones de laboratorio",
@@ -1918,7 +1918,7 @@
   {
     "titulo": "Técnico Superior en Fabricación de Productos Farmaceúticos, Biotecnológicos y Afines",
     "grupo": "Química",
-    "imagen": "../src/assets/.png",
+    "imagen": "../src/assets/FPFBA.png",
     "descripcion": "La titulación de Técnico Superior en Fabricación de Productos Farmaceúticos, Biotecnológicos y Afines prepara al alumnado para desenvolverse profesionalmente en el sector relacionado, aplicando conocimientos técnicos, habilidades prácticas y competencias clave del entorno laboral.",
     "servicios": [
       "Competencia profesional en técnico superior en fabricación de productos farmaceúticos, biotecnológicos y afines",
