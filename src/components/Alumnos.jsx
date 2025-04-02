@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-
+import { useNavigate } from 'react-router-dom';
 export default function Alumnos( id_proyecto ) {
   const [data, setData] = useState([]);
   const [selectedAlumnos, setSelectedAlumnos] = useState([]);
+  const navigate = useNavigate();
   const id_profesor = JSON.parse(localStorage.getItem("user")).id;
 
   useEffect(() => {
@@ -49,7 +50,8 @@ export default function Alumnos( id_proyecto ) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id_proyecto: id_proyecto.id_proyecto, id_alumno: alumno.id }),
       });
-    })
+    });
+    navigate('/');
   }
 
   return (

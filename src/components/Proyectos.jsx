@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Alumnos from './Alumnos';
 import '../styles/Proyectos.css'
 import NavbarWeb from './NavbarWeb';
@@ -7,6 +7,7 @@ import NavbarWeb from './NavbarWeb';
 export default function Proyectos() {
     const [data, setData] = useState([])
     const params = useParams();
+    const navigate = useNavigate()
     const idEmpresa = params.id;
     useEffect(() => {
         const fetchData = async () => {
