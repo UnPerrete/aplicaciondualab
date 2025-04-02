@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Alumnos from './Alumnos';
 import '../styles/Proyectos.css'
 import NavbarWeb from './NavbarWeb';
+import { useAuth } from "../context/AuthProvider";
 
 export default function Proyectos() {
     const [data, setData] = useState([])
     const params = useParams();
-    const navigate = useNavigate()
-    const idEmpresa = params.id;
+    const {user} = useAuth();
+    const id = params.id != 0 ? params.id : user.id;
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("http://localhost:5000/api/listProjects", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ID: idEmpresa })
+                body: JSON.stringify({ ID: id, role: user.role })
             });
-            setData(await response.json())
+            setData(await response.json());
         };
         fetchData();
 

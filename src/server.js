@@ -262,7 +262,9 @@ app.post("/api/addUser", (req, res) => {
 
 
 app.post("/api/listProjects", (req, res) => {
-  const query = "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE e.ID = ? GROUP BY p.id_proyecto;"
+  const query = req.body.role == "Alumno" ? "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE u.ID = ? GROUP BY p.id_proyecto;" 
+  :
+   "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE e.ID = ? GROUP BY p.id_proyecto;"
   const ID = req.body.ID;
   db.query(query, [ID], (err, results) => {
     if (err) {

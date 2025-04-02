@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
+import { useAuth } from "../context/AuthProvider";
 
 const NavbarWeb = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -11,6 +12,7 @@ const NavbarWeb = () => {
     const [searchOpen, setSearchOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const { user } = useAuth();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,6 +51,7 @@ const NavbarWeb = () => {
 
             <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
                 <Link to="/">Inicio</Link>
+                {user.role == "Alumno" && <Link to="/info-proyecto/0">Proyectos</Link>}
                 <li
                     className="dropdown"
                     onMouseEnter={() => setDropdownOpen(true)} 
