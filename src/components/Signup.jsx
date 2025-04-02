@@ -9,7 +9,7 @@ export default function Signup() {
   const [formData, setFormData] = useState({ role: 'Profesor' });
   const [err, setErr] = useState(null);
   const [rol, setRol] = useState('Profesor');
-  const [profesores, setProfesores] = useState({});
+  const [profesores, setProfesores] = useState([]);
   const { login } = useAuth();
   const navigate = useNavigate();
   const centerData = centrosData.centrosFP
@@ -22,27 +22,48 @@ export default function Signup() {
   }, []);
 
 
-  
+const comprobarPass = (pass) => {
+  const isCorrect = /^(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Z]).{8,}$/.test(pass);
+  if (!isCorrect){
+    setErr("La contraseña debe tener al menos 8 caracteres, incluir una mayúscula y un número.")
+    return "";
+  }
+  setErr(null)
+  return CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex);
+}
 
 
-  const handleChange = (e) => {
-    let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
+const handleChange = (e) => {
+  let value = e.target.type === "password"
+    ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex)
+    : e.target.value;
+
+  if (e.target.name === "role") {
+    setRol(value);
+    console.log("🔄 Rol actualizado a:", value); // <--- Añade esto
+  }
+
+  setFormData({ ...formData, [e.target.name]: value });
+};
+
+  // const handleChange = (e) => {
+  //   let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
     
-    setFormData({ ...formData, [e.target.name]: value });
-  };
+  //   setFormData({ ...formData, [e.target.name]: value });
+  // };
 
-  const handleChangeRole = (e) => {
-    setRol(e.target.value);
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChangeRole = (e) => {
+  //   setRol(e.target.value);
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (err) return;
     let data = {};
-
+    
     //Comprobar requisitos de la contraseña
     try {
-
       //Llamada a la API
       const response = await fetch("http://localhost:5000/api/addUser", {
         method: "POST",
@@ -130,7 +151,7 @@ export default function Signup() {
 
         <fieldset>
           <legend>Rol</legend>
-          <select name="role" onChange={handleChangeRole} className="select-rol">
+          <select name="role" onChange={handleChange} className="select-rol">
             <option value="Profesor">Profesor</option>
             <option value="Alumno">Alumno</option>
             <option value="Empresa">Empresa</option>

@@ -199,7 +199,7 @@ app.put("/api/edit-profile/:nif", (req, res) => {
 
 // Endpoint para obtener los datos de la tabla
 app.get("/api/data", (req, res) => {
-  const query = "SELECT Municipio, ID, NombreComercial, Sector, Actividad, Calle, Nº, Web FROM empresas"; // Consulta SQL
+  const query = "SELECT e.Municipio, e.ID, e.NombreComercial, e.Sector, e.Actividad, e.Calle, e.Nº, e.Web, EXISTS(SELECT 1 FROM proyectos WHERE id_empresa = e.ID) AS hasProjects FROM empresas e"; // Consulta SQL
   db.query(query, (err, results) => {
     if (err) {
       console.error("Error al obtener los datos:", err);
@@ -232,8 +232,6 @@ app.post("/api/addUser", (req, res) => {
   // Validación de contraseña
   if (pass !== confirmpass) return res.status(500).json({ error: 79 });
 
-  // Hashear contraseña
-  const hashedPassword = CryptoJS.MD5(pass).toString(CryptoJS.enc.Hex);
 
   // Verifica que recibes correctamente el nombre comercial
   console.log("Nombre comercial recibido:", nombre_comercial);
@@ -245,7 +243,7 @@ app.post("/api/addUser", (req, res) => {
   const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
   db.query(query, [
-    nif, hashedPassword, role,
+    nif, pass, role,
     nombreValue, apellidoValue,
     gmail, telefono, zona,
     nacimiento, poblacion, instituto, profesor_id
@@ -262,7 +260,9 @@ app.post("/api/addUser", (req, res) => {
 
 
 app.post("/api/listProjects", (req, res) => {
-  const query = "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE e.ID = ? GROUP BY p.id_proyecto;"
+  const query = req.body.role == "Alumno" ? "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE u.ID = ? GROUP BY p.id_proyecto;" 
+  :
+   "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE e.ID = ? GROUP BY p.id_proyecto;"
   const ID = req.body.ID;
   db.query(query, [ID], (err, results) => {
     if (err) {
@@ -412,7 +412,7 @@ app.get("/api/listFinishedProjects", (req, res) => {
 });
 
 app.get("/api/listProfesores", (req, res) => {
-  const query = "SELECT p.id, u.nombre, u.apellido FROM users u JOIN profesores p ON u.id = p.user_id WHERE u.id = 1"
+  const query = "SELECT p.id, u.nombre, u.apellido FROM users u JOIN profesores p ON u.id = p.user_id"
   db.query(query, [], (err, result) => {
     if(err){
       console.error("Error al obtener los datos:", err);

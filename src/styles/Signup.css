@@ -26,10 +26,10 @@
 
 .signup-container fieldset {
   grid-column: span 1;
-  border: 2px solid #1e902c;
+  border: none;
+  border-top: 2px solid #1e902c;
   width: 94%;
   padding: 10px;
-  border-radius: 8px;
   margin-bottom: 10px;
 }
 
