@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/CentrosFP.css';
 import NavbarWeb from './NavbarWeb';
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 import { Link } from 'react-router-dom';
@@ -96,7 +96,7 @@ const CentrosFP = () => {
             <ArrowUp/>
             <InfoB/>
             {/* Footer */}
-            <FooterWeb/>
+            <FooterSonia/>
         </div>
     );
 };

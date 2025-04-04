@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import categoriasData from "./data/provisional.json";
 import "../styles/RetoSeleccionado.css"; // (opcional) Crea este archivo CSS para estilos
 import NavbarWeb from "./NavbarWeb";
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import ArrowUp from "./ui/ArrowUp";
 
 const RetoSeleccionado = () => {
@@ -86,7 +86,7 @@ const RetoSeleccionado = () => {
             </div>
 
             <ArrowUp />
-            <FooterWeb />
+            <FooterSonia/>
         </div>
     );
 };

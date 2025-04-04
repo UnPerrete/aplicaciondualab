@@ -4,7 +4,7 @@ import "../styles/Servicio.css"; // Importa los estilos CSS para el componente
 import categoriasData from "./data/servicios.json"; // Importa los datos de servicios desde un archivo JSON
 import "bootstrap-icons/font/bootstrap-icons.css"; // Importa los iconos de Bootstrap
 import NavbarWeb from "./NavbarWeb";
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import ArrowUp from "./ui/ArrowUp";
 import InfoB from './ui/Info';
 
@@ -144,7 +144,7 @@ const Servicios = () => {
       <ArrowUp/>
       <InfoB/>
       {/* Footer */}
-      <FooterWeb/>
+      <FooterSonia/>
     </div>
   );
 };

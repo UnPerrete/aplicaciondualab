@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/CentrosFP.css';
 import NavbarWeb from './NavbarWeb';
-import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 import FooterSonia from './FooterSonia';

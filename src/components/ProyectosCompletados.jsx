@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import '../styles/ProyectosCompletados.css';
 import NavbarWeb from "./NavbarWeb";
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 
@@ -63,7 +63,7 @@ const Proyecto = () => {
         <ArrowUp/>
         <InfoB/>
       {/* Footer */}
-      <FooterWeb />
+      <FooterSonia />
     </div>
   );
 };

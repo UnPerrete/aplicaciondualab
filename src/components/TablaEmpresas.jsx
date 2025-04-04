@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import NavbarWeb from "./NavbarWeb";
 import ArrowUp from "./ui/ArrowUp";
 import InfoB from './ui/Info';
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 
 export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
@@ -118,7 +118,7 @@ export const TablaEmpresas = () => {
       <ArrowUp />
       {/* Línea divisoria */}
       <hr className="section-divider" />
-      <FooterWeb/>
+      <FooterSonia/>
     </div>
   );
 };
