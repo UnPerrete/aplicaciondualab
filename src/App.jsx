@@ -5,7 +5,8 @@ import { TablaEmpresas } from './components/TablaEmpresas'
 import PrivateRoute from './context/PrivateRoute'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from './components/Signup';
-import Servicios from './components/Retos'
+import Retos from './components/Retos'
+// import Servicios from './components/RetosAnterior'
 import Profile from './components/Profile'
 import SeleccionarServicios from './components/SeleccionarRetos'
 import Proyectos from './components/Proyectos'
@@ -17,6 +18,7 @@ import Empresas from './components/Empresas'
 import Administraciones from './components/Administraciones'
 import Equipo from './components/Equipo'
 import Recursos from './components/Recursos'
+import RetoSeleccionado from './components/RetoSeleccionado'
 
 function App() {
 
@@ -34,7 +36,8 @@ function App() {
         <Route path="/administraciones" element={<Administraciones />} />
         <Route path="/login" element={<Login />} />
         <Route path="/tablaempresa" element={<PrivateRoute><TablaEmpresas /></PrivateRoute>} />
-        <Route path="/servicio" element={<Servicios />} />
+        <Route path="/servicio" element={<Retos />} />
+        <Route path="/servicio/:servicioId" element={<RetoSeleccionado />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/perfil" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="/seleccionar-servicios" element={<PrivateRoute><SeleccionarServicios /></PrivateRoute>} />
