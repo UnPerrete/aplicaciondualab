@@ -5,6 +5,7 @@ import NavbarWeb from './NavbarWeb';
 import FooterWeb from './FooterWeb';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
+import FooterSonia from './FooterSonia';
 
 const Empresas = () => {
     return (
@@ -88,6 +89,7 @@ const Empresas = () => {
 
             {/* Footer */}
             <FooterWeb/>
+            <FooterSonia/>
         </div>
     );
 };
