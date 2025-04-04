@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import NavbarWeb from "./NavbarWeb";
 import ArrowUp from "./ui/ArrowUp";
 import InfoB from './ui/Info';
+import FooterWeb from './FooterWeb';
 
 export const TablaEmpresas = () => {
   const [data, setData] = useState([]);
@@ -115,6 +116,9 @@ export const TablaEmpresas = () => {
       <p className="link" onClick={() => setTotalEmpresas(totalEmpresas * 2)}>Mostrar más ...</p>
       <InfoB />
       <ArrowUp />
+      {/* Línea divisoria */}
+      <hr className="section-divider" />
+      <FooterWeb/>
     </div>
   );
 };
