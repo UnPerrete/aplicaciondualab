@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logos/DualabIconTransparent.png';
+import logo from '../assets/logo.png';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
 import { useAuth } from "../context/AuthProvider";
 
 const NavbarWeb = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
     const [scrollingUp, setScrollingUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [searchOpen, setSearchOpen] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState("");
     const { user } = useAuth();
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,62 +24,64 @@ const NavbarWeb = () => {
     }, [lastScrollY]);
 
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    const closeMenu = () => {
-        setMenuOpen(false);
-        setDropdownOpen(false);
-    };
-
-    const toggleSearch = () => {
-        setSearchOpen(!searchOpen);
-    };
-
     return (
-        <div className={`navbar1 ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
-            <div class="logo">
-                <img src={logo} alt="Logo" />
-                <div class="logo-text">
-                    <strong>DuaLab</strong>
-                    <small>APRENDE CREANDO</small>
+        <div className={`navbar-container ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
+            <div className="navbar-top">
+                <div className="navbar-top-contact">
+                    <span><i className="bi bi-telephone-fill"></i> +34 659 02 16 03</span>
+                </div>
+                <div className='navbar-top-social'>
+                    <span className="email">info@dualab.es</span>
+                </div>
+                <div className="navbar-top-access">
+                    <Link to="/perfil">
+                    <i className="bi bi-person-circle"></i> {user?.nombre || user?.nombrecomercial || "Acceder"}
+                    </Link>
                 </div>
             </div>
 
-            {/* Ícono del menú responsive */}
-            <div className="menu-icon" onClick={toggleMenu}>
-                <i className="bi bi-grid"></i>
-            </div>
+            <div className="navbar-bottom">
+                <div className="logo">
+                    <Link to="/"><img src={logo} alt="Dualab" className="logo-img" /></Link>
+                </div>
 
-            <div className="nav-wrapper">
-            <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
-                <Link to="/">Inicio</Link>
-                {user?.role == "Alumno" && <Link to="/info-proyecto/0">Proyectos</Link>}
-                <li
-                    className="dropdown"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
-                >
-                    <Link to="/servicio" className="dropdown-toggle">Retos ▾</Link>
-                    {dropdownOpen && (
-                        <div className="dropdown-menu">
-                            <Link to="/centrosfp" onClick={closeMenu}>Centros FP</Link>
-                            <Link to="/" onClick={closeMenu}>Empresas</Link>
-                            <Link to="/administraciones" onClick={closeMenu}>Administraciones</Link>
-                        </div>
-                    )}
-                </li>
-                <Link to="/proyect">Proyectos</Link>
-                <Link to="/formacion">Formación</Link>
-                <Link to="/recursos">Recursos</Link>
-                <Link to="/contact">Contáctenos</Link>
-                <Link to="/equipo">Equipo</Link>
+                <nav className="nav-links1">
+                    <Link to="/">Inicio</Link>
+                    <div className="dropdown nav-link-dropdown">
+                        <Link to="/servicio" className="dropdown-toggle-text">Retos</Link>
+                        <i
+                             className={`bi ${dropdownOpen ? 'bi-chevron-up' : 'bi-chevron-down'} dropdown-arrow`}
+                            onClick={(e) => {
+                                e.stopPropagation(); // evita que el clic afecte al Link
+                                setDropdownOpen(!dropdownOpen);
+                            }}
+                        ></i>
+                        {dropdownOpen && (
+                            <div className="dropdown-menu">
+                                <Link to="/centrosfp">Centros FP</Link>
+                                <Link to="/">Empresas</Link>
+                                <Link to="/administraciones">Administraciones</Link>
+                            </div>
+                        )}
+                    </div>
+                    <Link to="/proyect">Proyectos</Link>
+                    <Link to="/formacion">Formación</Link>
+                    <Link to="/recursos">Recursos</Link>
+                    <Link to="/equipo">El Equipo</Link>
+                    <Link to="/contact">Contacto</Link>
+                    <span className="pais-selector">🇪🇸 España</span>
+                </nav>
 
-                <span className="navbar-right">
-                    <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
-                </span>
-            </nav>
+                <div className="nav-icons-inline">
+                    <div className="search-bar">
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                        {searchQuery === "" && <i className="bi bi-search search-placeholder-icon"></i>}
+                    </div>
+                </div>
             </div>
         </div>
     );

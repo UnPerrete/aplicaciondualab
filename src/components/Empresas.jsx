@@ -86,8 +86,7 @@ const Empresas = () => {
             <ArrowUp/>
             <InfoB/>
 
-            {/* Footer 
-            <FooterWeb/>*/}
+            {/* Footer */}
             <FooterSonia/>
         </div>
     );
