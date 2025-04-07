@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/logos/DualabIconTransparent.png';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
 import { useAuth } from "../context/AuthProvider";
@@ -40,8 +40,12 @@ const NavbarWeb = () => {
 
     return (
         <div className={`navbar1 ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
-            <div className="logo">
-                <Link to="/"><img src={logo} alt="Vía Óptima Dualab" className="logo-img" /></Link>
+            <div class="logo">
+                <img src={logo} alt="Logo" />
+                <div class="logo-text">
+                    <strong>DuaLab</strong>
+                    <small>APRENDE CREANDO</small>
+                </div>
             </div>
 
             {/* Ícono del menú responsive */}
@@ -58,7 +62,7 @@ const NavbarWeb = () => {
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                 >
-                    <Link to="/servicio" className="dropdown-toggle">Retos</Link>
+                    <Link to="/servicio" className="dropdown-toggle">Retos ▾</Link>
                     {dropdownOpen && (
                         <div className="dropdown-menu">
                             <Link to="/centrosfp" onClick={closeMenu}>Centros FP</Link>
@@ -72,19 +76,9 @@ const NavbarWeb = () => {
                 <Link to="/recursos">Recursos</Link>
                 <Link to="/contact">Contáctenos</Link>
                 <Link to="/equipo">Equipo</Link>
-                <span className="nav-icons-inline">
+
+                <span className="navbar-right">
                     <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
-                    <i className="bi bi-search" onClick={toggleSearch}></i>
-                    {searchOpen && (
-                        <div className="search-bar">
-                            <input
-                                type="text"
-                                placeholder="Buscar"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                        </div>
-                    )}
                 </span>
             </nav>
             </div>
