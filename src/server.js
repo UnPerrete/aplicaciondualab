@@ -31,15 +31,13 @@ db.connect((err) => {
 // Endpoint para el login
 app.post("/api/login", (req, res) => {
   const { role, nif, nombre_comercial, password } = req.body;
-  const hashedPassword = CryptoJS.MD5(password).toString(CryptoJS.enc.Hex);
   const roleNormalized = role?.toLowerCase();
 
   console.log("🟡 Login recibido:", {
     roleOriginal: role,
     roleNormalized,
     nif,
-    nombre_comercial,
-    hashedPassword
+    nombre_comercial
   });
 
   let query = "";
@@ -47,16 +45,7 @@ app.post("/api/login", (req, res) => {
 
   if (roleNormalized === "profesor") {
     query = "SELECT * FROM users WHERE nif = ? AND password = ? AND role = ?";
-    params = [nif, hashedPassword, role];
-  } else if (roleNormalized === "alumno") {
-    query = `
-      SELECT u.*, CONCAT(p.nombre, ' ', p.apellido) AS nombre_profesor
-      FROM users u
-      LEFT JOIN alumnos a ON u.id = a.user_id
-      LEFT JOIN users p ON a.profesor_id = p.id
-      WHERE u.nif = ? AND u.password = ? AND u.role = ?;
-    `;
-    params = [nif, hashedPassword, role];
+    params = [nif, password, role];
   } else if (roleNormalized === "empresa") {
     query = `
       SELECT e.*, u.password as user_password
@@ -64,7 +53,7 @@ app.post("/api/login", (req, res) => {
       JOIN empresas e ON TRIM(LOWER(u.nombre)) = TRIM(LOWER(e.NombreComercial))
       WHERE TRIM(LOWER(u.nombre)) = TRIM(LOWER(?)) AND u.password = ? AND u.role = ?;
     `;
-    params = [nombre_comercial, hashedPassword, role];
+    params = [nombre_comercial, password, role];
   } else {
     return res.status(400).json({ success: false, message: "Rol no reconocido" });
   }

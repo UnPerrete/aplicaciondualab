@@ -15,11 +15,11 @@ export default function Signup() {
   const centerData = centrosData.centrosFP
 
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/listProfesores")
-    .then(result => result.json())
-    .then(data => setProfesores(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/api/listProfesores")
+  //   .then(result => result.json())
+  //   .then(data => setProfesores(data));
+  // }, []);
 
 
 const comprobarPass = (pass) => {
@@ -108,7 +108,9 @@ const handleChange = (e) => {
             <>
               <legend>Datos de Empresa</legend>
               <input type="text" name="nombre_comercial" placeholder="Nombre Comercial" onChange={handleChange} required />
-              </>
+              <input type="text" name="nif" placeholder="NIF" onChange={handleChange} required />
+
+            </>
             )}
         </fieldset>
 
@@ -126,18 +128,6 @@ const handleChange = (e) => {
           <input type="password" name="confirmpass" placeholder="Confirmar Contraseña" onChange={handleChange} required />
         </fieldset>
 
-        {rol === "Alumno" && (
-          <fieldset>
-            <legend>Información del Alumno</legend>
-            <select name="profesor_id" id="profesor_id" onChange={handleChange}>
-              <option value="">Elige un profesor</option>
-              {profesores.map( (profe) => (
-                <option value={profe.id}>{profe.nombre + " " + profe.apellido}</option>
-              ) )}
-            </select>
-          </fieldset>
-        )}
-
         {rol === "Profesor" && (
           <fieldset>
             <legend>Información del Profesor</legend>
@@ -153,7 +143,6 @@ const handleChange = (e) => {
           <legend>Rol</legend>
           <select name="role" onChange={handleChange} className="select-rol">
             <option value="Profesor">Profesor</option>
-            <option value="Alumno">Alumno</option>
             <option value="Empresa">Empresa</option>
           </select>
         </fieldset>
