@@ -33,13 +33,15 @@ const NavbarWeb = () => {
 
                 <nav className="nav-links1">
                     <Link to="/">Inicio</Link>
-                    <div
-                        className="dropdown nav-link-dropdown"
-                        onClick={() => setDropdownOpen(!dropdownOpen)}
-                    >
-                        <span className="dropdown-toggle">
-                            Retos <i className={`bi ${dropdownOpen ? 'bi-caret-up-fill' : 'bi-caret-down-fill'}`}></i>
-                        </span>
+                    <div className="dropdown nav-link-dropdown">
+                        <Link to="/servicio" className="dropdown-toggle-text">Retos</Link>
+                        <i
+                             className={`bi ${dropdownOpen ? 'bi-chevron-up' : 'bi-chevron-down'} dropdown-arrow`}
+                            onClick={(e) => {
+                                e.stopPropagation(); // evita que el clic afecte al Link
+                                setDropdownOpen(!dropdownOpen);
+                            }}
+                        ></i>
                         {dropdownOpen && (
                             <div className="dropdown-menu">
                                 <Link to="/centrosfp">Centros FP</Link>

@@ -1,3 +1,8 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
 .navbar-container {
     position: fixed;
     top: 0;
@@ -9,7 +14,8 @@
 
 /* Espacio compensatorio debajo de la navbar */
 .content-wrapper {
-    padding-top: 130px; /* Ajusta según la altura combinada de navbar-top y navbar-bottom */
+    padding-top: 160px;
+ /* Ajusta según la altura combinada de navbar-top y navbar-bottom */
 }
 
 .navbar-top, .navbar-bottom {
@@ -65,7 +71,8 @@
 
 /* Parte inferior con navegación */
 .navbar-bottom {
-    background: linear-gradient(to right, #1e8a6e, #0f354a);
+    background: linear-gradient(to right, #1e8a6e 20%, #0f354a 80%);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,7 +87,7 @@
 .nav-links1 {
     display: flex;
     gap: 10px;
-    margin-left: 150px;
+    margin-left: 130px;
     margin-top: 60px;
     align-items: center;
     font-size: 20px;
@@ -108,7 +115,7 @@
     position: relative;
     width: 200px;
     margin-top: -80px;
-    margin-left: -250px;
+    margin-left: -260px;
 }
 
 .search-bar input {
@@ -138,7 +145,7 @@
     position: absolute;
     top: 120%;
     left: 0;
-    background-color: #ffffff;
+    background: linear-gradient(to bottom, #1e8a6e, #0f354a);
     padding: 12px 0;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -153,17 +160,25 @@
   /* Enlaces dentro del dropdown */
   .dropdown-menu a {
     padding: 12px 20px;
-    color: #183153;
+    color: white !important;
     text-decoration: none;
     font-size: 16px;
-    transition: background 0.2s, padding-left 0.2s;
   }
-  
-  /* Hover animado */
-  .dropdown-menu a:hover {
-    background-color: #f4f6f8;
-    padding-left: 25px;
-  }
+
+  .dropdown-arrow {
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-arrow:hover {
+    color: #979797;
+}
+
+.nav-link-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
   
   /* Animación */
   @keyframes dropdownFade {
