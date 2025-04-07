@@ -5,6 +5,8 @@
     right: 0;
     width: 100%;
     z-index: 9999;
+    padding: 0 0;
+    transition: all 0.7s ease;
 }
 
 /* Espacio compensatorio debajo de la navbar */
@@ -61,6 +63,14 @@
     gap: 5px;
     text-decoration: none;
     color: #183153;
+}
+
+.navbar-visible{
+    top: 0;
+}
+
+.navbar-hidden{
+    top: -300px;
 }
 
 /* Parte inferior con navegación */

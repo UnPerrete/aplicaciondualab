@@ -8,10 +8,24 @@ import { useAuth } from "../context/AuthProvider";
 const NavbarWeb = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [scrollingUp, setScrollingUp] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const { user } = useAuth();
 
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollingUp(window.scrollY < lastScrollY)
+            setLastScrollY(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
+
     return (
-        <div className="navbar-container">
+        <div className={`navbar-container ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="navbar-top">
                 <div className="navbar-top-contact">
                     <span><i className="bi bi-telephone-fill"></i> +34 659 02 16 03</span>
