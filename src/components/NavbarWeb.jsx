@@ -21,7 +21,7 @@ const NavbarWeb = () => {
                 </div>
                 <div className="navbar-top-access">
                     <Link to="/perfil">
-                        <i className="bi bi-person-circle"></i> Acceder
+                    <i className="bi bi-person-circle"></i> {user?.nombre || user?.nombrecomercial || "Acceder"}
                     </Link>
                 </div>
             </div>
