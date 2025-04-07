@@ -2,18 +2,14 @@
 
 .navbar1 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: white;
-    padding: 10px 32px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: fixed;
+    justify-content: space-between;
+    padding: 0 30px !important; 
+    background: linear-gradient(to bottom, #30947c, #15345f);
+    color: white;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
-    border-bottom: 4px solid #1e902c;
     transition: top 0.5s ease-in-out;
 }
 
@@ -27,18 +23,28 @@
 
 .nav-links1 {
     display: flex;
-    gap: 20px;
     align-items: center;
-    padding: 20px 30px;
-    box-sizing: border-box;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links1 a {
-    text-decoration: none;
-    color: gray;
-    transition: color 0.3s ease;
-    padding: 0 5px;
+.nav-links1 > a {
+    color: white !important;
 }
+
+.nav-links1 a,
+.nav-links1 .dropdown-toggle {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+
 
 .nav-links1 a:hover {
     color: black;
@@ -49,29 +55,15 @@
     font-weight: bold;
 }
 
-.nav-icons-inline {
-    position: relative;
+.navbar-right {
     display: flex;
-    flex-direction: row; 
-    gap: 5px;
+    align-items: center;
 }
 
-.search-bar {
-    position: absolute; /* posiciona respecto al icono de lupa */
-    top: 220%; 
-    right: -10px; /* ajusta según desees */
-    transform: translateY(-50%);
-    width: 150px;
-    max-width: 90vw;
-    z-index: 1000;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 5px 10px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.navbar-right a i{
+    height: 25px;
+    filter: brightness(0) invert(1); /* Hace que el icono sea blanco */
+    cursor: pointer;
 }
 
 .bi {
@@ -83,16 +75,7 @@
     color: black;
 }
 
-.logo {
-    width: 15%;
-}
 
-.logo img {
-    width: 85px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-}
 
 /* Dropdown */
 .dropdown {
@@ -104,7 +87,7 @@
 }
 
 .dropdown-toggle {
-    color: gray;
+
     transition: color 0.3s;
 }
 
@@ -134,7 +117,7 @@
     display: block;
     padding: 5px 10px;
     text-decoration: none;
-    color: gray;
+
     border-radius: 20px;
     transition: background-color 0.3s;
 }
@@ -155,7 +138,7 @@
     margin-left: 10px;
     cursor: pointer;
     font-size: 14px;
-    color: gray;
+
 }
 
 .menu-icon {
@@ -176,6 +159,34 @@
     height: 3px;
     border-radius: 3px;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  
+  .logo-text small {
+    font-size: 10px;
+    color: #cfeef0;
+  }
+
+  .nav-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
 
 /* --------------------- */
 /*       RESPONSIVE      */
@@ -316,5 +327,8 @@
     }
     
 }
+
+
+
 
 
