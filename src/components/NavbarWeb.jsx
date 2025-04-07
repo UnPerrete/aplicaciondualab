@@ -7,86 +7,65 @@ import { useAuth } from "../context/AuthProvider";
 
 const NavbarWeb = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [scrollingUp, setScrollingUp] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [searchOpen, setSearchOpen] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const { user } = useAuth();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollingUp(window.scrollY < lastScrollY)
-            setLastScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
-
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    const closeMenu = () => {
-        setMenuOpen(false);
-        setDropdownOpen(false);
-    };
-
-    const toggleSearch = () => {
-        setSearchOpen(!searchOpen);
-    };
-
     return (
-        <div className={`navbar1 ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
-            <div className="logo">
-                <Link to="/"><img src={logo} alt="Vía Óptima Dualab" className="logo-img" /></Link>
+        <div className="navbar-container">
+            <div className="navbar-top">
+                <div className="navbar-top-contact">
+                    <span><i className="bi bi-telephone-fill"></i> +34 659 02 16 03</span>
+                </div>
+                <div className='navbar-top-social'>
+                    <span className="email">info@dualab.es</span>
+                </div>
+                <div className="navbar-top-access">
+                    <Link to="/perfil">
+                        <i className="bi bi-person-circle"></i> Acceder
+                    </Link>
+                </div>
             </div>
 
-            {/* Ícono del menú responsive */}
-            <div className="menu-icon" onClick={toggleMenu}>
-                <i className="bi bi-grid"></i>
-            </div>
+            <div className="navbar-bottom">
+                <div className="logo">
+                    <Link to="/"><img src={logo} alt="Dualab" className="logo-img" /></Link>
+                </div>
 
-            <div className="nav-wrapper">
-            <nav className={`nav-links1 ${menuOpen ? 'active' : ''}`}>
-                <Link to="/">Inicio</Link>
-                {user?.role == "Alumno" && <Link to="/info-proyecto/0">Proyectos</Link>}
-                <li
-                    className="dropdown"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
-                >
-                    <Link to="/servicio" className="dropdown-toggle">Retos</Link>
-                    {dropdownOpen && (
-                        <div className="dropdown-menu">
-                            <Link to="/centrosfp" onClick={closeMenu}>Centros FP</Link>
-                            <Link to="/" onClick={closeMenu}>Empresas</Link>
-                            <Link to="/administraciones" onClick={closeMenu}>Administraciones</Link>
-                        </div>
-                    )}
-                </li>
-                <Link to="/proyect">Proyectos</Link>
-                <Link to="/formacion">Formación</Link>
-                <Link to="/recursos">Recursos</Link>
-                <Link to="/contact">Contáctenos</Link>
-                <Link to="/equipo">Equipo</Link>
-                <span className="nav-icons-inline">
-                    <Link to="/perfil"><i className="bi bi-person-fill"></i></Link>
-                    <i className="bi bi-search" onClick={toggleSearch}></i>
-                    {searchOpen && (
-                        <div className="search-bar">
-                            <input
-                                type="text"
-                                placeholder="Buscar"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                        </div>
-                    )}
-                </span>
-            </nav>
+                <nav className="nav-links1">
+                    <Link to="/">Inicio</Link>
+                    <div
+                        className="dropdown nav-link-dropdown"
+                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                    >
+                        <span className="dropdown-toggle">
+                            Retos <i className={`bi ${dropdownOpen ? 'bi-caret-up-fill' : 'bi-caret-down-fill'}`}></i>
+                        </span>
+                        {dropdownOpen && (
+                            <div className="dropdown-menu">
+                                <Link to="/centrosfp">Centros FP</Link>
+                                <Link to="/">Empresas</Link>
+                                <Link to="/administraciones">Administraciones</Link>
+                            </div>
+                        )}
+                    </div>
+                    <Link to="/proyect">Proyectos</Link>
+                    <Link to="/formacion">Formación</Link>
+                    <Link to="/recursos">Recursos</Link>
+                    <Link to="/equipo">El Equipo</Link>
+                    <Link to="/contact">Contacto</Link>
+                    <span className="pais-selector">🇪🇸 España</span>
+                </nav>
+
+                <div className="nav-icons-inline">
+                    <div className="search-bar">
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                        {searchQuery === "" && <i className="bi bi-search search-placeholder-icon"></i>}
+                    </div>
+                </div>
             </div>
         </div>
     );

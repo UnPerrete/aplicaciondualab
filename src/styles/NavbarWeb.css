@@ -1,320 +1,185 @@
-/* NavbarWeb.css */
-
-.navbar1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 10px 32px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
+.navbar-container {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    border-bottom: 4px solid #1e902c;
-    transition: top 0.5s ease-in-out;
+    width: 100%;
+    z-index: 9999;
 }
 
-.navbar-visible {
-    top: 0 !important;
+/* Espacio compensatorio debajo de la navbar */
+.content-wrapper {
+    padding-top: 130px; /* Ajusta según la altura combinada de navbar-top y navbar-bottom */
 }
 
-.navbar-hidden {
-    top: -170px !important;
+.navbar-top, .navbar-bottom {
+    width: 100%;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* Parte superior con datos de contacto */
+.navbar-top {
+    background-color: #f4f6f8;
+    height: 35px;
+    color: #183153;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 6px 20px;
+    gap: 20px;
+}
+
+.navbar-top-contact {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.navbar-top-social {
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar-top-access {
+    color: #183153;
+    transition: color 0.3s ease;
+}
+
+.navbar-top-access:hover {
+    color: #1e8a6e !important;
+}
+
+.navbar-top span,
+.navbar-top a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #183153;
+}
+
+/* Parte inferior con navegación */
+.navbar-bottom {
+    background: linear-gradient(to right, #1e8a6e, #0f354a);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: auto;
+    width: 100px;
 }
 
 .nav-links1 {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    margin-left: 150px;
+    margin-top: 60px;
     align-items: center;
-    padding: 20px 30px;
-    box-sizing: border-box;
+    font-size: 20px;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-links1 a {
+    color: white !important;
     text-decoration: none;
-    color: gray;
     transition: color 0.3s ease;
-    padding: 0 5px;
 }
 
 .nav-links1 a:hover {
-    color: black;
+    color: rgb(167, 167, 167) !important;
 }
 
-.nav-links1 a.active {
-    color: black;
-    font-weight: bold;
-}
 
 .nav-icons-inline {
-    position: relative;
-    display: flex;
-    flex-direction: row; 
-    gap: 5px;
+    align-items: center;
 }
 
+/* --- BUSCADOR --- */
 .search-bar {
-    position: absolute; /* posiciona respecto al icono de lupa */
-    top: 220%; 
-    right: -10px; /* ajusta según desees */
-    transform: translateY(-50%);
-    width: 150px;
-    max-width: 90vw;
-    z-index: 1000;
+    position: relative;
+    width: 200px;
+    margin-top: -80px;
+    margin-left: -250px;
 }
 
 .search-bar input {
     width: 100%;
-    padding: 5px 10px;
     border-radius: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 12px;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.bi {
+.search-bar .bi-search {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
     cursor: pointer;
-   transition: color 0.5s ease;
+    color: #717171;
 }
 
-.bi:hover {
-    color: black;
-}
-
-.logo {
-    width: 15%;
-}
-
-.logo img {
-    width: 85px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-}
-
-/* Dropdown */
-.dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0;              /* elimina espacio interno */
-    margin: 0; 
+/* --- EXTRAS --- */
+.pais-selector {
+    color: white;
+    cursor: pointer;
 }
 
 .dropdown-toggle {
-    color: gray;
-    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+.dropdown-toggle i {
+    font-size: 12px;
+    transition: color 0.3s ease;
 }
 
 .dropdown-toggle:hover {
-    color: black;
+    color: rgb(167, 167, 167);
 }
 
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    padding: 10px;
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-}
 
-/* Mostrar menú al rozar en Desktop y Responsive */
-.dropdown:hover .dropdown-menu {
-    display: flex;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: gray;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-}
-
-.dropdown-menu a:hover {
-    background-color: #f0f0f0;
-    color: black;
-}
-
-.dropdown-toggle {
+.nav-link-dropdown {
+    color: white;
+    padding: 0 5px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    padding: -5px;     
-    width: auto;
+    transition: color 0.3s ease;
 }
 
-.dropdown-arrow {
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    color: gray;
+.nav-link-dropdown:hover {
+    color: #cce8e0;
 }
 
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    color: green;
-    transition: color 0.5s ease;
+.nav-links1 a,
+.pais-selector,
+.nav-link-dropdown {
+    white-space: nowrap;
 }
 
-.menu-icon:hover {
-    color: black;
-}
-
-.menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    border-radius: 3px;
-}
-
-/* --------------------- */
-/*       RESPONSIVE      */
-/* --------------------- */
-
-@media screen and (max-width: 1150px) {
-    .nav-wrapper {
-        display: flex;
-        align-items: center;
-        flex: 1;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-    .nav-links1 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2px;
-        padding: 0px 5px;
-        font-size: 14px;
-        box-sizing: border-box;
-        flex: 1;
-        white-space: nowrap;
-      }
-    .nav-links1 a {
-        padding: 0 1px;
-    }
-
-    .nav-icons-inline {
-        margin-left: 0px; 
-        gap: 10px;
-        position: relative;
-      }
-
-    .logo {
-        width: auto;
-    }
-
-    .search-bar {
-        position: static; 
-        right: 0;
-        transform: translateY(0);
-        width: 180px;
-        z-index: 1000;
-    }
-
-    .dropdown-menu {
-        position: absolute;
-        z-index: 1100;
-    }
-
-    .dropdown-menu a {
-        padding: 5px 15px;
-    }
-}
-
-@media screen and (max-width: 550px) {  
-    .logo img{
-        width: 100px; 
-    }
-
-    .menu-icon {
-        display: flex;
-        position: absolute;
-        left: 65%;
-    }
-
-    .nav-links1 {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 16px;
-        gap: 15px;
-        padding: 20px;
-        display: none;
-        border-bottom: 4px solid #1e902c;
-    }
-
-    .nav-links1.active {
-        display: flex;
-    }
-
-    .nav-links1 a {
-        border-radius: 20px;
-        transition: background-color 0.3s ease;
-    }
-
-    .nav-links1 a:hover {
-        background-color: #f0f0f0;
-    }
-
-    .dropdown {
-        width: 100%;
-        flex-direction: column; /* mejor vertical en móvil */
-        align-items: flex-start;
-    }
-
-    .dropdown-menu {
-        position: static; /* para que el menú fluya correctamente hacia abajo */
-        box-shadow: none;
-        border-radius: 0;
-        width: 100%;
-        padding-left: 15px;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: flex; /* asegura el hover en responsive también */
-    }
-
-    .dropdown-toggle {
-        padding: 0 !important;
-        margin: 0 !important;
-        width: auto !important;
-    }
-
-    .logo {
-        width: 30%;
-        margin-right: 40px;
-    }
-
-    .nav-icons-inline {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 10px;
-        flex-wrap: nowrap;
-    }
-
-    .search-bar {
-        position: absolute; 
-        top: -250%; 
-        left: 55px; 
-        transform: translateY(50%);
-        width: 50vw;
-    }
-    
-}
-
+.search-placeholder-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+  }
+  
 
