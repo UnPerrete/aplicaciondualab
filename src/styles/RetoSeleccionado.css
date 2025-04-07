@@ -1,0 +1,192 @@
+/* DetalleServicio.css */
+
+/* Estilos generales */
+.detalle-servicio {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0eeee;
+    box-sizing: border-box;
+}
+
+/* Ajuste para la navbar */
+.detalle-container {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+/* Contenedor principal */
+.max-w-4xl {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+/* Sección del ciclo formativo */
+.ciclo-section {
+    background-color: #e6f0ff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Info del ciclo */
+.ciclo-info {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .ciclo-info {
+        width: 67%;
+    }
+}
+
+h1{
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.ciclo-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+}
+
+.badge-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge {
+    background-color: #dbeafe;
+    color: #1e40af;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge-green {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.ciclo-description {
+    color: #374151;
+    line-height: 1.5;
+}
+
+/* Título del servicio */
+.servicio-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 1.5rem;
+}
+
+/* Card de descripción */
+.descripcion-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.40rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+/* Cards de información */
+.info-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.info-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.info-list strong {
+    color: #111827;
+}
+
+/* Fases del servicio */
+.fase-head{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+.fase-item {
+    border-left: 4px solid #48d23b;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.fase-title {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.fase-duration {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.fase-tasks {
+    list-style-type: disc;
+    padding-left: 0;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+.fase-tasks li {
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.fases-container{
+    text-align: left;
+}
+
+/* Efectos hover */
+.ciclo-section:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+.fase-item:hover {
+    border-left-color: #84da7c;
+}

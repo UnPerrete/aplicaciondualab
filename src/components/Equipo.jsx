@@ -1,7 +1,7 @@
 import '../styles/Equipo.css';
 import React from 'react';
 import NavbarWeb from './NavbarWeb';
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 
@@ -58,7 +58,7 @@ const Equipo = () => {
             </div>
             <ArrowUp/>
             <InfoB/>
-            <FooterWeb/>
+            <FooterSonia/>
         </div>
     );
 };

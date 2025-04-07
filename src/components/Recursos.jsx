@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import NavbarWeb from "./NavbarWeb";
 import '../styles/Recursos.css';
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 import { Link } from 'react-router-dom';
@@ -130,7 +130,7 @@ const Recursos = () => {
 
             <ArrowUp/>
             <InfoB/>
-            <FooterWeb />
+            <FooterSonia />
         </div>
     );
 };

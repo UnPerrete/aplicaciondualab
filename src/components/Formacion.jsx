@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavbarWeb from "./NavbarWeb";
 import '../styles/Formacion.css';
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 import categoriasData from "./data/servicios.json";
@@ -232,7 +232,7 @@ const Formacion = () => {
 
           <ArrowUp/>
           <InfoB/>
-          <FooterWeb/>
+          <FooterSonia/>
         </div>
       );
 };

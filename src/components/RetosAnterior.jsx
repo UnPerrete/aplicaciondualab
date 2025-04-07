@@ -1,14 +1,14 @@
 import React, { useState } from "react"; // Importa React y el hook useState
 import { useNavigate } from "react-router-dom"; // Importa useNavigate para la navegación entre páginas
 import "../styles/Servicio.css"; // Importa los estilos CSS para el componente
-import categoriasData from "./data/provisional.json"; // Importa los datos de servicios desde un archivo JSON
+import categoriasData from "./data/servicios.json"; // Importa los datos de servicios desde un archivo JSON
 import "bootstrap-icons/font/bootstrap-icons.css"; // Importa los iconos de Bootstrap
 import NavbarWeb from "./NavbarWeb";
 import FooterSonia from './FooterSonia';
 import ArrowUp from "./ui/ArrowUp";
 import InfoB from './ui/Info';
 
-const Retos = () => {
+const Servicios = () => {
   const [desplegados, setDesplegados] = useState([]); // Estado para almacenar los elementos desplegados
   const [categorias, setCategorias] = useState(categoriasData); // Estado para almacenar las categorías de servicios
   const [categoriasOriginal] = useState([...categoriasData]); // Estado que almacena la copia original de las categorías
@@ -45,7 +45,7 @@ const Retos = () => {
     setOrdenAscendente(!ordenAscendente); // Alterna el orden ascendente/descendente
     setCategorias(() => {
       const copiaCategorias = [...categoriasOriginal]; // Copia las categorías originales
-      return copiaCategorias.sort((a, b) =>
+      return copiaCategorias.sort((a, b) => 
         ordenAscendente ? a.grupo.localeCompare(b.grupo) : b.grupo.localeCompare(a.grupo)
       ); // Ordena alfabéticamente en función de ordenAscendente
     });
@@ -60,10 +60,10 @@ const Retos = () => {
 
   return (
     <div className="p-6"> {/* Contenedor principal con padding */}
-      <div>
-        <NavbarWeb /> {/* Navbar para la navegación */}
-      </div>
-      <h1 className="text-3xl font-bold text-center mb-4">
+    <div>
+      <NavbarWeb /> {/* Navbar para la navegación */}
+    </div>
+      <h1 className="text-3xl font-bold text-center mb-4"> 
         En esta sección, podrá conocer nuestras principales áreas de
         especialización y los retos que ofrecemos en cada una.
         <br />
@@ -71,7 +71,7 @@ const Retos = () => {
       </h1>
 
       <button className="go-button" type="button" onClick={() => navigate("/seleccionar-servicios")}>
-        Seleccionar retos_<i className="bi bi-clipboard"></i> {/* Botón para navegar a la selección de servicios */}
+       Seleccionar retos_<i className="bi bi-clipboard"></i> {/* Botón para navegar a la selección de servicios */}
       </button>
 
       <div className="dropdown-container"> {/* Contenedor del menú desplegable */}
@@ -80,13 +80,13 @@ const Retos = () => {
             className="title pointerCursor"
             onClick={() => setMenuAbierto(!menuAbierto)} // Alterna la visibilidad del menú
           >
-            Seleccione una opción<i className={menuAbierto ? "bi bi-chevron-up" : "bi bi-chevron-down"}></i>
+            Seleccione una opción<i className={menuAbierto ? "bi bi-chevron-up" : "bi bi-chevron-down"}></i> 
           </div>
           <div className={`menu pointerCursor ${menuAbierto ? "" : "hide"}`}> {/* Muestra u oculta el menú */}
             <div className="option" onClick={ordenarPorGrupo}>• Ordenar alfabéticamente</div>
             <div className="option" onClick={() => { setCategorias([...categoriasOriginal]); cerrarMenu(); }}>• Restaurar orden original</div>
             <div className="option" onClick={() => { setGruposVisibles({}); cerrarMenu(); }}>• Colapsar todos los grupos</div>
-            <div className="option" onClick={() => { setGruposVisibles(Object.fromEntries(categorias.map(cat => [cat.familiaprofesional, true]))); cerrarMenu(); }}>• Expandir todos los grupos</div>
+            <div className="option" onClick={() => { setGruposVisibles(Object.fromEntries(categorias.map(cat => [cat.grupo, true]))); cerrarMenu(); }}>• Expandir todos los grupos</div>
             <div className="option" onClick={toggleModoCompacto}>{modoCompacto ? "• Modo expandido" : "• Modo compacto"}</div>
             <div className="option" onClick={() => { navigate('/seleccionar-servicios'); cerrarMenu(); }}>• Seleccionar retos</div>
           </div>
@@ -96,7 +96,7 @@ const Retos = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6"> {/* Contenedor en formato grid para los grupos de servicios */}
         {Object.entries(
           categorias.reduce((acc, categoria) => {
-            const grupo = categoria.familiaprofesional || "Otros"; // Si no tiene grupo, se asigna a "Otros"
+            const grupo = categoria.grupo || "Otros"; // Si no tiene grupo, se asigna a "Otros"
             if (!acc[grupo]) acc[grupo] = [];
             acc[grupo].push(categoria);
             return acc;
@@ -111,30 +111,28 @@ const Retos = () => {
             </div>
             {gruposVisibles[grupo] &&
               categoriasGrupo.map((categoria) => (
-                <div key={categoria.ciclo} className={`text-center mt-4 ${modoCompacto ? 'compacto' : ''}`}>
-                  {!modoCompacto && (
+                <div key={categoria.titulo} className={`text-center mt-4 ${modoCompacto ? 'compacto' : ''}`}>
+                  {!modoCompacto && ( 
                     <img
                       src={categoria.imagen} // Imagen de la categoría
-                      alt={categoria.ciclo}
+                      alt={categoria.titulo}
                       className="w-full h-64 object-cover rounded-lg"
                     />
                   )}
                   <h2 className="text-xl font-semibold mt-4">
-                    {categoria.ciclo} {/* Título de la categoría */}
+                    {categoria.titulo} {/* Título de la categoría */}
                   </h2>
                   {!modoCompacto && <p className="mt-2 text-gray-600">{categoria.descripcion}</p>} {/* Descripción de la categoría */}
                   <button
                     className="mt-2 text-blue-500 flex items-center justify-center"
-                    onClick={() => toggleDesplegable(categoria.ciclo)} // Alterna la visibilidad de los servicios
+                    onClick={() => toggleDesplegable(categoria.titulo)} // Alterna la visibilidad de los servicios
                   >
-                    {desplegados.includes(categoria.ciclo) ? "Retos ▴" : "Retos ▾"}
+                    {desplegados.includes(categoria.titulo) ? "Retos ▴" : "Retos ▾"}
                   </button>
-                  {desplegados.includes(categoria.ciclo) && (
+                  {desplegados.includes(categoria.titulo) && (
                     <ul className="mt-2 text-gray-700 text-left mx-auto w-4/5">
                       {categoria.servicios.map((servicio) => (
-                        <li key={servicio.id} onClick={() => navigate(`/servicio/${servicio.id}`)} className="text-sm hover:text-blue-600 cursor-pointer py-1">
-                          {servicio.titulo}
-                        </li>
+                        <li key={servicio} className="text-sm">{servicio}</li> // Lista de servicios de la categoría
                       ))}
                     </ul>
                   )}
@@ -143,12 +141,12 @@ const Retos = () => {
           </div>
         ))}
       </div>
-      <ArrowUp />
-      <InfoB />
+      <ArrowUp/>
+      <InfoB/>
       {/* Footer */}
-      <FooterSonia />
+      <FooterSonia/>
     </div>
   );
 };
 
-export default Retos; // Exporta el componente para su uso en otras partes de la aplicación
+export default Servicios; // Exporta el componente para su uso en otras partes de la aplicación

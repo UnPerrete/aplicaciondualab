@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Contacto.css';
 import NavbarWeb from "./NavbarWeb";
-import FooterWeb from './FooterWeb';
+import FooterSonia from './FooterSonia';
 import InfoB from './ui/Info';
 import ArrowUp from "./ui/ArrowUp";
 
@@ -55,7 +55,7 @@ const Contactenos = () => {
         <InfoB/>
         <ArrowUp/>
         {/* Footer */}
-        <FooterWeb/>
+        <FooterSonia/>
        </div> 
     );
 };

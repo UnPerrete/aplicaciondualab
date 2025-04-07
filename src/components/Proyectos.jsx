@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Alumnos from './Alumnos';
 import '../styles/Proyectos.css'
 import NavbarWeb from './NavbarWeb';
+import FooterSonia from './FooterSonia';
 import { useAuth } from "../context/AuthProvider";
 
 export default function Proyectos() {
@@ -47,6 +48,7 @@ export default function Proyectos() {
                 </div>
             )}
             <Link to={"/tablaempresa"}><button>Volver</button></Link>
+            <FooterSonia/>
         </>
     )
 }
