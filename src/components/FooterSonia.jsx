@@ -24,7 +24,7 @@ const FooterSonia = () => {
         </div>
       </div>
 
-      <div className='separado'></div>
+      {/* <div className='separado'></div> */}
 
       <div className="footer-gradient-wrap">
         <div className="footer-contentS">

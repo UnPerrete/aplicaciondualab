@@ -1,31 +1,51 @@
 /* FooterSonia.css */
 
-.footerS {
+/*.footerS {
   width: 100%;
-  background-color: #122746; /* color que continúa después del degradado */
+  background-color: #122746; /* color que continúa después del degradado 
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   margin: 0;
   padding: 0;
+}*/
+.footerS {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #122746;
+  color: white;
 }
 
 .footer-gradient-wrap {
+  width: 100%; /* 🔥 esto es lo que te falta */
   background: linear-gradient(to bottom, #99b749, #122746);
   padding-top: 2rem;
-  padding-bottom: 2rem; /* Ajusta este valor según cuánto quieres que ocupe el degradado */
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  right: 50%;
+  /* margin-left: -50vw;
+  margin-right: -50vw; */
 }
 
 .footer-contentS {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.1rem 0.1rem 0.1rem; /* aumentamos padding-top */
+  padding: 0 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 1rem;
-  position: relative; /* necesario para posicionar iconos relativos a este bloque */
+  position: relative;
 }
+
 
 .footer-columnS {
   flex: 0.01 1 auto;
@@ -96,9 +116,10 @@
 }
 
 .footer-bottomS {
+  width: 100%;
   max-width: 1200px;
-  margin: 0.1rem auto 0; /* antes: 2rem */
-  padding-top: 0.1rem; /* antes: 1rem */
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: center;
@@ -152,6 +173,10 @@
   height: auto;
 }
 
+.separado{
+  padding: 1rem 1;
+}
+
 .colaboradores-wrap {
   width: 100%;
   background-color: white;
@@ -159,7 +184,7 @@
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  padding: 1rem 0;
+  padding: 1rem 1;
   text-align: left;
 }
 
