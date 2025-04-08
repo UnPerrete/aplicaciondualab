@@ -227,7 +227,7 @@ app.post("/api/addUser", (req, res) => {
 
   // Asignación según rol
   const nombreValue = role === "Empresa" ? nombre_comercial.trim() : nombre;
-  const apellidoValue = role === "Empresa" ? null : apellido;
+  const apellidoValue = role === "Empresa" ? 'pordefecto' : apellido;
 
   const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -249,9 +249,7 @@ app.post("/api/addUser", (req, res) => {
 
 
 app.post("/api/listProjects", (req, res) => {
-  const query = req.body.role == "Alumno" ? "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE u.ID = ? GROUP BY p.id_proyecto;" 
-  :
-   "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado, JSON_ARRAYAGG(CONCAT(u.nombre, ' ', u.apellido)) AS colaboradores FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = e.ID LEFT JOIN proyectoalumno AS pa ON p.id_proyecto = pa.id_proyecto LEFT JOIN users AS u ON pa.id_alumno = u.id WHERE e.ID = ? GROUP BY p.id_proyecto;"
+  const query = "SELECT p.id_proyecto, p.nombre, p.descripcion, p.microservicios, p.estado FROM proyectos AS p JOIN empresas AS e ON p.id_empresa = ? GROUP BY p.id_proyecto;"
   const ID = req.body.ID;
   db.query(query, [ID], (err, results) => {
     if (err) {
@@ -394,17 +392,6 @@ app.get("/api/listFinishedProjects", (req, res) => {
   db.query(query, [], (err, result) => {
     if(err){
       console.error("Error al guardar los datos:", err);
-      return res.status(500).json({ error: "Error al obtener los datos" });
-    }
-    return res.status(200).json(result);
-  });
-});
-
-app.get("/api/listProfesores", (req, res) => {
-  const query = "SELECT p.id, u.nombre, u.apellido FROM users u JOIN profesores p ON u.id = p.user_id"
-  db.query(query, [], (err, result) => {
-    if(err){
-      console.error("Error al obtener los datos:", err);
       return res.status(500).json({ error: "Error al obtener los datos" });
     }
     return res.status(200).json(result);
