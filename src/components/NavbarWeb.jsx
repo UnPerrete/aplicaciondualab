@@ -69,6 +69,7 @@ const NavbarWeb = () => {
                                 <Link to="/proyect">Proyectos</Link>
                                 <Link to="/formacion">Formación</Link>
                                 <Link to="/recursos">Recursos</Link>
+                                <Link to="/empresa">Empresas</Link>
                             </div>
                         )}
                     </div>

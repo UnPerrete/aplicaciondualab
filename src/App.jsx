@@ -19,6 +19,7 @@ import Administraciones from './components/Administraciones'
 import Equipo from './components/Equipo'
 import Recursos from './components/Recursos'
 import RetoSeleccionado from './components/RetoSeleccionado'
+import Inicio from './components/Inicio'
 
 function App() {
 
@@ -30,7 +31,8 @@ function App() {
         <Route path="/contact" element={<Contactenos />} />
         <Route path="/formacion" element={<Formacion />} />
         <Route path="/centrosfp" element={<CentrosFP />} />
-        <Route path="/" element={<Empresas />} />
+        <Route path="/" element={<Inicio />} />
+        <Route path="/empresa" element={<Empresas />} />
         <Route path="/recursos" element={<Recursos />} />
         <Route path="/equipo" element={<Equipo />} />
         <Route path="/administraciones" element={<Administraciones />} />
