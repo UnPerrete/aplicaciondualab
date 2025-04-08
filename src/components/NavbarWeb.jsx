@@ -47,26 +47,26 @@ const NavbarWeb = () => {
 
                 <nav className="nav-links1">
                     <Link to="/">Inicio</Link>
+                    <Link to="/servicio" >Retos</Link>
                     <div className="dropdown nav-link-dropdown">
-                        <Link to="/servicio" className="dropdown-toggle-text">Retos</Link>
-                        <i
+                        <p className="dropdown-toggle-text">Explorar <i
                              className={`bi ${dropdownOpen ? 'bi-chevron-up' : 'bi-chevron-down'} dropdown-arrow`}
                             onClick={(e) => {
                                 e.stopPropagation(); // evita que el clic afecte al Link
                                 setDropdownOpen(!dropdownOpen);
                             }}
-                        ></i>
+                        ></i></p>
+                        
                         {dropdownOpen && (
                             <div className="dropdown-menu">
                                 <Link to="/centrosfp">Centros FP</Link>
-                                <Link to="/">Empresas</Link>
                                 <Link to="/administraciones">Administraciones</Link>
+                                <Link to="/proyect">Proyectos</Link>
+                                <Link to="/formacion">Formación</Link>
+                                <Link to="/recursos">Recursos</Link>
                             </div>
                         )}
                     </div>
-                    <Link to="/proyect">Proyectos</Link>
-                    <Link to="/formacion">Formación</Link>
-                    <Link to="/recursos">Recursos</Link>
                     <Link to="/equipo">El Equipo</Link>
                     <Link to="/contact">Contacto</Link>
                     <span className="pais-selector">🇪🇸 España</span>

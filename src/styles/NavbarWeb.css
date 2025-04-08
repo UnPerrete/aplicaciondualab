@@ -92,11 +92,11 @@
 .nav-links1 {
     display: flex;
     gap: 10px;
-    margin-left: 130px;
     margin-top: 60px;
     align-items: center;
     font-size: 20px;
-    flex: 1;
+    margin: 0 auto;
+    width: fit-content;
     justify-content: center;
 }
 
@@ -118,27 +118,27 @@
 /* --- BUSCADOR --- */
 .search-bar {
     position: relative;
-    width: 200px;
-    margin-top: -80px;
-    margin-left: -260px;
-}
-
-.search-bar input {
+    width: 150px;
+  }
+  
+  .search-bar input {
     width: 100%;
-    border-radius: 20px;
-    padding: 10px 12px;
+    padding: 10px 40px 10px 40px; /* Espacio a la izquierda para el icono */
+    border-radius: 999px;
     border: none;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-
-.search-bar .bi-search {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+  }
+  
+  .search-bar i {
     position: absolute;
-    top: 50%;
     left: 30px;
+    top: 50%;
     transform: translateY(-50%);
-    cursor: pointer;
-    color: #717171;
-}
+    font-size: 18px;
+    color: #888;
+    pointer-events: none; /* para que no bloquee el clic */
+  }
 
 /* --- EXTRAS --- */
 .pais-selector {
@@ -216,6 +216,10 @@
     color: rgb(167, 167, 167);
 }
 
+.nav-link-dropdown.dropdown {
+    padding: 0;
+    margin: 10px;
+}
 
 .nav-link-dropdown {
     color: white;
@@ -223,6 +227,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    padding: 0;
     transition: color 0.3s ease;
 }
 
