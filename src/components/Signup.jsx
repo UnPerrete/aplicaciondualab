@@ -6,20 +6,12 @@ import centrosData from "./data/centrosFP.json";
 import "../styles/Signup.css";
 
 export default function Signup() {
-  const [formData, setFormData] = useState({ role: 'Profesor' });
+  const [formData, setFormData] = useState();
   const [err, setErr] = useState(null);
   const [rol, setRol] = useState('Profesor');
-  const [profesores, setProfesores] = useState([]);
   const { login } = useAuth();
   const navigate = useNavigate();
   const centerData = centrosData.centrosFP
-
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/api/listProfesores")
-  //   .then(result => result.json())
-  //   .then(data => setProfesores(data));
-  // }, []);
 
 
 const comprobarPass = (pass) => {
@@ -45,17 +37,6 @@ const handleChange = (e) => {
 
   setFormData({ ...formData, [e.target.name]: value });
 };
-
-  // const handleChange = (e) => {
-  //   let value = e.target.type === "password" ? CryptoJS.MD5(e.target.value).toString(CryptoJS.enc.Hex) : e.target.value;
-    
-  //   setFormData({ ...formData, [e.target.name]: value });
-  // };
-
-  // const handleChangeRole = (e) => {
-  //   setRol(e.target.value);
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
