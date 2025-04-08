@@ -229,14 +229,20 @@ app.post("/api/addUser", (req, res) => {
   const nombreValue = role === "Empresa" ? nombre_comercial.trim() : nombre;
   const apellidoValue = role === "Empresa" ? 'pordefecto' : apellido;
 
-  const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  // Normalizar el rol, asignar 'Profesor' si no viene o es inválido
+const safeRole = (role && ["Profesor", "Empresa"].includes(role)) ? role : "Profesor";
 
-  db.query(query, [
-    nif, pass, role,
-    nombreValue, apellidoValue,
-    gmail, telefono, zona,
-    nacimiento, poblacion, instituto, profesor_id
-  ], (err, results) => {
+// DEBUG opcional
+console.log("🔍 Role recibido:", role, "→ Usado:", safeRole);
+
+const query = "CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+db.query(query, [
+  nif, pass, safeRole,
+  nombreValue, apellidoValue,
+  gmail, telefono, zona,
+  nacimiento, poblacion, instituto, profesor_id
+], (err, results) => {
     if (err) {
       console.error("Error al subir los datos:", err);
       return res.status(500).json({ error: err.errno });
