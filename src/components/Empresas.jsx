@@ -5,13 +5,13 @@ import NavbarWeb from './NavbarWeb';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 import FooterSonia from './FooterSonia';
+import BannerFormacion from './Test';
 
 const Empresas = () => {
     return (
-        <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
+        <>
             {/* Navbar */}
             <NavbarWeb/>
-
             {/* Banner Principal */}
             <div className="main-banner3">
                 <h2>EMPRESAS</h2>
@@ -21,6 +21,7 @@ const Empresas = () => {
             <Link to="/tablaempresa">
                 <button className="boton_empresas">Ver tabla de empresas</button>
             </Link>
+
 
             {/* Introducción */}
             <div className="intro-text2">
@@ -88,7 +89,7 @@ const Empresas = () => {
 
             {/* Footer */}
             <FooterSonia/>
-        </div>
+        </>
     );
 };
 

@@ -1,27 +1,16 @@
 /* CentrosFP.css */
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0eeee;
     box-sizing: border-box;
 }
 
-.navbar1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 10px 32px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    border-bottom: 4px solid #1e902c;
+div{
+    padding: 0;
 }
-
 .logo {
     display: flex;
     align-items: center;
@@ -140,24 +129,90 @@ body {
     color: gray;
 }
 
+/* CentrosFP.css - Responsive Improvements */
+
 @media (max-width: 768px) {
+    .main-banner3 {
+        height: 150px;
+        margin-top: 120px;
+        /* Ajuste por navbar en móvil */
+    }
+
+    .main-banner3 h2 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+
     .intro-text2 {
         flex-direction: column;
         padding: 20px;
+        gap: 20px;
+    }
+
+    .intro-text2 h1 {
+        font-size: 1.8rem;
+        width: 100%;
+    }
+
+    .intro-text2 p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .section-title2 {
+        padding: 20px 15px;
+        font-size: 1.3rem;
     }
 
     .contact-content2 {
         flex-direction: column;
-        padding: 20px;
+        padding: 20px 0 20px 0;
+        gap: 20px;
     }
 
-    .card, .contact-info2 {
-        width: 100%;
+    .card,
+    .contact-info2 {
+        width: 85%;
     }
 
-    .intro-text2 h1, .intro-text2 p {
-        width: 100%;
+    .contact-info2 h3 {
+        font-size: 1.5rem;
     }
+}
+
+@media (max-width: 480px) {
+    .main-banner3 {
+        height: 120px;
+        margin-top: 140px;
+        /* Más espacio para navbar en móviles pequeños */
+    }
+
+    .main-banner3 h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro-text2 h1 {
+        font-size: 1.5rem;
+    }
+
+    .boton_empresas {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* Mejoras adicionales para todos los dispositivos */
+body {
+    min-width: 320px;
+    /* Soporte mínimo para móviles muy pequeños */
+}
+
+
+/* Asegurar que las imágenes sean responsive */
+.card-img {
+    max-width: 100%;
+    height: auto;
 }
 
 .boton_empresas {
@@ -173,4 +228,10 @@ body {
 
 .boton_empresas:hover {
     background-color: #15751f;
+}
+
+/* Mejorar legibilidad en móviles */
+p,
+li {
+    line-height: 1.5;
 }
