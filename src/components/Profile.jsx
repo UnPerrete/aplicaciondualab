@@ -5,7 +5,6 @@ import "../styles/Profile.css"; // Importa los estilos de CSS específicos para 
 import NavbarWeb from "./NavbarWeb";
 import ArrowUp from "./ui/ArrowUp";
 import InfoB from './ui/Info';
-import FooterSonia from './FooterSonia';
 
 const Profile = () => {
     // Extrae el estado y las funciones necesarias del contexto de autenticación
@@ -253,7 +252,6 @@ const Profile = () => {
       </div>
       <InfoB />
       <ArrowUp />
-      <FooterSonia/>
     </>
   );
 };

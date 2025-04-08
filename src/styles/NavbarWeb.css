@@ -284,9 +284,6 @@
     }
 }
 
-
-
-/* --- RESPONSIVE --- */
 @media screen and (max-width: 768px) {
     .navbar-hidden {
         top: -370px; /* o incluso -220px si quieres que se esconda más */
