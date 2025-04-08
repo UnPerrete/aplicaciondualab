@@ -253,7 +253,6 @@ const Profile = () => {
       </div>
       <InfoB />
       <ArrowUp />
-      <FooterSonia/>
     </>
   );
 };
