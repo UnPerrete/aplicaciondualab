@@ -5,7 +5,6 @@ import NavbarWeb from './NavbarWeb';
 import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 import FooterSonia from './FooterSonia';
-import BannerFormacion from './Test';
 
 const Empresas = () => {
     return (
