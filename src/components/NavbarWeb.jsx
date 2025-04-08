@@ -10,8 +10,9 @@ const NavbarWeb = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [scrollingUp, setScrollingUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const { user } = useAuth();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+    const { user } = useAuth();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,29 +24,33 @@ const NavbarWeb = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
 
-
     return (
         <div className={`navbar-container ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
+            <div className="navbar-inner-wrap">
             <div className="navbar-top">
-                <div className="navbar-top-contact">
-                    <span><i className="bi bi-telephone-fill"></i> +34 659 02 16 03</span>
-                </div>
-                <div className='navbar-top-social'>
-                    <span className="email">info@dualab.es</span>
-                </div>
-                <div className="navbar-top-access">
-                    <Link to="/perfil">
-                    <i className="bi bi-person-circle"></i> {user?.nombre || user?.nombrecomercial || "Acceder"}
-                    </Link>
-                </div>
-            </div>
-
-            <div className="navbar-bottom">
-                <div className="logo">
-                    <Link to="/"><img src={logo} alt="Dualab" className="logo-img" /></Link>
+                     <div className="navbar-top-contact">
+                         <span><i className="bi bi-telephone-fill"></i> +34 659 02 16 03</span>
+                     </div>
+                     <div className='navbar-top-social'>
+                         <span className="email">info@dualab.es</span>
+                     </div>
+                     <div className="navbar-top-access">
+                         <Link to="/perfil">
+                             <i className="bi bi-person-circle"></i> {user?.nombre || user?.nombrecomercial || "Acceder"}
+                         </Link>
+                     </div>
                 </div>
 
-                <nav className="nav-links1">
+                <div className="navbar-bottom">
+                    <div className="logo">
+                        <Link to="/"><img src={logo} alt="Dualab" className="logo-img" /></Link>
+                    </div>
+                
+                    <button className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                         <i className="bi bi-list"></i>
+                     </button>
+
+                <nav className={`nav-links1 ${mobileMenuOpen ? 'open' : ''}`}>
                     <Link to="/">Inicio</Link>
                     <Link to="/servicio" >Retos</Link>
                     <div className="dropdown nav-link-dropdown">
@@ -72,14 +77,15 @@ const NavbarWeb = () => {
                     <span className="pais-selector">🇪🇸 España</span>
                 </nav>
 
-                <div className="nav-icons-inline">
-                    <div className="search-bar">
-                        <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                        {searchQuery === "" && <i className="bi bi-search search-placeholder-icon"></i>}
+                    <div className="nav-icons-inline">
+                        <div className="search-bar">
+                            <input
+                                type="text"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            {searchQuery === "" && <i className="bi bi-search search-placeholder-icon"></i>}
+                        </div>
                     </div>
                 </div>
             </div>
