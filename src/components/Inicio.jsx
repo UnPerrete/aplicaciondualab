@@ -12,6 +12,9 @@ const Inicio = () => {
             <NavbarWeb/>
             <Mapa/>
             <VisionEstrategia/>
+            <div>
+                <p></p>
+            </div>
             <ArrowUp/>
             <InfoB/>
             <FooterSonia/>
