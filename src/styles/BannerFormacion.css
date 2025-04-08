@@ -1,0 +1,142 @@
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .banner-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Oscurece la imagen */
+    z-index: 1;
+  }
+  
+  /* Overlays geométricos */
+  .overlay-left,
+  .overlay-right {
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  
+  .overlay-left {
+    left: 0;
+    background-color: #499b80 ;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+
+  }
+  
+  .overlay-right {
+    right: 0;
+    background-color: #94b143;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  /* Contenido */
+  .text-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 5%;
+    flex-direction: column;
+  }
+  
+  .top-text {
+    color: white;
+    font-size: 2.6rem;
+    font-weight: bold;
+    max-width: 600px;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0;
+  }
+  
+  .bottom-text {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    max-width: 500px;
+    align-self: flex-end;
+    text-align: right;
+    margin: 0;
+  }
+
+  /* ----------- Responsive ----------- */
+
+@media (max-width: 1024px) {
+    .banner-container {
+      height: 500px;
+    }
+  
+    .top-text {
+      font-size: 2.2rem;
+      max-width: 80%;
+    }
+  
+    .bottom-text {
+      font-size: 1.7rem;
+      max-width: 70%;
+    }
+  
+    .overlay-left,
+    .overlay-right {
+      width: 20%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .banner-container {
+      height: 450px;
+    }
+  
+    .text-content {
+      padding: 15% 5% 15% 5%;
+    }
+  
+    .top-text {
+      font-size: 1.8rem;
+      max-width: 100%;
+      text-align: left;
+    }
+  
+    .bottom-text {
+      font-size: 1.5rem;
+      max-width: 100%;
+      align-self: flex-start;
+      text-align: left;
+    }
+  
+    .overlay-left,
+    .overlay-right {
+      width: 25%;
+      opacity: 0.4;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner-container {
+      height: 400px;
+    }
+  
+    .top-text {
+      font-size: 1.5rem;
+    }
+  
+    .bottom-text {
+      font-size: 1.2rem;
+    }
+  }

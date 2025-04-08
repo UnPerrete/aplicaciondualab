@@ -5,11 +5,13 @@ import ArrowUp from './ui/ArrowUp';
 import InfoB from './ui/Info';
 import VisionEstrategia from "./VisionEstrategia";
 import Mapa from './Mapa360';
+import BannerFormacion from './BannerFormacion';
 
 const Inicio = () => {
     return(
         <div className="Inicio">
             <NavbarWeb/>
+            <BannerFormacion></BannerFormacion>
             <Mapa/>
             <VisionEstrategia/>
             <div>
