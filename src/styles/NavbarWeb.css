@@ -157,7 +157,7 @@
     position: absolute;
     top: 120%;
     left: 0;
-    background: linear-gradient(to bottom, #1e8a6e 20%, #0f354a 75%);
+    background: linear-gradient(to bottom, #1e8a6e 20%, #0f354a 70%);
     padding: 12px 0;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -237,6 +237,9 @@
 /* --- RESPONSIVE --- */
 
 @media screen and (max-width: 1024px) {
+    .logo img {
+        width: 120px; /* Cambia el tamaño de la imagen del logo aquí */
+    }
     .navbar-hidden {
         top: -380px; /* o incluso -220px si quieres que se esconda más */
       }
@@ -249,11 +252,11 @@
     .nav-links1 {
         flex-wrap: wrap;
         justify-content: flex-start;
-        font-size: 16px;
+        font-size: 13px;
         margin-left: 0;
         margin-top: 2px; 
         width: 100%;
-        gap: 5px; 
+        gap: 2px; 
     }
 
     .search-bar {
