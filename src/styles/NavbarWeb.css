@@ -52,7 +52,7 @@
 }
 
 .navbar-top-access {
-    color: #183153;
+    color: #183153 !important;
     transition: color 0.3s ease;
 }
 
@@ -88,7 +88,7 @@
 
 .logo img {
     height: auto;
-    width: 100px;
+    width: 150px;
 }
 
 .nav-links1 {
@@ -157,7 +157,7 @@
     position: absolute;
     top: 120%;
     left: 0;
-    background: linear-gradient(to bottom, #1e8a6e, #0f354a);
+    background: linear-gradient(to bottom, #1e8a6e 20%, #0f354a 75%);
     padding: 12px 0;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -258,7 +258,7 @@
 
     .search-bar {
         position: relative; 
-        margin: -70px 0 2px 0; 
+        margin: -50px 0 2px 0; 
         width: 120%;
         max-width: 300px;
     }
@@ -286,8 +286,9 @@
 
 @media screen and (max-width: 768px) {
     .navbar-hidden {
-        top: -260px; /* o incluso -220px si quieres que se esconda más */
-      }
+        top: -220px;
+    }
+
     .navbar-top {
         font-size: 14px;
         flex-direction: column;
@@ -300,13 +301,28 @@
         flex-direction: column;
         align-items: flex-start;
         background: linear-gradient(to bottom, #1e8a6e 20%, #0f354a 80%);
-        padding: 5px 10px; 
-        height: auto; 
+        padding: 0px 5px;
+        height: auto;
         min-height: 20px;
     }
 
+    .logo {
+        order: -2;
+        margin-bottom: -30px;
+    }
+
     .logo img {
-        width: 90px;
+        width: 130px;
+    }
+
+    .nav-icons-inline {
+        order:-1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        width: 60%;
+        margin: 10px 0;
     }
 
     .hamburger {
@@ -315,23 +331,50 @@
         border: none !important;
         font-size: 28px;
         color: white;
-        margin-bottom: 10px;
         cursor: pointer;
         transition: color 0.3s ease;
+        width: 40px;
+        margin: -10;
+        padding: 0;
+        margin-left: 20px;
     }
 
     .hamburger:hover {
         color: #aaa !important;
     }
 
-    .hamburger:focus {
-        outline: none; 
-        box-shadow: none; 
+    .hamburger:focus,
+    .hamburger:active {
+        outline: none;
+        box-shadow: none;
     }
 
-    .hamburger:active {
-        outline: none; 
-        box-shadow: none; 
+    .search-bar {
+        flex: 1;
+        display: block;
+        position: relative;
+        margin: 0; /* Elimina márgenes adicionales */
+        margin-left: 200; /* Mueve el search-bar completamente a la izquierda */
+        width: 80%;
+        margin-bottom: -15px;
+    }
+
+    .search-bar input {
+        width: 80%;
+        padding-left: 16px;
+        border-radius: 20px;
+        padding: 10px 12px;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-bar .bi-search {
+        position: absolute;
+        top: 50%;
+        left: 32px;
+        transform: translateY(-50%);
+        color: #717171;
+        pointer-events: none;
     }
 
     .nav-links1 {
@@ -346,11 +389,6 @@
 
     .nav-links1.open {
         display: flex;
-    }
-
-    .nav-icons-inline,
-    .search-bar {
-        display: none;
     }
 
     .dropdown-arrow {
