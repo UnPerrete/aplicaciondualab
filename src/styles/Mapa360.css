@@ -2,15 +2,16 @@
 
 .mapa360-section {
   padding: 60px 20px;
-  background: linear-gradient(to bottom, #f7f7f7, #e2e2e2);
+  background-color: #102442;
   font-family: 'Poppins', sans-serif;
   text-align: center;
+  color: #f8f8f9;
 }
 
 .titulo {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #0b2344;
+  color: #f8f8f9;
   font-weight: 700;
 }
 
@@ -30,74 +31,95 @@
 }
 
 .imagen-central {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   margin-bottom: 10px;
 }
 
 .texto-central {
   font-weight: bold;
-  color: #0b2344;
+  color: #102442;
 }
 
 .hex-grid {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 900px;
+  height: 700px;
   margin: 0 auto;
 }
 
+.hex-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
 .hex {
+    width: 160px;
+    height: 138.6px;
+    background-color: #0b2344;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hex img.avatar {
+  width: 145px;
+  height: auto;
+  object-fit: contain;
+}
+
+.texto-hex {
+    max-width: 200px;
+  font-size: 0.85rem;
+  color: #f8f8f9;
+  line-height: 1.4;
+}
+ 
+.alumno        { top: 10%; left: 22%; transform: translate(-50%, -50%); flex-direction: row-reverse; text-align: right;}
+.empresa       { top: 10%; left: 72%; transform: translate(-50%, -50%);  }
+.tutores       { top: 40%; left: 87%; transform: translate(-50%, -50%);  }
+.expertos      { top: 70%; left: 72%; transform: translate(-50%, -50%);  }
+.dinamizadores { top: 70%; left: 22%; transform: translate(-50%, -50%); flex-direction: row-reverse; text-align: right;}
+.profesorado   { top: 40%; left: 12%; transform: translate(-50%, -50%); flex-direction: row-reverse; text-align: right;}
+
+.expertos .hex      { background-color: #fbd160; }
+.profesorado .hex   { background-color: #fbd160; }
+.tutores .hex       { background-color: #499b80; }
+.alumno .hex        { background-color: #499b80; }
+.dinamizadores .hex { background-color: #ca7b3b; }
+.empresa .hex       { background-color: #ca7b3b; }
+
+.imagen-central,
+.circulo-central,
+.move-360,
+.micro {
   position: absolute;
-  width: 160px;
-  height: 138.6px;
-  background-color: #0b2344;
+  left: 49%;
+  top: 190%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.imagen-central {
+  width: 250px;
+  height: auto;
+}
+
+.move-360 {
+  width: 200px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.micro {
+  font-size: 1.3rem;
+  font-weight: bold;
   color: white;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  font-size: 0.9rem;
-}
-
-.hex h3 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-}
-
-/* Posicionamiento circular */
-.alumno        { top: 0%; left: 50%; transform: translate(-50%, -50%); }
-.empresa       { top: 25%; left: 90%; transform: translate(-50%, -50%); }
-.tutores       { top: 75%; left: 90%; transform: translate(-50%, -50%); }
-.expertos      { top: 100%; left: 50%; transform: translate(-50%, -50%); }
-.dinamizadores { top: 75%; left: 10%; transform: translate(-50%, -50%); }
-.profesorado   { top: 25%; left: 10%; transform: translate(-50%, -50%); }
-
-.expertos{
-    background-color: #fbd160;
-}
-
-.profesorado{
-    background-color: #fbd160;
-}
-
-.tutores{
-    background-color: #499b80;
-}
-
-.alumno{
-    background-color: #499b80;
-}
-
-.dinamizadores{
-    background-color: #ca7b3b;
-}
-
-.empresa{
-    background-color: #ca7b3b;
+  margin-top: 90px;
 }
