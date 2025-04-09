@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/logos/dualabIcon.png';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
 import { useAuth } from "../context/AuthProvider";
@@ -16,15 +16,18 @@ const NavbarWeb = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrollingUp(window.scrollY < lastScrollY)
+            setScrollingUp(window.scrollY < lastScrollY);
             setLastScrollY(window.scrollY);
+            setDropdownOpen(false); // 🔽 CIERRA el submenú al hacer scroll
         };
-
+    
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
+    
 
     return (
+        <>
         <div className={`navbar-container ${scrollingUp ? 'navbar-visible' : 'navbar-hidden'}`}>
             <div className="navbar-inner-wrap">
             <div className="navbar-top">
@@ -45,10 +48,6 @@ const NavbarWeb = () => {
                     <div className="logo">
                         <Link to="/"><img src={logo} alt="Dualab" className="logo-img" /></Link>
                     </div>
-                
-                    <button className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                         <i className="bi bi-list"></i>
-                     </button>
 
                 <nav className={`nav-links1 ${mobileMenuOpen ? 'open' : ''}`}>
                     <Link to="/">Inicio</Link>
@@ -79,6 +78,9 @@ const NavbarWeb = () => {
                 </nav>
 
                     <div className="nav-icons-inline">
+                    <button className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                         <i className="bi bi-list"></i>
+                     </button>
                         <div className="search-bar">
                             <input
                                 type="text"
@@ -91,6 +93,9 @@ const NavbarWeb = () => {
                 </div>
             </div>
         </div>
+        <div style={{ height: '190px' }}></div>
+        </>
+        
     );
 };
 
