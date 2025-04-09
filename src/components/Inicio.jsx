@@ -12,7 +12,13 @@ const Inicio = () => {
         <div className="Inicio">
             <NavbarWeb/>
             <BannerFormacion></BannerFormacion>
+            <div>
+                <p></p>
+            </div>
             <Mapa/>
+            <div>
+                <p></p>
+            </div>
             <VisionEstrategia/>
             <div>
                 <p></p>

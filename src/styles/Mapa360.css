@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.mapa360-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f7f7f7, #e2e2e2);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #0b2344;
+  font-weight: 700;
+}
+
+.hexagono-central {
+  position: relative;
+  width: 200px;
+  height: 173.2px;
+  background-color: white;
+  margin: 0 auto 60px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.imagen-central {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.texto-central {
+  font-weight: bold;
+  color: #0b2344;
+}
+
+.hex-grid {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.hex {
+  position: absolute;
+  width: 160px;
+  height: 138.6px;
+  background-color: #0b2344;
+  color: white;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+}
+
+.hex h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+/* Posicionamiento circular */
+.alumno        { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+.empresa       { top: 25%; left: 90%; transform: translate(-50%, -50%); }
+.tutores       { top: 75%; left: 90%; transform: translate(-50%, -50%); }
+.expertos      { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+.dinamizadores { top: 75%; left: 10%; transform: translate(-50%, -50%); }
+.profesorado   { top: 25%; left: 10%; transform: translate(-50%, -50%); }
+
+.expertos{
+    background-color: #fbd160;
+}
+
+.profesorado{
+    background-color: #fbd160;
+}
+
+.tutores{
+    background-color: #499b80;
+}
+
+.alumno{
+    background-color: #499b80;
+}
+
+.dinamizadores{
+    background-color: #ca7b3b;
+}
+
+.empresa{
+    background-color: #ca7b3b;
+}

@@ -1,23 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 .vision-section {
-  /* background: linear-gradient(to bottom, #0b2344, #3b6d30); */
   background: linear-gradient(to bottom, #0b2344 0%, #c6d991 50%, #a2c04a 100%);
   color: white;
   padding: 60px 20px;
   text-align: center;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .vision-header h2 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: white;
 }
 
 .vision-header p {
   font-size: 1.1rem;
   line-height: 1.5;
-  max-width: 700px;
-  margin: 0 auto 40px;
+  max-width: 900px;
+  margin: 0 auto 0px;
 }
 
 /* .vision-columns {
@@ -87,6 +88,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 10px;
+  margin-top: 100px;
 }
 
 .vision-block p {
@@ -126,4 +128,18 @@
 .vision-block.softskills {
   background-color: #ca7b3b;
   color: white;
+}
+
+.vision-icon-wrapper {
+  position: relative;
+  top: 300px; /* ajusta este valor para que sobresalga más o menos */
+  z-index: 4;
+}
+
+.vision-icon {
+  width: 300px;
+  height: auto;
+  position: relative;
+  top: -100px; /* controla cuánto se sale del hexágono */
+  z-index: 3;
 }
