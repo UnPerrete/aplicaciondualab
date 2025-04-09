@@ -101,7 +101,7 @@
 .micro {
   position: absolute;
   left: 49%;
-  top: 190%;
+  top: 160%;
   transform: translate(-50%, -50%);
   z-index: 10;
 }
