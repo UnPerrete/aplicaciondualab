@@ -18,7 +18,7 @@ const Mapa = () => {
         <img src={circ} alt="Circulo-central" className="circulo-central" />
         <img src={centroMapa} alt="Microproyectos" className="imagen-central" />
         <img src={move} alt="Movimiento360" className="move-360" />
-        <p className='micro'>MICROPOYECTOS</p>
+        <p className='micro'>MICROPROYECTOS</p>
   
         <div className="hex-grid">
           <div className="hex-wrapper alumno">
