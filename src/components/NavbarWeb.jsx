@@ -7,6 +7,7 @@ import { useAuth } from "../context/AuthProvider";
 
 const NavbarWeb = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [paisDropdownOpen, setPaisDropdownOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [scrollingUp, setScrollingUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -19,6 +20,8 @@ const NavbarWeb = () => {
             setScrollingUp(window.scrollY < lastScrollY);
             setLastScrollY(window.scrollY);
             setDropdownOpen(false); // 🔽 CIERRA el submenú al hacer scroll
+            setMobileMenuOpen(false); // 🔽 CIERRA el menú móvil al hacer scroll
+            setPaisDropdownOpen(false); // 🔽 CIERRA el menú de país al hacer scroll
         };
     
         window.addEventListener('scroll', handleScroll);
@@ -74,7 +77,22 @@ const NavbarWeb = () => {
                     </div>
                     <Link to="/equipo">El Equipo</Link>
                     <Link to="/contact">Contacto</Link>
-                    <span className="pais-selector">🇪🇸 España</span>
+                     {/* Dropdown para selector de país */}
+                     <div className="dropdown nav-link-dropdown">
+                            <p className="dropdown-toggle-text" onClick={(e) => {
+                                e.stopPropagation();
+                                setPaisDropdownOpen(!paisDropdownOpen);
+                            }}>
+                                🇪🇸 España <i className={`bi ${paisDropdownOpen ? 'bi-chevron-up' : 'bi-chevron-down'} dropdown-arrow`}></i>
+                            </p>
+
+                            {paisDropdownOpen && (
+                                <div className="dropdown-menu">
+                                    <span>🇪🇸 Español</span>
+                                    <span>🇬🇧 Inglés</span>
+                                </div>
+                            )}
+                        </div>
                 </nav>
 
                     <div className="nav-icons-inline">
