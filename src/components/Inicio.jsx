@@ -6,12 +6,17 @@ import InfoB from './ui/Info';
 import VisionEstrategia from "./VisionEstrategia";
 import Mapa from './Mapa360';
 import BannerFormacion from './BannerFormacion';
+import Espacio from './Espacio';
 
 const Inicio = () => {
     return(
         <div className="Inicio">
             <NavbarWeb/>
             <BannerFormacion></BannerFormacion>
+            <div>
+                <p></p>
+            </div>
+            <Espacio/>
             <div>
                 <p></p>
             </div>

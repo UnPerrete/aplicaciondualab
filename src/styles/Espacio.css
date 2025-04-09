@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.espacio-section {
+  /* background: linear-gradient(to bottom, #0b2344 0%, #c6d991 50%, #a2c04a 100%); */
+  background: white;
+  color: #102442;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.espacio-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  color: #102442;
+}
+
+.espacio-header p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 0 auto 0px;
+}
+
+/* .vision-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+} */
+.espacio-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap; /* evita que se salten de línea */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.espacio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+/* HEXÁGONO AMPLIADO */
+.hexagon {
+  position: relative;
+  width: 320px;
+  height: 280px;
+  background-color: white;
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  color: #222;
+}
+
+.hexagon:hover {
+  transform: scale(1.03);
+}
+
+.hexagon h3,
+.hexagon p,
+.hexagon .icon-placeholder {
+  z-index: 2;
+}
+
+.espacio-block .icon-placeholder {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.espacio-block h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+.espacio-block p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.espacio-button {
+  margin-top: 20px;
+  background-color: #0b2344;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.vision-button:hover {
+  background-color: #041225;
+}
+
+/* Colores personalizados */
+.espacio-block.digital {
+  background-color: #499b80;
+  color: white;
+}
+
+.espacio-block.sostenibilidad {
+  background-color: #94b143;
+  color: white;
+}
+
+.espacio-block.softskills {
+  background-color: #ca7b3b;
+  color: white;
+}
+
+.espacio-icon-wrapper {
+  position: relative;
+  top: 300px; /* ajusta este valor para que sobresalga más o menos */
+  z-index: 4;
+}
+
+.espacio-icon {
+  width: 300px;
+  height: auto;
+  position: relative;
+  top: -100px; /* controla cuánto se sale del hexágono */
+  z-index: 3;
+}
