@@ -7,12 +7,17 @@ import VisionEstrategia from "./VisionEstrategia";
 import Mapa from './Mapa360';
 import BannerFormacion from './BannerFormacion';
 import Espacio from './Espacio';
+import InfPag from './InfoPag';
 
 const Inicio = () => {
     return(
         <div className="Inicio">
             <NavbarWeb/>
             <BannerFormacion></BannerFormacion>
+            <div>
+                <p></p>
+            </div>
+            <InfPag/>
             <div>
                 <p></p>
             </div>

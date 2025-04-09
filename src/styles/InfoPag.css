@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #102542;
+    background-color: white;
+  }
+  
+  .top-banner {
+    width: 100%;
+    display: block;
+  }
+  
+  .section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .section img {
+    width: 75%;
+    max-width: 100%;
+    border-radius: 2rem;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .section img.mesa {
+    border-radius: 0;
+  }
+  
+  .section-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .section-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #102542;
+  }
+  
+  .section-text p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+  
+  .section-text strong {
+    font-weight: 700;
+  }
+  
+  .button {
+    background-color: #102542;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+  }
+  
