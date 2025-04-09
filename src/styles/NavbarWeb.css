@@ -79,7 +79,7 @@
 
 /* Parte inferior con navegación */
 .navbar-bottom {
-    background: linear-gradient(to right, #1e8a6e 20%, #0f354a 80%);
+    background: linear-gradient(to bottom, #1e8a6e 20%, #0f354a 80%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,8 +126,8 @@
 .search-bar {
     position: relative;
     width: 200px;
-    margin-top: -80px;
-    margin-left: -260px;
+    margin-top: -60px;
+    margin-left: -240px;
 }
 
 .search-bar input {
@@ -141,7 +141,7 @@
 .search-bar .bi-search {
     position: absolute;
     top: 50%;
-    left: 30px;
+    left: 18px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #717171;
@@ -259,12 +259,12 @@
     .search-bar {
         position: relative; 
         margin: -70px 0 2px 0; 
-        width: 100%;
+        width: 120%;
         max-width: 300px;
     }
 
     .search-bar input {
-        width: 100%;
+        width: 80%;
         border-radius: 20px;
         padding: 10px 15px 10px 12px; /* Añade espacio para el ícono */
         border: none;
@@ -286,7 +286,7 @@
 
 @media screen and (max-width: 768px) {
     .navbar-hidden {
-        top: -370px; /* o incluso -220px si quieres que se esconda más */
+        top: -260px; /* o incluso -220px si quieres que se esconda más */
       }
     .navbar-top {
         font-size: 14px;
