@@ -94,8 +94,8 @@ const NavbarWeb = () => {
 
                 {paisDropdownOpen && (
                   <div className="dropdown-menuB">
-                    <span onClick={() => i18n.changeLanguage('es')}>🇪🇸 {t('español')}</span>
-                    <span onClick={() => i18n.changeLanguage('en')}>🇬🇧 {t('ingles')}</span>
+                    <span onClick={() => i18n.changeLanguage('es')}>ES {t('español')}</span>
+                    <span onClick={() => i18n.changeLanguage('en')}>EN {t('ingles')}</span>
                   </div>
                 )}
               </div>
