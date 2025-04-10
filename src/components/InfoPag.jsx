@@ -4,6 +4,9 @@ import mesa from "../assets/mesa.png";
 import exp from "../assets/explicando.png";
 import sen from "../assets/sentao.png";
 import top from "../assets/top.png";
+import circulo_verdeoscuro from "../assets/30.png";
+import circulo_naranja from "../assets/31.png";
+import circulo_verde from "../assets/32.png";
 
 export default function InfoPag() {
   return (
@@ -11,6 +14,7 @@ export default function InfoPag() {
       <img src={top} alt="Top banner" className="top-banner" />
 
       <section className="section">
+        <img src={circulo_verdeoscuro} alt="Decorativo" className="decorativo fondo-izquierda" />
         <div>
           <img src={mesa} alt="Mesa de trabajo" className="mesa" />
         </div>
@@ -33,6 +37,7 @@ export default function InfoPag() {
       </section>
 
       <section className="section">
+        <img src={circulo_naranja} alt="Decorativo" className="decorativo fondo-derecha" />
         <div className="section-text">
           <h2>Prácticas Aula + Empresa con ABR</h2>
           <p>El programa de prácticas rompe el modelo tradicional.</p>
@@ -50,6 +55,7 @@ export default function InfoPag() {
       </section>
 
       <section className="section">
+        <img src={circulo_verde} alt="Decorativo" className="decorativo frente-centro" />
         <div>
           <img src={sen} alt="Personas sentadas trabajando" />
         </div>
