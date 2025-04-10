@@ -67,4 +67,53 @@ body {
     cursor: pointer;
     border: none;
   }
+
+  .decorativo {
+    position: absolute;
+    width: 400px !important; /* fuerza el tamaño */
+    height: auto !important;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .circulo-pequeño {
+    width: 90px !important;
+    opacity: 1;
+    z-index: 2 !important;
+  }
+  
+  .section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section img:not(.decorativo) {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Círculo verde oscuro detrás, a la izquierda */
+  .fondo-izquierda {
+    top: 2rem;
+    left: 2rem;
+    z-index: 1;
+  }
+  
+  /* Círculo naranja detrás, a la derecha */
+  .fondo-derecha {
+    top: 2rem;
+    right: 2rem;
+    z-index: 0;
+  }
+  
+  /* Círculo verde claro delante, centrado */
+  .frente-centro {
+    top: 14rem;
+    left: 33%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 1;
+    width: 250px !important;
+  }
   
