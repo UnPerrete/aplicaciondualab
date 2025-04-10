@@ -42,7 +42,7 @@ const Proyecto = () => {
 
       {/* Sección de tarjetas con validación */}
       {/* <div className="card-grid"> */}
-      <div className="card-gridd" style={{ maxWidth: '1600px', margin: 'auto' }}>
+      <div className="card-gridd">
         {data && data.length > 0 ? (
           data.map((item, index) => (
             <Card key={index} className="cardd">

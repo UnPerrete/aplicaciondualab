@@ -66,9 +66,11 @@ export const TablaEmpresas = () => {
 
 
   return (
-    <div>
-      <NavbarWeb />
-      <div style={{ marginTop: "90px" }}>
+    <>
+    <NavbarWeb />
+    <div className="main-container">
+      
+      <div>
         <SearchBar onSearch={setData} />
       </div>
       <div className="filtros">
@@ -118,7 +120,9 @@ export const TablaEmpresas = () => {
       <ArrowUp />
       {/* Línea divisoria */}
       <hr className="section-divider" />
-      <FooterSonia/>
+      
     </div>
+    <FooterSonia/>
+    </>
   );
 };

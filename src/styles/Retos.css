@@ -1,17 +1,7 @@
 /* Servicio.css */
-
-/* Estilos generales */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0eeee;
-  box-sizing: border-box;
-}
-
 /* Ajuste para que la navbar no tape el contenido */
 .p-6 {
-  margin-top: 80px; /* Deja un margen superior para que no se coma el contenido */
+  margin: 100px 200px 100px 200px; /* Deja un margen superior para que no se coma el contenido */
 }
 
 /* Título principal */
@@ -212,4 +202,8 @@ body {
 /* Hide Menu */
 .hide {
   display: none;
+}
+
+.w-full{
+  margin-bottom: 40px;
 }

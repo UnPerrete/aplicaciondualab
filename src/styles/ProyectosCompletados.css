@@ -1,11 +1,5 @@
 /* Investigacion.css */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-}
-
 .logo {
     display: flex;
     align-items: center;
@@ -25,7 +19,6 @@ body {
 .main-banner {
     position: relative;
     height: 500px;
-    width: 90%;
     background-image: url('https://img.freepik.com/vector-premium/concepto-banner-iconos-negocios-creativos-banner-web-idea-proyecto-arte-inicio-innovacion_121070-1043.jpg');
     /*background-image: url('https://files.oaiusercontent.com/file-2G1nPNnA2kCN4mhq3dhE7E?se=2025-03-20T11%3A18%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D9b62dee7-792b-4292-b1df-b6749eb2aee6.webp&sig=PtzLfgD69ecDP%2BbpfRT6mWxlTbuvfgjPgt0R7Kn%2BMiM%3D');*/
     background-size: cover;
@@ -65,7 +58,6 @@ body {
     padding: 20px;
     max-width: 1600px; 
     margin: auto;
-    margin: auto;
 }
 
 .cardd {
@@ -76,6 +68,10 @@ body {
     transition: transform 0.3s;
     width: 100%; 
     max-width: 450px;
+}
+
+.p-6{
+    margin: 70px;
 }
 
 .cardd:hover {
@@ -100,3 +96,8 @@ body {
     color: #555;
 }
 
+@media screen and (max-width: 768px) {
+    .p-6{
+        margin: 10px;
+    }
+}

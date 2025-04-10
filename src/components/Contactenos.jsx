@@ -7,9 +7,11 @@ import ArrowUp from "./ui/ArrowUp";
 
 const Contactenos = () => {
     return (
+        <>
+        <NavbarWeb/>
         <div>
             {/* Navbar */}
-            <NavbarWeb/>
+            
 
             {/* Contact Banner */}
             <div className="contact-banner">
@@ -55,8 +57,10 @@ const Contactenos = () => {
         <InfoB/>
         <ArrowUp/>
         {/* Footer */}
-        <FooterSonia/>
-       </div> 
+        
+       </div>
+       <FooterSonia/>
+       </>
     );
 };
 

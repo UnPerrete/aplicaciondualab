@@ -1,6 +1,6 @@
 import React, { useState } from "react"; // Importa React y el hook useState
 import { useNavigate } from "react-router-dom"; // Importa useNavigate para la navegación entre páginas
-import "../styles/Servicio.css"; // Importa los estilos CSS para el componente
+import "../styles/Retos.css"; // Importa los estilos CSS para el componente
 import categoriasData from "./data/provisional.json"; // Importa los datos de servicios desde un archivo JSON
 import "bootstrap-icons/font/bootstrap-icons.css"; // Importa los iconos de Bootstrap
 import NavbarWeb from "./NavbarWeb";
@@ -59,10 +59,9 @@ const Retos = () => {
   };
 
   return (
+    <>
+    <NavbarWeb /> {/* Navbar para la navegación */}
     <div className="p-6"> {/* Contenedor principal con padding */}
-      <div>
-        <NavbarWeb /> {/* Navbar para la navegación */}
-      </div>
       <h1 className="text-3xl font-bold text-center mb-4">
         En esta sección, podrá conocer nuestras principales áreas de
         especialización y los retos que ofrecemos en cada una.
@@ -146,8 +145,10 @@ const Retos = () => {
       <ArrowUp />
       <InfoB />
       {/* Footer */}
-      <FooterSonia />
+      
     </div>
+    <FooterSonia />
+    </>
   );
 };
 

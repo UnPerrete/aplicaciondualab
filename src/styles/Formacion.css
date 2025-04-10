@@ -1,7 +1,6 @@
 .main-banner2 {
     position: relative;
     height: 500px;
-    width: 90%;
     background-image: url('https://fedfinancees-production.s3.amazonaws.com/system/image/name_type/364/compress_actuality_teaser_1639653658.jpg');
     background-size: cover;
     background-position: center;
@@ -33,6 +32,7 @@
     gap: 20px;
     flex-wrap: wrap; /* permite que se ajuste en pantallas pequeñas */
     border-top: 3px solid #888888;
+    padding: 40px;
 }
 
 .section-container img {

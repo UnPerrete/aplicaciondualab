@@ -28,8 +28,10 @@ const Formacion = () => {
     }, []);
 
     return (
+      <>
+      <NavbarWeb/>
         <div className="bg-gray-100 min-h-screen w-full overflow-x-hidden">
-          <NavbarWeb/>
+          
     
           {/* Banner Principal similar a Proyectos */}
           <div className="main-banner2">
@@ -87,7 +89,7 @@ const Formacion = () => {
             Fab Academy se enfoca en la fabricación personal: prototipos de sus ideas en productos.
             </p>
           </div>
-
+              <div  className="section-container">
                 <div className="imagen-container">
                     <div className="section-image">
                         <img
@@ -121,7 +123,7 @@ const Formacion = () => {
                         <h1 className="section-title">Recursos</h1>
                     </div>
                 </div>
-
+                </div>
         </div>
 
         <div className="section-container">
@@ -193,21 +195,6 @@ const Formacion = () => {
         </div>
       </div>
 
-        {/* <div className="section-container">
-                <h1>ÁREAS DE FORMACIÓN</h1>
-                <div className="cardds-grid">
-                  {servicios.map((servicio, index) => (
-                      <div key={index} className="area-cardds">
-                          <img src={servicio.imagen || ""} alt={servicio.titulo} className="area-cardds-img" />
-                          <div className="area-cardds-content">
-                              <h2>{servicio.titulo}</h2>
-                              <p>{servicio.descripcion}</p>
-                          </div>
-                      </div>
-                  ))}
-                </div> 
-          </div>*/}
-
             {/* Programas de Asesoramiento y Experiencias de Aprendizaje Inmersivo */}
             <div className="section-container">
                 <h1>PROGRAMAS DE ASESORAMIENTO Y APRENDIZAJE INMERSIVO</h1>
@@ -232,8 +219,10 @@ const Formacion = () => {
 
           <ArrowUp/>
           <InfoB/>
-          <FooterSonia/>
+          
         </div>
+        <FooterSonia/>
+        </>
       );
 };
 

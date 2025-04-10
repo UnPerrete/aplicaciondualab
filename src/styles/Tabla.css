@@ -1,4 +1,10 @@
 /* Estilos generales */
+/* Estilos del contenedor */
+.main-container {
+
+  padding: 100px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -40,13 +46,6 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #f1f1f1; /* Color de fondo al pasar el ratón */
   transition: background-color 0.3s ease;
-}
-
-/* Estilos del contenedor */
-div {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 /* Estilos para el filtro de municipio */

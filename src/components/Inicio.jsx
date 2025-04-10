@@ -11,32 +11,17 @@ import InfPag from './InfoPag';
 
 const Inicio = () => {
     return(
-        <div className="Inicio">
+        <>
             <NavbarWeb/>
             <BannerFormacion></BannerFormacion>
-            <div>
-                <p></p>
-            </div>
             <InfPag/>
-            <div>
-                <p></p>
-            </div>
             <Espacio/>
-            <div>
-                <p></p>
-            </div>
             <Mapa/>
-            <div>
-                <p></p>
-            </div>
             <VisionEstrategia/>
-            <div>
-                <p></p>
-            </div>
             <ArrowUp/>
             <InfoB/>
             <FooterSonia/>
-        </div>
+        </>
     );
 };
 
