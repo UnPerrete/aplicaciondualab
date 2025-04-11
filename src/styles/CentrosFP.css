@@ -103,13 +103,110 @@
 
 .centro-info{
     text-align: left;
-    width: 100%;
+    width:100%;
 }
 
 .centro-img img{
     width: 10em;
     height: 10em;
 }
+
+iframe{
+    width: 240px;
+    height: 220px;
+}
+
+@media (max-width: 1024px) {
+    .centros {
+        width: 90%;
+    }
+
+    .centro-info {
+        width: 100%;
+    }
+
+    .centro-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        padding: 3em 5em 3em 5em;
+    }
+
+    .centro-card div {
+        padding: 0.5em;
+    }
+
+    .centro-img img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .centro-map{
+        width: 100%;
+    }
+
+    .centro-map iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .centros-content h1 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .centro-info h3 {
+        font-size: 1.2em;
+    }
+
+    .centro-info p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 375px) {
+    .centros-content h1 {
+        font-size: 1.4em;
+        padding: 0.5em;
+    }
+
+    .centro-card {
+        padding: 0.5em;
+        gap: 0.5em;
+    }
+
+    .centro-img img {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+    }
+
+    .centro-info h3 {
+        font-size: 1em;
+    }
+
+    .centro-info p {
+        font-size: 0.85em;
+    }
+
+    .centro-map iframe {
+        height: 180px;
+        width: 100%;
+    }
+
+    .centro-info {
+        padding: 0;
+    }
+
+    .centro-card div {
+        padding: 0.5em 0;
+    }
+}
+
 
 .contact-content2 {
     display: flex;

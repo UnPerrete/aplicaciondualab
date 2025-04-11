@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/CentrosFP.css';
 import NavbarWeb from './NavbarWeb';
 import FooterSonia from './FooterSonia';
@@ -93,9 +94,10 @@ const CentrosFP = () => {
                                         <h3>{centro.nombre}</h3>
                                         <p><strong>Teléfono:</strong> {centro.telefono}</p>
                                         <p><strong>Email:</strong> {centro.email}</p>
+                                        <p><strong>Web: </strong><Link to={centro.web} >{centro.nombre}</Link></p>
                                     </div>
                                     <div className='centro-map'>
-                                        <iframe src={centro.mapa} width="240" height="220" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                                        <iframe src={centro.mapa} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 </div>
                             ))}
