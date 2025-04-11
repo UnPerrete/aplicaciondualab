@@ -75,6 +75,42 @@
     border-top: 3px solid #b9b9b9;
 }
 
+
+.centros-content{
+    display: grid;
+    justify-items:center;
+}
+
+.centros-content h1{
+    padding: 1em;
+    font-size: 2.5em;
+}
+
+.centros{
+    width: 74%;
+}
+
+.centro-card{
+    border-top: 1px solid green;
+    padding: 1em;
+    display: flex;
+    align-items: center
+}
+
+.centro-card div{
+    padding: 1em;
+}
+
+.centro-info{
+    text-align: left;
+    width: 100%;
+}
+
+.centro-img img{
+    width: 10em;
+    height: 10em;
+}
+
 .contact-content2 {
     display: flex;
     padding: 40px 100px;

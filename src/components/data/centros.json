@@ -1,0 +1,235 @@
+{
+  "centros":[
+      {
+        "codigo": 35014640,
+        "nombre": "CIFP CRUZ DE PIEDRA",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "CARRETERA GENERAL DEL NORTE, 40,KM 2.",
+        "telefono": "928-252969 y 828-130011",
+        "email": "35014640@gobiernodecanarias.org",
+        "imagen":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAqGQfhLGkA74I26fI4oMolS27pnVHWS1Ttg&s",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112697.87330991762!2d-15.481692499664812!3d28.03032703494629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc409445b31059cd%3A0x1b0a1dfe3444d20a!2sCIFP%20Cruz%20de%20Piedra!5e0!3m2!1ses!2ses!4v1744360683243!5m2!1ses!2ses"
+
+      },
+      {
+        "codigo": 35015875,
+        "nombre": "CIFP FELO MONZÓN GRAU BASSAS",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "CTRA. LOMO BLANCO, 48",
+        "telefono": "928-350350",
+        "email": "35015875@gobiernodecanarias.org",
+        "imagen": "https://innovacion.elfelo.es/wp-content/uploads/2022/09/cropped-Barco-y-estrella-Y-TEXTO_OK_PANTONE_NEGRO",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.123308021474!2d-15.44979557381584!3d28.08178137596986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095cf70d7aefd%3A0xbcff22b656046217!2sCIFP%20Felo%20Monz%C3%B3n%20Grau-Bassas!5e0!3m2!1ses!2ses!4v1744364010956!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35014652,
+        "nombre": "CIFP SAN CRISTÓBAL",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ CÓRDOBA, 46B.",
+        "telefono": "928-118008",
+        "email": "35014652@gobiernodecanarias.org",
+        "imagen": "https://cifpsancristobal.org/wp-content/uploads/2017/10/San-Cristobal-CIFP.logo_.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7039.606411927833!2d-15.417928599999996!3d28.09154510000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095f2628b6c0d%3A0x2b00b04d86f7f64d!2sCentro%20P%C3%BAblico%20Integrado%20de%20Formaci%C3%B3n%20Profesional%20(CPIFP)%20San%20Crist%C3%B3bal.!5e0!3m2!1ses!2ses!4v1744364133108!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35015887,
+        "nombre": "CIFP TONY GALLARDO",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "CTRA. GENERAL DE LAS COLORADAS, Nº 1",
+        "telefono": "928-796292",
+        "email": "35015887@gobiernodecanarias.org",
+        "imagen": "https://www.gobiernodecanarias.org/educacion/6/centros/dircentrosweb/scripts/foto.asp?foto=-2147481878",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.706373652878!2d-15.432894623813585!3d28.155425575928707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40953516ea75c1%3A0x993fe979028f96ec!2sIES%20Tony%20Gallardo!5e0!3m2!1ses!2ses!4v1744364245441!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35001864,
+        "nombre": "CPEIPS SAN IGNACIO DE LOYOLA",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ JUAN E. DORESTE, 1",
+        "telefono": "928-314000",
+        "email": "sanignacio@fundacionloyola.es",
+        "imagen": "https://fundacionloyola.com/sanignacio/wp-content/uploads/2020/02/Logo-Colegio-San-Ignacio-de-Loyola.jpg",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2092.7373791674017!2d-15.413462346569517!3d28.099244192781736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40958b895908a3%3A0x9146908a01548892!2sColegio%20San%20Ignacio%20de%20Loyola!5e0!3m2!1ses!2ses!4v1744364322482!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35001748,
+        "nombre": "CPEIPS SAN JUAN BOSCO",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "CTRA. DEL CENTRO, 54",
+        "telefono": "928-311454",
+        "email": "titularlaspalmassjb@salesianas.org",
+        "imagen": "https://media.licdn.com/dms/image/v2/C4D0BAQF2-xGAFQreVA/company-logo_200_200/company-logo_200_200/0/1631329489019?e=2147483647&v=beta&t=nJhy_BMXrPP0FMsQSDcWKIrDf4qExGbT2Faz7-GwduY",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.6110779061423!2d-15.424775523815228!3d28.09740387596111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40968423e05d01%3A0xccc6baf53bb2a488!2sColegio%20San%20Juan%20Bosco!5e0!3m2!1ses!2ses!4v1744364379297!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35006370,
+        "nombre": "CPES CENTRO SOPEÑA LAS PALMAS",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ PRUDENCIA HDEZ. AJENO, 15-17",
+        "telefono": "928-310962 y 928-314504",
+        "email": "d.academica@sopenalaspalmas.org",
+        "imagen": "https://www.sopenalaspalmas.org/images/contenido_general/logopositivovertical.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7040.02463342537!2d-15.422055923815584!3d28.085167175967936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095efc477042d%3A0x58fa1e5412371e05!2sCentro%20Privado%20de%20Educaci%C3%B3n%20Secundaria%20O.S.C.U.S.!5e0!3m2!1ses!2ses!4v1744364439008!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35007842,
+        "nombre": "IES ANA LUISA BENÍTEZ",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ ANA BENÍTEZ, 15",
+        "telefono": "928-499587",
+        "email": "35007842@gobiernodecanarias.org",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBxKZJEfMuBz4YYI0pXmZCDy5fnXXEZv3xzA&s",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.605909188291!2d-15.442067223815313!3d28.097561475961058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095b954df2b5f%3A0x2bec717ab8988008!2sIES%20Ana%20Luisa%20Ben%C3%ADtez!5e0!3m2!1ses!2ses!4v1744364470754!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35010403,
+        "nombre": "IES ANTONIO GODOY SOSA",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ SAN GABRIEL, 14",
+        "telefono": "928-675182 y 928-675760",
+        "email": "35010403@gobiernodecanarias.org",
+        "imagen": "https://www3.gobiernodecanarias.org/medusa/edublog/iesantoniogodoysosa/wp-content/uploads/sites/30/2024/09/logo-ies.jpg",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.4280182273615!2d-15.479925023815186!3d28.10298507595817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4094677cc91255%3A0xb7f6a60a76bfeda4!2sIES%20Antonio%20Godoy%20Sosa!5e0!3m2!1ses!2ses!4v1744364501607!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35009711,
+        "nombre": "IES CAIRASCO DE FIGUEROA",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ SAN GABRIEL, 12",
+        "telefono": "928-670200 y 928-677530",
+        "email": "35009711@gobiernodecanarias.org",
+        "imagen": "https://www3.gobiernodecanarias.org/medusa/edublog/iescairascodefigueroa/wp-content/uploads/sites/419/2025/01/copia-de-logo-cairasco-a3-banco.jpg",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.4280182273615!2d-15.479925023815186!3d28.10298507595817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc409442a519a581%3A0xf08d2d42d5ce8b2f!2sIES%20Cairasco%20de%20Figueroa!5e0!3m2!1ses!2ses!4v1744364568436!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35009577,
+        "nombre": "IES EL RINCÓN",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "AVDA.DEL INDUST. JOSÉ SÁNCHEZ PEÑATE, S/N",
+        "telefono": "928-304367 y 928-304366",
+        "email": "35009577@gobiernodecanarias.org",
+        "imagen":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWjP-5-AjiwguH_PcdhRZL1dUBCMnhcfm4rg&s",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.6264161422177!2d-15.449318323814447!3d28.1274126759444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40951c8a18a0f3%3A0x142cb0d09763a325!2sIES%20El%20Rinc%C3%B3n!5e0!3m2!1ses!2ses!4v1744364595186!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35009395,
+        "nombre": "IES FERIA DEL ATLÁNTICO",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "ALFÉREZ PROVISIONAL, 24",
+        "telefono": "928-455016",
+        "email": "35009395@gobiernodecanarias.org",
+        "imagen": "https://www3.gobiernodecanarias.org/medusa/edublog/iesferiadelatlantico/wp-content/uploads/sites/602/2025/03/feriando.jpeg",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7038.759641206828!2d-15.45007782381506!3d28.104454375957243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095a8529815bf%3A0x4d07283adc1d387f!2sIES%20Feria%20del%20Atl%C3%A1ntico!5e0!3m2!1ses!2ses!4v1744364626128!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35002960,
+        "nombre": "IES LA MINILLA",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ CONCEJAL GARCÍA FEO, 28",
+        "telefono": "928-270402 y 928-270404",
+        "email": "35002960@gobiernodecanarias.org",
+        "imagen": "https://www3.gobiernodecanarias.org/medusa/edublog/ieslaminilla/wp-content/uploads/sites/425/2024/06/logo.jpg",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7037.686791583431!2d-15.442326423814656!3d28.120802475948096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc409508d2609035%3A0xb18dfd700c5fc516!2sIES%20La%20Minilla!5e0!3m2!1ses!2ses!4v1744364654617!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35010427,
+        "nombre": "IES LOS TARAHALES",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ ALFÉREZ PROVISIONAL, 3",
+        "telefono": "928-325419",
+        "email": "35010427@gobiernodecanarias.org",
+        "imagen": "",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.509987907985!2d-15.45159592381529!3d28.10048607595958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095b217739545%3A0x6e971389bb057469!2sIES%20Los%20Tarahales!5e0!3m2!1ses!2ses!4v1744364680412!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35008561,
+        "nombre": "IES MESA Y LÓPEZ",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "AVDA. MESA Y LÓPEZ, 69",
+        "telefono": "928-599130",
+        "email": "35008561@gobiernodecanarias.org",
+        "imagen": "https://www3.gobiernodecanarias.org/medusa/edublog/ieslostarahales/wp-content/uploads/sites/859/2023/02/logo-contacto2.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.518227225642!2d-15.44167122381429!3d28.130708075942437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc409510fab2ac49%3A0x28d84bb3d2fefe84!2sIES%20Mesa%20y%20L%C3%B3pez!5e0!3m2!1ses!2ses!4v1744364712074!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35002911,
+        "nombre": "IES PÉREZ GALDÓS",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "PASEO DE TOMÁS MORALES, 37-B",
+        "telefono": "928-304447",
+        "email": "35002911@gobiernodecanarias.org",
+        "imagen": "https://www3.gobiernodecanarias.org/medusa/edublog/iesperezgaldos/wp-content/uploads/sites/801/2023/06/cropped-logo-iespg-1.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.1745718179327!2d-15.425631823814898!3d28.110710575953707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40959b97b9f92f%3A0x377141c8b8ce60a!2zSUVTIFDDqXJleiBHYWxkw7Nz!5e0!3m2!1ses!2ses!4v1744364733181!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35014482,
+        "nombre": "IES POETA TOMÁS MORALES CASTELLANO",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "PASEO TOMÁS MORALES, 37 A",
+        "telefono": "928-303093",
+        "email": "35014482@gobiernodecanarias.org",
+        "imagen": "https://www3.gobiernodecanarias.org/medusa/edublog/iespoetatomasmoralescastellano/wp-content/uploads/sites/125/2022/07/logo-iesptmc.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.190045184413!2d-15.42493972381493!3d28.110238975953923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40959bbe042d23%3A0xccb7aa3e7f05f990!2sIES%20Poeta%20Tom%C3%A1s%20Morales%20Castellano!5e0!3m2!1ses!2ses!4v1744364818806!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35002984,
+        "nombre": "IES POLITÉCNICO LAS PALMAS",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ CANALEJAS, 43",
+        "telefono": "928-499517",
+        "email": "35002984@gobiernodecanarias.org",
+        "imagen":"https://laboratoriogaldos.es/wp-content/uploads/2019/02/LOGO-POLITECNOCO-320x320.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.168288565641!2d-15.423313523814892!3d28.110902075953696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40959b7003b277%3A0xc6ac0cf46d3cd8e8!2sIES%20Polit%C3%A9cnico%20Las%20Palmas!5e0!3m2!1ses!2ses!4v1744364841518!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35009383,
+        "nombre": "IES PRIMERO DE MAYO",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "URB. PARQUE CENTRAL, S/N",
+        "telefono": "928-118162 y 928-458369",
+        "email": "35009383@gobiernodecanarias.org",
+        "imagen": "",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.504287312092!2d-15.448202423815236!3d28.100659875959433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40952ccf2e533d%3A0xf790afb7518cafad!2sIES%20Primero%20de%20Mayo!5e0!3m2!1ses!2ses!4v1744364918461!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35010208,
+        "nombre": "IES SCHAMANN",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ MARIUCHA, 80",
+        "telefono": "928-577827",
+        "email": "35010208@gobiernodecanarias.org",
+        "imagen": "https://static.wixstatic.com/media/2a2a54_b8dca61697a349de917bf77d3b90df8c.gif/v1/fill/w_280,h_295,al_c,lg_1,pstr/2a2a54_b8dca61697a349de917bf77d3b90df8c.gif",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.504287312092!2d-15.448202423815236!3d28.100659875959433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095a14553a5f3%3A0xba78194f6dbd6177!2sIES%20Schamann!5e0!3m2!1ses!2ses!4v1744364948108!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35010439,
+        "nombre": "IES SIETE PALMAS",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ LAS BORRERAS, 1",
+        "telefono": "928-115555",
+        "email": "35010439@gobiernodecanarias.org",
+        "imagen": "https://periodicosietepalmas.wordpress.com/wp-content/uploads/2022/03/screen-shot-2022-03-06-at-20.07.17.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7038.335986536448!2d-15.437887623814882!3d28.110911075953602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095acf4b16469%3A0xbc69740e45e85adb!2sIES%20Siete%20Palmas!5e0!3m2!1ses!2ses!4v1744364968925!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35001608,
+        "nombre": "IFPMP LAS PALMAS DE GRAN CANARIA",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ SIMÓN BOLÍVAR, 15",
+        "telefono": "928-494645",
+        "email": "director@maritimopesquerolp.org",
+        "imagen": "",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7038.335986536448!2d-15.437887623814882!3d28.110911075953602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095acf4b16469%3A0xbc69740e45e85adb!2sIES%20Siete%20Palmas!5e0!3m2!1ses!2ses!4v1744364968925!5m2!1ses!2ses"
+      },
+      {
+        "codigo": 35009322,
+        "nombre": "IES PABLO MONTESINO",
+        "municipio": "LAS PALMAS DE GRAN CANARIA",
+        "direccion": "C/ GUSTAVO J. NAVARRO, 27",
+        "telefono": "928-599308",
+        "email": "35009322@gobiernodecanarias.org",
+        "imagen": "https://iespablomontesino.es/wp-content/uploads/2022/07/Logotipo3-300x241.png",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7038.593620327891!2d-15.444144023815008!3d28.106984775955816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095a58958eb57%3A0xacfd0f66a5b1552d!2sIES%20Pablo%20Montesino!5e0!3m2!1ses!2ses!4v1744368762837!5m2!1ses!2ses"
+      }
+  ]
+}
