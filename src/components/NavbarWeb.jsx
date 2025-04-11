@@ -5,7 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
 import { useAuth } from "../context/AuthProvider";
 import { useTranslation } from 'react-i18next';
-import i18n from '../components/I18n';
+import i18n from './ui/I18n';
 
 const NavbarWeb = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -116,7 +116,7 @@ const NavbarWeb = () => {
             </div>
           </div>
         </div>
-      <div style={{ height: '190px' }}></div>
+        <div className="navbar-spacer"></div>
     </>
   );
 };

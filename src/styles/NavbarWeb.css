@@ -308,6 +308,10 @@
     pointer-events: none;
 }
 
+.navbar-spacer {
+    height: 230px; /* separación original */
+  }
+  
 /* --- RESPONSIVE --- */
 
 @media screen and (max-width: 1024px) {
@@ -510,6 +514,10 @@
         color: white !important;
         padding-left: 0;
     }
+
+    .navbar-spacer {
+        height: 250px; /* separación original */
+      }
 }
 
 @media screen and (max-width: 400px) {

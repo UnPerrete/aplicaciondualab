@@ -14,6 +14,7 @@ i18n
     resources: {
       es: {
         translation: {
+          // Navbar
           inicio: "Inicio",
           retos: "Retos",
           explorar: "Explorar",
@@ -32,6 +33,7 @@ i18n
       },
       en: {
         translation: {
+          // Navbar
           inicio: "Home",
           retos: "Challenges",
           explorar: "Explore",
