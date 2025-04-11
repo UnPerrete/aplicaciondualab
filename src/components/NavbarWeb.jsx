@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logos/dualabIcon.png';
+import logo from '../assets/logos/DualabIcon.png';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import '../styles/NavbarWeb.css';
 import { useAuth } from "../context/AuthProvider";
